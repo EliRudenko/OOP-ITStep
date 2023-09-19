@@ -1,5 +1,7 @@
 #include<iostream>
-#include "Car.h"
+#include <cstring>
+#include <string>
+#include "Car.cpp"
 
 using namespace std;
 
