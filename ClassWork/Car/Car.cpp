@@ -68,6 +68,7 @@ void Car::Print()
 
 char* Car::GetModel(){ return this->model; }
 char* Car::GetColor(){ return this->color;}
+
 int Car::GetYear(){ return this->year; }
 double Car::GetPrice(){ return this->price; }
 
