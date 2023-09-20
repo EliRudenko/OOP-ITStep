@@ -1,9 +1,10 @@
 #include "My_String.h"
+#include "d:\IT-STEP\IT-Step-Repo\Framework.h"
 #include <iostream>
 
 int MyString::objectCount = 0;
 
-//КОНСТРУКТОРЫ  ДЕСТРУКТОР
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 MyString::MyString() : str(new char[81]), length(80) 
 {
@@ -46,7 +47,7 @@ MyString::~MyString()
 
 //NEW
 MyString& MyString::operator=(const MyString& right)
-{//конструктор присваивания
+{//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     if (this != &right) //a=a
     {
         delete[] str;
@@ -63,7 +64,7 @@ MyString& MyString::operator=(const MyString& right)
 }
 
 
-// ВВОД ВЫВОД
+// пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 void MyString::Input() 
 {
     std::cout << "Enter the string: ";
@@ -77,16 +78,16 @@ void MyString::Print() const { std::cout << "String: " << this->str << std::endl
 
 
 
-//МЕТОДЫ соответственно тз
+//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
 void MyString::MyStrcpy(const MyString& obj) 
-{//копирование строк
+{//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     this->length = obj.length;
 
     for (int i = 0; i <= this->length; ++i) { this->str[i] = obj.str[i]; }
 }
 
 bool MyString::MyStrStr(const char* s) const 
-{//поиск подстроки в строке
+{//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     int sLength = 0;
 
     while (s[sLength] != '\0') { ++sLength; }
@@ -109,7 +110,7 @@ bool MyString::MyStrStr(const char* s) const
 }
 
 int MyString::MyChr(char c) const 
-{//поиск символа в строке(индекс найденного символа, либо -1)
+{//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ(пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ -1)
     for (int i = 0; i < this->length; ++i) 
     {
         if (this->str[i] == c) { return i; }
@@ -117,10 +118,10 @@ int MyString::MyChr(char c) const
     return -1;
 }
 
-int MyString::MyStrLen() const { return this->length; } //возвращает длину строки
+int MyString::MyStrLen() const { return this->length; } //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
 void MyString::MyStrCat(const MyString& b) 
-{// объединение строк
+{// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     char* newStr = new char[this->length + b.length + 1];
 
     for (int i = 0; i < this->length; ++i) { newStr[i] = this->str[i]; }
@@ -133,7 +134,7 @@ void MyString::MyStrCat(const MyString& b)
 }
 
 void MyString::MyDelChr(char ch) 
-{// удаляет указанный символ 
+{// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
     int count = 0;
 
     for (int i = 0; i < this->length; ++i) 
@@ -149,10 +150,10 @@ void MyString::MyDelChr(char ch)
 }
 
 int MyString::MyStrCmp(const MyString& b) const 
-{// сравнение строк 
-    //-1 – первая строка меньше чем вторая
-    //1 – первая больше чем вторая
-    //0 – строки равны!
+{// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 
+    //-1 пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    //1 пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    //0 пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ!
 
     for (int i = 0; i <= this->length && i <= b.length; ++i) 
     {
@@ -173,7 +174,7 @@ int MyString::MyStrCmp(const MyString& b) const
 
 
 
-//ПЕРЕГРУЗКИ ОПЕРАТОРОВ
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 MyString MyString::operator+(const MyString& other) const 
 {
     MyString result(this->length + other.length);
@@ -201,33 +202,33 @@ MyString& MyString::operator+=(const MyString& addstr)
 }
 
 
-//Новое дз
+//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
 char& MyString::operator[](int index) { return this->str[index]; }
 
 const char& MyString::operator[](int index) const { return this->str[index]; }
 
 
-//СТАТ МЕТОД (кол во созданных обьектов)
+//пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 int MyString::getObjectCount() { return objectCount; }
 
 
 
 
 
-//Новое дз
+//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
 
 void MyString::Add_Chars()
 {
-    //память под новую строку
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     char* newStr = new char[this->length + 11];
 
-    //копия строки
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     for (int i = 0; i < this->length; ++i) { newStr[i] = this->str[i]; }
 
-    //10 новых символов будут \0
+    //10 пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ \0
     for (int i = this->length; i < this->length + 11; ++i) { newStr[i] = '\0'; }
 
-    //чистка памяти, указательна новую строку
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     delete[] this->str;
     this->str = newStr;
     this->length += 10;
@@ -236,11 +237,11 @@ void MyString::Add_Chars()
 
 MyString& MyString::operator+=(char c) 
 {
-    int old_Len = this->MyStrLen();// длина
+    int old_Len = this->MyStrLen();// пїЅпїЅпїЅпїЅпїЅ
 
     this->Add_Chars();// +10
 
-    //конец строки
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     this->str[old_Len] = c;
     this->str[old_Len + 1] = '\0';
 
@@ -248,7 +249,7 @@ MyString& MyString::operator+=(char c)
 }
 MyString& MyString::operator+=(int n)
 {
-    int old_Len = this->MyStrLen();// длина
+    int old_Len = this->MyStrLen();// пїЅпїЅпїЅпїЅпїЅ
 
     for (int i = 0; i < n; ++i)
     {
@@ -263,12 +264,12 @@ MyString& MyString::operator+=(int n)
 
 MyString MyString::operator+(char c) const
 {
-    MyString result(*this);// копия строки
-    int old_Len = result.MyStrLen(); // длина
+    MyString result(*this);// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    int old_Len = result.MyStrLen(); // пїЅпїЅпїЅпїЅпїЅ
 
     result.Add_Chars(); // +10
 
-    //в конец строки
+    //пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     result.str[old_Len] = c; 
     result.str[old_Len + 1] = '\0';
 
@@ -277,7 +278,7 @@ MyString MyString::operator+(char c) const
 
 MyString operator+(char c, const MyString& obj) 
 {
-    MyString result(1); //только 1 символ
+    MyString result(1); //пїЅпїЅпїЅпїЅпїЅпїЅ 1 пїЅпїЅпїЅпїЅпїЅпїЅ
     result[0] = c;
     result[1] = '\0';
 
@@ -286,8 +287,8 @@ MyString operator+(char c, const MyString& obj)
 
 MyString MyString::operator+(int n) const 
 {
-    MyString result(*this);// копия строки
-    int old_Len = result.MyStrLen();// длина строки
+    MyString result(*this);// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    int old_Len = result.MyStrLen();// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
     for (int i = 0; i < n; ++i) 
     {
@@ -302,16 +303,16 @@ MyString MyString::operator+(int n) const
 
 MyString MyString::operator++(int) 
 {
-    MyString result(*this);// копия строки
+    MyString result(*this);// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
-    this->Add_Chars();//+10 и в конец А
+    this->Add_Chars();//+10 пїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ
     this->str[this->length - 11] = 'A';
 
     return result;
 }
 MyString& MyString::operator++() 
 {
-    *this += 'A'; // в конец А
+    *this += 'A'; // пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ
     return *this;
 }
 
@@ -320,7 +321,7 @@ char& MyString::operator()(int index)
 {
     if (index >= 0 && index < this->length)
     {
-        return this->str[index];//ссылка на символ
+        return this->str[index];//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     }
     else
     {
@@ -332,7 +333,7 @@ const char& MyString::operator()(int index) const
 {
     if (index >= 0 && index < this->length)
     {
-        return this->str[index];// конст ссылка на символ
+        return this->str[index];// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     }
     else
     {
@@ -363,3 +364,27 @@ std::istream& operator>>(std::istream& is, MyString& obj)
 
     return is;
 }
+
+MyString::MyString(MyString&& obj) : str(nullptr), length(0) 
+{
+    this->str = obj.str;
+    this->length = obj.length;
+
+    obj.str = nullptr;
+    obj.length = 0;
+}
+MyString& MyString::operator=(MyString&& obj) 
+{
+    if (this != &obj) 
+    {
+        delete[] this->str;
+
+        this->str = obj.str;
+        this->length = obj.length;
+
+        obj.str = nullptr;
+        obj.length = 0;
+    }
+    return *this;
+}
+

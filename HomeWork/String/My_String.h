@@ -1,22 +1,23 @@
+#pragma once
 
 class MyString 
 {
 private:
-    char* str; // указатель на строку
-    int length; // длина 
+    char* str; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+    int length; // пїЅпїЅпїЅпїЅпїЅ 
 
 public:
-    static int objectCount; //Стат поле кол во созданных объектов
+    static int objectCount; //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-    // Конструкторы и деструктор
-    MyString(); // по умолчанию
-    MyString(int size); // с размером
-    MyString(const char* input); // с инициализацией от юзера
-    MyString(const MyString& other); // копи
-    MyString& operator=(const MyString& right); //присваивание
-    ~MyString(); // деструктор
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    MyString(); // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    MyString(int size); // пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    MyString(const char* input); // пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+    MyString(const MyString& other); // пїЅпїЅпїЅпїЅ
+    MyString& operator=(const MyString& right); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    ~MyString(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-    // Методы для ввода и вывода
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     void Input();
     void Print() const;
 
@@ -45,7 +46,7 @@ public:
     }
 
 
-    // Методы работы со строками
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     void MyStrcpy(const MyString& obj);
     bool MyStrStr(const char* str) const;
     int MyChr(char c) const;
@@ -54,29 +55,33 @@ public:
     void MyDelChr(char c);
     int MyStrCmp(const MyString& b) const;
 
-    // Перегрузка операторов
-    MyString operator+(const MyString& other) const; // оператор сложения
-    MyString& operator+=(const MyString& other); // оператор +=
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    MyString operator+(const MyString& other) const; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    MyString& operator+=(const MyString& other); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ +=
     
-    //Новое дз
-    char& operator[](int index); // оператор []
-    const char& operator[](int index) const; // оператор [] const
+    //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
+    char& operator[](int index); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ []
+    const char& operator[](int index) const; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ [] const
 
-    // Стат метод кол во объектов
+    // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     static int getObjectCount();
 
 
-    // Новое дз
-    void Add_Chars(); //+10 в уонец
-    MyString operator+(char c) const; // конкатенация стр символов, перегрузка опер +
-    MyString operator+(int n) const; // конкатенация стрп int, перегрузка опер +
-    MyString& operator+=(char c); // добавление символа в конец строки, перегрузка +=
-    MyString& operator+=(int n); // добавления int в конец строки, перегрузка +=
-    MyString operator++(int); //добавления А в коец, перегрузка ++
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
+    void Add_Chars(); //+10 пїЅ пїЅпїЅпїЅпїЅпїЅ
+    MyString operator+(char c) const; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ +
+    MyString operator+(int n) const; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ int, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ +
+    MyString& operator+=(char c); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ +=
+    MyString& operator+=(int n); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ int пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ +=
+    MyString operator++(int); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ++
     MyString& operator++(); 
 
-    char& operator()(int index); // доступ к символу по индексу
-    const char& operator()(int index) const; // конст и тоже самое
+    char& operator()(int index); // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    const char& operator()(int index) const; // пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+
+    MyString(MyString&& obj);
+    MyString& operator=(MyString&& obj);
+    
 };
 
-MyString operator+(char c, const MyString& obj); // конкатенация символа строка, перегрузка +
+MyString operator+(char c, const MyString& obj); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ +

@@ -1,5 +1,13 @@
-#include "My_String.h"
+#include "My_String.cpp"
+#include "d:\IT-STEP\IT-Step-Repo\Framework.h"
 #include <iostream>
+
+
+
+void ByVal(MyString obj){}
+MyString ReturnVal(MyString arr) { return arr; }
+
+
 
 int main() 
 {
@@ -7,7 +15,7 @@ int main()
     MyString str2(100);
     MyString str3("Hello, World!");
 
-    //ВВОД ВЫВОД
+    //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     str1.Input();
     str1.Print();
 
@@ -16,19 +24,19 @@ int main()
 
     str3.Print();
 
-    // копирование строк
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     str1.MyStrCat(str2);
     str1.Print();
 
-    // удаляет указанный символ 
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
     str1.MyDelChr('e');
     str1.Print();
     
-    // возвращает длину строки
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     std::cout << "Length of str1: " << str1.MyStrLen() << std::endl;
 
 
-    // поиск символа в строке(индекс найденного символа, либо -1)
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ(пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ -1)
     int index = str1.MyChr('H');
     if (index != -1) 
     {
@@ -36,7 +44,7 @@ int main()
     }
     else { std::cout << "'H' not found" << std::endl;}
 
-    // поиск подстроки в строке
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     bool contains = str1.MyStrStr("World");
     if (contains) 
     {
@@ -45,12 +53,18 @@ int main()
     else { std::cout << "'World' not found in str1" << std::endl; }
 
     
-    //ПЕРЕГРУЗКА ОПЕРАТОРОВ
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     MyString str4 = str1 + str3;
     str4.Print();
     
     str4 += str3;
     str4.Print();
+
+
+    MyString str_add(3);
+    ByVal (str_add);
+    MyString rez = ReturnVal(str_add);
+    
     
     //_________________________________________
 
@@ -68,7 +82,7 @@ int main()
     std::cout << "Character at index 6: " << charAtIndex << std::endl;
 
     // const operator()(int index)
-    const MyString constStr = "Program"; // для проверки
+    const MyString constStr = "Program"; // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     char constChar = constStr(2);
     std::cout << "Character at index 2 in constant string: " << constChar << std::endl;
 
@@ -90,7 +104,7 @@ int main()
     str9.Print();
     */
 
-    //СТАТ
+    //пїЅпїЅпїЅпїЅ
     std::cout << "Number of objects created: " << MyString::getObjectCount() << std::endl;
 
     return 0;
