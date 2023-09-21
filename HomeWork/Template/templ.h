@@ -92,49 +92,49 @@ void Matrix<T>::Print() const
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::operator+(const Matrix<T>& other) const 
+Matrix<T> Matrix<T>::operator+(const Matrix<T>& add) const 
 {
     Matrix<T> result(rows, cols);
     for (int i = 0; i < rows; ++i) 
     {
-        for (int j = 0; j < cols; ++j) { result.data[i][j] = data[i][j] + other.data[i][j]; }
+        for (int j = 0; j < cols; ++j) { result.data[i][j] = data[i][j] + add.data[i][j]; }
     }
     return result;
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::operator-(const Matrix<T>& other) const 
+Matrix<T> Matrix<T>::operator-(const Matrix<T>& add) const 
 {
     Matrix<T> result(rows, cols);
     for (int i = 0; i < rows; ++i) 
     {
-        for (int j = 0; j < cols; ++j) { result.data[i][j] = data[i][j] - other.data[i][j]; }
+        for (int j = 0; j < cols; ++j) { result.data[i][j] = data[i][j] - add.data[i][j]; }
     }
     return result;
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::operator*(const Matrix<T>& other) const 
+Matrix<T> Matrix<T>::operator*(const Matrix<T>& add) const 
 {
-    Matrix<T> result(rows, other.cols);
+    Matrix<T> result(rows, add.cols);
     for (int i = 0; i < rows; ++i) 
     {
-        for (int j = 0; j < other.cols; ++j) 
+        for (int j = 0; j < add.cols; ++j) 
         {
             result.data[i][j] = 0;
-            for (int k = 0; k < cols; ++k) { result.data[i][j] += data[i][k] * other.data[k][j]; }
+            for (int k = 0; k < cols; ++k) { result.data[i][j] += data[i][k] * add.data[k][j]; }
         }
     }
     return result;
 }
 
 template <typename T>
-Matrix<T> Matrix<T>::operator/(const Matrix<T>& other) const 
+Matrix<T> Matrix<T>::operator/(const Matrix<T>& add) const 
 {
     Matrix<T> result(rows, cols);
     for (int i = 0; i < rows; ++i) 
     {
-        for (int j = 0; j < cols; ++j) { result.data[i][j] = data[i][j] / other.data[i][j]; }
+        for (int j = 0; j < cols; ++j) { result.data[i][j] = data[i][j] / add.data[i][j]; }
     }
     return result;
 }
@@ -168,21 +168,21 @@ T Matrix<T>::findMin() const
 }
 
 template <typename T>
-Matrix<T>& Matrix<T>::operator=(const Matrix<T>& other) 
+Matrix<T>& Matrix<T>::operator=(const Matrix<T>& add) 
 {
-    if (this == &other) { return *this; }
+    if (this == &add) { return *this; }
 
     for (int i = 0; i < rows; ++i) { delete[] data[i]; }
     delete[] data;
 
-    rows = other.rows;
-    cols = other.cols;
+    rows = add.rows;
+    cols = add.cols;
     data = new T*[rows];
 
     for (int i = 0; i < rows; ++i) 
     {
         data[i] = new T[cols];
-        for (int j = 0; j < cols; ++j) { data[i][j] = other.data[i][j]; }
+        for (int j = 0; j < cols; ++j) { data[i][j] = add.data[i][j]; }
     }
 
     return *this;
