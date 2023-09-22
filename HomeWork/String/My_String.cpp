@@ -1,5 +1,7 @@
 #include "My_String.h"
 #include "d:\IT-STEP\IT-Step-Repo\Framework.h"
+#include <initializer_list>
+
 #include <iostream>
 
 int MyString::objectCount = 0;
@@ -38,6 +40,23 @@ MyString::MyString(const MyString& other) : str(nullptr), length(other.length)
 
     for (int i = 0; i <= this->length; ++i) { this->str[i] = other.str[i]; }
 }
+
+//ТЕМА
+MyString::MyString(std::initializer_list<char> init_list) : str(nullptr), length(0)
+{
+    ++this->objectCount;
+    this->length = init_list.size();
+
+    this->str = new char[ this->length];
+
+    for(auto х = init_list.begin(); х != init_list.end(); ++х) 
+    { 
+        *this->str = *х; 
+        ++*this->str;
+    }
+    this->str -= this->length;
+}
+
 
 MyString::~MyString() 
 {

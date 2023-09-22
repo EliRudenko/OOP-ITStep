@@ -15,6 +15,9 @@ public:
     MyString(const char* input); // � �������������� �� �����
     MyString(const MyString& other); // ����
     MyString& operator=(const MyString& right); //������������
+
+    MyString(std::initializer_list<char> initList);
+
     ~MyString(); // ����������
 
     // ������ ��� ����� � ������
@@ -44,6 +47,9 @@ public:
         length = size;
         str[0] = '\0';
     }
+
+
+    
 
 
     // ������ ������ �� ��������
