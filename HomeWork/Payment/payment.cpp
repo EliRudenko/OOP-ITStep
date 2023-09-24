@@ -5,17 +5,17 @@
 const double Payment::PENSION_FUND_PERCENTAGE = 0.01;
 const double Payment::INCOME_TAX_PERCENTAGE = 0.13;
 
-Payment::Payment(const char* name, double salary, int startYear, double bonusPercentage, double incomeTax, int workedDays, int totalDays) {
+Payment::Payment(const char* Name, double salary, int startYear, double bonusPercentage, double incomeTax, int workedDays, int totalDays) {
     // Выделяем память под fullName и копируем переданное имя
-    fullName = new char[strlen(name) + 1];
-    strcpy(fullName, name);
+    name = new char[strlen(Name) + 1];
+    strcpy(name, Name);
 
     this->salary = salary;
-    this->startYear = startYear;
-    this->bonusPercentage = bonusPercentage;
-    this->incomeTax = incomeTax;
-    this->workedDays = workedDays;
-    this->totalDays = totalDays;
+    this->start_year = startYear;
+    this->bonus_percent = bonusPercentage;
+    this->income_tax = incomeTax;
+    this->worked_days = workedDays;
+    this->total_days = totalDays;
 }
 
 Payment::~Payment() {
