@@ -28,10 +28,9 @@ int main()
     std::cout << "Enter the number of working days in a month: ";
     std::cin >> total_days;
 
-    // Создаем объект класса Payment
+    //объект класса Payment
     Payment data_employee(name, salary, start_year, bonus_percent, income_tax, worked_days, total_days);
 
-    // Выполняем все необходимые расчеты
     data_employee.calcul_accrued_am();
     data_employee.calcul_withheld_am();
     data_employee.calcul_net_am();
@@ -40,6 +39,7 @@ int main()
 
 
     /*
+    //БЫСТРАЯ ПРОВЕРКА + ПЕРЕГРУЗКА
     Payment additionalPayment("Additional salary", 10000, 2023, 10, 15, 20, 25);
     data_employee += additionalPayment; // Увеличиваем зарплату с помощью оператора +=
     data_employee.display(); // Выводим обновленную информацию
