@@ -13,19 +13,19 @@ private:
     double accrued_amount;
     double withheld_amount;
 
-    static const double PENSION_FUND_PERCENTAGE;
-    static const double INCOME_TAX_PERCENTAGE;
+    static const double PENSION_FUND_PERCENTAGE; //процент пенсионного фонда
+    static const double INCOME_TAX_PERCENTAGE; // проценкт налога прибыли
 
 public:
     Payment(const char* name, double salary, int start_year, double bonus_percent, double income_tax, int worked_days, int total_days);
     ~Payment();
-    void calcul_accrued_am(); // Метод для расчета начисленной суммы
-    void calcul_withheld_am(); // Метод для расчета удержанной суммы
-    void calcul_net_am(); // Метод для расчета суммы, выдаваемой на руки
-    int calcul_experience(); // Метод для расчета стажа
-    void print(); // Метод для вывода информации о зарплате
-    
-    // Перегрузка операторов
+    void calcul_accrued_am(); //НАЧИСЛЕННАЯ СУММА
+    void calcul_withheld_am(); // УДЕРЖАННАЯ СУММА
+    void calcul_net_am(); //ВЫДАЕТСЯ НА РУКИ
+    int calcul_experience(); //СТАЖ
+    void print(); 
+
+    //ПЕРЕГРУЗКА ОПЕР.
     Payment& operator+=(const Payment& other);
     Payment& operator-=(const Payment& other);
     Payment& operator*=(double multiplier);
