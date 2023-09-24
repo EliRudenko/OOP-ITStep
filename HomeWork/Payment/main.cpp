@@ -1,48 +1,49 @@
 #include "payment.cpp"
 #include <iostream>
 
-int main() {
-    // Просим пользователя ввести данные
+int main() 
+{
     char name[100];
-    double salary, bonusPercentage, incomeTax;
-    int startYear, workedDays, totalDays;
+    double salary, bonus_percent, income_tax;
+    int start_year, worked_days, total_days;
 
-    std::cout << "Введите ФИО: ";
+    std::cout << "Enter your full name: ";
     std::cin.getline(name, 100);
 
-    std::cout << "Введите оклад: ";
+    std::cout << "Enter salary: ";
     std::cin >> salary;
 
-    std::cout << "Введите год поступления на работу: ";
-    std::cin >> startYear;
+    std::cout << "Enter the year you started working: ";
+    std::cin >> start_year;
 
-    std::cout << "Введите процент надбавки: ";
-    std::cin >> bonusPercentage;
+    std::cout << "Enter the bonus percentage: ";
+    std::cin >> bonus_percent;
 
-    std::cout << "Введите подоходный налог (%): ";
-    std::cin >> incomeTax;
+    std::cout << "Enter income tax (%): ";
+    std::cin >> income_tax;
 
-    std::cout << "Введите количество отработанных дней в месяце: ";
-    std::cin >> workedDays;
+    std::cout << "Enter the number of days worked in the month: ";
+    std::cin >> worked_days;
 
-    std::cout << "Введите количество рабочих дней в месяце: ";
-    std::cin >> totalDays;
+    std::cout << "Enter the number of working days in a month: ";
+    std::cin >> total_days;
 
     // Создаем объект класса Payment
-    Payment employee(name, salary, startYear, bonusPercentage, incomeTax, workedDays, totalDays);
+    Payment data_employee(name, salary, start_year, bonus_percent, income_tax, worked_days, total_days);
 
     // Выполняем все необходимые расчеты
-    employee.calculateAccruedAmount();
-    employee.calculateWithheldAmount();
-    employee.calculateNetAmount();
+    data_employee.calcul_accrued_am();
+    data_employee.calcul_withheld_am();
+    data_employee.calcul_net_am();
 
-    // Выводим информацию о зарплате
-    employee.display();
+    data_employee.print();
 
-    // Примеры использования перегруженных операторов
-    Payment additionalPayment("Дополнительная зарплата", 10000, 2022, 5, 10, 20, 30);
-    employee += additionalPayment; // Увеличиваем зарплату с помощью оператора +=
-    employee.display(); // Выводим обновленную информацию
+
+    /*
+    Payment additionalPayment("Additional salary", 10000, 2023, 10, 15, 20, 25);
+    data_employee += additionalPayment; // Увеличиваем зарплату с помощью оператора +=
+    data_employee.display(); // Выводим обновленную информацию
+    */
 
     return 0;
 }

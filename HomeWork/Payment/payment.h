@@ -1,28 +1,29 @@
-#pragma once
+#include "d:\IT-STEP\IT-Step-Repo\Framework.h"
 
-class Payment {
+class Payment 
+{
 private:
-    char* fullName;
+    char* name;
     double salary;
-    int startYear;
-    double bonusPercentage;
-    double incomeTax;
-    int workedDays;
-    int totalDays;
-    double accruedAmount;
-    double withheldAmount;
+    int start_year;
+    double bonus_percent;
+    double income_tax;
+    int worked_days;
+    int total_days;
+    double accrued_amount;
+    double withheld_amount;
 
     static const double PENSION_FUND_PERCENTAGE;
     static const double INCOME_TAX_PERCENTAGE;
 
 public:
-    Payment(const char* name, double salary, int startYear, double bonusPercentage, double incomeTax, int workedDays, int totalDays);
+    Payment(const char* name, double salary, int start_year, double bonus_percent, double income_tax, int worked_days, int total_days);
     ~Payment();
-    void calculateAccruedAmount(); // Метод для расчета начисленной суммы
-    void calculateWithheldAmount(); // Метод для расчета удержанной суммы
-    void calculateNetAmount(); // Метод для расчета суммы, выдаваемой на руки
-    int calculateExperience(); // Метод для расчета стажа
-    void display(); // Метод для вывода информации о зарплате
+    void calcul_accrued_am(); // Метод для расчета начисленной суммы
+    void calcul_withheld_am(); // Метод для расчета удержанной суммы
+    void calcul_net_am(); // Метод для расчета суммы, выдаваемой на руки
+    int calcul_experience(); // Метод для расчета стажа
+    void print(); // Метод для вывода информации о зарплате
     
     // Перегрузка операторов
     Payment& operator+=(const Payment& other);
