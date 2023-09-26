@@ -102,6 +102,7 @@ int main()
 /*
     ST.Init_keyboard();
 */
+
 //для быстрой проверки
     char inp[5];
     std::cout << "Enter a string with a maximum length of 20 characters:" << std::endl;
