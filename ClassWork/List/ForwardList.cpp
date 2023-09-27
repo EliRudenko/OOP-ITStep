@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include "d:\IT-STEP\IT-Step-Repo\Framework.h"
 
 
 struct Element
@@ -135,7 +136,7 @@ void List::Print()
 
 void List::Insert(char data, int position)
 {//ВЫСТАВКА
-    if (position < 0 || position > Count) // GHJDTHRF
+    if (position < 0 || position > Count) // ПРОВЕРКА
     {
         std::cout << "Error!" << std::endl; // не правильная позиция
         return;
@@ -231,13 +232,14 @@ int main()
 		lst.Add(s[i]);
 	// Распечатываем содержимое списка
 	lst.Print();
+/*
 	// Удаляем три элемента списка
 	lst.Del();
 	lst.Del();
 	lst.Del();
 	//Распечатываем содержимое списка
 	lst.Print();
-
+*/
 
 
 //ДЗ_1
@@ -245,11 +247,13 @@ int main()
     lst.Print();
 
     int position = lst.Find('L');
+	
     if (position != -1)
     {
 		cout << "Correct" << position << std::endl;
 	}
     else { cout << "Error!"; }
+	
 
 	lst.Del_Position(2);
     lst.Print();
