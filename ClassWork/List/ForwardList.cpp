@@ -168,6 +168,7 @@ void List::Insert(char data, int position)
 
 void List::Del_Position(int position)
 {//УДАЛЕНИЕ по позиции
+/*
     if (position < 0 || position >= Count)
     {
         std::cout << "Error!" << std::endl; // не правильная позиция
@@ -194,6 +195,19 @@ void List::Del_Position(int position)
     }
 
     Count--;
+*/
+
+     Element* temp = Head;
+	 while (position > 2)
+	 {
+		temp = temp->Next;
+		position--;
+	 }
+	 Element* del = temp->Next;
+	 temp->Next = del->Next;
+
+	 delete del;
+
 }
 
 int List::Find(char data)
