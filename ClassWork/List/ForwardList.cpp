@@ -237,5 +237,22 @@ int main()
 	lst.Del();
 	//Распечатываем содержимое списка
 	lst.Print();
+
+
+
+//ДЗ_1
+    lst.Insert('L', 2);
+    lst.Print();
+
+    int position = lst.Find('L');
+    if (position != -1)
+    {
+		cout << "Correct" << position << std::endl;
+	}
+    else { cout << "Error!"; }
+
+	lst.Del_Position(2);
+    lst.Print();
+
 }
 
