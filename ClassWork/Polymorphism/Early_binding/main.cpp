@@ -2,6 +2,7 @@
 
 #include "d:\IT-STEP\IT-Step-Repo\Framework.h"
 
+#include "Figure.cpp"
 #include "Circle.cpp"
 #include "Rectangle.cpp"
 #include "Triangle.cpp"
@@ -43,7 +44,7 @@ int main()
 
 
 //РЕШЕНИЕ
-
+ 
     Figure* ptr = nullptr;  
 
     std::cout << "1. C" << std::endl;
