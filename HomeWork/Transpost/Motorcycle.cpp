@@ -6,7 +6,7 @@ Motorcycle::Motorcycle(double speed, double volume, std::string fuelType, std::s
 void Motorcycle::display() const 
 {
     Transport::display();
-    std::cout << "Name: " << this->name << "\n";
+    std::cout << "Name: " << this->name << std::endl;;
 }
 
 std::string Motorcycle::getName() const { return this->name; }
