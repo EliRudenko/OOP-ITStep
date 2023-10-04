@@ -9,14 +9,16 @@
 //get, ste, вывод на консоль итд
 
 
+#include "d:\IT-STEP\IT-Step-Repo\Framework.h"
+#include <iostream>
+
 #include "Transport.cpp"
-#include "Car.cpp"
+#include "Tram.cpp"
 #include "Ship.cpp"
 #include "Plane.cpp"
 #include "Motorcycle.cpp"
-#include "Tram.cpp"
+#include "Car.cpp"
 
-#include <iostream>
 
 int main() 
 {
