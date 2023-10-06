@@ -10,6 +10,10 @@
 
 int main()
 {
+    //Person* ptr = new Student("Lara", 18, "Step");
+
+
+
     Student obj("Lara", 18, "Step");
     obj.Print(); // АВТОМАТИЧЕСКИ ПОНИМАЕТ ДЛЯ КАКОГО КЛАССА НАДО ВЫЗВАЯ МЕТОД 
 
