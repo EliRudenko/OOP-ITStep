@@ -1,9 +1,8 @@
 #pragma once
-
 #include "Continent.h"
 #include <string>
 
-class NorthAmerica : public Continent 
+class Africa : public Continent 
 {
 private:
     int temperature;
@@ -12,12 +11,12 @@ private:
     int numAnimals;
     int maxAnimals;
 public:
-    NorthAmerica();
-    ~NorthAmerica();
+    Africa();
+    ~Africa();
     void SetTemperature(int temp);
     void SetArea(float area);
     void AddAnimal(std::string animal);
     void ShowInfo();
-
 };
+
 

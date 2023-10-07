@@ -20,6 +20,7 @@ public:
 */
 
 //3
+/*
 void MyFunc(IFly * ptr)
 {
 	ptr->Fly();
@@ -43,6 +44,7 @@ int main()
    MyFunc(&pl);
 
 }
+*/
 
 
 /*

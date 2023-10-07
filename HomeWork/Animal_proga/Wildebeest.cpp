@@ -12,3 +12,7 @@ void Wildebeest::print()
     std:: cout << "Is alive: " << (isAlive() ? "Yes" : "No") << std::endl;
 }
 
+Wildebeest::~Wildebeest()
+{
+
+}

@@ -10,6 +10,8 @@ public:
 
     void print();
 
-    virtual ~Wildebeest() = 0;
+    //virtual ~Wildebeest() = 0;
+
+    ~Wildebeest();
 };
 

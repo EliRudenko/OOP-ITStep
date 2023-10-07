@@ -13,7 +13,7 @@ protected:
 
 public:
     //Continent(const double InputMedTemp, const double InputArea, const Animal& InputHerb, const Animal& InputCarn);
-
+    Continent();
     Continent(const double InputMedTemp, const double InputArea, Animal* InputHerb, Animal* InputCarn, const char* InputName);
 
     virtual void printContSpecs(void) const = 0;
