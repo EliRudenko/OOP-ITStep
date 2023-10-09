@@ -4,6 +4,8 @@
 
 struct Security 
 {
-    static std::string encryptPassword(const std::string& password); // Шифрование пароля.
-    static std::string decryptPassword(const std::string& encryptedPassword); // Дешифрование пароля.
+    static std::string encrypt_password(const std::string& password); //шифрование пароля
+    static std::string decrypt_password(const std::string& encryptedPassword); //дешифрование пароля
 };
+
+

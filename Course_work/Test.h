@@ -19,7 +19,7 @@ public:
     // Деструктор класса Test, освобождающий память, выделенную под вопросы.
     ~Test();
 
-    void addQuestion(const Question& question); // Добавление вопроса в тест.
-    void removeQuestion(int index); // Удаление вопроса из теста.
+    void add_question(const Question& question); // Добавление вопроса в тест.
+    void remove_question(int index); // Удаление вопроса из теста.
 };
 

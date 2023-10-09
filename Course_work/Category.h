@@ -7,9 +7,9 @@
 class Category 
 {
 private: //поля принадлежат только обьектам этого класса, за пределами НЕ доступны
-    std::string categoryName; // Название категории
+    std::string category_name; // Название категории
     Test* tests; // Массив тестов
-    int numTests; // Количество тестов
+    int num_tests; // Количество тестов
 
 public:
     // Конструктор класса Category, инициализирующий его основные атрибуты.
@@ -18,7 +18,8 @@ public:
     // Деструктор класса Category, освобождающий память, выделенную под тесты.
     ~Category();
 
-    void addTest(const Test& test); // Добавление теста в категорию.
-    void removeTest(int index); // Удаление теста из категории.
+    void add_test(const Test& test); // Добавление теста в категорию
+    void del_Test(int index); // Удаление теста из категории
 };
+
 

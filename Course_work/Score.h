@@ -3,7 +3,7 @@
 class Score 
 {
 private: //поля принадлежат только обьектам этого класса, за пределами НЕ доступны
-    int correctAnswers; // Количество правильных ответов
+    int correct_answers; // Количество правильных ответов
     double percentage; // Процент правильных ответов
     int grade; // Оценка
 
@@ -12,8 +12,9 @@ public:
     Score(int correctAnswers, double percentage, int grade);
 
     // Геттеры для атрибутов.
-    int getCorrectAnswers() const;
-    double getPercentage() const;
-    int getGrade() const;
+    int get_correct_answers() const;
+    double get_percentage() const;
+    int get_grade() const;
 };
+
 

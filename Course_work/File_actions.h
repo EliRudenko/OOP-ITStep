@@ -2,7 +2,7 @@
 
 struct FileIO 
 {
-    static void importFromFile(); // Импорт данных из файла.
-    static void exportToFile(); // Экспорт данных в файл.
+    static void import_From_file(); // Импорт данных из файла.
+    static void export_To_file(); // Экспорт данных в файл.
 };
 

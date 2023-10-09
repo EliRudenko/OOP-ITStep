@@ -6,9 +6,9 @@
 class Exam 
 {
 public:
-    virtual void takeTest(Test* test) = 0; // Взятие теста (чисто виртуальный метод).
-    virtual void calculateResults(Test* test) = 0; // Расчет результатов (чисто виртуальный метод).
-    virtual void assignGrade(Score* score) = 0; // Назначение оценки (чисто виртуальный метод).
+    virtual void take_test(Test* test) = 0; // Взятие теста (чисто виртуальный метод).
+    virtual void calculate_results(Test* test) = 0; // Расчет результатов (чисто виртуальный метод).
+    virtual void assign_grade(Score* score) = 0; // Назначение оценки (чисто виртуальный метод).
 };
 
 

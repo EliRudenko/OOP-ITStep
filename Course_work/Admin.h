@@ -12,6 +12,6 @@ public:
     Admin(const std::string& login, const std::string& encryptedPassword);
 
     bool authorize(); // Переопределение метода авторизации для администратора.
-    void manageUsers(); // Управление пользователями.
-    void viewStatistics(); // Просмотр статистики результатов тестирования.
+    void manage_users(); // Управление пользователями.
+    void view_statistics(); // Просмотр статистики результатов тестирования.
 };
