@@ -15,7 +15,7 @@ public:
     void removeQuestion(Question* question, Test* test); // Удаление вопроса.
     void interruptTesting(Test* test); // Прерывание тестирования.
     void continueTesting(Test* test); // Продолжение тестирования.
-};
+}; 
 
 
 /*
