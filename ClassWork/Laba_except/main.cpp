@@ -2,20 +2,6 @@
 #include <string.h>
 
 
-class Divide_by_zero : public Exception
-{
-public:
-    Divide_by_zero(const char* zero);
-    virtual const char* GetMessage() const;
-
-};
-Divide_by_zero::Divide_by_zero(const char* mes) : Exception(mes) {}
-
-const char* Divide_by_zero::GetMessage() const { return m_message; }
-
-
-
-
 
 class Exception
 {
@@ -23,16 +9,22 @@ protected:
     char m_message[100];
 
 public:
-
     Exception(const char* message);
-
-    virtual const char* GetMessage() const;
+    const char* GetMessage() const;
 };
+Exception::Exception(const char* message) { std::strcpy(m_message, message); }
 
-Exception::Exception(const char* message) {  strcpy_s(m_message, message); }
+const char* Exception::GetMessage() const {  return m_message; }
 
-const char* Exception::GetMessage() const { return m_message; }
 
+
+
+class Divide_by_zero : public Exception
+{
+public:
+    Divide_by_zero(const char* zero);
+};
+Divide_by_zero::Divide_by_zero(const char* mes) : Exception(mes) {}
 
 
 
@@ -42,9 +34,7 @@ class IndexException : public Exception
 public:
     IndexException(const char* message);
 };
-
 IndexException::IndexException(const char* message) : Exception(message) {}
-
 
 
 
