@@ -3,7 +3,8 @@
 #include "User.cpp"
 #include "Admin.cpp"
 
-int main() {
+int main() 
+{
     int mode = User::getModeFromUser();
 
     if (mode == 1) {
