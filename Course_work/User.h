@@ -4,7 +4,7 @@
 
 class User 
 {
-protected: // потому что данные будут использоваться в потомках (Admin)
+protected:// потому что данные будут использоваться в потомках (Admin)
     static const int maxUsers = 100;
     static User registeredUsers[maxUsers];
     static int numUsers;
@@ -16,7 +16,7 @@ protected: // потому что данные будут использоват
     std::string phone;
 
 public:
-    User() = default; // Добавляем конструктор по умолчанию
+    User();
     User(const std::string& login, const std::string& encryptedPassword, const std::string& fullName, const std::string& address, const std::string& phone);
 
     void register_user();
@@ -28,4 +28,3 @@ public:
     std::string getFullName() const;
     static bool isLoginTaken(const std::string& login);
 };
-
