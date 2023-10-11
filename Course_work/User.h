@@ -5,6 +5,10 @@
 class User 
 {
 protected: // потому что данные будут использоваться в потомках (Admin)
+    static const int maxUsers = 100;
+    static User registeredUsers[maxUsers];
+    static int numUsers;
+
     std::string login;
     std::string encrypted_password;
     std::string full_name;
@@ -12,21 +16,16 @@ protected: // потому что данные будут использоват
     std::string phone;
 
 public:
-    // Конструктор класса User, инициализация
+    User() = default; // Добавляем конструктор по умолчанию
     User(const std::string& login, const std::string& encryptedPassword, const std::string& fullName, const std::string& address, const std::string& phone);
 
-    //для регистрации пользователя и входа
     void register_user();
     bool authorize();
+    void setLogin(const std::string& newLogin);
 
-    //просмотр результатов и прохождение теста
-    virtual void print_results();
-    void take_test();
-
-//?
-    static int getModeFromUser(); // Добавленный метод для выбора режима
+    static int getModeFromUser();
     static std::string getStringFromUser(const std::string& message);
+    std::string getFullName() const;
+    static bool isLoginTaken(const std::string& login);
 };
-
-
 
