@@ -27,4 +27,9 @@ public:
     static std::string getStringFromUser(const std::string& message);
     std::string getFullName() const;
     static bool isLoginTaken(const std::string& login);
+
+    bool isAuthorized() const;
+    const std::string& getEncryptedPassword() const;
+    void setEncryptedPassword(const std::string& newPassword);
+
 };

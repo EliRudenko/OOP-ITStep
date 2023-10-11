@@ -1,144 +1,94 @@
 #include<iostream>
-
 #include "User.cpp"
 #include "Admin.cpp"
 
 int main() 
 {
-    int mode = User::getModeFromUser();
+    User user("", "", "", "", ""); // Создаем пустого пользователя
+    Admin admin("", ""); // Создаем админа с пустым логином и паролем
 
-    if (mode == 1) {
-        User user("", "", "", "", ""); // Создаем пустого пользователя
-        user.register_user(); // Регистрация пользователя
+    bool isAdmin = false; // Переменная, показывающая, является ли текущий пользователь администратором
 
-        bool authorized = user.authorize(); // Авторизация пользователя
-
-        if (authorized) {
-            std::cout << "Welcome, " << user.getFullName() << "!" << std::endl;
-        } else {
-            std::cout << "Invalid credentials." << std::endl;
-        }
-    } else if (mode == 2) {
-        Admin admin("admin", "admin123"); // Создаем админа с логином и паролем по умолчанию
-
-        bool authorized = admin.authorize_admin("admin", "admin123"); // Авторизация администратора
-
-        if (authorized) {
-            std::cout << "Welcome, Admin!" << std::endl;
-
-            int action;
-            do {
-                std::cout << "Select action (1 - Change Password, 2 - Change Login, 0 - Quit): ";
-                std::cin >> action;
-
-                switch (action) {
-                    case 1:
-                        {
-                            std::string newPassword = User::getStringFromUser("Enter new encrypted password: ");
-                            admin.change_admin_password(newPassword);
-                            std::cout << "Password changed successfully!" << std::endl;
-                        }
-                        break;
-                    case 2:
-                        {
-                            std::string newLogin = User::getStringFromUser("Enter new login: ");
-                            admin.change_admin_login(newLogin);
-                            std::cout << "Login changed successfully!" << std::endl;
-                        }
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        std::cout << "Invalid action. Try again." << std::endl;
-                }
-            } while (action != 0);
-        } else {
-            std::cout << "Invalid credentials." << std::endl;
-        }
-    }
-
-    return 0;
-}
-
-
-
-
-/*
-int main() 
-{
-    int mode = User::getModeFromUser();
-
-    if (mode == 1) 
+    while (true) 
     {
-        // Режим пользователя
-        User user("johndoe", "password123", "John Doe", "123 Main St", "555-1234");
-        user.register_user(); // Регистрация пользователя
-        bool authorized = user.authorize(); // Авторизация пользователя
+        int mode = User::getModeFromUser();
 
-        if (authorized) {
-            std::cout << "Welcome, " << user.getFullName() << "!" << std::endl;
-        } else { std::cout << "Invalid credentials." << std::endl; }
-
-    } 
-    else if (mode == 2) 
-    {
-        // Режим администратора
-        Admin admin("admin", "admin123");
-        bool authorized = admin.authorize(); // Авторизация администратора
-
-        if (authorized) 
+        if (mode == 1 && !isAdmin) 
         {
-            std::cout << "Welcome, Admin!" << std::endl;
-            int action;
+            user.register_user(); // Регистрация пользователя
+            bool authorized = user.authorize(); // Авторизация пользователя
 
-            do 
+            if (authorized) 
             {
-                std::cout << "Select action (1 - Change Password, 2 - Change Login, 3 - Manage Users, 4 - View Statistics, 5 - Manage Testing, 6 - Import/Export, 0 - Quit): ";
-                std::cin >> action;
+                std::cout << "Welcome, " << user.getFullName() << "!" << std::endl;
+                
+            } 
+            else { std::cout << "Invalid credentials." << std::endl; }
+        } 
+        else if (mode == 2 && !admin.isAuthorized()) 
+        {
+            if (admin.getEncryptedPassword().empty()) 
+            {
+                std::string login, password;
+                std::cout << "Set admin login: ";
+                std::cin >> login;
+                std::cout << "Set admin password: ";
+                std::cin >> password;
+                admin.setLogin(login);
+                admin.setEncryptedPassword(password);
+            }
 
-                switch (action) 
+            std::string login, password;
+            std::cout << "Enter admin login: ";
+            std::cin >> login;
+            std::cout << "Enter admin password: ";
+            std::cin >> password;
+
+            if (admin.authorize_admin(login, password))
+            { // Авторизация админа
+                std::cout << "Welcome, Admin!" << std::endl;
+                isAdmin = true;
+
+                int action;
+                do 
                 {
-                    case 1:
+                    std::cout << "Select action (1 - Change Password, 2 - Change Login, 0 - Logout): ";
+                    std::cin >> action;
+
+                    switch (action) 
+                    {
+                        case 1:
                         {
                             std::string newPassword = User::getStringFromUser("Enter new encrypted password: ");
                             admin.change_admin_password(newPassword);
                             std::cout << "Password changed successfully!" << std::endl;
                         }
-                        break;
-                    case 2:
+                            break;
+                        case 2:
                         {
                             std::string newLogin = User::getStringFromUser("Enter new login: ");
                             admin.change_admin_login(newLogin);
                             std::cout << "Login changed successfully!" << std::endl;
                         }
-                        break;
-
-                    case 3:
-                        admin.manage_users();
-                        break;
-                    case 4:
-                        admin.view_statistics();
-                        break;
-                    case 5:
-                        admin.manage_testing();
-                        break;
-                    case 6:
-                        admin.import_export_categories_tests();
-                        break;
-                    case 0:
-                        break;
-                    default:
-                        std::cout << "Invalid action. Try again." << std::endl;
-                }
-
-            } while (action != 0);
-        } 
-        else 
-        {
-            std::cout << "Invalid credentials." << std::endl;
+                            break;
+                        case 0:
+                            isAdmin = false;
+                            break;
+                        default:
+                            std::cout << "Invalid action. Try again." << std::endl;
+                    }
+                    
+                } while (action != 0);
+            } 
+            else { std::cout << "Invalid credentials." << std::endl; }
         }
+
+        // Добавьте здесь логику для выхода из программы
+        std::cout << "Do you want to exit (y/n)? ";
+        char choice;
+        std::cin >> choice;
+        if (choice == 'y' || choice == 'Y') { break; }
     }
 
     return 0;
 }
-*/
