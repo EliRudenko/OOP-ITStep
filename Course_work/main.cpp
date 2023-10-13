@@ -7,6 +7,7 @@
 
 int main() 
 {
+    //РЕГИСТРАЦИЯ, ВХОД
     UserInterface users;
     users.for_main();
 }
