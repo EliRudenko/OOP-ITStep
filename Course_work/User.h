@@ -2,11 +2,6 @@
 
 #include <string>
 
-
-#pragma once
-
-#include <string>
-
 class User 
 {
 protected:// потому что данные будут использоваться в потомках (Admin)

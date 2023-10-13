@@ -1,7 +1,21 @@
 #include<iostream>
 
+
 #include "User.cpp"
 #include "Admin.cpp"
+#include "User_interface.cpp"
+
+int main() 
+{
+    UserInterface users;
+    users.for_main();
+}
+
+
+
+/*
+//ПЕРЕНЕСЕНО В КЛАСС
+//оставила для возссожной проверки при поломках, для уверенности
 
 int main() 
 {
@@ -89,3 +103,4 @@ int main()
 
     return 0;
 }
+*/
