@@ -3,13 +3,12 @@
 #include "User.cpp"
 #include "Admin.cpp"
 
-
 int main() 
 {
     User user("", "", "", "", ""); 
     Admin admin("", ""); 
 
-    bool isAdmin = false; //текущий пользователь администратор?
+    bool isAdmin = false; 
 
     while (true) 
     {
@@ -28,7 +27,7 @@ int main()
             else {  std::cout << "Invalid credentials!" << std::endl; }
 
         } 
-        else if (mode == 2 && !admin.isAuthorized()) 
+        else if (mode == 2 ) //&& !admin.isAuthorized()
         {
             if (admin.getPassword().empty()) 
             {
@@ -43,7 +42,7 @@ int main()
             std::string password = User::getStringFromUser("Enter admin password: ");
 
             if (admin.authorize_admin(login, password))
-            { // Авторизация админа
+            { 
                 std::cout << "Welcome, Admin!" << std::endl;
                 isAdmin = true;
 
