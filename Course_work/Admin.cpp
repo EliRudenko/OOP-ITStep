@@ -26,35 +26,23 @@ void Admin::change_admin_login(const std::string& newAdminLogin) { login = newAd
 bool  Admin::isAuthorized() const { return User::isAuthorized(); }
 
 
-
-
-
 /*
 void Admin::manage_users() 
 {
-    std::cout << "User management actions: create, delete, modify." << std::endl;
-    
+    std::cout << "User management actions: create, delete, modify." << std::endl;   
 }
 
 void Admin::view_statistics() 
-{
-    std::cout << "View statistics for testing results." << std::endl;
-   
-}
+{}
 
 void Admin::manage_testing() 
 {
-    std::cout << "Testing management actions: add categories, tests, questions." << std::endl;
-    
+    std::cout << "Testing management actions: add categories, tests, questions." << std::endl;   
 }
 
 void Admin::import_export_categories_tests() 
-{
-    std::cout << "Import/Export categories and tests from/to a file." << std::endl;
-    
-}
+{}
 */
-
 
 
 //const std::string& Admin::getEncryptedPassword() const { return User::getEncryptedPassword(); }

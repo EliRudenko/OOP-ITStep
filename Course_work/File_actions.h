@@ -1,8 +1,8 @@
 #pragma once
 
-struct FileIO 
+struct File_actions
 {
-    static void import_From_file(); // Импорт данных из файла.
-    static void export_To_file(); // Экспорт данных в файл.
+    static void import_From_file(); 
+    static void export_To_file(); 
 };
 

@@ -1,15 +1,6 @@
 #pragma once
 
 #include <string>
-
-#include "User.h"
-
-
-
-#pragma once
-
-#include <string>
-
 #include "User.h"
 
 class Admin : public User 
@@ -28,7 +19,7 @@ public:
 
     bool isAuthorized() const;
 
-    
+
 /*
     void manage_users(); 
     void view_statistics(); 
@@ -40,44 +31,3 @@ public:
     //void setEncryptedPassword(const std::string& newPassword);
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-class Admin : public User 
-{
-public:
-
-    Admin(const std::string& login, const std::string& encryptedPassword);
-    
-
-    bool authorize();
-
-    //void manage_users(); 
-    //void view_statistics(); 
-    //void manage_testing();
-    //void import_export_categories_tests();
-
-    bool authorize_admin(const std::string& inputLogin, const std::string& inputPassword); // на удаление
-    void change_admin_password(const std::string& newAdminPassword);
-    void change_admin_login(const std::string& newAdminLogin);
-
-
-    bool isAuthorized() const;
-    const std::string& getEncryptedPassword() const;
-    void setEncryptedPassword(const std::string& newPassword);
-
-};
-*/

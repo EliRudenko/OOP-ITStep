@@ -5,15 +5,15 @@
 class Statistics 
 {
 private: //поля принадлежат только обьектам этого класса, за пределами НЕ доступны
-    Score* scores; // Массив результатов
-    int num_scores; // Количество результатов
+    Score* scores; // результаты (МАССИВ)
+    int num_scores; // кол во
 
 public:
-    Statistics(); // Конструктор класса Statistics.
-    ~Statistics(); // Деструктор класса Statistics.
+    Statistics(); 
+    ~Statistics();
 
-    void print_results(); // Просмотр результатов тестирования.
-    void write_results_To_file(); // Запись результатов в файл.
+    void print_results(); 
+    void write_results_To_file(); 
 };
 
 
