@@ -6,21 +6,20 @@
 #include <iostream>
 #include <vector>
 
+
 class UserInterface 
 {
 private:
-    User user;
-    Admin admin;
-    bool isAdmin;
+    static std::vector<User> registeredUsers; 
+    static Admin admin;
+    static bool isAdmin;
 
 public:
-    UserInterface();
-    void for_main();
-
-    void handleUserMode();
-    void handleAdminMode();
-    void chooseActionAfterAuthorization();
-    void performAdminActions();
-    bool askToExit();
-
+    static void for_main();
+    static void handleUserMode();
+    static void handleAdminMode();
+    static void chooseActionAfterAuthorization();
+    static void performAdminActions();
+    static bool askToExit();
 };
+

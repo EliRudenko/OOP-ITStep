@@ -92,8 +92,7 @@ void TestInterface::displayResults(int categoryIndex, int subCategoryIndex, int 
     std::cout << "Results:" << std::endl;
     std::cout << "Correct answers: " << correctAnswers << " out of " << totalQuestions << std::endl;
 
-    // два знака после запятой
-    std::cout.precision(2); 
+    std::cout.precision(2); //ДВА ЗНАКА ПОСЛЕ ЗАЯТОЙ
     std::cout << "Percentage correct: " << std::fixed << percentCorrect << "%" << std::endl;
 
     double rawScore = (double(correctAnswers) / totalQuestions) * 12;
@@ -102,6 +101,7 @@ void TestInterface::displayResults(int categoryIndex, int subCategoryIndex, int 
     std::cout << "Final Score: " << finalScore << " out of 12" << std::endl;
 
     std::cout << std::endl;
+
 }
 
 
@@ -109,7 +109,7 @@ void TestInterface::displayResults(int categoryIndex, int subCategoryIndex, int 
 int TestInterface::getUserChoice(int min, int max) 
 {
     int choice;
-    while (true) 
+    while (true)  
     {
         std::cout << "Enter your choice: ";
         std::cin >> choice;
@@ -122,3 +122,63 @@ int TestInterface::getUserChoice(int min, int max)
     return -1; 
 }
 
+void TestInterface::addCategory(Admin& admin) 
+{
+    std::string categoryName;
+    std::cout << "Enter the name of the new category: ";
+    std::cin.ignore();
+    std::getline(std::cin, categoryName);
+
+    admin.addCategory(categoryName);
+    std::cout << "Category added successfully!" << std::endl;
+}
+
+void TestInterface::addTestToCategory(Admin& admin) 
+{
+    std::string categoryName, testName;
+    std::cout << "Enter the name of the category: ";
+    std::cin.ignore();
+    std::getline(std::cin, categoryName);
+    std::cout << "Enter the name of the new test: ";
+    std::getline(std::cin, testName);
+
+    admin.addTestToCategory(categoryName, testName);
+    std::cout << "Test added to category successfully!" << std::endl;
+}
+
+void TestInterface::addQuestionToTest(Admin& admin) 
+{
+    std::string categoryName, testName, questionText;
+    std::vector<std::string> options;
+    char correctOption;
+
+    std::cout << "Enter the name of the category: ";
+    std::cin.ignore();
+    std::getline(std::cin, categoryName);
+    std::cout << "Enter the name of the test: ";
+    std::getline(std::cin, testName);
+    std::cout << "Enter the question text: ";
+    std::getline(std::cin, questionText);
+
+    for (int i = 0; i < 4; i++) 
+    {
+        std::string option;
+        std::cout << "Enter option " << i+1 << ": ";
+        std::getline(std::cin, option);
+        options.push_back(option);
+    }
+
+    std::cout << "Enter the correct option (A, B, C, or D): ";
+    std::cin >> correctOption;
+
+    admin.addQuestionToTest(categoryName, testName, questionText, options, correctOption);
+    std::cout << "Question added to test successfully!" << std::endl;
+}
+
+
+
+std::vector<std::string> TestInterface::getCats() { return categories; }
+
+std::vector<std::vector<std::string>> TestInterface::getSubCats() { return subCategories; }
+
+std::vector<std::vector<std::vector<Question>>> TestInterface::getTest() { return tests; }

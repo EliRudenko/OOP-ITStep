@@ -1,15 +1,7 @@
 #include<iostream>
 
-/*
-#include "User.cpp"
-#include "Admin.cpp"
-#include "User_interface.cpp"
-#include "Test_Interface.cpp"
-#include "Category.cpp"
-#include "Question.h"
-*/
-
 #include "File_connection_library.h"
+#include "File_actions.cpp"
 
 int main() 
 {
@@ -18,6 +10,15 @@ int main()
 
     userInterface.for_main(); 
 
+/*
+    File_actions testOut(&testInterface);
+    
+    int categoryChoice = testInterface.getUserChoice(0, testInterface.getCats().size());
+    int subcategoryChoice = testInterface.getUserChoice(0, testInterface.getSubCats()[categoryChoice - 1].size());
+    testOut.outCats(categoryChoice - 1, subcategoryChoice - 1);
+*/
+
     return 0;
 }
 
+ 
