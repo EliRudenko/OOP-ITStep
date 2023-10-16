@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 class User 
 {
@@ -31,5 +32,4 @@ public:
     bool isAuthorized() const;
     const std::string& getPassword() const;
     void setPassword(const std::string& newPassword);
-
 };

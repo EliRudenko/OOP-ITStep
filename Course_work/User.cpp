@@ -28,6 +28,8 @@ int User::getModeFromUser()
 
 void User::register_user() 
 {
+    //addTestResult(0);
+
     bool isUniqueLogin = false;
 
     while (!isUniqueLogin) 
@@ -93,3 +95,7 @@ bool User::isLoginTaken(const std::string& login)
 const std::string& User::getPassword() const { return password; }
 
 void User::setPassword(const std::string& newPassword) { password = newPassword; }
+
+
+
+
