@@ -220,7 +220,7 @@ void UserInterface::performAdminActions()  //ОПЙИИ ДЛЯ АДМИНА
                 {
                     if (it->getLogin() == loginToDelete) 
                     {
-                        it = registeredUsers.erase(it); // УДАЛЯЕТСЯ пользователь, ИНТЕРАТОР НА СЛЕДУЮЩИЙ ЭЛЕМЕНТ
+                        // it = registeredUsers.erase(it); // УДАЛЯЕТСЯ пользователь, ИНТЕРАТОР НА СЛЕДУЮЩИЙ ЭЛЕМЕНТ
                         userFound = true; //пользователь НАЙДЕН
                     }
                     else{ ++it; }// логин не совпал идем дальше искать, следующий пользователь
