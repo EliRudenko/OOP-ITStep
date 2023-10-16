@@ -8,45 +8,49 @@
 
 struct Question 
 {
-    std::string text;
-    std::vector<std::string> options;
-    char correctOption;
+    std::string text; // текст вопроса
+    std::vector<std::string> options; //выотанты ответов
+    char correctOption; // правильные варики
 };
 
 class TestInterface 
 {
 private:
     
-    std::vector<std::string> categories = {"Maths", "Physics"};
-    std::vector<std::vector<std::string>> subCategories = {{"Combinatorics", "Mathematical analysis"}, {"Quantum physics", "Mechanics"}};
-    std::vector<std::vector<std::vector<Question>>> tests;
+    std::vector<std::string> categories = {"Maths", "Physics"}; // ВЕКТОР КАТЕГОРИЙ
+    std::vector<std::vector<std::string>> subCategories = {{"Combinatorics", "Mathematical analysis"}, {"Quantum physics", "Mechanics"}}; // ВЕКТОР ПОДКАТЕГОРИЙ
+    std::vector<std::vector<std::vector<Question>>> tests; //ВЕКТОР ТЕСТОВ состоит из:
+    // 1 std::vector<std::vector<Question>> КАТЕГОРИЯ
+    // 2 std::vector<Question> ПОДКАТЕГОРИИ ТЕСТОВ  внутри каждой категории
+    // 3 std::vector<Question> ВОПРОСЫ внутри каждой подкатегории
 
 public:
 
-    void startTesting(); 
+    void startTesting(); // ЗАПУСК ТЕСТИРОВАНИЯ
 
-    void loadTests();
+    void loadTests(); // запуск ТЕСТОВ
 
-    void displayCategories();
-    void displaySubCategories(int categoryIndex);
-    void displayQuestions(int categoryIndex, int subCategoryIndex);
-    void displayResults(int categoryIndex, int subCategoryIndex, int correctAnswers);
+    void displayCategories(); //вывод КАТЕГОРИЙ
+    void displaySubCategories(int categoryIndex); // вывод ПОДКАТЕГОРИЙ
+    void displayQuestions(int categoryIndex, int subCategoryIndex); // вывод ВОПРОСОВ
 
-    int getUserChoice(int min, int max);
+    void displayResults(int categoryIndex, int subCategoryIndex, int correctAnswers); // РЕЗУЛЬТАТЫ
 
-    void addCategory(Admin& admin);
-    void addTestToCategory(Admin& admin);
-    void addQuestionToTest(Admin& admin);
+    int getUserChoice(int min, int max); 
+
+    void addCategory(Admin& admin); // ДОБАВИТЬ категорию теста
+    void addTestToCategory(Admin& admin); // ДОБАВИТЬ подкатегорию теста 
+    void addQuestionToTest(Admin& admin); // ДОБАВИТЬ вопрос 
 
 
     std::vector<Question> getQuestionsForTest(int categoryIndex, int subCategoryIndex) 
     {
-        return tests[categoryIndex][subCategoryIndex];
+        return tests[categoryIndex][subCategoryIndex]; // получение вопроса для теста
     }
-
-    std::vector<std::string> getCats();
-    std::vector<std::vector<std::string>> getSubCats();
-    std::vector<std::vector<std::vector<Question>>> getTest();
+ 
+    std::vector<std::string> getCats(); // получение КАТЕГОРИИ
+    std::vector<std::vector<std::string>> getSubCats(); // получение ПОДКАТЕГОРИИ
+    std::vector<std::vector<std::vector<Question>>> getTest(); // получении ТЕСТА
 
 };
 
