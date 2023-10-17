@@ -1,6 +1,6 @@
 #include "File_actions.h"
 
-/*
+
 File_actions::File_actions(TestInterface* iTests) { testInt = iTests; } // указатель на обьект TestInterface
 
 void File_actions::outCats(int catC, int subCatC)
@@ -19,13 +19,12 @@ void File_actions::outCats(int catC, int subCatC)
     {
         for (int j = 0; j < testInt->getSubCats().size(); j++) {  out << testInt->getSubCats()[i][j] << "    "; } // заголовки
     }
-
+/*
     out << "Questions :" << std::endl;
 
     testInt->loadTests();
 
     for (const Question& question : testInt->getTest()[catC][subCatC]) {  out << question.text << std::endl; } // вопр
-
+*/
     out.close();
 }
-*/

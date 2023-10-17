@@ -88,21 +88,25 @@ void User::register_user()
 }
 
 bool User::validateEmail(const std::string& email) 
-{//ПРОВЕРКА АДРЕСА (должно быть @ и . ибо это ел почта)
-    int atIndex = email.find('@'); // найи символ для проверки того что ввел пользователь
-    int dotIndex = email.rfind('.');
+{
+    // найи символ для проверки того что ввел пользователь
+    auto atIndex = std::find(email.begin(), email.end(), '@');
+    auto dotIndex = std::find(email.rbegin(), email.rend(), '.');
 
     //ПРОВЕРКИ есть ли в адресе от пользователя нужные символы
-    bool hasAt = (atIndex != std::string::npos);
-    bool hasDot = (dotIndex != std::string::npos);
+    bool hasAt = (atIndex != email.end());
+    bool hasDot = (dotIndex != email.rend());
     
-    bool dotAfterAt = (hasAt && hasDot && dotIndex > atIndex); // ПОСЛЕДОВАТЕЛЬНОСТЬ (@ а потом .)
+    // ПОСЛЕДОВАТЕЛЬНОСТЬ (@ а потом .)
+    bool dotAfterAt = (hasAt && hasDot && std::distance(atIndex, email.end()) > std::distance(dotIndex, email.rend())); 
     return dotAfterAt; // результат 
 }
 
+
+
 bool User::validatePhoneNumber(const std::string& phoneNumber) 
 {//ПРОВЕРКА НОМЕРА
-    return phoneNumber.find("+380") == 0 && phoneNumber.size() == 13; // начинается +380, сумма 13 цыфер
+    return phoneNumber.find("+380") == 0 && phoneNumber.size() == 13; // начинается +380, сумма 13 цыфер, (0 это начало для сравление)
 }
 
 

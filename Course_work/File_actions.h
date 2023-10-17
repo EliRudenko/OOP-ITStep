@@ -1,6 +1,6 @@
 #pragma once
 
-/*
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -23,4 +23,3 @@ public:
 
     void outCats(int catC, int subCatC);
 };
-*/

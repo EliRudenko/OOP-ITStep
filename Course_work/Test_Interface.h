@@ -4,6 +4,7 @@
 #include <string>
 
 #include "User.h"
+#include "Admin.h"
 
 
 struct Question 

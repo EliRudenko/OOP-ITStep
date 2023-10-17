@@ -66,17 +66,21 @@ void TestInterface::displayQuestions(int categoryIndex, int subCategoryIndex)
 
     for (const Question& question : tests[categoryIndex][subCategoryIndex]) //ПЕРЕБОР ВОПРОСОВ ДЛЯ ВЫБРАННОЙ КАТЕГОРИИ И ПОДКАТЕГОРИИ
     {
-        //дмапозон 
+        //диапозон 
         //const Question& question   переменная question константная ссылка на ВЕКТОР (тип элемента ввектора Question)
         // tests[categoryIndex][subCategoryIndex] обращение к ВЕКТОРУ tests 
-        //categoryIndex - индект вненего(КАТЕГОРИЯ)     subCategoryIndex - интекс вложенного, внутреннего вектора (ПОДКАТЕГОРИЯ)
+        //categoryIndex - индект внешнего(КАТЕГОРИЯ)     subCategoryIndex - интекс вложенного, внутреннего вектора (ПОДКАТЕГОРИЯ)
+        // ссылка на вопр которая получает категорию и полкатегорию, защет этого получает тесты
+
+        //каждый элемент в ВЕКТОРЕ tests[categoryIndex][subCategoryIndex] последовательно присваивается переменной  question = работа с каждым вопросов внутри цикла 
+
 
         std::cout << std::endl;
         std::cout << question.text << std::endl; //выбор текста вопроса
 
         for (const std::string& option : question.options) { std::cout << option << std::endl; } // вывод вариантов ответа
         //const std::string& option   переменная option константная ссылка на элемент вектора (ТИП ВЕКТОРА std::string)
-        //question.options ОБРАЩЕНИЕ К ВЕКТОРУ options ЫНУТРИ ОБЬЕКТА questionй!!!!!
+        //question.options ОБРАЩЕНИЕ К ВЕКТОРУ options ВНУТРИ ОБЬЕКТА questionй!!!!!
         //потому что там строки с вариантами ответов
 
         std::cout << "Your answer: ";
