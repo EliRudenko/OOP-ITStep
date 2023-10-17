@@ -15,8 +15,7 @@ const int User::maxUsers;
 
 User::User() {}
 
-User::User(const std::string& login, const std::string& password, const std::string& fullName, const std::string& address, const std::string& phone) 
-    : login(login), password(password), full_name(fullName), address(address), phone(phone) {}
+User::User(const std::string& login, const std::string& password, const std::string& fullName, const std::string& address, const std::string& phone)  : login(login), password(password), full_name(fullName), address(address), phone(phone) {}
 
 std::string User::getStringFromUser(const std::string& message) 
 {//для ввода строк (пользователь)
@@ -89,6 +88,17 @@ void User::register_user()
 
 bool User::validateEmail(const std::string& email) 
 {
+
+    size_t atIndex = email.find('@'); 
+    size_t dotIndex = email.rfind('.');
+
+    // Check if the required characters are present in the user's input
+    bool hasAt = (atIndex != std::string::npos);
+    bool hasDot = (dotIndex != std::string::npos);
+    
+    bool dotAfterAt = (hasAt && hasDot && dotIndex > atIndex); 
+    return dotAfterAt; 
+/*
     // найи символ для проверки того что ввел пользователь
     auto atIndex = std::find(email.begin(), email.end(), '@');
     auto dotIndex = std::find(email.rbegin(), email.rend(), '.');
@@ -100,9 +110,8 @@ bool User::validateEmail(const std::string& email)
     // ПОСЛЕДОВАТЕЛЬНОСТЬ (@ а потом .)
     bool dotAfterAt = (hasAt && hasDot && std::distance(atIndex, email.end()) > std::distance(dotIndex, email.rend())); 
     return dotAfterAt; // результат 
+*/
 }
-
-
 
 bool User::validatePhoneNumber(const std::string& phoneNumber) 
 {//ПРОВЕРКА НОМЕРА
@@ -121,6 +130,7 @@ bool User::authorize()
 
     return (inputLogin == login && inputPassword == password); // если СОВПАДАЮТ (то что только что ввел и то что при регистрации) то true
 }
+
 
 bool User::isAuthorized() const { return !login.empty() && !password.empty(); } // если логин и пароль НЕ пустые - все ок
 
