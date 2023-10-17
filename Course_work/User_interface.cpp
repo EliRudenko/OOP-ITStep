@@ -192,8 +192,8 @@ void UserInterface::performAdminActions()  //ОПЙИИ ДЛЯ АДМИНА
     {
         std::cout << "Select action: " << std::endl;
         std::cout << "1 - Create User, 2 - Remove User" << std::endl;
-        std::cout << "3- Change Password, 3 - Change Login" << std::endl;
-        std::cout << "4 - Add Category, 5 - Add Test to Category, 6 - Add Question to Test" << std::endl;
+        std::cout << "3- Change Password, 4 - Change Login" << std::endl;
+        std::cout << "5 - Add Category, 6 - Add Test to Category, 7 - Add Question to Test" << std::endl;
         std::cout << "0 - Logout" << std::endl;
         std::cout << "Enter: ";
         std::cin >> action;
