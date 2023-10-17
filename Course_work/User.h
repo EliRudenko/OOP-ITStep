@@ -12,7 +12,8 @@ class User
 {
 protected:
     static const int maxUsers = 100; // максимальное количество пользователей
-    static std::vector<User> registeredUsers; //ЗАРЕГИСТРИРОВАННЫЕ пользователи
+    static std::vector<User> registeredUsers; //ЗАРЕГИСТРИРОВАННЫЕ пользователи, (контейней, хранит)
+
 
 //инфа для регистрации и тп
     std::string login;

@@ -31,7 +31,6 @@ void TestInterface::startTesting()
 }
 
 
-
 void TestInterface::loadTests() 
 {
     //РАЗМЕРЫ ВЕКТОРОВ ТЕКСТОВ (в зависимости от кол во категорий и подкатегорий)
