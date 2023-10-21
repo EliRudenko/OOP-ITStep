@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DZ</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: #6e5757;
+            margin: 20px;
+        }
+        .container 
+        {
+            background-color: #a79797;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .fruit-list 
+        {
+            list-style-type: none;
+            padding: 0;
+        }
+        .fruit-list-item 
+        {
+            background-color: #ba6c6c;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px 0;
+            color: #333;
+            position: relative;
+        }
+        .dark-background
+        {
+            background-color: #963838;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+
+
+
+
+
+
+        .task-list 
+        {
+            max-width: 500px;
+            margin: 0 auto;
+            list-style-image: url('unchecked_16.png');
+        }
+
+        .task-item 
+        {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+
+        .task-icon 
+        {
+            width: 16px;
+            height: 16px;
+            margin-right: 10px;
+        }
+
+        .task-text 
+        {
+            flex-grow: 1;
+            text-decoration: none;
+        }
+
+        .task-checked 
+        {
+            text-decoration: line-through;
+            color: #555; 
+        }
+
+        .task-done { background-color: #538a53; }
+
+        .task-not-done { background-color: #dc7d7d; }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 style="text-align:center;">List of fruits</h1>
+
+    <ul class="fruit-list">
+        <li class="fruit-list-item">1.<span class="dark-background">Apple</span></li>
+        <li class="fruit-list-item">2.<span class="dark-background">Orange</span></li>
+        <li class="fruit-list-item">3.<span class="dark-background">Pineapple</span></li>
+        <li class="fruit-list-item">4.<span class="dark-background">Pear</span></li>
+        <li class="fruit-list-item">5.<span class="dark-background">Cherry</span></li>
+    </ul>
+</div>
+
+<br>
+
+<div class="container">
+    <h1 style="text-align:center;">Task List</h1>
+    <ul class="task-list">
+        <li class="task-item task-done">
+            <img class="task-icon" src="checked_16.png" alt="checked">
+            <span class="task-text task-checked">Задача 1 (выполнено)</span>
+        </li>
+        <li class="task-item task-done">
+            <img class="task-icon" src="checked_16.png" alt="checked">
+            <span class="task-text task-checked">Задача 2 (выполнено)</span>
+        </li>
+        <li class="task-item task-done">
+            <img class="task-icon" src="checked_16.png" alt="checked">
+            <span class="task-text task-checked">Задача 3 (выполнено)</span>
+        </li>
+        <li class="task-item task-done">
+            <img class="task-icon" src="checked_16.png" alt="checked">
+            <span class="task-text task-checked">Задача 4 (выполнено)</span>
+        </li>
+        <li class="task-item task-not-done">
+            <img class="task-icon" src="unchecked_16.png" alt="unchecked">
+            <span class="task-text">Задача 5 (не выполнено)</span>
+        </li>
+        <li class="task-item task-not-done">
+            <img class="task-icon" src="unchecked_16.png" alt="unchecked">
+            <span class="task-text">Задача 6 (не выполнено)</span>
+        </li>
+    </ul>
+</div>
+
+<br>
+
+<div class="container">
+    <h1 style="text-align:center;">Definition</h1>
+
+    <br>
+    <h1>TAG</h1>
+
+    <code>[tag]</code>
+
+    <h3 style="font-style: italic; font-weight: normal;">noun</h3>
+
+    <ol>
+        <li>
+            a label attached to someone or something for the purpose of identification or to give other information
+            <p style="color: #7f8483;">"he gave his pet a collar with a metal name tag"</p>
+            synonyms: <i style="color: #5084cc;">label, ticket, badge, mark, marker, tab, tally, sticker, docket, stub, chit, chitt, counterfci, lag, stamp</i>
+            <p style="color: #7f8483;">"a price tag"</p>
+        </li>
+
+        <li>
+            a small piece or part that is attached to a main body.
+        </li>
+    </ol>
+
+    <h3 style="font-style: italic; font-weight: normal;">verb</h3>
+
+    <ol>
+        <li>
+            attach a label to
+            <p style="color: #7f8483;">"mothers suspected that their babies had been wrongly tagged during an alarm at the hospital"</p>
+            synonyms: <i style="color: #5084cc;">label attach tags to, put a label on, mark, ticket, earmark, identify, docket, flag, indicate</i>
+            <p>"the bottles were tagged with colour-coded labels"</p>
+        </li>
+
+        <li>
+            add to something, especially as an afterthought or with no real connection.
+            <p style="color: #7f8483;">"she meant to tag her question on at the end of her remarks"</p>
+            synonyms: <i style="color: #5084cc;">add, tack, join, attach, append, affix, annex</i>
+            <p style="color: #7f8483;">"their heads were so large that the rest of their bodies seemed <b>tagged on</b> as an afterthought"</p>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>
