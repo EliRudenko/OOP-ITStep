@@ -1,0 +1,33 @@
+* {margin: 0;}
+
+body 
+{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #d68d8d63;
+    background-image: url(background_img.jpg); 
+    background-repeat:no-repeat; 
+    background-size:100% auto;
+    background-attachment: fixed;
+    margin: 20px;
+}
+
+
+#container
+{
+    background-color: rgba(191, 150, 150, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    width: 50%;
+} 
+
+
+p
+{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1,h2
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
