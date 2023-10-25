@@ -1,0 +1,153 @@
+body 
+{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #d68d8d63;
+    background-image: url(icons_practice_module_3/background_img.jpg); 
+    background-repeat:no-repeat; 
+    background-attachment: fixed;
+}
+
+
+.gallery li
+{
+    float:left;
+    width: 120px;
+    height: 100px;
+    
+    margin: 10px;
+    padding: 20px;
+    margin-top: 10px;
+
+    background-color: #b685cae8;
+    text-align: center;
+    border-radius: 10px;
+
+
+    list-style: none;
+
+    /* width: 30%;  */
+
+    /* float:inline-start;*/
+}
+
+
+
+
+.thumbnails 
+{
+    display: flex; /*что бы по середине*/
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.thumbnail 
+{
+    margin: 5px;
+    border: 2px solid #ffffff;
+    width: 100px;
+    height: 80px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumbnail:hover 
+{
+    border-color: #ff74b7;
+    background-color: #ff74b75e;
+}
+
+
+h1,h2,p
+{
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+
+
+
+.list 
+{
+    list-style-position: inside;
+    padding: 0;
+    /* text-align: center;  */
+
+}
+.list-item 
+{
+
+    width: 130px; 
+    margin-bottom: 2px;
+    padding: 5px;
+
+    background-color: #b685cae8;
+    text-align: center;
+    border-radius: 5px;
+    list-style: none;
+
+}
+.dark-background
+{
+    background-color: #74522b;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0px 0;
+    list-style-position: inside;
+}
+
+.list-item:hover 
+{
+    border-color: #ff74b7;
+    background-color: #ff74b75e; 
+    border-radius: 15px;
+    margin: 2px 0;
+    list-style-position: inside; 
+}
+
+
+/* #container
+{
+    margin: auto;
+    padding: 10px;
+    width: auto;
+    margin: 10px;
+    text-align: center;
+} */
+
+
+a
+{
+    color: rgb(118, 49, 116);
+    text-decoration: none;
+}
+a:hover 
+{
+    color:  rgb(191, 40, 255);
+    text-decoration: underline;
+}
+
+menu ul li img
+{
+    width: 50px;
+    height: 50px;
+}
+
+.forimg 
+{
+    text-align: left;
+    padding: 0%;
+    margin: 5px;
+    
+    width: 100px;
+    height: 30px;
+    
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
