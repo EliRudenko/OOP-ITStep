@@ -123,12 +123,11 @@ h1,h2,p
 
 a
 {
-    color: rgb(118, 49, 116);
+    color: rgb(44, 13, 56);
     text-decoration: none;
 }
 a:hover 
 {
-    color:  rgb(191, 40, 255);
     text-decoration: underline;
 }
 
@@ -138,6 +137,19 @@ menu ul li img
     height: 50px;
 }
 
+.forimg-block 
+{
+        
+    width: 230px;
+    height: 210px;
+    padding: 10px;
+    background-color: #ec91fc38;
+    border-radius: 15px;
+    margin: 0px 0;
+    list-style-position: inside; 
+}
+
+
 .forimg 
 {
     text-align: left;
@@ -145,7 +157,7 @@ menu ul li img
     margin: 5px;
     
     width: 100px;
-    height: 30px;
+    height: 15px;
     
     display: flex;
     justify-content: center;
