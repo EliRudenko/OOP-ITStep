@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название вашего сайта</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Высота страницы будет занимать 100% высоты видимой области браузера */
+            margin: 0; /* Убираем отступы по умолчанию */
+        }
+
+        header, footer, main {
+            width: 100%; /* Занимают 100% ширины страницы */
+            box-sizing: border-box; /* Учитываем padding и border в общей ширине элемента */
+            flex-shrink: 0; /* Элементы не будут уменьшаться в размерах */
+        }
+
+        header, footer {
+            background-color: #ccc; /* Цвет фона для шапки и футера (замените на нужный) */
+            padding: 10px; /* Добавляем небольшие отступы внутри шапки и футера */
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between; /* Равномерно распределяем блоки по горизонтали */
+            flex-grow: 1; /* Основное содержимое будет растягиваться по вертикали */
+            overflow: hidden; /* Предотвращаем появление полос прокрутки при маленьком экране */
+        }
+
+        aside, section {
+            width: 100%; /* Занимают 100% ширины контейнера */
+            box-sizing: border-box; /* Учитываем padding и border в общей ширине элемента */
+            margin-bottom: 10px; /* Добавляем небольший пробел снизу между блоками */
+        }
+
+        aside {
+            background-color: #f0f0f0; /* Цвет фона для aside (замените на нужный) */
+        }
+
+        section {
+            background-color: #e0e0e0; /* Цвет фона для секций (замените на нужный) */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Содержимое шапки и навигации -->
+    </header>
+
+    <main>
+        <aside class="left-aside">
+            <!-- Содержимое первого aside слева -->
+        </aside>
+
+        <aside class="left-aside">
+            <!-- Содержимое второго aside слева -->
+        </aside>
+        
+        <section class="section-one">
+            <!-- Содержимое первой секции -->
+        </section>
+
+        <section class="section-two">
+            <!-- Содержимое второй секции -->
+        </section>
+    </main>
+
+    <footer>
+        <!-- Содержимое футера -->
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<style>
+div.fixed 
+{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    
+    border: 3px solid #73AD21;
+}
+
+div.fixed2 
+{
+    position: fixed;
+    bottom: 0;
+    right: 1;
+    width: 300px;
+    height: 300px;
+    
+    border: 3px solid #73AD21;
+}
+
+div.fixed3
+{
+    position: fixed;
+    top: 0;
+    right: 1;
+    width: 300px;
+    height: 300px;
+    
+    border: 3px solid #73AD21;
+}
+
+div.fixed4
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    
+    border: 3px solid #73AD21;
+}
+</style>
+</head>
+<body>
+
+
+<div class="fixed"></div>
+
+<div class="fixed2"></div>
+
+<div class="fixed3"></div>
+
+<div class="fixed4"></div>
+
+</body>
+</html> -->
