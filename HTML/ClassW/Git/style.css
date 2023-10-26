@@ -75,9 +75,21 @@ footer
     bottom: 0;
 
     width: 100%; 
-    height: 80px;
-    background-color: #2d304658; 
+    height: 50px;
+    background-color: #2d304658;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
+
+footer div img
+{
+    width: 30px;
+    height: 30px;
+}
+
+
+
 
 .asi1
 {
@@ -150,7 +162,6 @@ p
 .thumbnails 
 {
     display: flex;
-   
     margin: 0px;
     padding: 15px;
 
@@ -162,7 +173,6 @@ p
 
 .thumbnail 
 {
-
     /* border: 2px solid #ffffff; */
     width: 100px;
     height: 20px;
@@ -170,4 +180,96 @@ p
     padding: 10px;
     /* justify-content: center; */
     align-items: center;
+}
+
+
+/* .footer_ul
+{
+    float: left;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+    list-style-type: none;
+} */
+
+.footer_text
+{
+    float: left;
+    font-size: x-small;
+    text-align: center;
+    margin: 10px;
+    list-style-type: none;
+    
+}
+
+
+
+.list 
+{
+    list-style-position: inside;
+    padding: 0;
+    /* text-align: center;  */
+
+}
+.list-item 
+{
+
+    width: 130px; 
+    margin-bottom: 2px;
+    padding: 5px;
+
+    background-color: #b685cae8;
+    text-align: center;
+    border-radius: 5px;
+    list-style: none;
+
+} 
+
+
+/* 
+.forimg-block 
+{
+        
+    width: 100px;
+    height: 20px;
+
+    background-color: #d2212138;
+    border-radius: 15px;
+
+    
+} */
+
+
+.forimg 
+{
+    /* text-align: left;
+    padding: 0%;
+    margin: 5px;
+     */
+    /* width: 200px;
+    height: 200px; */
+    
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+
+    border-color: aqua;
+
+    font-size: x-small;
+    color: #a0a0a0;
+    list-style: none; 
+}
+
+a
+{
+    color: rgb(137, 57, 168);
+    text-decoration: none;
+}
+a:hover 
+{
+    color: aqua;
+    text-decoration: underline;
 }
