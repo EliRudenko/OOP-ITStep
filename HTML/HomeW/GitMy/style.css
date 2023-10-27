@@ -131,11 +131,15 @@ footer div img
 
 h1,h2,h3
 {
-    /* margin: 10px;
-    padding: 15px; */
+    margin-top: 10px;
+    margin-left: 145px;
+    padding: 15px;
     font-style: normal;
-    font-family:monospace;
-    font-size: x-large;
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+
+    /* font-family:monospace; */
+    font-size: large;
 }
 
 p
@@ -208,6 +212,7 @@ p
     font-size: x-small;
     text-align: center;
     margin: 10px;
+    /* margin-left: 20px; */
     list-style-type: none;
     
 }
@@ -249,27 +254,31 @@ p
     
 } */
 
+hr
+{
+    border-color: #171c2448;
+}
 
 
 .forimg 
 {
     
-    padding-right: 4%;
+    /* padding-right: 4%; */
     
     opacity: 0.5;
 
-    width: 200px;
+    width: 150px;
 
     display: flex;
-    justify-content: center;
+    /* justify-content: center;
     align-items:center;
-    text-align: center;
+    text-align: center; */
 
     border-color: aqua;
 
     font-size: x-small;
     /* color: #a0a0a0; */
-    list-style: none; 
+    /* list-style: none;  */
 }
 
 a
