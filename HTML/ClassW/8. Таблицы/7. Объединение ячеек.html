@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Объединение ячеек</title>
+    <style>
+        table {
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 3px solid black;
+            margin: 0;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Объединение ячеек</h1>
+    <table>
+        <thead>
+            <tr style="background-color: #dddddd">
+                <th rowspan="2" style="width: 200px">День недели</th>
+                <th colspan="2" style="width: 120px">Температура</th>
+            </tr>
+            <tr style="background-color: #dddddd">
+                <th style="width: 60px">Мин</th>
+                <th style="width: 60px">Макс</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="width: 200px">Понедельник</td>
+                <td style="width: 60px">8</td>
+                <td style="width: 60px">12</td>
+            </tr>
+            <tr>
+                <td style="width: 200px">Вторник</td>
+                <td style="width: 60px">10</td>
+                <td style="width: 60px">16</td>
+            </tr>
+            <tr>
+                <td style="width: 200px">Среда</td>
+                <td style="width: 60px">11</td>
+                <td style="width: 60px">14</td>
+            </tr>
+            <tr>
+                <td style="width: 200px">Четверг</td>
+                <td style="width: 60px">12</td>
+                <td style="width: 60px">18</td>
+            </tr>
+            <tr>
+                <td style="width: 200px;">Пятница</td>
+                <td style="width: 60px;">14</td>
+                <td style="width: 60px;">20</td>
+            </tr>
+            <tr>
+                <td style="width: 200px">Суббота</td>
+                <td style="width: 60px">14</td>
+                <td style="width: 60px">18</td>
+            </tr>
+            <tr>
+                <td style="width: 200px">Воскресенье</td>
+                <td style="width: 60px">15</td>
+                <td style="width: 60px">22</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+

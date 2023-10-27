@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Группы строк и столбцов</title>
+    <style>
+        table {
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 3px solid black;
+            margin: 0;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Группы строк и столбцов</h1>
+    <table>
+        <!-- столбцы -->     
+        <colgroup style="width:60px; text-align:center">
+            <col style="width:200px" />
+            <col style="background-color: #ddeeff" />
+            <col style="background-color: #ffdddd" />
+        </colgroup>
+        <!-- шапка -->
+        <thead style="background-color: #dddddd">
+            <tr>
+                <th rowspan="2">День недели</th>
+                <th colspan="2" style="width: 120px">Температура</th>
+            </tr>
+            <tr>
+                <th>Мин</th>
+                <th>Макс</th>
+            </tr>
+        </thead>
+        <!-- итог -->
+        <tfoot style="font-weight:bold; color: red">
+            <tr style="vertical-align:bottom; height:40px">
+                <td>Средняя температура:</td>
+                <td>12</td>
+                <td>17</td>
+            </tr>
+        </tfoot>
+        <!-- тело таблицы -->
+        <tbody>
+            <tr>
+                <td>Понедельник</td>
+                <td>8</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Вторник</td>
+                <td>10</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>Среда</td>
+                <td>11</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>Четверг</td>
+                <td>12</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Пятница</td>
+                <td>14</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Суббота</td>
+                <td>14</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>Воскресенье</td>
+                <td>15</td>
+                <td>22</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+

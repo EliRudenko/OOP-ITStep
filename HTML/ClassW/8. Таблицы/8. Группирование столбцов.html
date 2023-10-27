@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Группирование столбцов</title>
+    <style>
+        table {
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 3px solid black;
+            margin: 0;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+<h1>Группирование столбцов</h1>
+<table>
+    <colgroup style="width:250px; background-color: #ddeeff">
+        <col style="width:100px; background-color: #00eeff" />
+        <col /> <!-- Пропускаем столбец. У него будет форматирование по умолчанию для группы. -->
+        <col style="background-color: #ddffee" />
+        <col /> <!-- Пропускаем столбец. У него будет форматирование по умолчанию для группы. -->
+        <col style="width:160px; background-color: red" />
+    </colgroup>
+    
+    <thead>
+        <tr>
+            <th>Заголовок</th>
+            <th>Заголовок</th>
+            <th>Заголовок</th>
+            <th>Заголовок</th>
+            <th>Заголовок</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Данные</td>
+            <td>Данные</td>
+            <td>Данные</td>
+            <td>Данные</td>
+            <td>Данные</td>
+        </tr>
+        <tr>
+            <td>Данные</td>
+            <td>Данные</td>
+            <td>Данные</td>
+            <td>Данные</td>
+            <td>Данные</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
