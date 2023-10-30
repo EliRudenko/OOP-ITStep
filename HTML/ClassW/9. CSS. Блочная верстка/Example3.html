@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Блочная верстка в HTML5</title>
+    <style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+        div {
+            margin-top: 10px;
+            border: 1px solid black;
+            font-size: 20px;
+            height: 80px;
+            text-align:center;
+			overflow: hidden;
+        }
+
+        #header {
+            background-color: #990000;
+            color: white;
+        }
+
+        #leftSidebar{
+            background-color: #dddddd;
+            float: left;
+            width: 150px;
+        }
+        #rightSidebar{
+            background-color: #dddddd;
+            float: right;
+            width: 150px;
+        }
+        #main{
+            background-color: #dddddd;
+            height: 150px;
+            margin-left: 160px;
+            margin-right: 160px;
+        }
+
+        #footer {
+            background-color: #990000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">Шапка сайта (хедер) может содержать название сайта, логотип и меню.</div>
+    <div id="leftSidebar">Боковая панель (сайдбар)</div>
+    <div id="rightSidebar">Боковая панель (сайдбар)</div>
+    <div id="main">Информационное содержание сайта (контент)</div>
+    <div id="footer">Подвал сайта (футер) может содержать ваши контактные данные, условия пользования, ссылки на разделы сайта и иконки соц. сетей.</div>
+</body>
+</html>

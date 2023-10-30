@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Блочная верстка в HTML5</title>
+    <style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+        div {
+            margin-top: 10px;
+            border: 1px solid black;
+            font-size: 20px;
+            height: 80px;
+            text-align: center;
+			overflow: hidden;
+        }
+
+        #header {
+            background-color: #990000;
+            color: white;
+        }
+
+        #sidebar {
+            background-color: #dddddd;
+            float: left;
+            width: 24%;
+            height: 180px;
+        }
+
+        #main {
+            background-color: #dddddd;
+            float: left;
+            width: 75%;
+            height: 180px;
+        }
+
+        #footer {
+            background-color: #990000;
+            color: white;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">Шапка сайта (хедер) может содержать название сайта, логотип и меню.</div>
+    <div id="sidebar">Боковая панель (сайдбар). Содержит как навигационные, так и информационные элементы. Чаще всего в боковой панели можно встретить формы поиска, рекламные баннеры, навигационные меню или виджеты.</div>
+    <div id="main">Информационное содержание сайта (контент)</div>
+    <div id="footer">Подвал сайта (футер) может содержать ваши контактные данные, условия пользования, ссылки на разделы сайта и иконки соц. сетей.</div>
+</body>
+</html>
