@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box6 {
+  transition: perspective(500px);
+}
+
+div {
+  width: 150px;
+  height: 150px;
+  background: #16EAD9;
+  transform: scale(1.2, 1.2);
+  animation: boxrotate 4s alternate;
+
+}
+
+@keyframes box {
+
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(500px, 0);
+  }
+
+  50% {
+    transform: translate(500px, 150px);
+  }
+
+  75% {
+    transform: translate(0, 150px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes boxrotate {
+
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes boxscale {
+
+  0% {
+    transform: scaleX(1);
+  }
+
+  25% {
+    transform: scaleY(2);
+  }
+
+  50% {
+    transform: scale(0.5, 1);
+  }
+
+  65% {
+    transform: scale(0);
+  }
+
+  75% {
+    transform: scale(-1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes boxskew {
+
+  0% {
+    /*  наклон */
+    transform: skew(0deg);
+  }
+
+  25% {
+    transform: skew(20deg);
+  }
+
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+@keyframes boxzoom {
+
+  0% {
+    transform: translate3d(0, 0, 0)
+  }
+
+  100% {
+    transform: translate3d(0, 0, 200px)
+  }
+}

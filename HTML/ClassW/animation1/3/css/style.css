@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: pink
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background: #2BD5CC;
+  border-radius: 50%;
+  border: 15px solid #92E9FF;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, .5);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 100px;
+  overflow: hidden;
+}
+
+@keyframes load {
+  100% {
+    transform: translateY(-1100px);
+  }
+}
+
+.loader {
+  animation: load 11s steps(11, end) infinite;
+}

@@ -1,0 +1,77 @@
+*{margin: 0;padding: 0;}
+
+h1
+{
+  animation: shadow 2s;
+  /*animation-duration: 2s;*/
+  color: pink;
+  padding: 1em
+}
+
+@keyframes shadow 
+{
+	from {text-shadow: 0 0 3px black;}
+	50% {text-shadow: 0 0 30px red;}
+	to {text-shadow: 0 0 3px black;}
+}
+
+#box
+{
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	background: #8BF173;
+	animation: movebg 3s;
+}
+
+@keyframes movebg
+{
+	from
+	{
+		top: 10%;
+		left: 0;
+	}
+	20%{left: 80%;
+		top: 10%;}
+	50%
+	{
+		top: 50%;
+		left: 80%;
+	}
+
+	75%
+	{
+		top: 50%;
+		left: 0%;
+		background: red
+	}
+	
+	to{
+		top: 10%;
+		left: 0;
+	}
+}
+.box2
+{
+	width: 100px;
+	height: 100px;
+	background: url(img/star.svg);
+}
+#box3{position: absolute;
+animation: movebg 3s}
+#box3 rect
+{
+
+	fill: #30DCF5; 
+	stroke: #2D25C5;
+	stroke-width: 4;
+	transition: all 200ms;
+}
+#box3 rect:hover
+{
+	fill: #4DE85F
+}
+#box3 circle
+{
+	fill: #BCED6F
+}

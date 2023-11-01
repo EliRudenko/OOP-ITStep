@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card</title>
+  <style>
+
+    .card {
+      width: 300px;
+      height: 350px;
+      margin: 0 auto;
+      
+      position: relative;/*относительное позиционирование родительского элемента,
+      чтобы дочерние .product, .description располагать внутри card*/
+      border: 1px solid #f5dde1;
+    }
+
+    .product, .description {
+      width: 100%;/*ширина 100% родителя*/
+      height: 100%;/*высота 100% родителя*/
+      position: absolute;/*абсолютное позиционирование элементов внутри родителя с классом card*/
+      left: 0;/*координата позиционирвоания слева 0px*/
+      top: 0;/*координата позиционирвоания сверху 0px*/
+      text-align:center;
+      backface-visibility: hidden;/*скрывает обратную сторону во время переворота*/
+      background-color: #fff;
+      transition: 1s;
+     }
+
+    .description a
+    {
+      display:inline-block;
+      padding: 10px 30px;
+      margin-top:30px;
+      text-decoration:none;
+      text-transform:uppercase;
+      color:#fff;
+      background-color: #f5dde1;
+    }
+    .description {
+      box-sizing:border-box;
+      padding:40px;
+      transform: rotateY(180deg); /*поврот блока с описание на 180 град, прячем в начальном состоянии, без наведения курсора мыши*/
+    }
+    .card:hover .product {
+    	transform: rotateY(180deg); /*разворачиваем блок с изображением на 180 градусов*/
+    }
+    .card:hover .description {
+    	transform: rotateY(360deg); /*возвразщаем блок с описанием*/
+    }
+
+
+
+
+    
+    .gallery 
+    {
+        /* width: 920px;
+        height: 300px; */
+        margin: auto;
+        margin-top: 100px;
+        border: 1px solid #ffffff77;
+        background-color: #0e12185a;
+        text-align: center;
+        padding: 80px;
+
+        margin-bottom: 100px;
+    }
+
+    .thumbnails 
+    {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0;
+    }
+
+
+    .thumbnail 
+    {
+        /* margin: 40px; */
+        /* width: 100px;
+        height: 80px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* .thumbnail:hover 
+    {
+        border-color: #e24428;
+        background-color: #ff74745e;
+    } */
+
+    .name-prod
+    {
+      position:absolute;
+      bottom: 0;
+      
+      width: 300px;
+      height: 75px;
+      margin-top: 200px;
+      border: 0;
+      text-align:center;
+      font-size: small;
+      background-color: #548054;
+   
+    }
+
+    img
+    {
+        width: 300px;
+        height: 280px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="gallery">
+    <ul class="thumbnails">
+        <li class="thumbnail">
+          <div class="card">
+            <div class="product"><img src="1.jpg"></div>
+            <div class="description">
+              <h2>Description</h2>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi autem, eaque nihil nesciunt facere culpa. Aperiam voluptates quo, asperiores nesciunt, unde ut culpa sed reprehenderit, magni adipisci, at explicabo nostrum.</p>
+              <a href="#">buy</a>
+            </div>
+            <div class = "name-prod">
+              <p>Шкарпетки жовто-зелені "Капібари" NOSKAR</p>
+               <h2>125 грн</h2>
+              </div>
+          </div>
+        </li>
+
+        <li class="thumbnail">
+          <div class="card">
+            <div class="product"><img src="2.jpg"></div>
+            <div class="description">
+              <h2>Description</h2>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi autem, eaque nihil nesciunt facere culpa. Aperiam voluptates quo, asperiores nesciunt, unde ut culpa sed reprehenderit, magni adipisci, at explicabo nostrum.</p>
+              <a href="#">buy</a>
+            </div>
+            <div class = "name-prod">
+              <p>Шкарпетки жовто-зелені "Капібари" NOSKAR</p>
+               <h2>125 грн</h2>
+            </div>
+          </div>
+        </li>
+
+        <li class="thumbnail">
+          <div class="card">
+            <div class="product"><img src="3.jpg"></div>
+            <div class="description">
+              <h2>Description</h2>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi autem, eaque nihil nesciunt facere culpa. Aperiam voluptates quo, asperiores nesciunt, unde ut culpa sed reprehenderit, magni adipisci, at explicabo nostrum.</p>
+              <a href="#">buy</a>
+            </div>
+            <div class = "name-prod">
+              <p>Шкарпетки жовто-зелені "Капібари" NOSKAR</p>
+               <h2>125 грн</h2>
+            </div>
+          </div>
+        </li>
+
+        <li class="thumbnail">
+          <div class="card">
+            <div class="product"><img src="4.png"></div>
+            <div class="description">
+              <h2>Description</h2>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi autem, eaque nihil nesciunt facere culpa. Aperiam voluptates quo, asperiores nesciunt, unde ut culpa sed reprehenderit, magni adipisci, at explicabo nostrum.</p>
+              <a href="#">buy</a>
+            </div>
+            <div class = "name-prod">
+              <p>Шкарпетки жовто-зелені "Капібари" NOSKAR</p>
+               <h2>125 грн</h2>
+            </div>
+          </div>
+        </li>
+        <!-- <li class="thumbnail"><img src="icon_practice/Cervantes_Jauregui.jpg" alt="2"></li>
+        <li class="thumbnail"><img src="icon_practice/Dickens_Gurney.jpg" alt="3"></li>
+        <li class="thumbnail"><img src="icon_practice/Edgar_Allan_Poe.jpg" alt="4"></li>
+        <li class="thumbnail"><img src="icon_practice/Oscar_Wilde_Sarony.jpg" alt="5"></li> -->
+
+    </ul>
+</div>
+</body>
+</html>
