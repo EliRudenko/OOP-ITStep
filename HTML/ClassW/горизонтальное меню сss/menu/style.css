@@ -1,0 +1,11 @@
+﻿body{background:#dadada}
+*{margin:0; padding:0}
+#menu{margin:20px}
+#menu ul ul{display:none}
+#menu  li{float:left; list-style-type:none;}
+#menu li a{display:block; background: #4e4e4e; color: #fff; text-decoration:none; padding:30px}
+#menu li a:hover{display:block; background: #575757;color:orange}
+#menu ul li:hover > ul{display:block;}
+
+#menu ul{position: relative}
+#menu li{font-family: Arial; text-align:center; width:140px}

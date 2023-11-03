@@ -1,0 +1,22 @@
+
+body{background:#069}
+*{margin:0; padding:0}
+#menu{margin:30px}
+
+#menu ul li{position: relative}
+
+#menu ul ul{display:none;position:absolute;top:100%}
+
+#menu ul ul li{float:none;position:relative}
+
+#menu li{float:left; list-style-type:none}
+
+#menu li a{display:block; color:#CCC; background:#333; text-decoration:none; padding:20px}
+
+#menu ul a:hover{background:#09C; color:#333}
+
+#menu ul li:hover > ul{display:block}
+
+#menu li{font:14px Verdana, Geneva, sans-serif; width:140px; text-align:center}
+#menu ul{position:relative}
+#menu ul ul ul{position:absolute; top:0; left:100%}
