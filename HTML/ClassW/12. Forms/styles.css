@@ -1,0 +1,30 @@
+input{
+    border:1px solid darkblue;
+    border-radius: 5px;
+}
+
+input:hover{
+    background-color: dodgerblue;
+    color: white;
+}
+
+input[type="email"]{
+    background-color: grey;
+}
+
+ option[selected]{
+     color: green;
+ }
+
+ input[type="text"]::placeholder{
+     color: green;
+ }
+
+ input[type="checkbox"]:checked{
+    background-color: hotpink;
+ }
+
+ input:invalid{
+     background-color: indianred;
+ }
+
