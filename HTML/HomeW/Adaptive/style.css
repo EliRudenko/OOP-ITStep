@@ -52,7 +52,7 @@ header{
     /*между элементами задаем отступ*/
     justify-content: space-between;
     /*отступ справа и слева зависит от ширины окна браузера*/
-    padding: 0 3vw;
+    /* padding: 0 3vw; */
 }
 header>div{
     width: 100%;
@@ -156,27 +156,7 @@ main>section+div>aside{
     
 }
 
-/* main>section+div>aside+aside
-{
-    padding: 2%;
-    border:  5px solid rgb(0, 242, 255);
-    height: 20%;
-}
-
-main>section+div>aside+aside
-{
-    width: 20px;
-    height: 20px;
-
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: start;
-    align-items: center;
-} */
-
-div#aside-two aside 
+div#aside2 aside 
 {
     border:  5px solid rgb(0, 242, 255);
 
@@ -184,7 +164,6 @@ div#aside-two aside
     padding: 2%;
 
 
-    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -193,11 +172,12 @@ div#aside-two aside
 }
 
 
-.aside-two-item {
-
-    flex-direction: row;
+.aside-squares 
+{
     width: 22px;
     height: 22px;
+    flex-direction: row;
+
     background-color: aqua;
     margin: 1.25%;
 }
