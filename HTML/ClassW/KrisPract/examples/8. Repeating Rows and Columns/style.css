@@ -1,0 +1,25 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(2, 1fr 2fr); */
+    /* grid-template-columns: 50px repeat(2, 1fr 2fr); */
+    grid-gap: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #0d233d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid div {
+    padding: 0.3em;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #482880;
+    color: #ffffff;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.grid div:nth-child(odd) {
+    background-color: #1769aa;
+}
