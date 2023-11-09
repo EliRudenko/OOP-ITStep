@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html lang="en">
   <head>
@@ -16,7 +16,6 @@
         width: 130px;
         box-sizing: border-box;
         border: 1px solid #777;
-        background-color: aqua;
       }
       input:focus {
         border-color: rgb(255, 255, 0);
@@ -122,5 +121,118 @@
         <button type="submit">Order</button>
       </div>
     </form>
+  </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <title>Moonlight news</title>
+    <style>
+      fieldset 
+      {
+        width: 180px;
+        background-color: rgba(33, 40, 70, 0.566);
+      }
+      label span {
+        width: 70px;
+        text-align: right;
+        display: inline-block;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="head-form">
+      <form>
+        <h3>Create account</h3>
+        <ul>
+          <li>
+            <label>
+              <span>Your name</span><br>
+              <input type="text" id="fname" name="firstName" placeholder=" First and last name"/>
+            </label>
+          </li>
+          <li>  
+            <label>
+              <span>Adress</span><br>
+              <input type="text" id="fname" name="firstName"/>
+            </label>
+          </li>
+          <li>
+            <label>
+              <span>Mobile number or email</span><br>
+              <input type="text" id="lName" name="lastName" />
+            </label>
+          </li>
+
+          <fieldset>
+            <legend>Select size:</legend>
+            <ul>
+              <li>
+                <label>
+                  <span>Small</span>
+                  <input type="radio" id="small" name="size" value="small" />
+                </label>
+              </li>
+              <li>
+                <label>
+                  <span>Medium</span>
+                  <input
+                    type="radio"
+                    id="medium"
+                    name="size"
+                    value="medium"
+                    checked
+                  />
+                </label>
+              </li>
+              <li>
+                <label>
+                  <span>Large </span>
+                  <input type="radio" id="medium" name="size" value="medium" />
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <li>
+            <label>
+              <span>Add Comment</span><br>
+              <input type="text" id="fname" name="firstName"/>
+            </label>
+          </li>
+
+
+
+
+
+
+          <li>
+            <label>
+              <span>Password</span><br>
+              <input type="password" id="password" name="userPassword" placeholder=" At least 6 characters" />
+            </label>
+          </li>
+          <li>
+            <label>
+              <span style="margin-top: 13px;">Re-enter password</span><br>
+              <input type="email" id="email" name="userEmail" />
+            </label>
+          </li>
+          
+          <li id="buttons">
+            <input id="submitBtn" type="submit" value="Continue" />
+          </li>
+
+        </ul>
+      </form>
+    </div>
   </body>
 </html>

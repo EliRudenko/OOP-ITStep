@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Moonlight news</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div class="head-form">
+        <div class="for-bloc-img">
+            <img src="1.png">
+            <h2>Registration</h2>
+            <div 
+            style="width: 30px; height: 30px; font-size: x-large;  text-align: center;">
+                &#10148;
+            </div>
+        </div>
+
+        <form>
+        <ul>
+            <li>
+            <label>
+                <span>Name:</span>
+                <input type="text" id="fname" name="firstName" />
+            </label>
+            </li>
+
+            <li>
+                <label>
+                    <span>Gender:</span>
+                    <input type="radio" value="male" id="gender1" name="sex" />
+                    <label for="gender1">Male</label>
+                    <input type="radio" value="female" id="gender2" name="sex" />
+                    <label for="gender2">Female</label>
+                </label>
+            </li>
+
+            <li>
+                <label>
+                <span>Email:</span>
+                <input type="email" id="email" name="userEmail" />
+                </label>
+            </li>
+
+            <div>
+                <label>
+                <span>Сountry:</span>
+                <select id="nameOfPizza" name="nameOfPizza">
+                    <option>Odesa</option>
+                    <option>Kyiv</option>
+                    <option>Lviv</option>
+                </select>
+                </label>
+            </div>
+
+
+
+            <li id="buttons">
+            <input id="submitBtn" type="submit" value="Register" />
+            </li>
+        </ul>
+        </form>
+    </div>
+
+  </body>
+</html>
