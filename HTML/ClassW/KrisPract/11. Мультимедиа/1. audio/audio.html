@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sound Samples</title>
+</head>
+
+<body>
+  <h1>Samples:</h1>
+  <article class="sample">
+    <header>
+      <h2>Drums</h2>
+    </header>
+    <!--
+         autoplay
+         Звук начинает играть сразу после загрузки страницы.
+        controls
+        Добавляет панель управления к аудиофайлу.
+        loop
+        Повторяет воспроизведение звука с начала после его завершения.
+        preload
+        Используется для загрузки файла вместе с загрузкой веб-страницы.
+        src
+        Указывает путь к воспроизводимому файлу.
+         -->
+    <audio id="drums" controls>
+      <source src="sounds/ogg/drums.ogg" type="audio/ogg">
+      <source src="sounds/mp3/drums.mp3" type="audio/mpeg">
+    </audio>
+  </article>
+
+  <article>
+    <header>
+      <h2>Guitar</h2>
+    </header>
+    <audio id="guitar" controls>
+      <source src="sounds/ogg/guitar.ogg" type="audio/ogg">
+      <source src="sounds/mp3/guitar.mp3" type="audio/mpeg">
+    </audio>
+  </article>
+
+  <article>
+    <header>
+      <h2>Organ</h2>
+    </header>
+    <audio id="organ" controls>
+      <source src="sounds/ogg/organ.ogg" type="audio/ogg">
+      <source src="sounds/mp3/organ.mp3" type="audio/mpeg">
+    </audio>
+  </article>
+
+  <article>
+    <header>
+      <h2>Bass</h2>
+    </header>
+    <audio id="bass" controls>
+      <source src="sounds/ogg/bass.ogg" type="audio/ogg">
+      <source src="sounds/mp3/bass.mp3" type="audio/mpeg">
+    </audio>
+  </article>
+</body>
+
+</html>

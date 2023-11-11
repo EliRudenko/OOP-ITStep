@@ -1,0 +1,237 @@
+
+/*обратимся ко всем элементам, чтобы убрать отступы, которые назначит браузер по умолчанию*/
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    /*зададим основной размер шрифта, для того, чтобы пользоваться относительной единицей rem*/
+    font-size: 16px;
+}
+body{
+    /* скроем контент, превышающий ширину окна браузера */
+    overflow-x: hidden;
+    /*устанавливаем основной шрифт контента - системный - это позволит быстрее загрузить страницу*/
+    font-family: Helvetica, Tahoma, Verdana,   sans-serif;
+    /* Единица rem задаёт размер относительно размера шрифта элемента <html> */
+    font-size: 1rem;
+    color: rgb(75, 75, 75);
+    margin: 20px;
+}
+h1,h2,h3,a{
+    /*шрифт для заголовков и ссылок будет 'Bitter', который мы подключили с помощью тега <link>*/
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+    color: rgb(105, 105, 105);
+}
+/*для основного контейнера будем использовать фиксировано-резиновую верстку*/
+.container{
+    /*устанавливаем основную ширину равной ширине видимой части окна браузера*/
+    width: 100vw;
+    /*устанавливаем минимальную ширину, до которой можно сжимать контейнер, если ширина устройства будет меньше - появится горизонтальный скролл*/
+    min-width: 320px;
+    /*устанавливаем максимальную ширину, до которой можно расширять контейнер, если ширина устройства будет больше - по бокам появятся отступы*/
+    max-width: 100%;
+    /*для того, чтобы контейнер находился всегда по центру по горизонтали указываем значения для внешних отступов*/
+    margin: auto;
+    /*в случае, если контента будет мало, чтобы страница полностью заполнила всю высоту окна браузера, устанавливаем минимальную высоту*/
+    min-height: 100vh;
+    /*в случае, если контента будет много, чтобы появился вертикальный скролл, устанавливаем значение высоты равной содержимому*/
+    height: auto;
+    /*для более простого расположения элементов на странице, воспользуемся технологией flexBox*/
+    display: flex;
+    /*направление основной оси меняем на вертикальное*/
+    flex-direction: column;
+}
+/*каждому элементу контейнера будем устанавливать фоновой цвет, чтобы было нагляднее*/
+header{
+    
+    /*зададим размер header по основной оси*/
+    flex-basis: 10vh;
+    /*элементы шапки сайта располагаются слева на право*/
+    display: flex;
+    /*между элементами задаем отступ*/
+    justify-content: space-between;
+    /*отступ справа и слева зависит от ширины окна браузера*/
+    /* padding: 0 3vw; */
+}
+header>div{
+    width: 100%;
+}
+header h1{
+    /*выравниваем содержимое дочернего элемента по вертикали*/
+    margin-top: 2%;
+    text-align: center;
+    align-self: center;
+    width: 100px;
+    border: 3px solid aqua;
+}
+header>div>div+div>nav{
+    /*выравниваем содержимое дочернего элемента по вертикали*/
+    align-self: center;
+    /*для того, чтобы легко расположить ссылки, воспользуемся снова технологией flexBox*/
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 1vw;
+    text-align: center;
+
+    border: 3px solid aqua;
+
+}
+/*стилевое оформление ссылок основного меню*/
+header nav a{
+    display: block;
+    /* margin-left: 2vw;
+    padding: 0.5vw 1vw; */
+    padding-right: 2vw;
+    padding-left: 2vw;
+    /**/
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+header nav a:hover,
+header nav a.active{
+    border-bottom: 2px solid rgba(105, 105, 105, 0.5);
+}
+/*main - основной элемент страницы является одновременно и flex-родителем и flex-контейнером*/
+main{
+    /*чтобы заполнять все пространство по основной оси основным элементом прописываем свойство flex */
+    flex: 1 1 auto;
+    display: flex;
+    /*дочерние элементы располагаются слева на право*/
+    justify-content: space-between;
+    padding-top: 2vh;
+    
+}
+
+.for-video
+{
+    display: flex;
+    /* margin-left: 5%; */
+    margin-top: 1%;
+    /* justify-content: center;
+    align-items: center; */
+    background-color: aqua;
+
+}
+
+.description
+{
+    margin-top: 2%;
+    /* margin-left: 5%; */
+}
+
+.Logo-name
+{
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+    
+}
+
+main>section{
+    /*чтобы заполнять все пространство по основной оси основным элементом прописываем свойство flex */
+    flex: 1 1 55%;
+}
+main>section>article{
+    border:  5px solid rgb(0, 242, 255);  
+    margin-left: 4%;
+}
+main>section>article>*{
+    display: block;
+    padding-bottom: 1.5vh;
+
+}
+
+
+main>section+div{
+
+    flex-basis: 30%;
+    padding: 1%;
+    padding-top: 0%;
+    /* border:  5px solid rgb(0, 242, 255); */
+    height: 20%;
+}
+
+main>section+div>aside{
+    /*зададим размер левой части по основной оси в процентах*/
+
+    padding: 2%;
+    border:  5px solid rgb(0, 242, 255);
+    height: 20%;
+    margin-bottom: 2%;
+    
+    
+}
+
+
+
+
+
+main>section+aside figcaption{
+    font-size: 0.9rem;
+    border: 3px solid rgb(0, 255, 0);
+}
+
+footer{
+    /*зададим размер footer по основной оси*/
+    flex-basis: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*запрос для экранов с максимальной шириной 960px и меньше*/
+@media screen and (max-width:960px){
+
+    main>section+div>aside+div>aside{
+        /*зададим размер левой части по основной оси в процентах*/
+        flex-basis: 20%;
+
+    }
+    main>section+div
+    {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    main>section{
+        /*зададим размер центральной части по основной оси в процентах*/
+        flex-basis: 70%;
+        margin-left: 2%;
+    }
+}
+
+/*запрос для экранов с максимальной шириной 570px и меньше*/
+@media screen and (max-width:700px){
+    header{
+        flex-basis: auto;
+         /*меняем направление основной оси шапки сайта*/
+        flex-direction: column;
+    }
+    main{
+        /*меняем направление основной оси элемента отображающего основной контент*/
+        flex-direction: column;
+    }
+    main>section+div>aside{
+        /*спрячем правый элемент на всех устройствах, с шириной 960px и меньше*/
+        display: none;
+    }
+    main>section+div
+    {
+        flex-basis: 15vh;
+        margin-left: 2%;
+        margin-right: 5%;
+    }
+
+    main>section{
+        /*зададим размер основному контенту по основной оси*/
+        flex-basis: auto;
+
+        /*изменим порядок отображения элементов так, чтобы контент находился выше*/
+        order:-1;
+    }   
+}
+

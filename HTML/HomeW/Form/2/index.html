@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Moonlight news</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div class="head-form">
+        <form method="get">
+          <h2>Place your order</h2>
+            <ul>
+                <div class="for-bloc">
+                    <li>
+                    <label>
+                        <span>Nick</span>
+                        <input type="text" id="fname" name="firstName"/>
+                    </label>
+                    </li>
+                </div>
+
+                <!-- <div class="for-bloc">
+                  <li>
+                      <label>
+                      <span>Adress</span>
+                      <input  style="height: 60px;"  type="email" id="email" name="userEmail"/>
+                      </label>
+                  </li>
+                </div> -->
+<!-- 
+                <div class="for-bloc">
+                  <li>
+                      <label>
+                      <span>Phone</span>
+                      <input type="text" id="phone" name="userPhone" placeholder="+380-000-00-00-00" pattern="^+(380)-\d{3}-\d{2}-\d{2}-\d{2}$"/>
+                      </label>
+                  </li>
+                </div> -->
+
+                <div class="for-bloc">
+                    <li>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" id="email" name="userEmail" placeholder="example@gmail.com" pattern="^\w{5,}@\D{3,5}\.\D{2,4}$"/>
+                        </label>
+                    </li>
+                </div>
+
+                <div class="for-bloc">
+                  <li>
+                    <label>
+                      <span>Date:</span>
+                      <input type="date"/>
+                    </label>
+                  </li>
+                </div>
+
+                <div class="for-bloc">
+                  <li>
+                    <label>
+                        <span>Gender:</span>
+                        <input type="radio" value="male" id="gender1" name="sex" />
+                        <label for="gender1">Male</label>
+                        <input type="radio" value="female" id="gender2" name="sex" />
+                        <label for="gender2">Female</label>
+                    </label>
+                  </li>
+                </div>
+
+                <div class="for-bloc">
+                  <div style="margin-bottom: 10px;">
+                      <label>
+                        <span>Сountry:</span>
+                        <select id="nameOfPizza" name="nameOfPizza">
+                            <option>Odesa</option>
+                            <option>Kyiv</option>
+                            <option>Lviv</option>
+                      </select>
+                      </label>
+                  </div>
+                </div>
+
+                <br><hr><br>
+
+                <div class="for-bloc">
+                  <div style="margin-bottom: 10px;">
+                      <label>
+                        <span>Experience</span>
+                        <select id="nameOfPizza" name="nameOfPizza">
+                            <option>0</option>
+                            <option>1-5</option>
+                            <option>5-10</option>
+                            <option>10-20</option>
+                            <option>20-30</option>
+                            <option>30-40</option>
+                            <option>40-50</option>
+                      </select>
+                      </label>
+                  </div>
+                </div>
+              
+              <div class="for-bloc">
+                <div style="margin-bottom: 10px;">
+                    <label>
+                      <span>Hero type</span>
+                      <select id="nameOfPizza" name="nameOfPizza">
+                          <option>Mario</option>
+                          <option>Mushroom</option>
+                          <option>Princess</option>
+                    </select>
+                    </label>
+                </div>
+              </div>
+
+                <li id="buttons">
+                <input id="submitBtn" type="submit" value="Register" />
+                </li>
+            </ul>
+        </form>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Moonlight news</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <div class="head-form">
+        <form method="get">
+          <h2>Place your order</h2>
+            <ul>
+                <div class="for-bloc">
+                    <li>
+                    <label>
+                        <span>Name</span>
+                        <input type="text" id="fname" name="firstName" placeholder="First and last name"/>
+                    </label>
+                    </li>
+                </div>
+
+                <div class="for-bloc">
+                  <li>
+                      <label>
+                      <span>Adress</span>
+                      <input  style="height: 60px;"  type="email" id="email" name="userEmail"/>
+                      </label>
+                  </li>
+                </div>
+
+                <div class="for-bloc">
+                  <li>
+                      <label>
+                      <span>Phone</span>
+                      <input type="text" id="phone" name="userPhone" placeholder="+380-000-00-00-00" pattern="^+(380)-\d{3}-\d{2}-\d{2}-\d{2}$"/>
+                      </label>
+                  </li>
+                </div>
+
+                <div class="for-bloc">
+                    <li>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" id="email" name="userEmail" placeholder="example@gmail.com" pattern="^\w{5,}@\D{3,5}\.\D{2,4}$"/>
+                        </label>
+                    </li>
+                </div>
+
+ 
+
+                <br><hr><br>
+
+                <div class="for-bloc">
+                  <div style="margin-bottom: 10px;">
+                      <label>
+                      <span>Sushi</span>
+                      <select id="nameOfPizza" name="nameOfPizza">
+                          <option>Philadelphia Honshu</option>
+                          <option>Nagasaki</option>
+                          <option>Kawasaki</option>
+                      </select>
+                      </label>
+                  </div>
+              </div>
+
+
+                <div class="for-bloc">
+                  <div style="margin-bottom: 10px;">
+                      <label>
+                      <span>Sushi chopsticks</span>
+                      <select id="nameOfPizza" name="nameOfPizza">
+                          <option>Ordinary</option>
+                          <option>Educational</option>
+                          <option>No need</option>
+                      </select>
+                      </label>
+                  </div>
+              </div>
+
+              <div class="for-bloc">
+                <li>
+                  <label>
+                    <span>Amount of Sushi chopsticks</span>
+                    <input type="number" id="number" placeholder="0"/>
+                  </label>
+                </li>
+              </div>
+
+              <div class="for-bloc">
+                <li>
+                  <label>
+                    <span>Need a set of napkins?</span>
+                    <input type="checkbox" id="news" name="newsCheck" />
+                  </label>
+                </li>
+              </div>
+
+
+
+
+
+
+                <div class="for-bloc">
+                  <li>
+                      <label>
+                      <span>Comment</span>
+                      <input type="email" id="email" name="userEmail"/>
+                      </label>
+                  </li>
+                </div>
+
+                <li id="buttons">
+                <input id="submitBtn" type="submit" value="Register" />
+                </li>
+            </ul>
+        </form>
+    </div>
+
+  </body>
+</html>
