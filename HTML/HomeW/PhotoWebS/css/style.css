@@ -1,0 +1,78 @@
+
+.full-container{
+    /*устанавливаем основную ширину равной ширине видимой части окна браузера*/
+    width: 100vw;
+    /*устанавливаем минимальную ширину, до которой можно сжимать контейнер, если ширина устройства будет меньше - появится горизонтальный скролл*/
+    min-width: 320px;
+    /*устанавливаем максимальную ширину, до которой можно расширять контейнер, если ширина устройства будет больше - по бокам появятся отступы*/
+    max-width: 100%;
+    /*для того, чтобы контейнер находился всегда по центру по горизонтали указываем значения для внешних отступов*/
+    margin: auto;
+    /*в случае, если контента будет мало, чтобы страница полностью заполнила всю высоту окна браузера, устанавливаем минимальную высоту*/
+    min-height: 100vh;
+    /*в случае, если контента будет много, чтобы появился вертикальный скролл, устанавливаем значение высоты равной содержимому*/
+    height: auto;
+    /*для более простого расположения элементов на странице, воспользуемся технологией flexBox*/
+    display: flex;
+    /*направление основной оси меняем на вертикальное*/
+    flex-direction: column;
+
+    background-color: rgb(73, 60, 52)
+
+}
+
+
+.main-nav {
+    /* position: fixed; */
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background-color: rgb(106, 75, 56);
+    margin-bottom: 20px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+ul {
+    list-style: none;
+    display: flex;
+    float: right;
+    text-align: center;
+    justify-content: center;
+    padding: 0.5%;
+}
+
+ul li {
+    margin-left: 40px;
+}
+
+ul a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+nav ul a:hover 
+{
+    color: #ff8e43;
+    background-color: #342f29ac;
+    border-radius: 10%;
+}
+
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    width: 30px;
+}
