@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- стилевой файл проекта подключаем после стилевого файла фреймворка -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-nav text-uppercase">
+                    <!-- добавляем класс active к пункту меню текущей страницы -->
+                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="blog.html">Blog</a>
+                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </nav>
+        </div>
+</div>
+
+<div class="container-fluid"> 
+    <div class="row header_bg">
+    <div class="col pt-5">
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner text-center text-white mt-md-5">
+            <div class="carousel-item active">
+                <h4 class="py-3 text-uppercase">Title first slide</h4>
+                <p class="d-none d-sm-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium cupiditate, neque ipsam magnam quidem ab eius nisi vitae.</p>
+                <button class="btn btn-light text-light bg-dark text-uppercase">View More</button>
+            </div>
+            <div class="carousel-item">
+                <h4 class="py-3 text-uppercase">Title second slide</h4>
+                <p class="d-none d-sm-block">Praesentium cupiditate, neque ipsam magnam quidem ab eius nisi vitae. Obcaecati ducimus est facere nostrum in illo nihil a accusamus iusto.</p>
+                <button class="btn btn-light text-light bg-dark text-uppercase">View More</button>
+            </div>
+            <div class="carousel-item">
+                <h4 class="py-3 text-uppercase">Title third slide</h4>
+                <p class="d-none d-sm-block">Obcaecati ducimus est facere nostrum in illo nihil a accusamus iusto. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <button class="btn btn-light text-light bg-dark text-uppercase">View More</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid"> 
+    <div class="row mt-3">
+        <div class="col">
+            <h2 class="text-center text-uppercase">Our services</h2>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mt-2">
+    <div class="col text-center">
+        <h3 class=" text-uppercase">Ducimus</h3>
+        <img class="d-none d-md-block mx-auto" src="images/icon_01.png" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, quisquam temporibus? </p>
+    </div>
+    <div class="col text-center">
+        <h3 class=" text-uppercase">Commodi</h3>
+        <img class="d-none d-md-block mx-auto" src="images/icon_02.png" alt="">
+        <p>Aliquid, quisquam temporibus? Commodi, hic ut ratione excepturi iste ad sapiente.</p>
+    </div>
+    <div class="col text-center">
+        <h3 class=" text-uppercase">Aliquid</h3>
+        <img class="d-none d-md-block mx-auto" src="images/icon_03.png" alt="">
+        <p>Placeat quidem recusandae dicta nostrum necessitatibus facere eligendi unde sunt tempora.</p>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5"> 
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center text-uppercase">Voluptatibus</h2>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2">
+    <div class="col">
+        <div class="media bg-dark text-white p-3 my-1">
+            <img src="images/icon_04.png" class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0">Nulla vel</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error excepturi volupta tibus esse eum tenetur explicabo exercitationem beatae unde dolorem nam commodi maxime, vero, ex minus consectetur accusamus suscipit rem saepe!</p>
+            </div>
+          </div>
+    </div>
+    <div class="col">
+        <div class="media bg-dark text-white p-3 my-1">
+            <img src="images/icon_05.png" class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0">Facilis sunt</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis sunt dicta nobis enim magnam, voluptate corrupti, hic nostrum, saepe expedita dolores in ventore? Fugiat, voluptate dolor nam commodi. Ex obcaecati dolorum quaerat!</p>
+            </div>
+          </div>
+    </div>
+    <div class="col">
+        <div class="media bg-dark text-white p-3 my-1">
+            <img src="images/icon_06.png" class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0">Mossimus amet</h5>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, sit. Nostrum similique nihil mollitia, id culpa saepe temporibus possimus amet facilis nam dolore laboriosam natus laborum, qui quos rem unde!</p>
+            </div>
+          </div>
+    </div>
+    <div class="col">
+        <div class="media bg-dark text-white p-3 my-1">
+            <img src="images/icon_07.png" class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0">Officiis nulla</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nulla expedita tempora, atque repudiandae odio eius a repellendus fugiat ipsum, sit, fugit amet minima eum quis. Ut reiciendis dolorum harum.</p>
+            </div>
+          </div>
+    </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5"> 
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center text-uppercase">Our team</h2>
+        </div>
+    </div>
+    <div class="row row-cols-3">
+    <div class="col text-center">
+        <img src="images/persona-1.jpg" class="img-thumbnail w-75 rounded-circle" alt="">
+        <h4>Ducimus</h4>
+    </div>
+    <div class="col text-center">
+        <img src="images/persona-2.jpg" class="img-thumbnail w-75 rounded-circle" alt="">
+        <h4>Commodi</h4>
+    </div>
+    <div class="col text-center">
+        <img src="images/persona-3.jpg" class="img-thumbnail w-75 rounded-circle" alt="">
+        <h4>Aliquid</h4>
+    </div>
+    </div>
+</div>
+
+<footer class="container-fluid mt-5 pt-3 bg-dark"> 
+    <div class="row row-cols-1">
+    <div class="col">
+        <div class="text-center">
+            <a href="#" class="btn btn-light text-light bg-dark text-uppercase">Facebook</a>
+            <a href="#" class="btn btn-light text-light bg-dark text-uppercase">Twitter</a>
+            <a href="#" class="btn btn-light text-light bg-dark text-uppercase">Instagram</a>
+        </div>
+    </div>
+    <div class="col text-center text-light mt-2">
+        <p>&copy; 2020 All rights reserved</p>
+    </div>
+    </div>
+</footer>
+
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
