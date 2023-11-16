@@ -2,68 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>Signin Template · Bootstrap v5.0</title>
-
+    <title>Sign in</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico ">
+    
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
 
     
 
-    <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
+      .bd-placeholder-img 
+      {
+        font-size: 1.125rem;  
         text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
         user-select: none;
       }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
+      @media (min-width: 768px) 
+      {
+        .bd-placeholder-img-lg { font-size: 3.5rem; }
       }
     </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
+   
   </head>
-  <body class="text-center">
+  
+  <body style="margin: 0px;">
     
-<main class="form-signin">
+    <div class="form-signin" style="margin: 0px;">
 
-    <form style="width: 400px;">
-      <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-      <h1 class="h3 mb-3 fw-normal">Sign in to Git<b style="background-color: chocolate; padding-left:3px; padding-right: 3px; border-radius: 10px; margin-left: 3px;">Hub</b></h1>
-
-
-      <div style="background-color: aqua; padding: 5%;">
-        <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Password</label>
+      <form style="margin: 40px; margin-top:0px;">
+        <div class="text-center">
+          <img class="mb-4" src="../img/git_img.png" alt="" width="68px" height="68px">
+          <h1 class="h3 mb-4 fw-normal">Sign in to GitHub</h1>
         </div>
 
-        <div class="checkbox mb-2">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
+        <div class="container-forma">
+          <div class="form-floating">
+        
+            <p>Username or email address</p>
+            <input type="email"  id="floatingInput">
+            <!-- <label for="floatingInput">Email address</label> -->
+          </div>
+          <div class="form-floating">
+            <p>Password</p>
+
+            <input type="password"  id="floatingPassword">
+            <p style="margin-left: 60%;  font-size: small;"><a href="https://github.com/password_reset">Forgot password?</a></p>
+            <!-- <label for="floatingPassword">Password</label> -->
+          </div>
+
+          <!-- <div class="checkbox mb-2">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div> -->
+
+          <button class="w-100  mt-3" type="submit"><b>Sign in</b></button>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-      </div>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-    </form>
-</main>
+
+        <div class="text-center foot-dlock" >
+          <p><a href="#">Sign in with a passkey</a></p>
+          <p>New to GitHub? <a href="#">Create an account</a></p>
+        </div>
+
+        <!-- <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> -->
+        
+      </form>
+
+      <footer>
+        <ul> 
+          <li class="footer_text"><a href=""><p>Terms</p></a></li>
+          <li class="footer_text"><a href=""><p>Privacy</p></a></li>
+          <li class="footer_text"><a href=""><p>Docs</p></a></li>
+          <li class="footer_text" style="opacity: 0.5;"><p> Contact GitHub Support</p></li>
+      </ul>
+      </footer>
+
+    </div>
 
 
     

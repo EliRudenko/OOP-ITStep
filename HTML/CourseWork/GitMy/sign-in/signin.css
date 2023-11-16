@@ -1,28 +1,45 @@
 html,
 body {
-  height: 100%;
-}
-
-body {
+  /* height: 100%; */
+  font-family: sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
+  margin-top: 20px;
   padding-bottom: 40px;
-  background-color: #0e1218;
+  background-color: rgb(13, 17, 23);
   color: white;
 }
 
+
+.container-forma
+{
+  border: 1px solid rgba(89, 89, 89, 0.331);
+  background-color: rgb(22, 27, 34);
+  border-radius: 5px;
+  padding: 16px;
+}
 .form-signin {
+  margin-top: 0px;
   /* width: 100%; */
   min-width: 400px;
-  max-width: 330px;
+  max-width: 30px;
   /* padding: 0px;
   margin: auto; */
 }
 
+p
+{
+  padding: 0px; 
+  margin: 0px;
+}
+
 .form-signin .checkbox {
   font-weight: 400;
+
+
+
 }
 
 .form-signin .form-floating:focus-within {
@@ -31,16 +48,87 @@ body {
 
 .form-signin input[type="email"] 
 {
-  background-color:rgb(13, 15, 26);
-  margin-bottom: -1px;
+  background-color:rgb(14, 15, 22);
+  height: 32px;
+  width: 280px;
+
+  padding-bottom: 5px; padding-top: 5px;
+  padding-right: 12px; padding-left: 12px;
+
+  margin-bottom: 16px;
+  margin-top: 4px;
+
+  border-radius: 5px;
+  border: 1px solid rgba(80, 80, 80, 0.367);
+
+  background-color: rgb(13, 17, 23);
+
+/* 
   border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0; */
 }
+
 
 .form-signin input[type="password"] 
 {
-  background-color:rgb(13, 15, 26);
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  background-color:rgb(14, 15, 22);
+  height: 32px;
+  width: 280px;
+
+  padding-bottom: 5px; padding-top: 5px;
+  padding-right: 12px; padding-left: 12px;
+
+  /* margin-bottom: 16px; */
+  margin-top: 4px;
+
+  border-radius: 5px;
+  border: 1px solid rgba(80, 80, 80, 0.367);
+
+  background-color: rgb(13, 17, 23);
+}
+
+a
+{
+  color: rgb(74, 119, 255);
+  text-decoration: none;
+}
+
+button
+{
+  background-color: rgb(35, 134, 54);
+  border: none;
+  border-radius: 5px;
+  height: 32px;
+}
+button:hover
+{
+  background-color: rgb(44, 166, 68);
+}
+
+
+.foot-dlock
+{
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid rgba(80, 80, 80, 0.367);
+  border-radius: 5px;
+
+}
+
+footer
+{
+  margin: 40px;
+  margin-top: 80px;
+  padding: 0px;
+}
+.footer_text
+{
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    /* margin: 10px; */
+    padding-left: 12px;
+    /* margin-left: 20px; */
+    list-style-type: none;
+    
 }
