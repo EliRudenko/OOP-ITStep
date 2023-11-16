@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- для отображения иконок подключаем шрифты онлайн -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materialize</title>
+</head>
+<body>
+
+
+
+    <!-- <div class="container" style="margin: 0px; width: 100%; padding: 0px;"> -->
+        <nav class="blue-grey">
+            <!-- <div class="nav-wrapper"> -->
+                <a href="#!" class="brand-logo">Logo</a>
+                <a href="#" data-target="mobile-left" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Info</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-left" style="background-color:rgb(78, 129, 130);">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Info</a></li>
+        </ul>
+
+
+        <div class="row" style="margin-bottom: 0px;">
+            
+            <aside>
+                <div class="lime col s3 m3 l3 xl2" style="height:81vh;">
+                    
+                </div>
+            </aside>
+      
+            <main>
+                <div class="light-green col s9 m6 l6 xl8" style="height:81vh;">
+                    <div class="col s12 m9 xl9">
+                        <div class="section">
+                            <div class="row">
+
+                              <div class="col s12 m12 xl6">
+                                <div class="card">
+                                  <div class="card-image">
+                                    <img src="images/1.png">
+                                    <span class="card-title light-green-text" style="margin-left: 35%;">УТЯ</span>
+                                  </div>
+                                  <div class="card-content">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae laborum architecto consectetur qui, ea illo eligendi nemo, voluptas minus dolores facere repellendus ut, enim et eveniet nobis inventore dolorum labore!</p>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        
+            <aside style="height: 100%;">
+                <div class="lime col s3 m3 l3 xl2 hide-on-small-only" style="height:81vh;">
+                
+                </div>
+            </aside>
+        </div>
+
+
+            
+        <footer>
+            <div class="teal col s12 m12 12 x12" style="height:10vh;">
+                
+            </div>
+        </footer>
+      
+
+
+    </div>
+    
+
+
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+</body>
+
+</html>
