@@ -1,237 +1,252 @@
+* {
 
-/*обратимся ко всем элементам, чтобы убрать отступы, которые назначит браузер по умолчанию*/
-*{
-    padding: 0;
-    margin: 0;
+    box-sizing: border-box;
 }
-html {
-    /*зададим основной размер шрифта, для того, чтобы пользоваться относительной единицей rem*/
-    font-size: 16px;
+
+body {
+
+    margin: 0%;
+    padding: 0%;
 }
-body{
-    /* скроем контент, превышающий ширину окна браузера */
-    overflow-x: hidden;
-    /*устанавливаем основной шрифт контента - системный - это позволит быстрее загрузить страницу*/
-    font-family: Helvetica, Tahoma, Verdana,   sans-serif;
-    /* Единица rem задаёт размер относительно размера шрифта элемента <html> */
-    font-size: 1rem;
-    color: rgb(75, 75, 75);
-    margin: 20px;
-}
-h1,h2,h3,a{
-    /*шрифт для заголовков и ссылок будет 'Bitter', который мы подключили с помощью тега <link>*/
-    font-family: 'Bitter', serif;
-    font-weight: 400;
-    color: rgb(105, 105, 105);
-}
-/*для основного контейнера будем использовать фиксировано-резиновую верстку*/
-.container{
-    /*устанавливаем основную ширину равной ширине видимой части окна браузера*/
-    width: 100vw;
-    /*устанавливаем минимальную ширину, до которой можно сжимать контейнер, если ширина устройства будет меньше - появится горизонтальный скролл*/
-    min-width: 320px;
-    /*устанавливаем максимальную ширину, до которой можно расширять контейнер, если ширина устройства будет больше - по бокам появятся отступы*/
-    max-width: 100%;
-    /*для того, чтобы контейнер находился всегда по центру по горизонтали указываем значения для внешних отступов*/
-    margin: auto;
-    /*в случае, если контента будет мало, чтобы страница полностью заполнила всю высоту окна браузера, устанавливаем минимальную высоту*/
-    min-height: 100vh;
-    /*в случае, если контента будет много, чтобы появился вертикальный скролл, устанавливаем значение высоты равной содержимому*/
-    height: auto;
-    /*для более простого расположения элементов на странице, воспользуемся технологией flexBox*/
+
+#content {
+
+    width: 100%;
+    height: 100%;
     display: flex;
-    /*направление основной оси меняем на вертикальное*/
+    justify-content: center;
     flex-direction: column;
 }
-/*каждому элементу контейнера будем устанавливать фоновой цвет, чтобы было нагляднее*/
-header{
-    
-    /*зададим размер header по основной оси*/
-    flex-basis: 10vh;
-    /*элементы шапки сайта располагаются слева на право*/
-    display: flex;
-    /*между элементами задаем отступ*/
-    justify-content: space-between;
-    /*отступ справа и слева зависит от ширины окна браузера*/
-    /* padding: 0 3vw; */
+
+@font-face {
+    font-family: Youtube-Sans-med;
+    src: url(fonts/youtube-sans-medium.ttf);
+
+    font-family: Youtube-Sans-light;
+    src: url(fonts/youtube-sans-light.ttf);
+
+    font-family: Youtube-Sans-bold;
+    src: url(fonts/youtube-sans-bold.ttf);
 }
-header>div{
+
+.content-style {
+
+    font-family: Youtube-Sans-med;
+    font-size: 2em;
+    color: black;
+}
+
+#header {
+
     width: 100%;
-}
-header h1{
-    /*выравниваем содержимое дочернего элемента по вертикали*/
-    margin-top: 2%;
-    text-align: center;
-    align-self: center;
-    width: 100px;
-    border: 3px solid aqua;
-}
-header>div>div+div>nav{
-    /*выравниваем содержимое дочернего элемента по вертикали*/
-    align-self: center;
-    /*для того, чтобы легко расположить ссылки, воспользуемся снова технологией flexBox*/
-    display: flex;
-    margin-top: 2%;
-    margin-bottom: 1vw;
-    text-align: center;
-
-    border: 3px solid aqua;
-
-}
-/*стилевое оформление ссылок основного меню*/
-header nav a{
-    display: block;
-    /* margin-left: 2vw;
-    padding: 0.5vw 1vw; */
-    padding-right: 2vw;
-    padding-left: 2vw;
-    /**/
-    font-size: 1.1rem;
-    text-decoration: none;
-    border: 2px solid transparent;
-}
-header nav a:hover,
-header nav a.active{
-    border-bottom: 2px solid rgba(105, 105, 105, 0.5);
-}
-/*main - основной элемент страницы является одновременно и flex-родителем и flex-контейнером*/
-main{
-    /*чтобы заполнять все пространство по основной оси основным элементом прописываем свойство flex */
-    flex: 1 1 auto;
-    display: flex;
-    /*дочерние элементы располагаются слева на право*/
-    justify-content: space-between;
-    padding-top: 2vh;
-    
-}
-
-.for-video
-{
-    display: flex;
-    /* margin-left: 5%; */
-    margin-top: 1%;
-    /* justify-content: center;
-    align-items: center; */
-    background-color: aqua;
-
-}
-
-.description
-{
-    margin-top: 2%;
-    /* margin-left: 5%; */
-}
-
-.Logo-name
-{
+    height: 5%;
     display: flex;
     align-items: center;
-    margin-top: 1%;
-    
-}
-
-main>section{
-    /*чтобы заполнять все пространство по основной оси основным элементом прописываем свойство flex */
-    flex: 1 1 55%;
-}
-main>section>article{
-    border:  5px solid rgb(0, 242, 255);  
-    margin-left: 4%;
-}
-main>section>article>*{
-    display: block;
-    padding-bottom: 1.5vh;
-
-}
-
-
-main>section+div{
-
-    flex-basis: 30%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
     padding: 1%;
-    padding-top: 0%;
-    /* border:  5px solid rgb(0, 242, 255); */
-    height: 20%;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-main>section+div>aside{
-    /*зададим размер левой части по основной оси в процентах*/
+#header-menu {
 
-    padding: 2%;
-    border:  5px solid rgb(0, 242, 255);
-    height: 20%;
-    margin-bottom: 2%;
-    
-    
-}
-
-
-
-
-
-main>section+aside figcaption{
-    font-size: 0.9rem;
-    border: 3px solid rgb(0, 255, 0);
-}
-
-footer{
-    /*зададим размер footer по основной оси*/
-    flex-basis: 5vh;
+    width: 0.8em;
+    height: 0.8em;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2.5%;
+}
+
+div#header-menu img {
+
+    width: inherit;
+    height: inherit;
+    color: whitesmoke;
+}
+
+div#header-menu:hover {
+
+    background-color: grey;
+    border-radius: 50%;
+}
+
+#header-logo {
+
+    width: 180px;
+    height: 40px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 2.5%;
 }
 
-/*запрос для экранов с максимальной шириной 960px и меньше*/
-@media screen and (max-width:960px){
+div#header-logo img {
 
-    main>section+div>aside+div>aside{
-        /*зададим размер левой части по основной оси в процентах*/
-        flex-basis: 20%;
-
-    }
-    main>section+div
-    {
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-
-    main>section{
-        /*зададим размер центральной части по основной оси в процентах*/
-        flex-basis: 70%;
-        margin-left: 2%;
-    }
+    width: inherit;
+    height: inherit;
 }
 
-/*запрос для экранов с максимальной шириной 570px и меньше*/
-@media screen and (max-width:700px){
-    header{
-        flex-basis: auto;
-         /*меняем направление основной оси шапки сайта*/
-        flex-direction: column;
-    }
-    main{
-        /*меняем направление основной оси элемента отображающего основной контент*/
-        flex-direction: column;
-    }
-    main>section+div>aside{
-        /*спрячем правый элемент на всех устройствах, с шириной 960px и меньше*/
-        display: none;
-    }
-    main>section+div
-    {
-        flex-basis: 15vh;
-        margin-left: 2%;
-        margin-right: 5%;
-    }
+#main {
 
-    main>section{
-        /*зададим размер основному контенту по основной оси*/
-        flex-basis: auto;
-
-        /*изменим порядок отображения элементов так, чтобы контент находился выше*/
-        order:-1;
-    }   
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 1%;
 }
 
+#vid-content {
+
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 1.25%;
+}
+
+#vid-container {
+
+    width: 100%;
+    height: 60%;
+    margin-bottom: 0.5%;
+}
+
+#description-conatiner {
+
+    width: 100%;
+    height: 40%;
+    margin-top: 0.5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div#vid-container video {
+
+    width: inherit;
+    height: inherit;
+}
+
+.descript-props {
+
+    width: 100%;
+    height: auto;
+    padding: 1%;
+}
+
+#descript-name {
+
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+}
+
+div#descript-name span {
+
+    font-family: Youtube-Sans-bold;
+    font-size: 0.5em;
+    color: black;
+}
+
+#author-cont {
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 1%;
+    margin-left: 0.75%;
+}
+
+#pfp {
+
+    width: 0.8em;
+    height: 0.8em;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+#nickname-subs {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin-left: 0.75%;
+}
+
+div#nickname-subs span {
+
+    font-family: Youtube-Sans-light;
+    color: grey;
+    font-size: 0.4em;
+}
+
+#decription {
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.4);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1.25%;
+    margin-top: 1.5%;
+}
+
+div#decription span {
+
+    font-size: 0.3em;
+    font-family: Youtube-Sans-med;
+}
+
+#other-vids {
+
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 1.25%;
+}
+
+#other-vid-preview {
+
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.25%;
+    margin-bottom: 1.25%;
+}
+
+div#other-vid-preview iframe 
+{
+    width: 50%;
+    height: 70%;
+    margin-right: 1.25%;
+}
+
+#other-vid-preview-descript {
+
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+}
+
+div#other-vid-preview-descript span {
+
+    font-size: 0.5em;
+    font-family: Youtube-Sans-bold;
+}
