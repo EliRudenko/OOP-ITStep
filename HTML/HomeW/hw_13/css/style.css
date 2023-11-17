@@ -1,0 +1,54 @@
+.sidenav-overlay{
+    background-color: rgba(255,255,255,0.5);
+    z-index: 900;
+}
+input[type=text].my-input,
+input[type=tel].my-input{
+    border-bottom: 1px solid #ffffff;
+}
+input[type=text].my-input+label,
+input[type=tel].my-input+label{
+    color: white;
+}
+input[type=text].my-input:focus:not([readonly]),
+input[type=tel].my-input:focus:not([readonly]){
+    border-bottom: 1px solid #c5cae9;
+    box-shadow: 0 1px 0 0  #c5cae9;
+}
+.input-field .prefix {
+    color: white;
+}
+.input-field .prefix.active{
+    color: #c5cae9;
+}
+input[type=text].my-input:focus:not([readonly])+label.active,
+input[type=tel].my-input:focus:not([readonly])+label.active{
+    color: #c5cae9;
+}
+.parallax-container {
+    box-sizing: border-box;
+    height:87vh;
+    padding-top: 5vw;
+}
+
+input[type=text].contact,
+input[type=email].contact,
+textarea#message{
+    border-bottom: 1px solid #3f51b5;
+}
+input[type=text].contact+label,
+input[type=email].contact+label,
+textarea#message+label{
+    color: #3f51b5;
+}
+input[type=text].contact:focus:not([readonly]),
+input[type=email].contact:focus:not([readonly]),
+textarea#message:focus:not([readonly]){
+    border-bottom: 1px solid #3f51b5;
+    box-shadow: 0 1px 0 0  #3f51b5;
+}
+input[type=text].contact:focus:not([readonly])+label.active,
+input[type=email].contact:focus:not([readonly])+label.active,
+textarea#message+label.active{
+    color: #3f51b5;
+}
