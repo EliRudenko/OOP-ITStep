@@ -204,7 +204,6 @@ form
     opacity: 0.6; 
     margin: 0px;
 }
-
 .icons-header
 {
     height: 31px;
@@ -219,7 +218,6 @@ form
     border: 1px solid rgba(32, 54, 76, 0.745);
     border-radius: 5px;
 }
-
 .icons-header-last
 {
     height: 31px;
@@ -242,7 +240,6 @@ form
     padding: 0px; 
     margin: 0px;
 }
-
 .logo-user
 {
     height: 32px; 
@@ -333,23 +330,26 @@ nav
     height: 20px; 
     width: 20px;
 }
-
 .projects-icon
 {
     height: 19px; 
     width: 19px;
 }
-
-
-
-.aclassN {
+.aclassN 
+{
     color: rgb(255, 255, 255);
     text-decoration: none;
     margin-right: 1.5px;
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
+
+
+
+
+
+
 
 .name-item
 {
@@ -357,67 +357,31 @@ nav
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    margin-left: 9%; 
+    margin-right: 9%;
+    padding-bottom: 4px;
+    border-bottom: 1px solid gray;
 }
 
 .nameR
 {
     flex: 0 0 60%;
-    /* flex-basis: 5vh; */
     display: flex;
-
-   
 }
 
-.buttons-actions
+.img-logo-user-block-repo
 {
-    height: 45px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-items: center;
+    height: 24px; 
+    width: 24px; 
+    padding-top: 0px; 
+    border-radius: 50%; 
+    margin-right: 8px;
 }
-
-
-
-main 
+.name-repo
 {
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-top: 2vh;
-
-    margin-left: 9%;
-    margin-right: 10%;
-
-}
-
-section 
-{
-    flex: 0 0 75%; /**!!!!!!!!!!!!!*/
-    padding: 0px;
-    margin-right: 1%;
-}
-
-.sect-issues
-{
-    margin-top: 75px;
-    width: 100%;
-    height: 210px;
-    border: 1px solid rgba(22, 34, 77, 0.557);
-    border-radius: 8px;
-    
-    padding-top: 120px;
-    align-items: center;
-
-    text-align: center;
-
-}
-.p-issues
-{
-    margin-top: 20px;
-    align-items: center;
-    text-align: center;
+    font-weight:500; 
+    font-size: 20px;
 }
 .public
 {
@@ -461,6 +425,59 @@ section
 }
 
 
+.buttons-actions
+{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-items: center;
+}
+
+
+
+main 
+{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 2vh;
+
+    margin-left: 9%;
+    margin-right: 10%;
+
+}
+
+section 
+{
+    flex: 0 0 75%; /**!!!!!!!!!!!!!*/
+    padding: 0px;
+    margin-right: 1%;
+}
+
+/* .sect-issues
+{
+    margin-top: 75px;
+    width: 100%;
+    height: 210px;
+    border: 1px solid rgba(22, 34, 77, 0.557);
+    border-radius: 8px;
+    
+    padding-top: 120px;
+    align-items: center;
+
+    text-align: center;
+
+} */
+/* .p-issues
+{
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+} */
+
+
 
 
 
@@ -471,11 +488,18 @@ aside
     padding: 2%;
     margin-bottom: 2%;
 }
+.aside-list
+{
+    list-style-type: none; 
+    font-size: 14px; 
+    color: rgba(255, 255, 255, 0.296);
+}
 
 
 
 
-.left-block {
+.left-block 
+{
     display: none;
     position: fixed;
     top: 0;
@@ -489,8 +513,8 @@ aside
     pointer-events: none;
     padding-left: 0px;
 }
-
-.left-block::before {
+.left-block::before 
+{
     content: "";
     position: absolute;
     top: 0;
@@ -503,22 +527,16 @@ aside
     background-color:rgb(22, 27, 34);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
-
-#toggleLeft:checked ~ .left-block {
+#toggleLeft:checked ~ .left-block 
+{
     display: block;
     opacity: 1;
     pointer-events: auto;
 }
-
-#toggleLeft {
-    display: none;
-}
-
-label {
-    cursor: pointer;
-}
-
-.close-label {
+#toggleLeft { display: none; }
+label { cursor: pointer; }
+.close-label 
+{
     position: absolute;
     top: 0;
     left: 0;
@@ -526,24 +544,24 @@ label {
     height: 100%;
 }
 
-
-.menu-content {
+.menu-content-LEFT
+{
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: 200px; /* Set the width for your menu */
-    padding-top: 20px; /* Adjust spacing as needed */
+    width: 200px;
+    padding-top: 20px;
 }
 
-.menu-content
+.menu-content-LEFT
 {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.item-list-menu
+.item-list-menu-LEFT
 {
     padding-top: 10px;
     color: white;
@@ -553,10 +571,8 @@ label {
 
 
 
-
-
-
-.right-block {
+.right-block 
+{
     display: none;
     position: fixed;
     top: 0;
@@ -570,8 +586,8 @@ label {
     transition: opacity 0.7s;
     pointer-events: none;
 }
-
-.right-block::before {
+.right-block::before 
+{
     content: "";
     position: absolute;
     top: 0;
@@ -584,26 +600,19 @@ label {
     background-color:rgb(22, 27, 34);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
-
-#toggleRight:checked ~ .right-block {
+#toggleRight:checked ~ .right-block 
+{
     display: block;
     opacity: 1;
     pointer-events: auto;
 }
-
-#toggleRight {
-    display: none;
-}
-
-label {
-    cursor: pointer;
-}
-
-.close-label {
+#toggleRight { display: none; }
+label { cursor: pointer; }
+.close-label 
+{
     position: absolute;
     top: 0;
     right: 0;
-    /* padding-left: 80%; */
     width: 100%;
     height: 100%;
 }
@@ -620,42 +629,29 @@ label {
 
 
 
-/*запрос для экранов с максимальной шириной 960px и меньше*/
-@media screen and (max-width:960px){
-
-    main>section+div>aside+div>aside{
-        /*зададим размер левой части по основной оси в процентах*/
+@media screen and (max-width:960px)
+{
+    main>section+div>aside+div>aside
+    {
         flex-basis: 20%;
-
     }
     main>section+div
     {
         margin-left: 2%;
         margin-right: 2%;
     }
-
-    main>section{
-        /*зададим размер центральной части по основной оси в процентах*/
+    main>section
+    {
         flex-basis: 70%;
         margin-left: 2%;
     }
 }
 
-/*запрос для экранов с максимальной шириной 570px и меньше*/
 @media screen and (max-width:700px)
 {
-    header
-    {
-        flex-basis: auto;
-    }
-    main
-    {
-        flex-direction: column;
-    }
-    aside
-    {
-        margin-top: 10%;
-    }
+    header{ flex-basis: auto; }
+    main{ flex-direction: column; }
+    aside { margin-top: 10%; }
     section+div
     {
         flex-basis: 15vh;
@@ -668,36 +664,6 @@ label {
         order:-1;
     } 
 
-}
-
-
-@media screen and (max-width:900px)
-{
-    footer
-    {
-        margin: 0px 0px 0px 0px;
-        padding: 0px;
-        margin-left: 0px; 
-        
-        justify-content: center;
-
-    }
-    .footer_block
-    {
-
-        margin: 0px 0px 0px 0px;
-        padding: 0px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    ul
-    {
-        order:-1;
-    }
 }
 
 
@@ -730,6 +696,31 @@ label {
 @media screen and (max-width: 500px) {
     .nav_text:nth-child(4) {
         display: none;
+    }
+}
+
+@media screen and (max-width: 900px) 
+{
+    .block-img-text-Header img
+    {
+        margin: 0px;
+        padding-right: 8px;
+    }
+    .text-and-imgHeader-NameRepo
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0px;
+        padding-top: 4.5px;
+    }
+    .text-and-imgHeader-NameRepo span:nth-child(1) 
+    {
+        margin-left: 2px;  
+        font-size: 12px;
+        color: rgb(146, 155, 167);
+        font-weight:500;
+
     }
 }
 
@@ -787,30 +778,45 @@ label {
 
 
 
-@media screen and (max-width: 900px) 
+
+
+
+
+
+
+@media screen and (max-width:900px)
 {
-    .block-img-text-Header img
+    footer
     {
-        margin: 0px;
-        padding-right: 8px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        margin-left: 0px; 
+        
+        justify-content: center;
+
     }
-    .text-and-imgHeader-NameRepo
+    .footer_block
     {
+
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         margin: 0px;
-        padding-top: 4.5px;
+        padding: 0px;
     }
-    .text-and-imgHeader-NameRepo span:nth-child(1) 
-    {
-        margin-left: 2px;  
-        font-size: 12px;
-        color: rgb(146, 155, 167);
-        font-weight:500;
 
+    ul
+    {
+        order:-1;
     }
 }
+
+
+
+
+
 
 
 
@@ -979,9 +985,9 @@ hr
     font-family:inherit ;
     font-size: 12px;
 
-    display: flex; /* Use flexbox for alignment */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
 
     font-weight: lighter;
