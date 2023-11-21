@@ -494,6 +494,12 @@ aside
     font-size: 14px; 
     color: rgba(255, 255, 255, 0.296);
 }
+.aside-text
+{
+    padding-top: 35px;
+    padding-left: 5px;
+    font-size: 16px;
+}
 
 
 
@@ -699,31 +705,6 @@ label { cursor: pointer; }
     }
 }
 
-@media screen and (max-width: 900px) 
-{
-    .block-img-text-Header img
-    {
-        margin: 0px;
-        padding-right: 8px;
-    }
-    .text-and-imgHeader-NameRepo
-    {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 0px;
-        padding-top: 4.5px;
-    }
-    .text-and-imgHeader-NameRepo span:nth-child(1) 
-    {
-        margin-left: 2px;  
-        font-size: 12px;
-        color: rgb(146, 155, 167);
-        font-weight:500;
-
-    }
-}
-
 
 @media screen and (max-width: 1008px) 
 {
@@ -770,19 +751,35 @@ label { cursor: pointer; }
 
 @media screen and (max-width: 500px) 
 {
-    html,body
-    {
-        background-color: rgb(22, 27, 34);
-    }
+    html,body { background-color: rgb(22, 27, 34); }
 }
 
 
 
+@media screen and (max-width: 900px) 
+{
+    .block-img-text-Header img
+    {
+        margin: 0px;
+        padding-right: 8px;
+    }
+    .text-and-imgHeader-NameRepo
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0px;
+        padding-top: 4.5px;
+    }
+    .text-and-imgHeader-NameRepo span:nth-child(1) 
+    {
+        margin-left: 2px;  
+        font-size: 12px;
+        color: rgb(146, 155, 167);
+        font-weight:500;
 
-
-
-
-
+    }
+}
 
 @media screen and (max-width:900px)
 {
@@ -807,47 +804,21 @@ label { cursor: pointer; }
         padding: 0px;
     }
 
-    ul
+    .footer-list
     {
-        order:-1;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
     }
+
+    ul{ order:-1; }
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.aside-text
+footer 
 {
-    padding-top: 35px;
-    padding-left: 5px;
-    font-size: 16px;
-}
-
-
-
-
-
-
-/* Общие стили */
-footer {
     position: absolute;
     bottom: 0;
     width: 100%; 
@@ -860,6 +831,7 @@ footer {
 }
 
 .footer_block {
+
     border-top: 1px solid rgba(33, 38, 45, 0.408);
     margin-left: 6%;
     margin-right: 15%;
@@ -870,103 +842,23 @@ footer {
     width: 100%; 
 }
 
-.for-img-text {
-    display: flex;
-    align-items: center;
-}
 
-.footer-list1 {
+.footer-list 
+{
     display: flex;
-   
     justify-content: space-between;
-    
     flex-wrap: wrap;
 
     width: 100%; 
 }
 
-.footer_text {
-
+.footer_text 
+{
     font-size: 12px;
     list-style-type: none;
-
     margin-right: 10px;
 
 }
-
-@media screen and (max-width: 900px) {
-    footer {
-        height: 150px;
-        padding-bottom: 6px;
-    }
-
-    .for-img-text 
-    {
-        order: 2;
-       
-    }
-
-    .footer-list1{
-        align-items: center;
-        justify-content: center;
-        padding: 10px;
-    }
-
-    .img-footer {
-        order: 1;
-        margin-left: 40px;
-    }
-}
-
-
-
-
-/* h1,h2,h3
-{
-    margin-top: 0px;
-    font-style: normal;
-    font-size: 20px;
-}
-
-p
-{
-    padding-top: 10px;
-    padding-left: 5px;
-} */
-
-hr
-{
-    border: 1px solid rgba(48, 54, 61, 0.557)
-}
-.hrfooter
-{
-    margin: 0;
-    margin-left: 115px;
-    margin-right: 130px;
-}
-
-
-
-
-.thumbnails 
-{
-    display: flex;
-    margin: 0px;
-    padding: 20px;
-}
-
-
-.thumbnail 
-{
-    width: 100px;
-    height: 20px;
-    display: flex;
-    /* padding: 20px; */
-    align-items: center;
-}
-
-
-
 .img-footer
 {
     opacity: 0.7;
@@ -979,15 +871,14 @@ hr
 { 
     opacity: 0.6;
     color: rgb(211, 223, 240);
-    /* width: 165px; */
 
     width: 200px;
     font-family:inherit ;
     font-size: 12px;
 
-    display: flex; 
+    display: flex;
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
     text-align: center;
 
     font-weight: lighter;
@@ -996,8 +887,6 @@ hr
 
     margin-right: 52px;
 }
-
-
 .aclass
 {
     color: rgb(74, 119, 255);
@@ -1009,3 +898,41 @@ hr
     text-decoration:underline;
 }
  
+
+
+
+@media screen and (max-width: 900px) 
+{
+    footer 
+    {
+        height: 150px;
+        padding-bottom: 6px;
+    }
+    .footer-list
+    {
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .img-footer {
+        order: 1;
+        margin-left: 40px;
+    }
+}
+
+
+.thumbnails 
+{
+    display: flex;
+    margin: 0px;
+    padding: 20px;
+}
+.thumbnail 
+{
+    width: 100px;
+    height: 20px;
+    display: flex;
+    /* padding: 20px; */
+    align-items: center;
+}
