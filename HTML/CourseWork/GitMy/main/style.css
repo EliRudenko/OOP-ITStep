@@ -3,34 +3,22 @@
     margin: 0px;
     padding: 0px;
 }
-
 .container-full
 {
-    /*устанавливаем основную ширину равной ширине видимой части окна браузера*/
     width: 100vw;
-    /*устанавливаем минимальную ширину, до которой можно сжимать контейнер, если ширина устройства будет меньше - появится горизонтальный скролл*/
     min-width: 500px;
-    /*устанавливаем максимальную ширину, до которой можно расширять контейнер, если ширина устройства будет больше - по бокам появятся отступы*/
     max-width: 100%;
-    /*для того, чтобы контейнер находился всегда по центру по горизонтали указываем значения для внешних отступов*/
     margin: auto;
-    /*в случае, если контента будет мало, чтобы страница полностью заполнила всю высоту окна браузера, устанавливаем минимальную высоту*/
     min-height: 10vh;
-    /*в случае, если контента будет много, чтобы появился вертикальный скролл, устанавливаем значение высоты равной содержимому*/
     height: auto;
-    /*для более простого расположения элементов на странице, воспользуемся технологией flexBox*/
     display: flex;
-    /*направление основной оси меняем на вертикальное*/
     flex-direction: column;
 }
-
-
 html
 {
     font-size: 16px;
     background-color: rgb(13, 17, 23);
 }
-
 body
 {
     font-size: 1rem;
@@ -40,6 +28,10 @@ body
     
 }
 
+
+
+
+
 header 
 { 
     flex: 1 1 auto;
@@ -47,20 +39,16 @@ header
     justify-content: space-between;
     align-items: flex-start;
 
-
     flex-basis: 5vh;
 
-    height: 45px;
+    height: 6vh;
 
     padding: 10px 15px 2px;
-    /* padding-bottom: 0; */
     background-color: rgb(4, 8, 5);
 } 
 .left-text-header
 {
     flex: 0 0 40%; /**!!!!!!!!!!!!!*/
-    /* background-color: rgba(0, 255, 255, 0.156); */
-
 }
 .header_text_block 
 { 
@@ -70,8 +58,8 @@ header
  
     list-style-type: none;
 } 
-span{ margin-left: 4px; }
-.text-and-imgH 
+span{ margin-left: 4px; }  /*Для адаптива названия репозитории*/
+.text-and-imgHeader-NameRepo
 { 
     float: left; 
     padding-top: 12px; 
@@ -85,14 +73,32 @@ span{ margin-left: 4px; }
 { 
     width: 31px; 
     height: 31px; 
-    /* background-color: aqua; */ 
+    font-size: 15px; 
+
     border: 1px solid #25286598; 
     border-radius: 20%; 
+
     margin-top: 5px;
     margin-right: 10px;
-    font-size: 15px; 
+
 } 
-.img-header 
+.burger-img
+{
+    height: 23px; 
+    width: 17px; 
+    
+    padding-top: 4px; 
+    opacity: 0.7;
+}
+.block-img-text-Header 
+{  
+    width: 250px; 
+ 
+    display: flex;  
+    font-family:inherit; 
+    font-size: 12px; 
+} 
+.img-header-logo 
 { 
     width: 43px; 
     height: 43px; 
@@ -101,28 +107,36 @@ span{ margin-left: 4px; }
     align-items: center; 
     margin-right: 3px; 
 } 
-.for-imgH  
-{  
-    width: 250px; 
- 
-    display: flex;  
-    font-family:inherit; 
-    font-size: 12px; 
-} 
-
-
-
-.search-form 
+.slash-split-repo-name
 {
-    height: 45px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-items: center;
-
- 
+    font-style: normal; 
+    opacity: 0.5;
+}
+.repo-name
+{
+    font-weight: 500; 
+    font-style: normal; 
+    opacity: 1;
 }
 
+
+.icon-search
+{
+    font-size: 20px; 
+    opacity: 0.6;
+}
+.terminal-block-search
+{
+    border-left: 1px solid rgba(32, 54, 76, 0.745); 
+    padding-left: 2px;
+}
+.icon-terminal
+{
+    font-size: 14px; 
+    opacity: 0.6; 
+    margin: 0px; 
+    padding-left: 3px;
+}
 form 
 {
     height: 28px;
@@ -137,7 +151,7 @@ form
     border: 1px solid rgba(32, 54, 76, 0.745);
     border-radius: 5px;
 }
-.search-form input[type="text"] 
+.widgets input[type="text"] 
 {
     height: 21px;
     width: 309px;
@@ -146,13 +160,30 @@ form
     background-color: rgba(0, 0, 0, 0.329);
     border-radius: 4px;
 }
-.search-form button 
+.widgets button 
 {
     background: none;
     border: none;
     cursor: pointer;
 }
 
+.split-widgets
+{
+    border-left: 1px solid rgba(32, 54, 76, 0.745); 
+    padding-left: 0px; 
+    margin-left: 10px;
+
+    height: 20px; 
+    width: 10px;
+}
+.widgets
+{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-items: center;
+}
 .add
 {
     height: 25px;
@@ -167,6 +198,13 @@ form
     border: 1px solid rgba(32, 54, 76, 0.745);
     border-radius: 5px;
 }
+.icon-add
+{
+    font-size: 18px; 
+    opacity: 0.6; 
+    margin: 0px;
+}
+
 .icons-header
 {
     height: 31px;
@@ -197,7 +235,22 @@ form
     border: 1px solid rgba(32, 54, 76, 0.745);
     border-radius: 5px;
 }
+.last-widgets
+{
+    font-size: 20px; 
+    opacity: 0.5; 
+    padding: 0px; 
+    margin: 0px;
+}
 
+.logo-user
+{
+    height: 32px; 
+    width: 32px; 
+    padding-top: 4px; 
+    border-radius: 50%; 
+    margin-right: 15px;
+}
 
 
 
@@ -270,7 +323,22 @@ nav
     background-color: rgb(247, 129, 102);
     display: none; 
 }
+.highlightH-text
+{
+    color: white; 
+    font-weight: 500;
+}
+.code-icon
+{
+    height: 20px; 
+    width: 20px;
+}
 
+.projects-icon
+{
+    height: 19px; 
+    width: 19px;
+}
 
 
 
@@ -721,12 +789,12 @@ label {
 
 @media screen and (max-width: 900px) 
 {
-    .for-imgH img
+    .block-img-text-Header img
     {
         margin: 0px;
         padding-right: 8px;
     }
-    .text-and-imgH 
+    .text-and-imgHeader-NameRepo
     {
         display: flex;
         flex-direction: column;
@@ -734,7 +802,7 @@ label {
         margin: 0px;
         padding-top: 4.5px;
     }
-    .text-and-imgH span:nth-child(1) 
+    .text-and-imgHeader-NameRepo span:nth-child(1) 
     {
         margin-left: 2px;  
         font-size: 12px;
