@@ -416,9 +416,9 @@ nav
 }
 .option-text
 {
-    text-align: center;
+    /* text-align: center; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     display: flex;
 
     margin-bottom: 15px;
@@ -529,7 +529,7 @@ aside
     height: 100%;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    border: 1px solid rgba(32, 54, 76, 0.745);
+    border-right: 1px solid rgba(32, 54, 76, 0.745);
     background-color:rgb(22, 27, 34);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
@@ -548,6 +548,7 @@ label { cursor: pointer; }
     left: 0;
     width: 100%;
     height: 100%;
+    margin-left: 130px;
 }
 
 .menu-content-LEFT
@@ -556,23 +557,108 @@ label { cursor: pointer; }
     top: 0;
     left: 0;
     height: 100%;
-    width: 200px;
-    padding-top: 20px;
+    /* width: 100px; */
+    padding-top: 10px;
+    padding-left: 10px;
 }
-
-.menu-content-LEFT
-{
+.menu-content-LEFT ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Align items in a column */
 }
 
-.item-list-menu-LEFT
+.block-menu1-left ul li 
 {
-    padding-top: 10px;
-    color: white;
-    cursor: pointer;
+    margin-left: 0; 
+    opacity: 0.8;
+    align-self: flex-start;
+
+    font-size: 14px;
+
+    margin-top: 3.5px;
+    padding-right: 180px;
 }
+
+.block-menu2-left 
+{
+
+    /* width: 370px; */
+    margin-top: 11px;
+
+
+}
+
+.block-menu2-left ul li 
+{
+    margin-left: 0; 
+
+    align-self: flex-start;
+
+    font-size: 14px;
+
+    /* padding-right: 180px; */
+    margin-top: 5px;
+    margin-left: 8px;
+}
+
+.block-menu1-left
+{
+    /* width: 287px; */
+    margin-top: 8px;
+    padding-left: 8px; 
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid rgba(62, 85, 118, 0.204);
+}
+
+.img-user-left-menu
+{
+    border-radius: 50%;
+    width: 17px;
+    margin-right: 8px;
+    opacity: 1;
+}
+
+.container-for-img-menu 
+{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-block-menu-img { flex: 0 0 90%; }
+
+.left-block-menu-close
+{
+    flex: 0 0 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.left-block-menu-close label>span
+{
+
+    margin-top: 22px;
+    font-size: 14px; /* Adjust font size as needed */
+    padding: 3px;
+    opacity: 0.7;
+}
+
+.left-block-menu-close span
+{
+
+    margin-top: 2px;
+    margin-right: 10px;
+    font-size: 18px; /* Adjust font size as needed */
+    padding: 3px;
+    opacity: 0.7;
+}
+
 
 
 
@@ -602,7 +688,7 @@ label { cursor: pointer; }
     height: 100%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border: 1px solid rgba(32, 54, 76, 0.745);
+    border-left: 1px solid rgba(32, 54, 76, 0.745);
     background-color:rgb(22, 27, 34);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
@@ -614,14 +700,94 @@ label { cursor: pointer; }
 }
 #toggleRight { display: none; }
 label { cursor: pointer; }
-.close-label 
+.close-label-RIGHT
 {
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
+
 }
+.close-label-RIGHT-Span
+{
+    /* position: absolute; */
+    top: 0;
+    right: 0;
+    /* margin-right: 10px; */
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+
+.menu-content-RIGHT
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 280px;
+    padding-top: 12px;
+    padding-right: 25px;
+}
+
+
+.menu-content-RIGHT ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-content-RIGHT ul li {
+    padding-left: 0; /* Reset the padding */
+    margin-left: 0; /* Reset the margin */
+    color: white;
+
+}
+
+
+.container-for-img-menu-RIGHT
+{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.right-block-menu-img 
+{ 
+
+    flex: 0 0 90%; 
+}
+
+.right-block-menu-close
+{
+    flex: 1 1 20%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.right-block-menu-close label>span
+{
+
+    margin-top: 12px;
+    margin-bottom: 11px;
+ 
+    font-size: 14px;
+    padding: 3px;
+    opacity: 0.7;
+}
+
+
+
 
 
 
