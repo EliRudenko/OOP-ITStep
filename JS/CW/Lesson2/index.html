@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        
+        class Auditorium 
+        {
+            //ПОЛЯ В КОНСТРУКТОРЕ = ШОК
+            constructor(number, capacity, faculty)  //Аудитория : номер вместительность факультет
+            { //КОНСТРУКТОР
+                this.number = number;
+                this.capacity = capacity;
+                this.faculty = faculty;
+            }
+
+            display_auditorium() // ВЫВОД (аудитории)
+            {
+                console.log(`Auditorium ${this.number} (Capacity: ${this.capacity}, Faculty: ${this.faculty})`);
+            }
+
+            static sort_capacity(auditoriums) // СОРТИРОВКА (вместительность)
+            {
+                auditoriums.sort((first, second) => first.capacity - second.capacity); // сравниваются first и second (аудитории) по параметру вместительности
+                console.log("Sort by capacity:");
+               
+                auditoriums.forEach(auditorium => auditorium.display_auditorium()); // перепод эллементов массива последовательно ВТРОЕННЫЙ МЕТОД (но если не лень можно через for было бы)
+            }
+        }
+
+
+        class Group 
+        {
+            //Если this то это поле 
+            constructor(name, students, faculty) // Группа: название группы, студенты кол во, факульткт
+            {//КОНСТРУКТОР
+                this.name = name;
+                this.students = students;
+                this.faculty = faculty;
+            }
+
+            display_group() 
+            {//ВЫВОД
+                console.log(`Group ${this.name} (${this.faculty}, Students: ${this.students})`);
+            }
+
+            static suitable_auditoriums(auditoriums, group) 
+            {//ПОИСК АУДИТОРИИ ДЛЯ ГРУППЫ
+                console.log(`Suitable Auditoriums ${group.name} (${group.faculty}):`);
+
+                //ФИЛЬТР (аудитории- вместительность и факультет)
+                //то есть перебор по массиву и создание нового при подходящем значении
+                //принимает аудиторию и проверяет  auditorium.capacity >= group.students и auditorium.faculty === group.faculty
+                //принимает массив возвращает булевое значение (=>) - СТРЕЛОЧНАЯ ФУНКЦИЯ
+                const suitable_auditoriums_find = auditoriums.filter(auditorium => auditorium.capacity >= group.students && auditorium.faculty === group.faculty);
+               
+                
+                suitable_auditoriums_find.forEach(auditorium => auditorium.display_auditorium()); // перепод эллементов массива последовательно ВТРОЕННЫЙ МЕТОД 
+            }
+            
+        
+        }
+
+
+
+        let auditoriums = 
+        [
+            new Auditorium(28, 18, 'OOP'),
+            new Auditorium(32, 16, 'Web-dev')
+        ];
+
+        //проверка вывода
+        const audit_1 = new Auditorium(25, 20, 'С++');
+        audit_1.display_auditorium();
+
+        Auditorium.sort_capacity(auditoriums); //СОРТИРОВКА ПО ВМЕСТИТЕЛЬНОСТИ
+
+        //группа для проверка куда ее вместить, поиск аудитории для пары
+        const group_1 = new Group(221, 16, 'OOP');
+        group_1.display_group();
+
+        Group.suitable_auditoriums(auditoriums, group_1);
+
+    </script>
+</body>
+</html>
