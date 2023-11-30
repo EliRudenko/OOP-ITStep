@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<script>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function smaller_number() 
+        {//МЕНЬШЕЕ ИЗ ДВУХ ЧИСЕЛ
+            return Math.min(8, 18); 
+        }
+
+        function power() 
+        {//ЧИСЛО В СТЕПЕНИ
+            return Math.pow(8, 2);
+        }
+
+        function calculate() 
+        {//МАТЕМАТИЧЕСКИЕ ОПЕРАЦИИ
+            let num1 = 10;
+            let num2 = 5;
+            let operation = '+';
+
+            let result;
+
+            switch (operation) 
+            {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = 'ERROR';
+            }
+
+            return result;
+        }
+
+
+        function is_prime() 
+        {//ПРОСТОЕ ЧИСЛО?
+            let number = 18; 
+
+            if (number <= 1) { return false; }
+
+            for (let i = 2; i <= Math.sqrt(number); i++) 
+            {
+                if (number % i === 0) { return false; }
+            }
+
+            return true;
+        }
+
+        function multiplication_table() 
+        {//ТАБЛИЦА УМНОЖЕНИЯ
+            for (let i = 8; i <= 9; i++) 
+            {
+                let table = '';
+                for (let j = 1; j <= 10; j++) { table += `${i} * ${j} = ${i * j}\n`; }
+
+                console.log(`multiplication table ${i}:\n${table}`);
+            }
+        }
+
+        function Remainder(dividend, divisor) 
+        {//ОСТАТОК ДЕЛЕНИЯ
+            let quotient = Math.floor(dividend / divisor);
+            return dividend - (quotient * divisor);
+        }
+
+
+        function sum_numbers(...numbers) 
+        {//СУММА ОТ 1 ДО 5
+            return numbers.reduce((a, c) => a + c, 0);
+        }
+
+
+        function print_numbers_range(start, end, isEven) 
+        {//ЧЕТНОЕ ЧИСЛО В ДИАПОЗОНЕ
+            for (let i = start; i <= end; i++) 
+            {
+                if ((i % 2 === 0 && isEven) || (i % 2 !== 0 && !isEven)) { console.log(i); }
+            }
+        }
+
+
+
+        //+ ПРОВЕРКА НА ВЫСОКОСНЫЙ ГОД
+        function isLeapYear(year) 
+        {
+            return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        }
+
+        function Next_date(day, month, year) 
+        {
+            //ВЫСОКОСНЫЙ ГОД
+            let daysInMonth = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //ДЕБИЛЬНЫЙ ПЕРЕБОР КОЛ ВО ДНЕЙ МЕСЯЦОВ 
+
+            //ПРОВЕРОЧКИ
+            if (day < daysInMonth[month - 1]) 
+            {
+                return `${day + 1}.${month}.${year}`;
+            } 
+            else if (month < 12) 
+            {
+                return `1.${month + 1}.${year}`;
+            }
+            else { return `1.1.${year + 1}`; }
+        }
+
+
+
+
+        console.log("MIN ", smaller_number());
+        console.log("POW ", power());
+        console.log("REZ", calculate());
+        console.log("PRIME", is_prime());
+        multiplication_table();
+
+        let remainder = Remainder(18, 3); 
+        console.log("remainder ", remainder);
+
+        let sum = sum_numbers(1, 2, 3, 4, 5); 
+        console.log("SUM", sum);
+
+        console.log("Even");
+        print_numbers_range(1, 10, true); 
+
+        let nextDate = Next_date(29, 11, 2023); 
+        console.log("next date ", nextDate);
+
+
+    </script>
+</body>
+</html>
