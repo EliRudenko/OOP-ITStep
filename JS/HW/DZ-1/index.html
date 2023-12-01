@@ -88,44 +88,104 @@
 
 
         //5
-        let positiveCount = 0;
-        let negativeCount = 0;
-        let zeroCount = 0;
-        let evenCount = 0;
-        let oddCount = 0;
+        let positive = 0;
+        let negative = 0;
+        let zero = 0;
+        let even = 0;
+        let odd = 0;
         let numbersLeft = 10;
 
-        while (numbersLeft > 0) {
-        const userInput = parseFloat(prompt(`Введите число (${numbersLeft} чисел осталось):`));
+        while (numbersLeft > 0) 
+        {
+            const Input = parseFloat(prompt(`Enter number (${numbersLeft} left):`));
+            
+            if (!isNaN(Input)) 
+            {
+                if (Input > 0) 
+                {
+                    positive++;
+                } 
+                else if (Input < 0) 
+                {
+                    negative++;
+                } 
+                else 
+                {
+                    zero++;
+                }
+
+                if (Input % 2 === 0) 
+                {
+                    even++;
+                } 
+                else {
+                    odd++;
+                }
+
+                numbersLeft--;
+            } else { alert("Enter number"); }
+        }
+
+        // console.log(`Положительных чисел: ${positive}`);
+        // console.log(`Отрицательных чисел: ${negative}`);
+        // console.log(`Нулей: ${zero}`);
+        // console.log(`Четных чисел: ${even}`);
+        // console.log(`Нечетных чисел: ${odd}`);
+
         
-        if (!isNaN(userInput)) {
-            if (userInput > 0) {
-            positiveCount++;
-            } else if (userInput < 0) {
-            negativeCount++;
-            } else {
-            zeroCount++;
+        // Задача 6: Зациклить калькулятор
+        let continueCalculating = true;
+
+        while (continueCalculating) 
+        {
+            let number1 = parseFloat(prompt("Введите первое число:"));
+            let operator = prompt("Введите оператор (+, -, *, /):");
+            let number2 = parseFloat(prompt("Введите второе число:"));
+            let result;
+
+            switch (operator) 
+            {
+                case "+":
+                    result = number1 + number2;
+                    break;
+                case "-":
+                    result = number1 - number2;
+                    break;
+                case "*":
+                    result = number1 * number2;
+                    break;
+                case "/":
+                    result = number1 / number2;
+                    break;
+                default:
+                    console.log("Неверный оператор!");
+                    continue;
             }
 
-            if (userInput % 2 === 0) {
-            evenCount++;
-            } else {
-            oddCount++;
+            console.log(`Результат: ${result}`);
+            let continueAnswer = prompt("Хотите решить еще один пример? (да/нет)");
+
+            if (continueAnswer.toLowerCase() !== "да") 
+            {
+                continueCalculating = false;
             }
-
-            numbersLeft--;
-        } else {
-            alert("Введите корректное число.");
-        }
         }
 
-        console.log(`Положительных чисел: ${positiveCount}`);
-        console.log(`Отрицательных чисел: ${negativeCount}`);
-        console.log(`Нулей: ${zeroCount}`);
-        console.log(`Четных чисел: ${evenCount}`);
-        console.log(`Нечетных чисел: ${oddCount}`);
 
         
+        // Задача 7: Сдвиг цифр числа
+        let inputNumber = prompt("Введите число:");
+        let shiftAmount = parseInt(prompt("На сколько цифр его сдвинуть?"));
+        let numberLength = inputNumber.length;
+
+        // Определяем действительное значение сдвига
+        shiftAmount = shiftAmount % numberLength;
+
+        // Выполняем сдвиг
+        let shiftedNumber = inputNumber.substring(shiftAmount) + inputNumber.substring(0, shiftAmount);
+
+        console.log(`Результат сдвига: ${shiftedNumber}`);
+
 
     </script>
 </body>
