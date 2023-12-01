@@ -133,14 +133,14 @@
         // console.log(`Нечетных чисел: ${odd}`);
 
         
-        // Задача 6: Зациклить калькулятор
+        //6
         let continueCalculating = true;
 
         while (continueCalculating) 
         {
-            let number1 = parseFloat(prompt("Введите первое число:"));
-            let operator = prompt("Введите оператор (+, -, *, /):");
-            let number2 = parseFloat(prompt("Введите второе число:"));
+            let number1 = parseFloat(prompt("Enter 1 num"));
+            let operator = prompt("(+, -, *, /):");
+            let number2 = parseFloat(prompt("Emter 2 num"));
             let result;
 
             switch (operator) 
@@ -158,33 +158,45 @@
                     result = number1 / number2;
                     break;
                 default:
-                    console.log("Неверный оператор!");
+                    console.log("Error");
                     continue;
-            }
+            } 
 
-            console.log(`Результат: ${result}`);
-            let continueAnswer = prompt("Хотите решить еще один пример? (да/нет)");
+            console.log(`result: ${result}`);
+            let continueAnswer = prompt("continue? (Y/N)");
 
-            if (continueAnswer.toLowerCase() !== "да") 
+            if (continueAnswer.toLowerCase() !== "Y") 
             {
                 continueCalculating = false;
             }
         }
 
 
-        
-        // Задача 7: Сдвиг цифр числа
+
+        //7
         let inputNumber = prompt("Введите число:");
         let shiftAmount = parseInt(prompt("На сколько цифр его сдвинуть?"));
         let numberLength = inputNumber.length;
 
-        // Определяем действительное значение сдвига
         shiftAmount = shiftAmount % numberLength;
 
-        // Выполняем сдвиг
         let shiftedNumber = inputNumber.substring(shiftAmount) + inputNumber.substring(0, shiftAmount);
 
-        console.log(`Результат сдвига: ${shiftedNumber}`);
+        console.log(`result: ${shiftedNumber}`);
+
+        //8
+        let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+        let showNextDay = true;
+        let index = 0;
+
+        while (showNextDay) 
+        {
+            let userInput = confirm(`${daysOfWeek[index]}. Next day?`);
+            if (userInput) 
+            {
+                index = (index + 1) % daysOfWeek.length;
+            } else { showNextDay = false; }
+        }
 
 
     </script>
