@@ -74,8 +74,8 @@
 
 
         //4
-        function Digits(number) { return number.toString().length; } // число в строку, а length оптеделить код во символов в стр
-        /*
+        function Digits(number) { return number.toString().length; } 
+        
         const Input = parseInt(prompt("Enter number"));
 
         if (!isNaN(Input)) 
@@ -84,7 +84,7 @@
             console.log(`count numbers ${Input}: ${count}`);
         } 
         else { console.log("Enter number"); }
-        */
+        
 
 
         //5
@@ -126,36 +126,36 @@
             } else { alert("Enter number"); }
         }
 
-        // console.log(`Положительных чисел: ${positive}`);
-        // console.log(`Отрицательных чисел: ${negative}`);
-        // console.log(`Нулей: ${zero}`);
-        // console.log(`Четных чисел: ${even}`);
-        // console.log(`Нечетных чисел: ${odd}`);
+        console.log(`positive: ${positive}`);
+        console.log(`negative: ${negative}`);
+        console.log(`zero: ${zero}`);
+        console.log(`even: ${even}`);
+        console.log(`odd: ${odd}`);
 
         
         //6
-        let continueCalculating = true;
+        let calculating = true;
 
-        while (continueCalculating) 
+        while (calculating) 
         {
-            let number1 = parseFloat(prompt("Enter 1 num"));
+            let num1 = parseFloat(prompt("Enter 1 num"));
             let operator = prompt("(+, -, *, /):");
-            let number2 = parseFloat(prompt("Emter 2 num"));
+            let num2 = parseFloat(prompt("Emter 2 num"));
             let result;
 
             switch (operator) 
             {
                 case "+":
-                    result = number1 + number2;
+                    result = num1 + num2;
                     break;
                 case "-":
-                    result = number1 - number2;
+                    result = num1 - num2;
                     break;
                 case "*":
-                    result = number1 * number2;
+                    result = num1 * num2;
                     break;
                 case "/":
-                    result = number1 / number2;
+                    result = num1 / num2;
                     break;
                 default:
                     console.log("Error");
@@ -167,35 +167,74 @@
 
             if (continueAnswer.toLowerCase() !== "Y") 
             {
-                continueCalculating = false;
+                calculating = false;
             }
         }
 
 
 
         //7
-        let inputNumber = prompt("Введите число:");
-        let shiftAmount = parseInt(prompt("На сколько цифр его сдвинуть?"));
-        let numberLength = inputNumber.length;
+        let input = prompt("Enter number:");
+        let shift = parseInt(prompt("shift (enter number)?"));
+        let length_num = input.length;
 
-        shiftAmount = shiftAmount % numberLength;
+        shift = shift % length_num;
+        let shifted_number = input.substring(shift) + input.substring(0, shift);
+       
+        console.log(`result: ${shifted_number}`);
 
-        let shiftedNumber = inputNumber.substring(shiftAmount) + inputNumber.substring(0, shiftAmount);
 
-        console.log(`result: ${shiftedNumber}`);
 
         //8
-        let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-        let showNextDay = true;
+        let days_week = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+        let next_day = true;
         let index = 0;
 
-        while (showNextDay) 
+        while (next_day) 
         {
-            let userInput = confirm(`${daysOfWeek[index]}. Next day?`);
-            if (userInput) 
+            let userInput = confirm(`${days_week[index]}. Next day?`);
+            if (input) 
             {
-                index = (index + 1) % daysOfWeek.length;
-            } else { showNextDay = false; }
+                index = (index + 1) % days_week.length;
+            } else { next_day = false; }
+        }
+
+
+        //9
+        for (let i = 2; i <= 9; i++) 
+        {
+            console.log(`Multiplication table by ${i}:`);
+            for (let j = 1; j <= 10; j++) 
+            {
+                console.log(`${i} * ${j} = ${i * j}`);
+            }
+            console.log('\n');
+        }
+
+        //10
+        let min = 0;
+        let max = 100;
+        let guess = false;
+
+        while (!guess) 
+        {
+            let middle = Math.floor((min + max) / 2);
+            let input = prompt(`Your number > ${middle}, < ${middle} or == ${middle}? (Enter >, <, or =)`);
+
+            if (input === ">") 
+            {
+                min = middle + 1;
+            } 
+            else if (input === "<") 
+            {
+                max = middle - 1;
+            } 
+            else if (input === "=") 
+            {
+                guess = true;
+                console.log(`Correct ${middle}`);
+            } 
+            else { console.log("Error"); }
         }
 
 
