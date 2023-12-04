@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прототип</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .car-info {
+            display: inline-block;
+            margin: 10px 0 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="car-info" id="placeholder1"></div>
+    <div class="car-info" id="placeholder2"></div>
+    <div class="car-info" id="placeholder3"></div>
+
+    <script>
+        function Car(image, manufacturer, model, year, VIN) {
+            this.image = image;
+            this.manufacturer = manufacturer;
+            this.model = model;
+            this.year = year;
+            this.VIN = VIN;
+        }
+
+        // Каждая функция в JavaScript связана со своим прототипом - пустым объектом.
+        // Доступ к прототипу можно получить через свойство prototype на функции.
+        // Контекст функции (this) находящейся в прототипе, - объект, на котором функция будет изначально вызываться, а не сам прототип.
+        Car.prototype.showStats = function (element) {
+            element.insertAdjacentHTML("beforeend", `<img src="images/${this.image}" /><br />`);
+            element.insertAdjacentHTML("beforeend", `Производитель: ${this.manufacturer}<br />`);
+            element.insertAdjacentHTML("beforeend", `Модель: ${this.model}<br />`);
+            element.insertAdjacentHTML("beforeend", `Год выпуска: ${this.year}<br />`);
+            element.insertAdjacentHTML("beforeend", `VIN: ${this.VIN}<br />`);
+        };
+
+        // При использовании ключевого слова new после создания нового экземпляра для этого экземпляра устанавливается прототип.
+        // Прототип устанавливается из конструктора, который используется после ключевого слова new.
+        let car1 = new Car("audi-a6-250.jpg", "Audi", "A6", 2011, "ABCD1234567890XYZ");
+        let car2 = new Car("jaguar-x-type-250.jpg", "Jaguar", "X-Type", 2008, "DCAF0987654321XYZ");
+        let car3 = new Car("porsche-carrera-911-250.jpg", "Porsce", "Carrera 911", 2011, "EFGH0987654321XYZ");
+
+        let placeholder1 = document.querySelector("#placeholder1");
+        let placeholder2 = document.querySelector("#placeholder2");
+        let placeholder3 = document.querySelector("#placeholder3");
+
+        // Когда на экземпляре вызывается метод или происходит обращение к свойству
+        // и данной конструкции нет в самом экземпляре, то происходит обращение к прототипу
+        // и вызываемая конструкция ищется в прототипе.
+        // Метода showStats нет в car1, car2 или car3, но данный код выполняется корректно,
+        // так как после проверки наличия метода в экземпляре интерпретатор перейдет в прототип и попробует
+        // найти метод там.
+
+        // все три объекта используют один метод showStats, который находится в прототипе.
+        car1.showStats(placeholder1);
+        car2.showStats(placeholder2);
+        car3.showStats(placeholder3);
+
+        console.log(car1.toString());
+    </script>
+</body>
+
+</html>

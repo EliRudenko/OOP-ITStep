@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for in</title>
+</head>
+
+<body>
+    <script>
+        function Car(model) {
+            this.model = model;
+        }
+
+        Car.prototype.wheelsNumber = 4;
+
+        Car.prototype.showStats = function () {
+            console.log(this.model);
+            console.log(this.wheelsNumber);
+        }
+
+        // let car1 = new Car("Jaguar X-Type");
+        let car2 = new Car("Audi A6");
+
+        // car1.showStats();
+        car2.showStats();
+
+        for (const key in car2) {
+            // obj.hasOwnProperty(prop) - метод, который проверяет, принадлежит ли свойство prop объекту obj.
+            // Работая с объектом car1 можно получить доступ к пользовательским свойствам и методам:
+            // - model          на экземпляре
+            // - wheelsNumber   в связанном прототипе (то что потом, доп,  через prototype)
+            // - showStats      в связанном прототипе
+            // При наличии условия будет отображено свойство model, без условия будут выведены все три свойства.
+            if (car2.hasOwnProperty(key)) 
+            {
+                const value = car2[key];
+                console.log(key + " = " + value);
+            }
+
+            // Метод hasOwnProperty находится в объекте, который является прототипом нашего прототипа. Установка 
+            // этого прототипа в Object происходит автоматически.
+            // Методы hasOwnProperty, toString и другие есть у всех объектов, так как прототип Object устанавливается
+            // как крайний прототип в любой цепочке прототипов.
+        }
+    </script>
+</body>
+
+</html>

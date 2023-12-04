@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простой объект</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .car-info {
+            display: inline-block;
+            margin: 10px 0 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="car-info" id="placeholder1"></div>
+    <div class="car-info" id="placeholder2"></div>
+    <div class="car-info" id="placeholder3"></div>
+
+    <script>
+        // Когда в приложении появляется несколько объектов с одинаковым набором методов и свойств, 
+        // использование литералов для описания таких объектов становится не удобным, так как появляются 
+        // дублирования кода. Если в этом примере нам нужно будет добавить новое свойства всем автомобилям,
+        // например, пробег, или внести правки в метод showStats, нам нужно будет вносить изменения во всех
+        // литералах, описывающих объект автомобиль.
+
+        let car1 = {
+            image: "audi-a6-250.jpg",
+            manufacturer: "Audi",
+            model: "A6",
+            year: "2011",
+            VIN: "ABCD1234567890XYZ",
+
+            showStats: function (element) {
+                element.insertAdjacentHTML("beforeend", `<img src="images/${this.image}" /><br />`);
+                element.insertAdjacentHTML("beforeend", `Производитель: <b>${this.manufacturer}</b><br />`);
+                element.insertAdjacentHTML("beforeend", `Модель: ${this.model}<br />`);
+                element.insertAdjacentHTML("beforeend", `Год выпуска: ${this.year}<br />`);
+                element.insertAdjacentHTML("beforeend", `VIN: ${this.VIN}<br />`);
+            }
+        };
+
+        let car2 = {
+            image: "jaguar-x-type-250.jpg",
+            manufacturer: "Jaguar",
+            model: "X-type",
+            year: "2008",
+            VIN: "DCAF0987654321XYZ",
+
+            showStats: function (element) {
+                element.insertAdjacentHTML("beforeend", `<img src="images/${this.image}" /><br />`);
+                element.insertAdjacentHTML("beforeend", `Производитель: ${this.manufacturer}<br />`);
+                element.insertAdjacentHTML("beforeend", `Модель: ${this.model}<br />`);
+                element.insertAdjacentHTML("beforeend", `Год выпуска: ${this.year}<br />`);
+                element.insertAdjacentHTML("beforeend", `VIN: ${this.VIN}<br />`);
+            }
+        };
+
+        let car3 = {
+            image: "porsche-carrera-911-250.jpg",
+            manufacturer: "Porsce",
+            model: "Carrera 911",
+            year: "2011",
+            VIN: "EFGH0987654321XYZ",
+
+            showStats: function (element) {
+                element.insertAdjacentHTML("beforeend", `<img src="images/${this.image}" /><br />`);
+                element.insertAdjacentHTML("beforeend", `Производитель: ${this.manufacturer}<br />`);
+                element.insertAdjacentHTML("beforeend", `Модель: ${this.model}<br />`);
+                element.insertAdjacentHTML("beforeend", `Год выпуска: ${this.year}<br />`);
+                element.insertAdjacentHTML("beforeend", `VIN: ${this.VIN}<br />`);
+            }
+        };
+
+        let placeholder1 = document.querySelector("#placeholder1");
+        let placeholder2 = document.querySelector("#placeholder2");
+        let placeholder3 = document.querySelector("#placeholder3");
+
+        car1.showStats(placeholder1);
+        car2.showStats(placeholder2);
+        car3.showStats(placeholder3);
+    </script>
+</body>
+
+</html>

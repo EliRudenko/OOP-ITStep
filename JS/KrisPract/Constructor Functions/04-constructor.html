@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .car-info {
+            display: inline-block;
+            margin: 10px 0 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="car-info" id="placeholder1"></div>
+    <div class="car-info" id="placeholder2"></div>
+    <div class="car-info" id="placeholder3"></div>
+
+    <script>
+        // Функция-Конструктор - функция для создания и инициализации объектов с одинаковой структурой.
+        // От обычной функции функция конструктор отличается:
+        //  - по соглашению имя функции начинается с заглавной буквы (Pascal casing)
+        //  - в теле функции ключевое слово this (контекст функции) представляет новый пустой объект и задача 
+        //    функции этому пустому объекту задать свойства и методы
+        //  - функция должна вызываться с ключевым словом new, иначе контекст будет глобальным объектом или
+        //    undefined в случае strict mode
+
+        // Функция конструктор может рассматриваться как аналог классов в строго типизированных языках программирования
+
+        // Когда функция конструктор заканчивает работу, неявно возвращается значение контекста как результат функции.
+        // Можно представить, что выполняется return this; в конце конструктора.
+
+        function Car(image, manufacturer, model, year, VIN) {
+            this.image = image; //это всойство, обращение к прототипу
+            this.manufacturer = manufacturer;
+            this.model = model;
+            this.year = year;
+            this.VIN = VIN;
+
+            this.showStats = function (element) {
+                element.insertAdjacentHTML("beforeend", `<img src="images/${this.image}" /><br />`);
+                element.insertAdjacentHTML("beforeend", `Производитель: ${this.manufacturer}<br />`);
+                element.insertAdjacentHTML("beforeend", `Модель: ${this.model}<br />`);
+                element.insertAdjacentHTML("beforeend", `Год выпуска: ${this.year}<br />`);
+                element.insertAdjacentHTML("beforeend", `VIN: ${this.VIN}<br />`);
+            };
+        }
+
+        // При вызове конструктора нужно использовать ключевое слово new
+        // Ключевое слово new создает новый объект и устанавливает его в качестве контекста вызываемой функции.
+
+        let car1 = new Car("audi-a6-250.jpg", "Audi", "A6", 2011, "ABCD1234567890XYZ");
+        let car2 = new Car("jaguar-x-type-250.jpg", "Jaguar", "X-Type", 2008, "DCAF0987654321XYZ");
+        let car3 = new Car("porsche-carrera-911-250.jpg", "Porsce", "Carrera 911", 2011, "EFGH0987654321XYZ");
+
+        let placeholder1 = document.querySelector("#placeholder1");
+        let placeholder2 = document.querySelector("#placeholder2");
+        let placeholder3 = document.querySelector("#placeholder3");
+
+        car1.showStats(placeholder1);
+        car2.showStats(placeholder2);
+        car3.showStats(placeholder3);
+    </script>
+</body>
+
+</html>
