@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Закрытые (private) поля</title>
+</head>
+
+<body>
+    <script>
+        // Class field declaration
+        // Экспериментальная возможность https://github.com/tc39/proposal-class-fields
+        // Поддержка браузерами https://caniuse.com/mdn-javascript_classes_public_class_fields
+
+        class User {
+            #name = ""; // закрытое поле (закрытое - можно использовать только в классе)
+
+            constructor(name) {
+                this.#name = name; // закрытое поле можно поменять в теле класса
+            }
+
+            getName() {
+                return this.#name; // значение закрытого поля можно прочесть в поле класса
+            }
+        }
+
+        let u = new User("Dmitriy");
+        u.#name = "TEST"; // закрытое поле нельзя изменить за пределами класса
+        console.log(u.getName());
+    </script>
+</body>
+
+</html>

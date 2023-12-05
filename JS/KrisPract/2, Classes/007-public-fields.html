@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Открытые (public) поля</title>
+</head>
+
+<body>
+    <script>
+        // Class field declaration
+        // Экспериментальная возможность https://github.com/tc39/proposal-class-fields
+        // Поддержка браузерами https://caniuse.com/mdn-javascript_classes_public_class_fields
+        
+        class Rect {
+            height = 0; // открытое поле (открытое - можно использовать за пределами класса)
+            width = 0;
+
+            getArea() {
+                return this.height * this.width; 
+            }
+        }
+
+        let r = new Rect();
+        r.height = 10; // меняем значение открытому полю
+        r.width = 20;
+
+        console.log(r.getArea());
+    </script>
+</body>
+
+</html>
