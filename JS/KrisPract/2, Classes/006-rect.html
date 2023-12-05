@@ -55,7 +55,8 @@
 
         let r1 = new Rect(10, 20); 
 
-        r1._height = -10; // ошибка, значение не изменяется
+        // r1._height = -10; // ошибка, значение не изменяется
+        r1.height = -10;
         r1.width = 30; 
 
         console.log("width " + r1.width);

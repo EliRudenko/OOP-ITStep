@@ -10,16 +10,25 @@
 
 <body>
     <script>
-        class Rect {
+        class Rect 
+        {
             #width;
             #height;
 
-            constructor(width, height) {
+            // constructor() 
+            // {
+            //     this.#width = 0;
+            //     this.#height = 0;
+            // }
+
+            constructor(width, height) 
+            {
                 this.#width = width;
                 this.#height = height;
             }
 
-            get width() {
+            get width() 
+            {
                 if (this.#width === undefined) {
                     this.#width = 0;
                 }
@@ -27,7 +36,8 @@
                 return this.#width;
             }
 
-            set width(value) {
+            set width(value) 
+            {
                 if (value < 0) {
                     alert("Значение для width не может быть меньше 0");
                 } else {
@@ -35,7 +45,8 @@
                 }
             }
 
-            get height() {
+            get height() 
+            {
                 if (this.#height === undefined) {
                     this.#height = 0;
                 }
@@ -43,7 +54,8 @@
                 return this.#height;
             }
 
-            set height(value) {
+            set height(value) 
+            {
                 if (value < 0) {
                     alert("Значение для height не может быть меньше 0");
                 } else {
