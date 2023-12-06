@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наследование</title>
+</head>
+
+<body>
+    <script>
+        // Базовый класс Animal
+        class Animal {
+            sleep() {
+                console.log("Животное спит.");
+            }
+
+            eat() {
+                console.log("Животное ест.");
+            }
+        }
+
+        // Производный класс Dog.
+        // Класс Dog расширяет класс Animal.
+        // Класс Dog наследуется от класса Animal, это означает, что методы и свойства класса Animal будут доступны в классе
+        // Dog, при этом дочерний класс Dog может заместить работу методов, которые получены по наследству, а также добавить свои методы.
+        class Dog extends Animal {
+            eat() {
+                console.log("Собака ест мясо.");
+            }
+        }
+
+        // Класс Cow расширяет класс Animal
+        class Cow extends Animal {
+            eat() {
+                console.log("Корова ест траву.");
+            }
+        }
+
+        let a1 = new Dog();
+        let a2 = new Cow();
+
+        a1.eat();
+        a1.sleep();
+
+        console.log("-------");
+
+        a2.eat();
+        a2.sleep();
+
+        console.log("-------");
+
+        let animals = [new Dog(), new Cow()];
+
+        animals.forEach(animal => {
+            animal.eat();
+            animal.sleep();
+        });
+    </script>
+</body>
+
+</html>

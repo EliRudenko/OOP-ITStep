@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static</title>
+</head>
+
+<body>
+    <script>
+        class MyClass {
+            property1;           // свойство принадлежит экземпляру класса - у каждого экземпляра уникальное значение
+            static property2;    // статическое свойство принадлежит классу (функции конструктору) - одно значение на все экземпляры
+        }
+
+        let m1 = new MyClass();
+        let m2 = new MyClass();
+
+        m1.property1 = 10;
+        m2.property1 = 20;
+
+        MyClass.property2 = 100; // получить доступ к статическому свойству можно через класс
+
+        console.log(m1.property1);
+        console.log(m2.property1);
+        console.log(MyClass.property2);
+    </script>
+</body>
+
+</html>

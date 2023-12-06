@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Задание:
+        Найдите и исправьте ошибку
+        */
+
+        // class Car {
+        //     model;
+
+        //     constructor(model) {
+        //         this.model = model;
+        //     }
+
+        //     move() {
+        //         console.log(`Машина ${this.model} двигается со скоростью 80 км/час`);
+        //     }
+        // }
+
+        // class Truck extends Car {
+        //     weight;
+        //     maxCargo;
+        //     model;
+
+        //     constructor(model, maxCargo) {
+        //         this.model = model;
+        //         this.maxCargo = maxCargo;
+        //     }
+
+        //     loadCargo(weight) {
+        //         if (weight > this.maxCargo) {
+        //             console.log("Этот грузовик не может перевозить более 1000кг груза");
+        //         }
+        //         else {
+        //             this.weight = weight;
+        //             console.log(`В грузовик загружено ${this.weight}кг.`);
+        //         }
+        //     }
+        // }
+
+        // let v1 = new Car("Mazda");
+        // v1.move();
+
+
+
+        //ТУТ ПРОБЛЕМА, В КОНСТРУКТОРЕ НЕТ ПАРАМЕТРОВ 
+        // let v2 = new Truck();
+        // v2.loadCargo(1500);
+        // v2.move();
+
+
+        class Car 
+        {
+            model;
+
+            constructor(model) { this.model = model; }
+
+            move() { console.log(`Машина ${this.model} двигается со скоростью 80 км/час`); }
+        }
+
+        class Truck extends Car 
+        {
+            weight;
+            maxCargo;
+
+            constructor(model, maxCargo) 
+            {
+                super(model); //РОДИТЕЛЬСКИЙ КЛАСС, КОНСТРУКТОР
+                this.maxCargo = maxCargo;
+            }
+
+            loadCargo(weight) 
+            {
+                if (weight > this.maxCargo) 
+                {
+                    console.log("Этот грузовик не может перевозить более 1000 кг груза");
+                } 
+                else 
+                {
+                    this.weight = weight;
+                    console.log(`В грузовик загружено ${this.weight} кг.`);
+                }
+            }
+        }
+
+        let v1 = new Car("Mazda");
+        v1.move();
+
+        let v2 = new Truck("Volvo", 1000); // НУЖНО ПЕРЕДАТЬ ПАРАМЕТРЫ
+        v2.loadCargo(1500);
+        v2.move();
+
+    </script>
+</body>
+
+</html>

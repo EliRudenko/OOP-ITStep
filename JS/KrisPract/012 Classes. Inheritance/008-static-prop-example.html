@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример использования статического свойства</title>
+    <style>
+        #catalog {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #catalog>div {
+            margin: 10px;
+        }
+
+        .bg {
+            width: 250px;
+            height: 300px;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="catalog"></div>
+
+    <template id="product">
+        <div>
+            <div class="bg" style="background-image: url('{{imagePath}}');"></div>
+            <p>{{price}}$</p>
+        </div>
+    </template>
+
+    <template id="advertisement">
+        <div>
+            <a href="{{url}}" target="_blank">
+                <div class="bg" style="background-image: url('{{imagePath}}');"></div>
+            </a>
+        </div>
+    </template>
+    <script src="mustache.min.js"></script>
+
+    <script>
+        class CatalogItem {
+            template;
+            imagePath;
+
+            constructor(image, tempalteSelector) {
+                this.imagePath = image;
+                this.template = document.querySelector(tempalteSelector).innerHTML;
+
+            }
+
+            renderIn(element) {
+                let html = Mustache.render(this.template, this);
+                element.innerHTML += html;
+            }
+        }
+
+        class Product extends CatalogItem {
+            price;
+            static counter = 0;
+
+            constructor(imageaPath, price) {
+                super(imageaPath, "#product");
+                this.price = price;
+                Product.counter++;
+            }
+        }
+
+        class Advertisement extends CatalogItem {
+            url;
+            static counter = 0;
+
+            constructor(imagePath, url) {
+                super(imagePath, "#advertisement");
+                this.url = url;
+                Advertisement.counter++;
+            }
+        }
+
+        class Catalog {
+            items = [];
+            element;
+
+            constructor(elementSelector) {
+                this.element = document.querySelector(elementSelector);
+            }
+
+            add(item) {
+                this.items.push(item);
+            }
+
+            show() {
+                this.items.forEach(item => {
+                    item.renderIn(this.element);
+                });
+            }
+        }
+
+        let catalog = new Catalog("#catalog");
+
+        catalog.add(new Product("images/img1.jpg", 35.55));
+        catalog.add(new Product("images/img2.jpg", 25.25));
+        catalog.add(new Advertisement("images/banner1.jpg", "#"));
+        catalog.add(new Product("images/img3.jpg", 14.55));
+        catalog.add(new Product("images/img4.jpg", 65.55));
+        catalog.add(new Advertisement("images/banner2.jpg", "#"));
+
+        catalog.show();
+        console.log("Всего создано продуктов " + Product.counter);
+        console.log("Всего создано баннеров " + Advertisement.counter);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>super</title>
+</head>
+
+<body>
+    <script>
+        class BaseClass {
+            method() {
+                console.log("BaseClass.Method");
+            }
+        }
+
+        class DerivedClass extends BaseClass {
+            method() {
+                super.method(); // обращение к методу method из родительского класса, по сути обращение к прототипу функции конструктора BaseClass
+                console.log("DerivedClass.Method");
+            }
+        }
+
+        let instance1 = new BaseClass();
+        let instance2 = new DerivedClass();
+
+        console.log("instance1");
+        instance1.method();
+
+        console.log("instance2");
+        instance2.method();
+    </script>
+</body>
+
+</html>

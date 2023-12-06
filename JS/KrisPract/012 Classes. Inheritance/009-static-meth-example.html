@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример использования статических методов</title>
+</head>
+
+<body>
+    <script>
+        class User {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            log() {
+                console.log(this.name + " " + this.age);
+            }
+
+            static compare(user1, user2) {
+                return user1.age - user2.age;
+            }
+        }
+
+        let array = [
+            new User("Ivan", 29),
+            new User("Igor", 25),
+            new User("Elena", 32),
+            new User("Petr", 41),
+            new User("Anna", 24),
+            new User("Irina", 26),
+        ];
+
+        // метод массива sort может принимать в качестве параметра функцию, определяющую критерии оценивания, какой объект считать большим, а какой меньшим
+        // функция принимает два параметра и должна возвращать числовое значение
+        // если числовое значение меньше 0 - это означает, что первый объект меньше, чем второй
+        // если значение больше чем 0 - первый объект больше чем второй
+        // если значение 0 - объекты равны
+
+        array.sort(User.compare);
+
+        array.forEach(user => user.log());
+    </script>
+</body>
+
+</html>

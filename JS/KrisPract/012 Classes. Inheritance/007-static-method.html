@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static</title>
+</head>
+
+<body>
+    <script>
+        class MyClass {
+            property1;
+            
+            constructor(value) {
+                this.property1 = value;
+            }
+
+            // метод находится в прототипе и доступен на каждом экземпляре
+            method1() {
+                console.log("Не статический метод " + this.property1);
+            }
+
+            // статический метод, находится в классе (принадлежит функции конструктору)
+            static method2() {
+                console.log("Статический метод " + this.property1); // в статическом методе this указывает на функцию конструктор
+            }
+        }
+
+        let m1 = new MyClass(10);
+        let m2 = new MyClass(20);
+
+        m1.method1();
+        m2.method1();
+
+        MyClass.method2();
+    </script>
+</body>
+
+</html>
