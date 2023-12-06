@@ -1,122 +1,129 @@
+    class Animal 
+    {
+        constructor(weight, life) 
+        {
+            this.weight = weight;
+            this.life = life;
+        }
+    }
+    class Herbivore extends Animal 
+    {
+        constructor(weight, life) 
+        {
+            //род
+            super(weight, life);
+        }
+    
+        eatGrass() 
+        { 
+            this.weight += 10; 
+            console.log("Herbivore is eating grass. Weight increased to: " + this.weight);
+        } //набираем вес(
+    }
+    
+    class Carnivore extends Animal 
+    {
+        constructor(power, life) 
+        {
+            //пока что 0, потому что потом прибавляем
+            super(0, life);
+            this.power = power;
+        }
+    
+        eat(herbivore) 
+        {//проверки по условию
+            if (this.power >= herbivore.weight) 
+            {
+                this.power += 10;
+            } else { this.power -= 10; }
+            console.log("Carnivore is eating. Power changed to: " + this.power);
+        }
+    }
+    
+    class Wildebeest extends Herbivore 
+    {
+        constructor(weight, life) 
+        {
+            //род
+            super(weight, life);
+        }
+    }
+    class Bison extends Herbivore 
+    {
+        constructor(weight, life) 
+        {
+            //род
+            super(weight, life);
+        }
+    }
+    
 
-class Herbivore 
-{
-    constructor(weight, life) 
+    class Lion extends Carnivore 
     {
-      this.weight = weight;
-      this.life = life;
+        constructor(power, life) 
+        {
+            //родиетльский 
+            super(power, life); //передали аргументы для Lion
+        }
     }
-  
-    eatGrass() 
+    class Wolf extends Carnivore 
     {
-      this.weight += 10;
+        constructor(power, life) 
+        {
+            //родительский
+            super(power, life);//передаем аргументы для Wolf
+        }
     }
-  }
-  
+    
 
-  class Wildebeest extends Herbivore 
-  {
-    constructor(weight, life) 
+    class Continent 
     {
-      super(weight, life);
+        constructor(){}
     }
-  }
-  
-  class Bison extends Herbivore 
-  {
-    constructor(weight, life) 
-    {
-      super(weight, life);
-    }
-  }
+    
 
-  class Carnivore 
-  {
-    constructor(power) 
+    class Africa extends Continent 
     {
-      this.power = power;
-    }
-  
+        constructor(wildebeest_Weight, lion_Power) // для wildebeest и lion континент Africa, переданные значения
+        {
+            super();//род
 
-    eat(herbivore) 
+            //создаются обьекты и передаем значение  для животных Африки
+            this.wildebeest = new Wildebeest(wildebeest_Weight, true);
+            this.lion = new Lion(lion_Power, true);
+        }
+    }
+    
+    class NorthAmerica extends Continent 
     {
-      if (this.power > herbivore.weight) 
-      {
-        this.power += 10;
-      } else { this.power -= 10; }
+        constructor(bison_Weight, wolf_Power)  // переданные значения для континента NorthAmerica, ждя животного бизон и волк 
+        {
+            super();//род
+
+            //создаются обьекты с передачей значения 
+            this.bison = new Bison(bison_Weight, true);
+            this.wolf = new Wolf(wolf_Power, true);
+        }
     }
-  }
-  
-  class Lion extends Carnivore 
-  {
-    constructor(power) 
+
+    //тут были проверки
+    // console.log(northAmerica.bison); 
+    // console.log(northAmerica.wolf);
+    
+    class AnimalWorld 
     {
-      super(power);
+        constructor(){}
+    
+        mealHerbivores(continent) 
+        {
+            continent.wildebeest.eatGrass(); //для травоядных
+            continent.bison && continent.bison.eatGrass(); //существует ли бизон, ибо так по условию, проверочка
+        }
+    
+        mealCarnivores(continent) 
+        {
+            continent.lion && continent.lion.eat(continent.wildebeest); // ест wildebeest если он существует, проверочка, существует ли лев
+            continent.wolf && continent.wolf.eat(continent.bison);// так же как со львом
+        }
     }
-  }
-  
-  class Wolf extends Carnivore {
-    constructor(power) {
-      super(power);
-    }
-  }
-  
-  // Класс Континент - абстрактный
-  class Continent {
-    constructor() {
-      if (this.constructor === Continent) {
-        throw new Error("Abstract classes can't be instantiated.");
-      }
-    }
-  }
-  
-  // Конкретные классы континентов
-  class Africa extends Continent {
-    constructor() {
-      super();
-    }
-  }
-  
-  class NorthAmerica extends Continent {
-    constructor() {
-      super();
-    }
-  }
-  
-  // Класс Мир животных - клиент
-  class AnimalWorld {
-    // Метод для кормления травоядных
-    mealsHerbivores(herbivores) {
-      herbivores.forEach((herbivore) => {
-        herbivore.eatGrass();
-      });
-    }
-  
-    // Метод для питания плотоядных
-    nutritionCarnivores(carnivores, herbivore) {
-      carnivores.forEach((carnivore) => {
-        carnivore.eat(herbivore);
-      });
-    }
-  }
-  
-  // Пример использования:
-  
-  // Создание экземпляров травоядных и плотоядных
-  const wildebeest = new Wildebeest(100, true);
-  const bison = new Bison(150, true);
-  
-  const lion = new Lion(120);
-  const wolf = new Wolf(90);
-  
-  // Создание континентов
-  const africa = new Africa();
-  const northAmerica = new NorthAmerica();
-  
-  // Создание экземпляра мира животных
-  const animalWorld = new AnimalWorld();
-  
-  // Вызов методов для кормления и питания
-  animalWorld.mealsHerbivores([wildebeest, bison]);
-  animalWorld.nutritionCarnivores([lion, wolf], wildebeest);
-  
+    
