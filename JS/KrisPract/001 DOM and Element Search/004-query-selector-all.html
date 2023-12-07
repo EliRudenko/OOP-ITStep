@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelectorAll #4</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, numquam unde. Aut dolorum in, quia
+            numquam
+            error recusandae est odio nesciunt ut illum blanditiis illo minima, officiis mollitia eaque fugit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum corrupti sapiente, qui eius fuga nisi. Sequi
+            quibusdam sapiente deserunt fuga dolorem commodi perspiciatis, cum soluta possimus quaerat. Labore, eveniet
+            iusto.</p>
+        <a href="https://logbook.itstep.org/#/">Logbook</a> |
+        <a href="https://logbook.itstep.org/#/">Logbook</a>
+    </div>
+    <ul id="my-list-1">
+        <li>List Item 1-1</li>
+        <li class="selected">List Item 2-1</li>
+        <li>List Item 3-1</li>
+        <li class="selected">List Item 4-1</li>
+        <li>List Item 5-1</li>
+    </ul>
+
+    <article>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est fugit natus sapiente laborum esse. Aperiam eum
+        illum fuga laborum alias consectetur, quibusdam nisi quidem aliquam nulla, quae vero expedita fugiat.
+    </article>
+
+    <ul id="my-list-2">
+        <li>List Item 1-2</li>
+        <li>List Item 2-2</li>
+        <li>List Item 3-2</li>
+        <li>List Item 4-2</li>
+        <li>List Item 5-2</li>
+    </ul>
+
+    <script>
+        let listItem = document.querySelector('ul'); // поиск элемента с id my-list-1
+        let selected = listItem.querySelectorAll(".selected"); // поиск элементов с классом selected в элементе, найденном ранее
+
+        // данный пример демонстрирует, что метод querySelector возвращает элемент DOM, по которому можно производить повторно
+        // поиск с помощью методов querySelector или querySelectorAll
+        // в данном случае, такой же результат можно было достигнуть, выполнив одну строку
+        // let selected = document.querySelectorAll("#my-list-1 .selected");
+
+        for (const item of selected) {
+            item.style.border = "1px solid red";
+        }
+    </script>
+</body>
+
+</html>
