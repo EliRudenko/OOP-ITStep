@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .marked-text 
+        {
+            color: plum; 
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+       class Marker 
+       {
+            constructor(color, inkLevel) 
+            {
+                this.color = color;
+                this.inkLevel = inkLevel; // тут  хранится цвет и проценты чернил
+            }
+
+            mark(text) 
+            {
+                const for_div = document.querySelector('#output'); 
+                let markedText = '';
+
+                for (const char of text) 
+                {
+                    if (this.inkLevel >= 0.5 && char !== ' ') 
+                    {
+                        markedText += char.fontcolor(this.color); //встроенный метод, для показа строки с цветом 
+                        this.inkLevel -= 0.5; // для чернил по условию
+                    } else {
+                        markedText += char;
+                    }
+                }
+
+                for_div.innerHTML += markedText; //для вывода текста в блок с output
+            }
+        }
+
+        const marker = new Marker('plum', 80); 
+
+        marker.mark('Hello, world!'); 
+
+
+    </script>
+</body>
+</html>

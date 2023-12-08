@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ExtendedDate Class</title>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+    class ExtendedDate extends Date // Date стандарт
+    {
+        constructor(...args) 
+        {
+            super(...args);
+        }
+
+      getFormDate() 
+      {
+        const months = 
+        [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+        const day = this.getDate();
+        const month = months[this.getMonth()];
+        return `${day} ${month}`;
+      }
+
+      isPastDate() 
+      {//ищем вчерашний день
+        const currentDate = new Date();
+        return this < currentDate;
+      }
+
+      isLeapYear() 
+      {//высокосный год
+        const year = this.getFullYear();
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0; //стандарт
+      }
+
+      getNextDate() 
+      {//сделующий день 
+        const nextDay = new Date(this);
+        nextDay.setDate(this.getDate() + 1);
+        return nextDay.toDateString();
+      }
+
+    }
+
+    const printDate = new ExtendedDate();
+
+//для вывода
+
+    //если не парится то :
+    // document.write(Date);
+    // document.write(isPast);
+    // document.write(isLeap);
+    // document.write(next);
+
+    //но есть вариант 
+    const fot_div = document.querySelector('#output'); //ссылка на элемент ВЫвода с айдишником output
+
+    const Date_forPrint = `Data ${printDate.getFormDate()}`;
+    const isPast = `is Past Data? ${printDate.isPastDate() ? 'Yeap' : 'No'}`;
+    const isLeap = `is Leap Year? ${printDate.isLeapYear() ? 'Yeap' : 'No'}`;
+    const next = `Next Data ${printDate.getNextDate()}`;
+
+
+    //если не использовать innerHTML то адо будет создавать узлы; добавлять их в элемент
+    //document.createTextNode, document.createElement; appendChild
+    //поэтому innerHTML легче
+    //а вообще я не поняла зачем тут   вывод   через дом именно
+
+    //добавляется текст в блок
+    fot_div.innerHTML += `${Date_forPrint} <br/>`;
+    fot_div.innerHTML += `${isPast} <br/>`;
+    fot_div.innerHTML += `${isLeap} <br/>`;
+    fot_div.innerHTML += `${next} <br/>`;
+
+  </script>
+</body>
+</html>

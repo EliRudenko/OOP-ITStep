@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM navigation</title>
+    <style>
+        * {
+            margin: 8px;
+            padding: 8px;
+        }
+    </style> 
+</head>
+<body>
+    <div>
+        DIV
+        <p>P</p>
+        <ul id="elem">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <p>P</p>
+    </div>
+    <script>
+        let e = document.querySelector("#elem");
+        
+        e.parentElement.style.border = "1px solid red";
+
+        e.nextElementSibling.style.border = "1px solid green";
+        e.previousElementSibling.style.border = "1px solid blue";
+
+        for (const node of e.children) { // children - только дочерние узлы-элементы
+            node.style.border = "1px solid orange";
+        }
+
+        console.log(e.childNodes); // всего узлов 7, так как кроме элементов, в разметке есть переносы на новую строку
+
+    </script>
+</body>
+</html>

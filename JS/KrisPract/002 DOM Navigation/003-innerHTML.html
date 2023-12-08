@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+</head>
+<body>
+    Введенные значения:
+    <div id="output"></div>
+    <script>
+        while(true)
+        {
+            let value = prompt("Введите значение или exit для выхода");
+            if(value == "exit") break;
+            // Используя += мы добавляем к существующему контенту новые значения
+            document.querySelector("#output").innerHTML += value + "<br />";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM navigation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        td,
+        th {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="statsTable">
+        <tr>
+            <th>Название экзамена</th>
+            <th>Результат</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>HTML5 CSS3 Starter</td>
+            <td>580</td>
+            <td><img src="images/ok.png" alt="Exam Passed" /></td>
+        </tr>
+        <tr>
+            <td>JavaScript Starter</td>
+            <td>800</td>
+            <td><img src="images/ok.png" alt="Exam Passed" /></td>
+        </tr>
+        <tr>
+            <td>JavaScript Essential</td>
+            <td>730</td>
+            <td><img src="images/ok.png" alt="Exam Passed" /></td>
+        </tr>
+        <tr>
+            <td>TypeScript Fundamentals</td>
+            <td>650</td>
+            <td><img src="images/ok.png" alt="Exam Passed" /></td>
+        </tr>
+        <tr>
+            <td>Angular Starter</td>
+            <td>970</td>
+            <td><img src="images/ok.png" alt="Exam Passed" /></td>
+        </tr>
+    </table>
+
+    <script>
+        // Получаем каждый второй td из группы соседних td расположенных в таблице с id statsTable
+        // https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child
+        let examsScoreColumn = document.querySelectorAll("#statsTable td:nth-child(2)");
+        for (const td of examsScoreColumn) {
+
+            let passedExamIcon = td.nextElementSibling.firstElementChild;
+
+            if (td.textContent > 700) {
+                passedExamIcon.hidden = false;
+            }
+            else {
+                passedExamIcon.hidden = true;
+            }
+
+            // более короткий вариант кода, заменяющий блок if/else
+            passedExamIcon.hidden = td.textContent < 700;
+        }
+    </script>
+</body>
+
+</html>

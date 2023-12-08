@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table properties</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td, th {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="statsTable">
+        <tr>
+            <td>Январь</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>Февраль</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>Март</td>
+            <td>115</td>
+        </tr>
+        <tr>
+            <td>Апрель</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Март</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Июнь</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>Июль</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <th>Итого</th>
+            <th id="output"></th>
+        </tr>
+    </table>
+    <script>
+        // Элемент Table предоставляет дополнительные свойства для работы с элементами
+        // rows - коллекция строк таблицы <tr>
+        // cells - коллекция <td> и <th> находящихся в <tr>
+        // rowIndex - порядковый номер строки
+        let table = document.querySelector("#statsTable");
+        let output = document.querySelector("#output");
+
+        let sum = 0;
+        let rowLength = table.rows[0].cells.length; // количество колонок в таблице
+        for (const row of table.rows) {
+            let lastCell = row.cells[rowLength - 1];
+            sum += Number(lastCell.textContent);
+        }
+
+        output.textContent = sum;
+    </script>
+</body>
+
+</html>
