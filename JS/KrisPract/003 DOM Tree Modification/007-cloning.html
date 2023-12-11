@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клонирование элементов</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        article {
+            border: 1px solid black;
+            border-radius: 8px;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <article title="1">
+        <h1 title="2">Заголовок статьи</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore eum est voluptatem, necessitatibus repellendus fugit earum debitis deserunt rem dolorem ipsum perspiciatis, saepe, quibusdam vitae. Provident est minima iusto cumque.</p>
+    </article>
+
+    <script>
+        let articleNode = document.querySelector("article");
+
+        let shallowCopy = articleNode.cloneNode(false); // false - создание поверхностной копии
+        let deepCopy = articleNode.cloneNode(true); // true - создание глубокой копии
+
+        // глубокая копия - создание копии элемента со всеми атрибутами и дочерними элементами
+        // поверхностна копия - создание копии без копирования дочерних элементов
+
+        document.body.append(shallowCopy);
+        document.body.append(deepCopy);
+
+        title = deepCopy.querySelector("article h1");
+        title.textContent = "AAA"
+
+        title.parentElement.firstElementChild.nextElementSibling.textContent = "aoaoaoa"
+    </script>
+</body>
+</html>

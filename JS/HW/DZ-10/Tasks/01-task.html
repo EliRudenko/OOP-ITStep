@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+
+<body>
+    <div id="output">
+
+    </div>
+
+    <script>
+        /*
+        Задание:
+        Создайте параграфы под каждый элемент массива days, значения элементов массива должны быть добавлены как текст в параграфе.
+        Разместите все созданные параграфы в div с id output
+        */
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        let outputDiv = document.getElementById("output");
+
+        //пепребор массива
+        days.forEach(day => 
+        {
+            
+            let paragraph = document.createElement("p");
+
+
+            paragraph.textContent = day; // в значение текущего дня
+            outputDiv.appendChild(paragraph); //добавление в блок
+        });
+
+    </script>
+</body>
+
+</html>

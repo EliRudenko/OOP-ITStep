@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Creation</title>
+</head>
+<body>
+    <script>
+        // создание узлов
+        let divElement = document.createElement("div");         // создание HTML элемента <div></div>
+        let divText = document.createTextNode("Hello world");   // создание текстового узла "Hello world"
+
+        // созданные узлы не будут видимы пользователю, пока не станут частью DOM, который в данный момент отображает страница.
+
+        // добавление созданных узлов на страницу
+        divElement.append(divText);       // помещаем текстовый узел в HTML элемент. Метод append добавляет узел как последний дочерний узел.
+        document.body.append(divElement); // добавляем HTML элемент (в котором находится текстовый узел) в конец документа.
+
+        // альтернативный вариант с использованием более раннего API
+        // divElement.appendChild(divText);      
+        // document.body.appendChild(divElement); 
+    </script>
+</body>
+</html>

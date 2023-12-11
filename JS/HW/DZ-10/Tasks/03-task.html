@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td, th {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="statsTable">
+        <tr>
+            <td>Январь</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>Февраль</td>
+            <td>140</td>
+        </tr>
+        <tr>
+            <td>Март</td>
+            <td>115</td>
+        </tr>
+        <tr>
+            <td>Апрель</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Март</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            <td>Июнь</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td>Июль</td>
+            <td>100</td>
+        </tr>
+    </table>
+
+    <script>
+        /*
+        Задание:
+        Напишите сценарий, который удалит строки таблицы, в которых во второй колонке находятся значения меньше 100.
+        (В прошлом уроке были рассмотрены примеры, показывающие как получить доступ к родительским элементам, так как 
+        удалять нужно не ячейку td, в которой находится значение, а строку tr, в которой расположена эта ячейка).
+        */
+
+        let table = document.getElementById('statsTable');
+
+        //найти КРОМЕ ЗАГОЛОВКА
+        let rows = table.getElementsByTagName('tr');
+
+        //Почему с конца, потому что при удалении легче не напутать с индексами 
+        for (let i = rows.length - 1; i > 0; i--) 
+        {
+            //значчение ячейки 1 (то есть вторая ячейка, там где значения а не названия месяца), проходим по всем строкам
+            let cellValue = parseInt(rows[i].getElementsByTagName('td')[1].innerText);
+
+            if (cellValue < 100) { rows[i].parentNode.removeChild(rows[i]);} //меньше 100 = удаляем
+        }
+
+    </script>
+</body>
+
+</html>
