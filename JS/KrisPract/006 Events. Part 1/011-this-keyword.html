@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This в обработчике событий</title>
+</head>
+
+<body>
+    <button>Кнопка 1</button>
+    <button>Кнопка 2</button>
+    <button>Кнопка 3</button>
+
+    <script>
+        // находим все кнопки
+        let buttons = document.querySelectorAll("button");
+        // устанавливаем для всех кнопок одну и ту же функцию (clickHandler) в качестве обработчика события click
+        buttons.forEach(btn => {
+            btn.addEventListener("click", clickHandler);
+        });
+
+        function clickHandler() {
+            alert(this.textContent); // this - указывает на ту кнопку, для которой обрабатывается в данный момент событие.
+        }
+    </script>
+</body>
+
+</html>

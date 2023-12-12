@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+        button
+        {
+            background-color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    Операнд 1: <input id="input1" type="text"> <br />
+    <span id="input1Error" class="error">Введите значение</span> <br />
+    
+    Операнд 2: <input id="input2" type="text"> <br />
+    <span id="input2Error" class="error">Введите значение</span> <br />
+
+    <button id="add-btn">+</button>
+    <button id="rem-btn">-</button>
+    <button id="mul-btn">*</button>
+    <button id="div-btn">/</button>
+    <button id="reset-btn">reset</button>
+
+    <script>
+        /*
+        Задание:
+        Внесите правки в данный сценарий.
+        Добавьте обработчик на клик по кнопке reset. При клике значения, введённые в поля ввода "Операнд 1"
+        и "Операнд 2", должны быть заменены на значения 0
+        Добавьте проверку перед выполнением любой арифметической операции. Если поле ввода пустое, сделайте
+        для этого поля ввода красную рамку и сделайте видимый элемент с ошибкой под этим полем ввода.
+        Для поля ввода input1 при отсутствии значения сделайте видимым span #input1Error для поля ввода
+        input2 сделайте, в случае ошибки, #input2Error видимым.
+        */
+        // let input1 = document.querySelector("#input1");
+        // let input3 = document.querySelector("#input2");
+
+        // let addBtn = document.querySelector("#add-btn");
+        // let remBtn = document.querySelector("#rem-btn");
+        // let mulBtn = document.querySelector("#mul-btn");
+        // let divBtn = document.querySelector("#div-btn");
+
+        // addBtn.addEventListener("click", function () {
+        //     alert(Number(input1.value) + Number(input2.value));
+        // });
+
+        // remBtn.addEventListener("click", function () {
+        //     alert(input1.value - input2.value);
+        // });
+
+        // mulBtn.addEventListener("click", function () {
+        //     alert(input1.value * input2.value);
+        // });
+
+        // divBtn.addEventListener("click", function () {
+        //     alert(input1.value / input2.value);
+        // });
+
+
+
+        let input1 = document.querySelector("#input1");
+        let input2 = document.querySelector("#input2");
+
+        let input1Error = document.querySelector("#input1Error");
+        let input2Error = document.querySelector("#input2Error");
+
+
+        let addBtn = document.querySelector("#add-btn");
+        addBtn.addEventListener("click", function () 
+        {
+            //проверка на пустоту
+            if (!validateInputs()) { return };
+            alert(Number(input1.value) + Number(input2.value));
+        });
+
+
+        let remBtn = document.querySelector("#rem-btn");
+        remBtn.addEventListener("click", function () 
+        {
+            if (!validateInputs()) { return };
+            alert(input1.value - input2.value);
+        });
+
+        let mulBtn = document.querySelector("#mul-btn");
+        mulBtn.addEventListener("click", function () 
+        {
+            if (!validateInputs()) { return };
+            alert(input1.value * input2.value);
+        });
+
+        let divBtn = document.querySelector("#div-btn");
+        divBtn.addEventListener("click", function () 
+        {
+            if (!validateInputs() || input2.value === '0') { return };
+            alert(input1.value / input2.value);
+        });
+
+        // Добавьте обработчик на клик по кнопке reset
+        let resetBtn = document.querySelector("#reset-btn");
+        resetBtn.addEventListener("click", function () 
+        {
+            input1.value = '0';
+            input2.value = '0';
+            input1Error.classList.remove("error-visible");
+            input2Error.classList.remove("error-visible");
+            input1.classList.remove("error-border");
+            input2.classList.remove("error-border");
+        });
+
+        function validateInputs() 
+        {
+            let valid = true;
+
+            if (input1.value.trim() === '') 
+            {
+                input1Error.classList.add("error-visible");
+                input1.classList.add("error-border");
+                valid = false;
+            } 
+            else 
+            {
+                input1Error.classList.remove("error-visible");
+                input1.classList.remove("error-border");
+            }
+
+
+            if (input2.value.trim() === '')
+            {
+                input2Error.classList.add("error-visible");
+                input2.classList.add("error-border");
+                valid = false;
+            } 
+            else 
+            {
+                input2Error.classList.remove("error-visible");
+                input2.classList.remove("error-border");
+            }
+
+            return valid;
+        }
+    </script>
+</body>
+
+</html>

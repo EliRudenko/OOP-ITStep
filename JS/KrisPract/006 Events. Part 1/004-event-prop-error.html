@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка события через свойство</title>
+</head>
+<body>
+    <div id="my-div">
+        Click me
+    </div>
+
+    <script>
+        let div = document.querySelector("#my-div");
+        // Обратите внимание на то, что установка обработчика события - это указание функции, которую нужно запустить
+        // Когда событие возникнет, браузер самостоятельно выполнит вызов указанной функции.
+        // Если при установке обработчика после имени указать () - это запустит функцию и в качестве значения, 
+        // свойство onclick получит результат работы функции, а не саму функцию.
+        // Данную ошибку допускают многие начинающие.
+        div.onclick = showMessage(); // в качестве обработчика устанавливается значение undefined, так как функция ничего не возвращает
+
+        function showMessage() {
+            alert('Сработал обработчик события, установленный через свойство');
+        }
+    </script>
+</body>
+</html>
