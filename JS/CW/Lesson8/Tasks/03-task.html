@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        /*
+        Задание:
+        Реализуйте сценарий, который при нажатии на клавиши 1, 2 или 3 на клавиатуре будет добавлять рамку
+        красного цвета на соответствующий div. Если зажаты клавиши Ctrl + A, то красная рамка добавляется сразу
+        для всех div
+        */
+
+        document.addEventListener('keydown', function(event) 
+        {
+            if (event.key === '1' || event.key === '2' || event.key === '3') 
+            {
+                const divIndex = parseInt(event.key) - 1; 
+                const divs = document.querySelectorAll('div');
+                if (divIndex >= 0 && divIndex < divs.length) 
+                {
+                    divs[divIndex].style.border = '2px solid red'; 
+                }
+            } 
+            else if (event.key === 'Control' && event.key === 'KeyA') 
+            {
+                const divs = document.querySelectorAll('div');
+                divs.forEach(function(div) 
+                {
+                    div.style.border = '2px solid red'; 
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

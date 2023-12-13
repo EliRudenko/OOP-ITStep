@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Пользователи системы:</p>
+    <ul id="usersList">
+    </ul>
+
+    <script src="mustache.min.js"></script>
+
+    <script id="userTemplate" type="text/template">
+        {{#users}}
+        <li>{{name.first}} {{name.last}} ({{email}})</li>
+        {{/users}}
+    </script>
+    
+    <script>
+        /*
+        Задание:
+        Перепишите код таким образом, чтобы в нем использовались шаблоны.
+        Результат работы данного кода не должен измениться.
+        */
+        let users = [
+            {
+                balance: '1250.89',
+                age: 24,
+                name: {
+                    first: 'Golden',
+                    last: 'Clements'
+                },
+                company: 'EWAVES',
+                email: 'golden.clements@ewaves.io',
+                favoriteFruit: 'strawberry'
+            },
+            {
+                balance: '3637.94',
+                age: 23,
+                name: {
+                    first: 'Francis',
+                    last: 'Hebert'
+                },
+                company: 'XPLOR',
+                email: 'francis.hebert@xplor.biz',
+                favoriteFruit: 'apple'
+            },
+            {
+                balance: '1106.44',
+                age: 31,
+                name: {
+                    first: 'Hale',
+                    last: 'Cross'
+                },
+                company: 'EARTHPURE',
+                email: 'hale.cross@earthpure.us',
+                favoriteFruit: 'strawberry'
+            },
+            {
+                balance: '2502.43',
+                age: 25,
+                name: {
+                    first: 'Delores',
+                    last: 'Sykes'
+                },
+                company: 'ASSITIA',
+                email: 'delores.sykes@assitia.com',
+                favoriteFruit: 'strawberry'
+            },
+            {
+                balance: '3651.54',
+                age: 21,
+                name: {
+                    first: 'Ryan',
+                    last: 'Bolton'
+                },
+                company: 'MOLTONIC',
+                email: 'ryan.bolton@moltonic.biz',
+                favoriteFruit: 'apple'
+            },
+            {
+                balance: '1345.79',
+                age: 21,
+                name: {
+                    first: 'Carey',
+                    last: 'Schwartz'
+                },
+                company: 'UXMOX',
+                email: 'carey.schwartz@uxmox.info',
+                favoriteFruit: 'banana'
+            },
+            {
+                balance: '3261.11',
+                age: 30,
+                name: {
+                    first: 'Trevino',
+                    last: 'Mullins'
+                },
+                company: 'TERRASYS',
+                email: 'trevino.mullins@terrasys.org',
+                favoriteFruit: 'banana'
+            },
+            {
+                balance: '1659.17',
+                age: 20,
+                name: {
+                    first: 'Gilliam',
+                    last: 'Mendez'
+                },
+                company: 'ZENTHALL',
+                email: 'gilliam.mendez@zenthall.tv',
+                favoriteFruit: 'strawberry'
+            },
+            {
+                balance: '2340.54',
+                age: 32,
+                name: {
+                    first: 'Brewer',
+                    last: 'Vargas'
+                },
+                company: 'QIMONK',
+                email: 'brewer.vargas@qimonk.co.uk',
+                favoriteFruit: 'apple'
+            },
+            {
+                balance: '1736.91',
+                age: 24,
+                name: {
+                    first: 'Newman',
+                    last: 'Wynn'
+                },
+                company: 'VISALIA',
+                email: 'newman.wynn@visalia.name',
+                favoriteFruit: 'apple'
+            }
+        ];
+
+        // let list = document.querySelector("#usersList");
+        
+        // for (let i = 0; i < users.length; i++) { 
+        //     const currentUser = users[i];
+        //     let fullName = `${currentUser.name.first} ${currentUser.name.first}`;
+        //     let liContent = `${fullName} (${currentUser.email})`;
+        //     let li = document.createElement("li");
+        //     li.textContent = liContent;
+        //     list.append(li);
+        // }
+
+        let list = document.querySelector("#usersList");
+        let template = document.querySelector("#userTemplate").innerHTML;
+        let rendered = Mustache.render(template, { users: users });
+        list.innerHTML = rendered;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 04</title>
+    <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td, th {
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="Table_month">
+    </table>
+
+    <script>
+        /*
+        Задание:
+        Создайте шаблон и выведите содержимое массива source в таблице на текущей странице.
+        Свойство month должно выводиться в первый столбец, а свойство amount во второй столбец таблицы.
+        Количество строк таблицы должно соответствовать количеству элементов массива source. Используйте любой удобный способ работы с шаблонами.
+        */
+
+        let source = [
+            {
+                month: "Январь",
+                amount: 20
+            },
+            {
+                month: "Февраль",
+                amount: 140
+            },
+            {
+                month: "Март",
+                amount: 115
+            },
+            {
+                month: "Апрель",
+                amount: 100
+            },
+            {
+                month: "Март",
+                amount: 80
+            },
+            {
+                month: "Июнь",
+                amount: 90
+            },
+            {
+                month: "Июль",
+                amount: 100
+            }
+        ];
+
+
+
+        let table = document.getElementById('Table_month');
+
+        let header = table.createTHead();
+        let row = header.insertRow(0);
+        let thMonth = document.createElement("th");
+        let thAmount = document.createElement("th");
+        thMonth.innerText = "Month";
+        thAmount.innerText = "Amount";
+        row.appendChild(thMonth);
+        row.appendChild(thAmount);
+
+
+        //создание табл
+        let tbody = table.createTBody();
+        source.forEach(data => 
+        {
+            let row = tbody.insertRow();
+            let cellMonth = row.insertCell(0);
+            let cellAmount = row.insertCell(1);
+            cellMonth.innerText = data.month;
+            cellAmount.innerText = data.amount;
+        });
+        
+    </script>
+</body>
+
+</html>

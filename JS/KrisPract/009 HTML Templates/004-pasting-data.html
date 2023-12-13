@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Внедрение данных в шаблон</title>
+
+    <style>
+        .border {
+            border: 1px solid gray;
+            margin: 4px 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <template>
+        <div class="border">
+            <p>Имя шаблона <span id="template-name"></span>.</p>
+            <p>Шаблон скопирован раз - <span id="template-count"></span></p>
+        </div>
+    </template>
+
+    <button id="add-button">Создать по шаблону</button>
+    <script>
+        let templateCounter = 0;
+        let template = document.querySelector("template");
+
+        document.querySelector("#add-button").addEventListener("click", function () {
+            var templateClone = template.content.cloneNode(true);
+
+            // Внедрение данных в шаблон
+            templateClone.querySelector("#template-name").textContent = "My Template";
+            templateClone.querySelector("#template-count").textContent = ++templateCounter;
+
+            // Размещение шаблона в конце страницы
+            document.body.appendChild(templateClone);
+        });
+
+    </script>
+</body>
+
+</html>

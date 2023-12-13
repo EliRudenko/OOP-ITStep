@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .task-list {
+            width: 500px;
+        }
+
+        #start-message {
+            margin: 10px;
+        }
+
+        .task {
+            display: flex;
+            align-items: center;
+            border: 1px solid gray;
+            padding: 3px 8px;
+            margin: 2px 10px;
+        }
+
+        .task p {
+            margin-left: 4px;
+        }
+
+        .completed {
+            background-color: green;
+            color: white;
+        }
+
+        .completed p {
+            text-decoration: line-through;
+        }
+
+        .input-panel {
+            width: 500px;
+            margin: 8px;
+            padding: 2px;
+        }
+
+        .input-panel button {
+            padding: 4px;
+            width: 25%;
+        }
+
+        .input-panel input {
+            height: 23px;
+            padding-left: 4px;
+            width: 68%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-panel">
+        <input type="text" id="task-name-input">
+        <button id="add-task-btn">Добавить задачу</button>
+    </div>
+
+    <div class="task-list">
+        <p id="start-message">Нет новых задач</p>
+    </div>
+
+    <template id="template">
+        <div class="task">
+            <input type="checkbox">
+            <p>{{taskText}}</p>
+        </div>
+    </template>
+
+
+    <script src="mustache.min.js"></script>
+
+    <script>
+        /*
+        Задание:
+        Внесите необходимые правки в шаблон #template (подключите библиотеку mustache.js или используйте чистый JavaScript)
+        Перепишите функцию createTask таким образом, чтобы новые задачи создавались с помощью шаблона #template а не через document.createElement
+        */
+        // let taskNameInput = document.querySelector("#task-name-input");
+        // let addTaskButton = document.querySelector("#add-task-btn");
+        // let startMessage = document.querySelector("#start-message");
+        // let taskList = document.querySelector(".task-list");
+
+        // addTaskButton.addEventListener("click", addTaskHandler);
+        // taskList.addEventListener("click", changeTaskState);
+
+        // function createTask(text) {
+        //     let div = document.createElement("div");
+        //     div.classList.add("task");
+
+        //     let input = document.createElement("input");
+        //     input.type = "checkbox";
+
+        //     let p = document.createElement("p");
+        //     p.innerText = text;
+
+        //     div.append(input);
+        //     div.append(p);
+
+        //     return div;
+        // }
+
+        // function changeTaskState(e) {
+        //     // Если событие пришло не от checkbox - игнорируем его
+        //     if (e.target.nodeName != "input" && e.target.type != "checkbox") {
+        //         return;
+        //     }
+
+        //     if (e.target.checked) {
+        //         e.target.parentElement.classList.add("completed");
+        //     } else {
+        //         e.target.parentElement.classList.remove("completed");
+        //     }
+        // }
+
+        // function addTaskHandler() {
+        //     if (taskNameInput.value) {
+        //         if (!startMessage.hidden) startMessage.hidden = true;
+
+        //         let newTask = createTask(taskNameInput.value);
+        //         taskList.append(newTask);
+        //         taskNameInput.value = "";
+        //     } else {
+        //         alert("введите имя задачи");
+        //     }
+        // }
+
+        let taskNameInput = document.querySelector("#task-name-input");
+        let addTaskButton = document.querySelector("#add-task-btn");
+        let startMessage = document.querySelector("#start-message");
+        let taskList = document.querySelector(".task-list");
+        let template = document.querySelector("#template").innerHTML;
+
+        addTaskButton.addEventListener("click", addTaskHandler);
+        taskList.addEventListener("click", changeTaskState);
+
+        //поменяла
+        function createTaskFromTemplate(text) 
+        {
+            let rendered = Mustache.render(template, { taskText: text });
+            let div = document.createElement('div');
+            div.innerHTML = rendered.trim();
+            return div.firstChild;
+        }
+
+        function changeTaskState(e) 
+        {
+            if (e.target.nodeName != "input" && e.target.type != "checkbox") { return; }
+
+            if (e.target.checked) 
+            {
+                e.target.parentElement.classList.add("completed");
+            } 
+            else { e.target.parentElement.classList.remove("completed"); }
+        }
+
+        function addTaskHandler() 
+        {
+            if (taskNameInput.value) 
+            {
+                if (!startMessage.hidden) startMessage.hidden = true;
+
+                let newTask = createTaskFromTemplate(taskNameInput.value);
+                taskList.append(newTask);
+                taskNameInput.value = "";
+            } else { alert("Введите имя задачи"); }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMContentLoaded</title>
+    <script>
+        // Если попробовать обратиться к элементам в сценарии, расположенном в head
+        // будет получена ошибка, так как браузер еще не знает о существовании элементов
+        // #testDiv и #testImg
+        // console.log(document.querySelector("#testDiv").textContent);
+        // console.log(document.querySelector("#testImg").style.width + "px");
+
+        // DOMContentLoaded - браузер загрузил разметку и построил DOM дерево, 
+        // но внешние ресурсы, например картинки, могут еще загружаться. 
+        document.addEventListener("DOMContentLoaded", function () {
+            let div = document.querySelector("#testDiv")
+            let img = document.querySelector("#testImg")
+           
+            console.log(div.textContent);
+            console.log(getComputedStyle(img).width); // 0px -так как внешние ресурсы еще не загружены размер картинки неизвестен
+        });
+    </script>
+</head>
+
+<body>
+    <div id="testDiv">This is div</div>
+    <img id="testImg" src="https://via.placeholder.com/500" alt="placeholder image 500 * 500">
+</body>
+
+</html>

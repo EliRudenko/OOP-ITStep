@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+</head>
+
+<body>
+    <template id="template">
+        <div>
+            Название книги: <span id="titlePlaceholder"></span> <br />
+            Автор: <span id="authorPlaceholder"></span>
+            <hr />
+        </div>
+    </template>
+
+    <script>
+        /*
+        Задание:
+        Не используя посторонние библиотеки выведите содержимое массива books на экран используя шаблон #template
+        В шаблоне элемент #titlePlaceholder используйте для отображения свойства title из объекта, находящегося в массиве books.
+        В шаблоне элемент #authorPlaceholder используйте для отображения свойства author из объекта, находящегося в массиве books.
+        */
+        let books = 
+        [
+            {
+                title: "JavaScript. Полное руководство 7-е издание",
+                author: "Дэвид Флэнаган"
+            },
+            {
+                title: "JavaScript. Шаблоны",
+                author: "Стоян Стефанов"
+            },
+            {
+                title: "Секреты JavaScript ниндзя",
+                author: "Секреты JavaScript ниндзя"
+            }
+        ];
+    
+        //доступ шаблон
+        const template = document.getElementById('template');
+        const container = document.body;
+
+        //добавление книг в шаблон
+        books.forEach(book => 
+        {
+            //для нового єлемента клонирование шаблона
+            const instance = document.importNode(template.content, true);
+
+            const titlePlaceholder = instance.querySelector('#titlePlaceholder');
+            const authorPlaceholder = instance.querySelector('#authorPlaceholder');
+
+            titlePlaceholder.textContent = book.title;
+            authorPlaceholder.textContent = book.author;
+
+            //добавить
+            container.appendChild(instance);
+        });
+    </script>
+</body>
+
+</html>

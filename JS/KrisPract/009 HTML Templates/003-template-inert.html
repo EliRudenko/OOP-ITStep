@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Template element</title>
+</head>
+
+<body>
+
+	<template>
+		<p>Hello world from template</p>
+
+		<!--Скрипт не выполнится до тех пор, пока шаблон не станет частью DOM дерева-->
+		<script>
+			alert("hi");
+		</script>
+
+		<!--Изображение не будет отображаться до тех пор, пока шаблон не будет скопирован в DOM дерево-->
+		<img src="https://via.placeholder.com/500" />
+	</template>
+
+	<button id="btn">Вставить контент шаблона</button>
+
+	<script>
+		document.querySelector("#btn").addEventListener("click", function () {
+			var template = document.querySelector("template");
+			var templateClone = template.content.cloneNode(true);
+			// Сценарий и изображение из шаблона начнут работать только после клонирования шаблона в DOM дерево
+			document.body.appendChild(templateClone);
+		});
+	</script>
+
+</body>
+
+</html>

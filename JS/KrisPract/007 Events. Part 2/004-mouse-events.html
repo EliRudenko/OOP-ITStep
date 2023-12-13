@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>События мыши</title>
+    <style>
+        .rect {
+            background-color: green;
+            width: 200px;
+            height: 200px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rect" id="testDiv"></div>
+
+    <script>
+        let div = document.querySelector("#testDiv");
+        div.addEventListener("mouseover", mouseOverHanderl); // курсор попал в div
+        div.addEventListener("mouseout", mouseOutHanderl); // курсор вышел за пределы div
+        div.addEventListener("mousemove", mouseMoveHanderl); // курсор перемещается по div
+
+        function mouseOutHanderl() {
+            div.style.backgroundColor = "green";
+        }
+
+        function mouseOverHanderl() {
+            div.style.backgroundColor = "orange";
+        }
+
+        function mouseMoveHanderl(e) {
+            let message = `X:${e.clientX}; Y:${e.clientY}`;
+            div.textContent = message;
+        }
+    </script>
+</body>
+
+</html>

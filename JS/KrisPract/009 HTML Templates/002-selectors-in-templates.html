@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Элемнет Template</title>
+</head>
+
+<body>
+    <template>
+        <p>Hello world from template</p>
+    </template>
+
+    <script>
+        // Для шаблонов не работают селекторы
+        var pInTemplate = document.querySelector("template p");
+        console.log(pInTemplate); // null
+    </script>
+</body>
+
+</html>
