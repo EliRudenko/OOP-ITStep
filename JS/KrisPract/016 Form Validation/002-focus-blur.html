@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>События focus и blur</title>
+
+    <style>
+        .form-group {
+            margin: 4px;
+        }
+
+        .form-group label {
+            width: 75px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <form action="#" method="GET">
+            <label>Запрос</label>
+            <input type="text" name="search">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Поиск">
+            </div>
+        </form>
+
+        <script>
+            const form = document.forms[0];
+            // focus - событие происходит, когда элемент получает фокус. Событие не всплывает. Например, при клике по элементу или при переходе
+            // на элемент при помощи клавиши Tab. Событие указывает на то, что пользователь готовится к вводу данных.
+            // Может использоваться для инициализации данных, необходимых во время ввода. 
+            form.search.addEventListener("focus", function () { console.log("focus") });
+
+            // blur - событие происходит в момент потери фокуса, когда выполняется клик за пределами элемента управления, 
+            // или фокус получает другой элемент управления. Событие не всплывает. Событие указывает на то, что пользователь ввел данные.
+            // Чаще всего используется для проверки введенных пользователем данных
+            form.search.addEventListener("blur", function () { console.log("blur") });
+
+            // Так как события focus и blur не поддерживают всплытие, есть дополнительные события focusin и focusout которые поддерживают
+            // всплытие, но обработчики для этих событий могут быть добавлены только с помощью addEventListener
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button & Check Box</title>
+</head>
+
+<body>
+    <form>
+        Выберите валюту: <br>
+        <!-- для того, чтобы элементы типа radio объединялись в группу, в которой только один элемент может быть выделенным, нужно указать общее значение для атрибута name -->
+        USD<input type="radio" name="currency" value="USD" checked><br>
+        UAH<input type="radio" name="currency" value="UAH"><br>
+        RUB<input type="radio" name="currency" value="RUB"><br>
+        Согласен с условиями использования <input type="checkbox" name="termsAccepted">
+    </form>
+    <button id="checkButton">Проверить значения</button>
+    <script>
+        const form = document.forms[0];
+        document.querySelector("#checkButton").addEventListener("click", function () {
+            console.log("Согласен с условиями " + form.termsAccepted.checked);
+            console.log("Выбранная валюта " + form.currency.value);
+        });
+    </script>
+</body>
+
+</html>

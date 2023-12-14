@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 03</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form-group {
+            margin: 4px 10px;
+            display: inline-block;
+        }
+
+        .form-group label {
+            display: block;
+        }
+
+        [type=button] {
+            margin: 10px;
+        }
+
+        table {
+            margin: 10px
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td,
+        th {
+            padding: 8px;
+        }
+
+        input 
+        {
+            background-color: chocolate;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <form name="productForm">
+        <div class="form-group">
+            <label for="name">Название</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Цена</label>
+            <input type="text" id="price" name="price">
+        </div>
+
+        <div class="form-group">
+            <label for="currency">Валюта</label>
+            <select id="currency" name="currency">
+                <option value="USD">U.S. Dollar</option>
+                <option value="RUB">Russian Ruble</option>
+                <option value="UAH">Ukrainian Hryvnia</option>
+                <option value="EUR">Euro</option>
+                <option value="PLN">Polish Zloty</option>
+                <option value="CHF">Swiss Franc</option>
+            </select>
+        </div>
+        <br>
+        <input id="saveButton" type="button" value="Сохранить">
+    </form>
+
+    <table id="productsTable">
+
+    </table>
+
+    <script>
+        /*
+        Задание:
+        Поменяйте radio на select с вариантами валют -
+        value - USD, текст для пользователя - U.S. Dollar
+        value - RUB, текст для пользователя - Russian Ruble   НЕТ
+        value - UAH, текст для пользователя - Ukrainian Hryvnia
+        value - EUR, текст для пользователя - Euro
+        value - PLN, текст для пользователя - Polish Zloty
+        value - CHF, текст для пользователя - Swiss Franc
+        
+        Поведение функции addRow не должно измениться
+        */
+        // let productForm = document.forms.productForm;
+        // let productsTable = document.querySelector("#productsTable");
+        // let saveButton = document.querySelector("#saveButton");
+
+        // saveButton.addEventListener("click", function () {
+        //     addRow(productForm.name.value,
+        //         productForm.price.value,
+        //         productForm.currency.value);
+
+        //     for (let i = 0; i < productForm.elements.length; i++) {
+        //         const element = productForm.elements[i];
+        //         if (element.type == "text") element.value = "";
+        //     }
+        // });
+
+        // function addRow(name, price, currency) {
+        //     let tr = document.createElement("tr");
+        //     tr.insertAdjacentHTML("beforeend", `<td>${name}</td>`);
+        //     tr.insertAdjacentHTML("beforeend", `<td>${price}</td>`);
+        //     tr.insertAdjacentHTML("beforeend", `<td>${currency}</td>`);
+        //     productsTable.append(tr);
+        // }
+
+
+        let productForm = document.forms.productForm;
+        let productsTable = document.querySelector("#productsTable");
+        let saveButton = document.querySelector("#saveButton");
+
+        saveButton.addEventListener("click", function () 
+        {
+            addRow(productForm.name.value,
+                productForm.price.value,
+                productForm.currency.value);
+
+            for (let i = 0; i < productForm.elements.length; i++) 
+            {
+                const element = productForm.elements[i];
+                if (element.type == "text" || element.tagName.toLowerCase() == "select") { element.value = ""; }
+            }
+        });
+
+        function addRow(name, price, currency) 
+        {
+            let tr = document.createElement("tr");
+            tr.innerHTML = `<td>${name}</td><td>${price}</td><td>${currency}</td>`;
+            productsTable.appendChild(tr);
+        }
+
+    </script>
+</body>
+
+</html>

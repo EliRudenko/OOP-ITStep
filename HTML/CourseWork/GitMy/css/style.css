@@ -463,12 +463,14 @@ main
 {
     flex: 1 1 auto;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: flex-start;
     padding-top: 2vh;
 
     margin-left: 9%;
-    margin-right: 10%;
+    margin-right: 9%; /* 10%!!!*/
+
+    margin-bottom: 100px;
 
     /* background-color: blueviolet; */
 
@@ -478,9 +480,9 @@ main
 
 section 
 {
-    flex: 0 0 75%; /**!!!!!!!!!!!!!*/
+    flex: 0 0 74%; /**!!!!!!!!!!!!!*/
     padding: 0px;
-    margin-right: 8%;
+    margin-right: 0%;
 
     /* background-color: chartreuse; */
 }
@@ -491,7 +493,6 @@ section
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* text-align: center; */
 
     height: 5vh;
 
@@ -1142,8 +1143,12 @@ label { cursor: pointer; }
 footer 
 {
     position: absolute;
+    /* position: relative; */
     bottom: 0;
     width: 100%; 
+
+    /* flex-shrink: 0; */
+
     height: 95px;
     display: flex;
     align-content: center;
@@ -1162,8 +1167,10 @@ footer
     align-items: center;
     padding-top: 6px;
     width: 100%; 
+    /* padding-top: 2%;
+    padding-bottom: 3%;
+    margin-top: 10%; */
 }
-
 
 .footer-list 
 {

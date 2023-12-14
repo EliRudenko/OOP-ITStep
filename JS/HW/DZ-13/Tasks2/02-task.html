@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form-group {
+            margin: 4px 10px;
+            display: inline-block;
+        }
+
+        .form-group label {
+            display: block;
+        }
+
+        [type=button] {
+            margin: 10px;
+        }
+
+        table {
+            margin: 10px
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        td,
+        th {
+            padding: 8px;
+        }
+
+        input 
+        {
+            background-color: chocolate;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <form name="productForm">
+        <div class="form-group">
+            <label for="name">Название</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Цена</label>
+            <input type="text" id="price" name="price">
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Количество на складе</label>
+            <input type="text" id="quantity" name="quantity">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Валюта</label>
+            <input type="radio" id="currencyUSD" name="currency" value="USD" checked> USD
+            <input type="radio" id="currencyEUR" name="currency" value="EUR"> EUR
+        </div>
+        <br>
+        <input id="saveButton" type="button" value="Сохранить">
+    </form>
+
+    <table id="productsTable">
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Валюта</th>
+            <th>Количество на складе</th>
+        </tr>
+    </table>
+    <script>
+        /*
+        Задание:
+        Добавьте в форму поле ввода "количество на складе". Сделайте так, чтобы при нажатии на кнопку "Сохранить" значение из поля "количество на складе"
+        добавлялось как четвертая колонка в таблице.
+        */
+        // let productForm = document.forms.productForm;
+        // let productsTable = document.querySelector("#productsTable");
+        // let saveButton = document.querySelector("#saveButton");
+
+        // saveButton.addEventListener("click", function () {
+        //     addRow(productForm.name.value,
+        //         productForm.price.value,
+        //         productForm.currency.value);
+
+        //     for (let i = 0; i < productForm.elements.length; i++) {
+        //         const element = productForm.elements[i];
+        //         if (element.type == "text") element.value = "";
+        //     }
+        // });
+
+        // function addRow(name, price, currency) {
+        //     let tr = document.createElement("tr");
+        //     tr.insertAdjacentHTML("beforeend", `<td>${name}</td>`);
+        //     tr.insertAdjacentHTML("beforeend", `<td>${price}</td>`);
+        //     tr.insertAdjacentHTML("beforeend", `<td>${currency}</td>`);
+        //     productsTable.append(tr);
+        // }
+
+        let productForm = document.forms.productForm;
+        let productsTable = document.querySelector("#productsTable");
+        let saveButton = document.querySelector("#saveButton");
+
+        saveButton.addEventListener("click", function () 
+        {
+            addRow(
+                productForm.name.value,
+                productForm.price.value,
+                productForm.currency.value,
+                productForm.quantity.value
+            );
+
+
+            for (let i = 0; i < productForm.elements.length; i++) 
+            {
+                const element = productForm.elements[i];
+                if (element.type == "text" || element.type == "number") { element.value = ""; }
+            }
+        });
+
+        //заменила
+        function addRow(name, price, currency, quantity) 
+        {
+            let tr = document.createElement("tr");
+            tr.innerHTML = `<td>${name}</td><td>${price}</td><td>${currency}</td><td>${quantity}</td>`;
+            productsTable.appendChild(tr);
+        }
+
+    </script>
+</body>
+
+</html>

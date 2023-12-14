@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Встроенная валидация</title>
+    <style>
+        .form-group {
+            margin: 12px 4px;
+        }
+
+        .form-group label {
+            display: block;
+        }
+
+        .form-group label.inline {
+            display: inline-block;
+        }
+
+        /* :valid - псевдокласс находит элементы, которые прошли валидацию */
+        input:valid {
+            border: 1px solid green;
+        }
+
+        /* :invalid - псевдокласс находит элементы, которые не прошли валидацию */
+        input:invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <!-- 
+            HTML5 атрибуты для валидации:
+            required - поле, обязательное для заполнения
+            min - значение должно быть равным или больше, чем указанное
+            max - значение должно быть равным или меньше, чем указанное
+            pattern - проверка с помощью регулярного выражения
+            minlength - количество символов должно быть больше, чем указанное или равным ему
+            maxlength - количество символов должно быть меньше, чем указанное или равным ему
+
+            Типы input с проверкой:
+            email - проверяет формат введенного значения на соответствие электронному адресу
+            url - на соответствие абсолютному URL
+        -->
+
+        <div class="form-group">
+            <label>Имя</label>
+            <input type="text" name="firstNameInput" required>
+        </div>
+        <div class="form-group">
+            <label>Фамилия</label>
+            <input type="text" name="lastNameInput" required>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="emailInput" required>
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" name="passwordInput" required minlength="6" maxlength="16">
+        </div>
+        <div class="form-group">
+            <label>Подтверждение пароля</label>
+            <input type="password" name="passwordConfirmInput" required minlength="6" maxlength="16">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="acceptedInput" required>
+            <label class="inline">Согласен с условиями использования</label>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Зарегистрироваться">
+        </div>
+    </form>
+
+    <a href="#" id="checkLink">Проверить правильность формы</a>
+
+    <script>
+        const form = document.forms[0];
+        const link = document.querySelector("#checkLink");
+
+        form.addEventListener("submit", function (e) {
+            alert("Форма отправлена");
+        });
+
+        link.addEventListener("click", function () {
+            alert(form.checkValidity()); 
+            // checkValidity - проверяет есть ли ограничение у элемента и соответствует ли значение элемента этим ограничениям
+            // возвращает false если есть ошибки валидации, и true - если проверка прошла успешно
+        });
+    </script>
+</body>
+
+</html>

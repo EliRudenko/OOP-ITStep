@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autofocus</title>
+    <style>
+        .form-group {
+            margin: 4px;
+        }
+
+        .form-group label {
+            width: 75px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="GET">
+        <div class="form-group">
+            <label>Запрос</label>
+            <input type="text" name="search" autofocus>
+            <!-- autofocus - устанавливает фокус на элементе управления при загрузке страницы -->
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Поиск">
+        </div>
+    </form>
+
+    <script>
+        const form = document.forms[0];
+        form.search.focus(); // установка фокуса через JavaScript
+    </script>
+</body>
+
+</html>

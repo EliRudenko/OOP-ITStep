@@ -10,6 +10,7 @@
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/actions.css">
 
 </head>
 <body>
@@ -271,14 +272,21 @@
   
 
         <main>
-
-            <section>                
-                <article>
-                   
-                </article>
-            </section>
-
-
+            <div class="for-cards">
+                <template id="block-template">
+                    <div class="block">
+                        <div class="for-block-head">
+                            <div class="textTop"></div>
+                            <img src="" alt="Image">
+                        </div>
+                        
+                        <div class="text textBottom"></div>
+                        <a href="#" class="bottomLink">Ссылка</a>
+                    </div>
+                </template>
+                <div class="container"></div>
+            </div>
+            
         </main>
 
         
@@ -307,9 +315,70 @@
             
         </footer>
 
-
-
     </div>
+
+    
+    <script>
+        const container = document.querySelector('.container');
+        const blockTemplate = document.getElementById('block-template');
+
+        function createBlock(imageSrc, textTop, textBottom) {
+            const blockInstance = blockTemplate.content.cloneNode(true);
+
+            blockInstance.querySelector('img').src = imageSrc;
+            blockInstance.querySelector('.textTop').textContent = textTop;
+            blockInstance.querySelector('.textBottom').textContent = textBottom;
+
+            return blockInstance;
+        }
+
+        const blockInfo = [
+            {
+                imageSrc: 'путь_к_картинке_1.jpg',
+                textTop: 'Текст 1',
+                textBottom: 'Дополнительный текст 1'
+            },
+            {
+                imageSrc: 'путь_к_картинке_2.jpg',
+                textTop: 'Текст 2',
+                textBottom: 'Дополнительный текст 2'
+            },
+            {
+                imageSrc: 'путь_к_картинке_3.jpg',
+                textTop: 'Текст 3',
+                textBottom: 'Дополнительный текст 3'
+            }
+        ];
+
+        blockInfo.forEach(info => {
+            const block = createBlock(info.imageSrc, info.textTop, info.textBottom);
+            container.appendChild(block);
+        });
+
+        const blockInfo2 = [
+            {
+                imageSrc: 'путь_к_картинке_1.jpg',
+                textTop: 'Текст 4',
+                textBottom: 'Дополнительный текст 1'
+            },
+            {
+                imageSrc: 'путь_к_картинке_2.jpg',
+                textTop: 'Текст 5',
+                textBottom: 'Дополнительный текст 2'
+            },
+            {
+                imageSrc: 'путь_к_картинке_3.jpg',
+                textTop: 'Текст 6',
+                textBottom: 'Дополнительный текст 3'
+            }
+        ];
+
+        blockInfo2.forEach(info => {
+            const block = createBlock(info.imageSrc, info.textTop, info.textBottom);
+            container.appendChild(block);
+        });
+    </script>
+
 </body>
 </html>
 

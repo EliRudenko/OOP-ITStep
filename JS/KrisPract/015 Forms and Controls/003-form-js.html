@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Простая форма</title>
+
+    <style>
+        .form-grop {
+            margin: 4px;
+        }
+
+        .form-grop label {
+            width: 75px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="loginForm">
+        <div class="form-grop">
+            <label>Логин</label>
+            <input type="text" name="loginInput">
+        </div>
+        <div class="form-grop">
+            <label>Пароль</label>
+            <input type="password" name="passwordInput">
+        </div>
+        <div class="form-grop">
+             <input type="submit" value="Вход"> <!-- Отправляет запрос на сервер, страница перегружается -->
+        </div>
+    </form>
+
+    <a href="#" id="checkFormButton">Проверить форму</a> <br />
+    <a href="#" id="checkValuesButton">Проверить значения элементов</a>
+
+    <script>
+        // Способы получения форм текущего документа
+        let form1 = document.forms.loginForm; // получение формы с атрибутом name=loginForm
+        let form2 = document.forms[0]; // получение первой формы в документе
+        let form3 = document.querySelector("[name=loginForm]"); // через CSS селектор
+
+        document.querySelector("#checkFormButton").addEventListener("click", function () {
+            // все элементы, содержащиеся в форме, доступны через коллекцию elements на объекте формы
+            for (let i = 0; i < form1.elements.length; i++) {
+                const element = form1.elements[i];
+                console.log(element.name + " = " + element.value);
+            }
+        });
+
+        document.querySelector("#checkValuesButton").addEventListener("click", function () {
+            // получить доступ к элементу управления можно по имени на коллекции elements объекта form
+            // form.elements.<element-name>
+            console.log(form1.elements.loginInput.value);
+            console.log(form1.elements.passwordInput.value);
+
+            // альтернативная, более короткая форма записи, но может повлечь ошибки, если значение name во время выполнения будет изменено
+            // атрибут name элементов во время выполнения меняется крайне редко 
+            // form.<element-name>
+            console.log(form1.loginInput.value);
+            console.log(form1.passwordInput.value);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Использование textarea</title>
+</head>
+
+<body>
+    <form>
+        <input name="titleInput" type="text"> <br>
+        <textarea name="commentTextArea" cols="30" rows="10">Поле для комментария</textarea><br>
+    </form>
+    <button id="check">Проверить значения</button>
+    <script>
+        document.querySelector("#check").addEventListener("click", function () {
+            const form = document.forms[0];
+            console.log(form.titleInput.value);
+            console.log(form.commentTextArea.value); // содержит дефолтное значение или значение, которое вводил пользователь
+            console.log(form.commentTextArea.innerHTML); // содержит значение, которое находится в разметке
+        });
+    </script>
+</body>
+
+</html>

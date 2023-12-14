@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Блоки</title>
-  <!-- <link rel="stylesheet" href="styles.css"> -->
   <style>
-    .block 
-    {
+    .block {
         width: 200px;
         height: 100px;
         border: 1px solid #000;
@@ -14,27 +12,51 @@
         vertical-align: top;
         margin: 10px;
         padding: 10px;
+        position: relative;
     }
 
-    .block img {
+    .for-block-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .for-block-head img {
+        display: flex;
         max-width: 100%;
         height: auto;
     }
 
     .text {
+        flex: 0 0 50%;
         margin-top: 10px;
     }
 
+    .bottomLink {
+        position: absolute;
+        bottom: 5px;
+        /* left: 50%; */
+        /* transform: translateX(-50%); */
+        background-color: #81818160;
+        border: 2px solid rgba(69, 69, 69, 0.249);
+        border-radius: 5px;
+        padding: 2px 12px 4px;
+        color: white;
+        text-decoration: none;
+    }
   </style>
 </head>
-
 <body>
     <div style="width: 50%;">
         <template id="block-template">
             <div class="block">
-                <img src="" alt="Image">
-                <div class="textTop"></div>
+                <div class="for-block-head">
+                    <div class="textTop"></div>
+                    <img src="" alt="Image">
+                </div>
+                
                 <div class="text textBottom"></div>
+                <a href="#" class="bottomLink">Ссылка</a>
             </div>
         </template>
         <div class="container"></div>
