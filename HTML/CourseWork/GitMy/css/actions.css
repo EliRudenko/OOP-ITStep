@@ -6,21 +6,33 @@ main
 }
 
 
+
+.for-img > img
+{
+    width: 35px;
+    padding: 5px;
+    margin-top: 0px;
+    background-color: rgb(57, 74, 100);
+    border-radius: 50%;
+    /* border: 1px solid aqua; */
+}
+
 .block 
 {
     display: flex;
     justify-content: space-between;
     /* width: 312px; */
-    height: 135px;
+    height: 200px;
     width: 24%; /*фигня*/
 
     border: 1px solid #000;
     border-radius: 10px;
     display: inline-block;
-    /* vertical-align: top; */
+    vertical-align: top;
 
     margin: 5px;
     padding: 25px;
+    padding-top: 20px;
     position: relative;
 }
 
@@ -51,20 +63,37 @@ main
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    width: 100%;
+    margin-bottom: 10px;
+    /* height: 50px; */
 }
 
-.for-block-head img 
+/* .for-block-head img 
 {
     display: flex;
     max-width: 100%;
     height: auto;
-}
+} */
 
-.text 
+/* .text 
 {
     flex: 0 0 50%;
     margin-top: 10px;
+} */
+.textBottom
+{
+    height: auto; 
+    width: 80%;
+    background-color: aqua;
+    overflow: hidden; 
 }
+
+/* .text
+{
+    background-color: aqua;
+    margin-bottom: 20px;
+} */
 
 .bottomLink 
 {

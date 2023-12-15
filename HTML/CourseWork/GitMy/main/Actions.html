@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/actions.css">
 
+
 </head>
 <body>
     <div class="container-fuul">
@@ -276,10 +277,18 @@
                 <template id="block-template">
                     <div class="block">
                         <div class="for-block-head">
-                            <div class="textTop"></div>
-                            <img src="" alt="Image">
+                            <div>
+                                <div class="textTop"></div>
+                                <div class="textAdd"></div>
+                            </div>
+                            
+                           
+                            <div class="for-img">
+                                <img src="" alt="Image">
+                            </div>
+                            
                         </div>
-                        
+                       
                         <div class="text textBottom"></div>
                         <a href="#" class="bottomLink">Ссылка</a>
                     </div>
@@ -322,11 +331,12 @@
         const container = document.querySelector('.container');
         const blockTemplate = document.getElementById('block-template');
 
-        function createBlock(imageSrc, textTop, textBottom) {
+        function createBlock(imageSrc, textTop, textAdd, textBottom) {
             const blockInstance = blockTemplate.content.cloneNode(true);
 
             blockInstance.querySelector('img').src = imageSrc;
             blockInstance.querySelector('.textTop').textContent = textTop;
+            blockInstance.querySelector('.textAdd').textContent = textAdd;
             blockInstance.querySelector('.textBottom').textContent = textBottom;
 
             return blockInstance;
@@ -334,49 +344,55 @@
 
         const blockInfo = [
             {
-                imageSrc: 'путь_к_картинке_1.jpg',
-                textTop: 'Текст 1',
+                imageSrc: '../img/action/1.png',
+                textTop: 'Jekyll using Docker image',
+                textAdd: '11111',
+                textBottom: 'Package a Jekyll site using the jekyll/builder Docker image.'
+            
+            },
+            {
+                imageSrc: '../img/action/2.png',
+                textTop: 'C/C++ with Make',
+                textAdd: '1111111111',
+                textBottom: 'Build and test a C/C++ project using Make.'
+            },
+            {
+                imageSrc: '../img/action/1.png',
+                textTop: 'Jekyll using Docker image',
+                textAdd: '11111',
                 textBottom: 'Дополнительный текст 1'
-            },
-            {
-                imageSrc: 'путь_к_картинке_2.jpg',
-                textTop: 'Текст 2',
-                textBottom: 'Дополнительный текст 2'
-            },
-            {
-                imageSrc: 'путь_к_картинке_3.jpg',
-                textTop: 'Текст 3',
-                textBottom: 'Дополнительный текст 3'
             }
         ];
 
         blockInfo.forEach(info => {
-            const block = createBlock(info.imageSrc, info.textTop, info.textBottom);
+            const block = createBlock(info.imageSrc, info.textTop,info.textAdd, info.textBottom);
             container.appendChild(block);
         });
 
-        const blockInfo2 = [
-            {
-                imageSrc: 'путь_к_картинке_1.jpg',
-                textTop: 'Текст 4',
-                textBottom: 'Дополнительный текст 1'
-            },
-            {
-                imageSrc: 'путь_к_картинке_2.jpg',
-                textTop: 'Текст 5',
-                textBottom: 'Дополнительный текст 2'
-            },
-            {
-                imageSrc: 'путь_к_картинке_3.jpg',
-                textTop: 'Текст 6',
-                textBottom: 'Дополнительный текст 3'
-            }
-        ];
+        // const blockInfo2 = [
+        //     {
+        //         imageSrc: 'путь_к_картинке_1.jpg',
+        //         textTop: 'Текст 4',
+        //         textBottom: 'Дополнительный текст 1'
+        //     },
+        //     {
+        //         imageSrc: 'путь_к_картинке_2.jpg',
+        //         textTop: 'Текст 5',
+        //         textBottom: 'Дополнительный текст 2'
+        //     },
+        //     {
+        //         imageSrc: 'путь_к_картинке_3.jpg',
+        //         textTop: 'Текст 6',
+        //         textBottom: 'Дополнительный текст 3'
+        //     }
+        // ];
 
-        blockInfo2.forEach(info => {
-            const block = createBlock(info.imageSrc, info.textTop, info.textBottom);
-            container.appendChild(block);
-        });
+        // blockInfo2.forEach(info => {
+        //     const block = createBlock(info.imageSrc, info.textTop, info.textBottom);
+        //     container.appendChild(block);
+        // });
+
+
     </script>
 
 </body>

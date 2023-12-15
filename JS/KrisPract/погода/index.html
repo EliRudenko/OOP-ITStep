@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Получение прогноза погоды</title>
+</head>
+<style>
+    * {
+        font-size: 20px;
+    }
+
+    span {
+        color:chocolate;
+        font-size: 32px;
+        align-items: center;
+        display: flex;
+    }
+    img
+    {
+        width: 80px;
+    }
+
+    .block
+    {
+        align-items: center;
+        display: flex;
+    }
+
+    input
+    {
+       width: 300px;
+    }
+
+    button
+    {
+        background-color: chocolate;
+
+    }
+</style>
+
+<body>
+    <input type="text" id="cityInput" placeholder="Введите город">
+    <button id="submitBtn">Изменить город</button>
+    <h1>Прогноз погоды <span id="city"> </span></h1>
+    <div id="weatherInfo">
+        <div>
+            <div id="weather"></div>
+            <div class="block">
+                <div>
+                    <span id="temperature"></span>
+                </div>
+                <div>
+                    <img id="img" />
+                </div>
+                
+            </div>
+           
+        </div>
+        
+    </div>
+    <div id="description"></div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const apiKey = 'd77e8a80bfcc7551c3135a39d716ce92';
+
+            let city = 'Odessa';
+            const weatherElement = document.getElementById('weather');
+            const temperatureElement = document.getElementById('temperature');
+            const descriptionElement = document.getElementById('description');
+            const iconw = document.getElementById('img');
+            const cit = document.getElementById('city');
+            const cityInput = document.getElementById('cityInput');
+            const submitBtn = document.getElementById('submitBtn');
+
+            const showWeather = (cityName) => {
+                const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+                fetch(url)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        weatherElement.innerHTML = `${cityName}`;
+                        const temperature = data.main.temp;
+                        const description = data.weather[0].description;
+                        const icn = data.weather[0].icon;
+
+                        // cit.innerText = data.name;
+                        temperatureElement.innerHTML = `Текущая температура: ${temperature}°C`;
+                        iconw.src = `https://openweathermap.org/img/wn/${icn}.png`;
+                        descriptionElement.innerHTML = `Описание: ${description}`;
+                    })
+                    .catch((error) => {
+                        console.error('Произошла ошибка:', error);
+                    });
+            };
+
+            showWeather(city);
+
+            submitBtn.addEventListener('click', () => 
+            {
+                const userInput = cityInput.value.trim();
+                if (userInput) 
+                {
+                    city = userInput;
+                    showWeather(city);
+                    cityInput.value = ''; 
+                }
+            });
+        });
+    </script>
+</body>
+
+
+</html>
