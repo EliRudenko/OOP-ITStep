@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+</head>
+
+<body>
+    <button id="button1">Запрос</button>
+    <div id="output"></div>
+    <script>
+        /*
+        Задание:
+        Добавьте обработку статус кодов ошибок на стороне сервера и на стороне клиента
+        для сетевого запроса, который выполняется при нажатии на кнопку "Запрос" 
+        */
+
+        // let button1 = document.querySelector("#button1");
+        // let output = document.querySelector("#output");
+        // let url = "https://jsonplaceholder.typicode.com/todos/100000";
+
+        // button1.addEventListener("click", function () {
+        //     fetch(url)
+        //         .then(response => response.json())  
+        //         .then(json => {
+        //             output.innerHTML = "";
+        //             output.innerHTML += "<br>id: " + json.id;
+        //             output.innerHTML += "<br>user id: " + json.userId;
+        //             output.innerHTML += "<br>title: " + json.title;
+        //             output.innerHTML += "<br>completed: " + json.completed;
+        //         });
+        // });
+
+
+
+        let button1 = document.querySelector("#button1");
+        let output = document.querySelector("#output");
+        let url = "https://jsonplaceholder.typicode.com/todos/100000";
+
+        button1.addEventListener("click", function () 
+        {
+            fetch(url)
+                .then(response => 
+                {
+                    if (!response.ok) 
+                    {
+                        throw new Error('Network response was not ok.');
+                    }
+                    return response.json();
+                })
+
+
+                .then(json => 
+                {
+                    output.innerHTML = "";
+                    output.innerHTML += "<br>id: " + json.id;
+                    output.innerHTML += "<br>user id: " + json.userId;
+                    output.innerHTML += "<br>title: " + json.title;
+                    output.innerHTML += "<br>completed: " + json.completed;
+                })
+
+
+                .catch(error => 
+                {
+                    output.innerHTML = "Error: " + error.message;
+                });
+        });
+
+    </script>
+</body>
+
+</html>

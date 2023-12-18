@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Добавление задачи</title>
+  <style>
+    /*ДЛЯ КУРСОРА!!!!! лучший вариант*/
+    #submitButton:disabled { cursor: not-allowed; }
+  </style>
+</head>
+<body>
+
+  <h1>Добавить задачу</h1>
+  <form id="taskForm">
+
+    <label for="title">Название задачи:</label><br>
+    <input type="text" id="title" name="title" required><br>
+
+    <label for="description">Объяснение:</label><br>
+    <textarea id="description" name="description"></textarea><br>
+
+    <input type="submit" value="Сохранить" id="submitButton" disabled>
+
+  </form>
+
+  <script>
+    const titleInput = document.getElementById('title');
+    const submitButton = document.getElementById('submitButton');
+
+    function checkInput() 
+    {//проверка на заполнения поля
+      if (titleInput.value.trim() !== '')
+      {
+        submitButton.disabled = false;
+      } 
+      else
+      {
+        submitButton.disabled = true;
+      }
+    }
+
+    //название
+    titleInput.addEventListener('input', checkInput);
+
+    // сохранение localStorage !!!!
+    document.getElementById('taskForm').addEventListener('submit', function (e) 
+    {
+      e.preventDefault();
+      const title = titleInput.value;
+      const description = document.getElementById('description').value;
+
+      // Получение задачи 
+      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      tasks.push({ title, description });
+
+      // Сохранение в localStorage
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+
+      //додому
+      window.location.href = 'index.html';
+    });
+
+    //перезагрузка стр, проверка
+    checkInput();
+  </script>
+</body>
+</html>

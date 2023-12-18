@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Детали задачи</title>
+</head>
+<body>
+
+  <h1>Детали задачи</h1>
+
+  <div id="taskDetails">
+    <h2 id="taskTitle"></h2>
+    <p id="taskDescription"></p>
+    
+    <button onclick="deleteTask()">Удалить задачу</button>
+  </div>
+
+  <script>
+    const taskIndex = localStorage.getItem('taskIndex');
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const currentTask = tasks[taskIndex];
+
+    document.getElementById('taskTitle').innerText = currentTask.title;
+    document.getElementById('taskDescription').innerText = currentTask.description;
+
+    function deleteTask() 
+    {
+      tasks.splice(taskIndex, 1);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

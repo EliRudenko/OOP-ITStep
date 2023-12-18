@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>response body</title>
+</head>
+
+<body>
+    <button id="button1">Запрос (json)</button>
+    <button id="button2">Запрос (text) </button>
+    <div id="output"></div>
+    <script>
+
+        let button1 = document.querySelector("#button1");
+        let button2 = document.querySelector("#button2");
+        let output = document.querySelector("#output");
+        let url = "https://jsonplaceholder.typicode.com/todos/1";
+
+        // обрабатываем ответ как JSON
+        button1.addEventListener("click", function () {
+            fetch(url)
+                .then(response => response.json())      // десериализует объект из ответа в JSON формате
+                .then(json => {
+                    output.innerHTML = "";
+                    output.innerHTML += "<br>id: " + json.id;
+                    output.innerHTML += "<br>user id: " + json.userId;
+                    output.innerHTML += "<br>title: " + json.title;
+                    output.innerHTML += "<br>completed: " + json.completed;
+                });
+        });
+
+        // Обрабатываем ответ как текст
+        button2.addEventListener("click", function () {
+            fetch(url)
+                .then(response => response.text())      // получение ответа как обычного текста
+                .then(text => output.innerHTML = text);
+        });
+
+        /*
+        Response предоставляет несколько методов для работы с телом ответа
+        Все методы возвращают Promise с результатом, полученным из тела ответа
+        response.text() - получение ответа, как обычного текста
+        response.json() - получение объекта из ответа в формате JSON
+        response.formData() - возвращает тело ответа в виде FormData (объектное представление полей формы)
+        response.blob() - бинарные данные с типом
+        response.arrayBuffer() - низкоуровневое представление бинарных данных ArrayBuffer
+        */
+    </script>
+</body>
+
+</html>

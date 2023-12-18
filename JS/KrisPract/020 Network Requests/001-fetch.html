@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+
+<body>
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/todos/10";
+
+        // fetch - отправляет HTTP запрос и возвращает promise, описывающий асинхронную операцию
+        // Результатом, который доступен в промис, является объект встроенного класса Respone
+        // https://fetch.spec.whatwg.org/#response-class
+
+        // в данном случае, при вызове fetch отправляется GET запрос
+        let promise = fetch(url);
+
+        promise
+            .then(response => {
+		    // promise не переходит в состояние rejected из-за статус кодов 4xx и 5xx
+                if (response.ok) { // сервер прислал ответ со статус кодом 200-299
+                    alert("OK")
+                }
+                else {
+                    alert(response.status); // вывод статус кода, если ответ связан с ошибкой
+                }
+            })
+            .catch(error => console.log(error.message)); // обработка исключений, например, проблем с сетью
+
+    </script>
+</body>
+
+</html>

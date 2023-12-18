@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заголовки ответа</title>
+</head>
+
+<body>
+    <script>
+        let request = fetch("https://jsonplaceholder.typicode.com/todos/1");
+
+        request.then(response => {
+            // чтение значения заголовка по имени
+            console.log(response.headers.get('Content-Type'));
+
+            // перебор всех заголовков
+            for (let header of response.headers) {
+                console.log(`${header[0]} = ${header[1]}`);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 02</title>
+</head>
+
+<body>
+
+    <form id="postForm">
+        <label for="titleInput">Title:</label>
+        <input type="text" id="titleInput" required><br><br>
+        
+        <label for="bodyInput">Body:</label>
+        <input type="text" id="bodyInput" required><br><br>
+        
+        <input type="submit" value="Update">
+    </form>
+
+    <div id="output"></div>
+
+
+    <script>
+        /*
+        Задание:
+        Напишите сценарий, который будет обновлять сущность post со свойствами
+        id: 1,
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+
+        Создайте форму с полем ввода для значения свойства title и полем ввода для значения свойства body
+
+        Значения для свойств title и body получите от пользователя
+        Значения id и userId должны остаться равными 1 и выводить их в форме не нужно.
+        При загрузке сценария заполните форму данными получеными при обработке GET запроса на https://jsonplaceholder.typicode.com/posts/1
+
+        адрес для отправки запроса
+        https://jsonplaceholder.typicode.com/posts/1
+
+        для обновления сущности воспользуйтесь PUT запросом https://jsonplaceholder.typicode.com/posts/1. Обработайте ответ
+        и выведите информацию о ошибке или об успешно завершенной операции.
+        */
+
+        let form = document.querySelector("#postForm");
+        let output = document.querySelector("#output");
+        let url = "https://jsonplaceholder.typicode.com/posts/1";
+
+        form.addEventListener("submit", function (event) 
+        {
+            event.preventDefault();
+
+            let title = document.getElementById('titleInput').value;
+            let body = document.getElementById('bodyInput').value;
+
+            fetch(url, 
+            {
+                method: 'PUT',
+                body: JSON.stringify(
+                {
+                    id: 1,
+                    title: title,
+                    body: body,
+                    userId: 1
+                }),
+                headers: 
+                {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+            .then(response => 
+            {
+                if (!response.ok) 
+                {
+                    throw new Error('Failed to update post');
+                }
+                return response.json();
+            })
+            .then(json => 
+            {
+                output.innerHTML = "Post updated successfully!";
+            })
+            .catch(error => 
+            {
+                output.innerHTML = "Error: " + error.message;
+            });
+        });
+
+    </script>
+</body>
+
+</html>

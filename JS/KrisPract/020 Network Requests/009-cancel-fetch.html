@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отмена запроса</title>
+    <style>
+        .completed {
+            color: green;
+        }
+
+        .incomplete {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="loadButton">Зарузить список задач</button>
+    <span id="loader" style="display: none;">Загрузка... <a href="#" id="cancelLink">Отмена</a></span>
+
+    <div id="todoList">
+    </div>
+
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/todos";
+        const abortController = new AbortController();
+        // AbortController объект с одним свойством signal и одним методом abort
+        // при вызове метода abort генерируется событие abort на объекте AbortController.signal
+        // Метод fetch умеет работать с AbortContoller
+
+        let loadButton = document.querySelector("#loadButton");
+        let cancelLink = document.querySelector("#cancelLink");
+        let loader = document.querySelector("#loader");
+        let todoList = document.querySelector("#todoList");
+
+        loadButton.addEventListener("click", function () {
+            showLoader();
+            fetch(url,
+                { signal: abortController.signal }) // установка объекта, через который можно отменить асинхронную операцию
+                .then(response => response.json())
+                .then(json => renderList(json))
+                .finally(hideLoader)
+                .catch(error => {
+                    if (error.name == 'AbortError') { // если catch сработал из-за отмены fetch, обрабатываем ошибку
+                        alert("Запрос был отменен пользователем.");
+                    } else {
+                        throw error; // иначе бросаем ошибку дальше, чтобы ее обработали в другом месте (актуально для большого проекта)
+                    }
+                });
+        });
+
+        cancelLink.addEventListener("click", function () {
+            abortController.abort();
+        })
+
+        function showLoader() {
+            loader.style.display = "inline";
+        }
+
+        function hideLoader() {
+            loader.style.display = "none";
+        }
+
+        function renderList(list) {
+            list.forEach(element => {
+                let div = document.createElement("div");
+                div.innerHTML = `${element.id} (${element.completed}) - ${element.title}`;
+
+                if (element.completed) {
+                    div.classList.add("completed");
+                }
+                else {
+                    div.classList.add("incomplete");
+                }
+
+                todoList.append(div);
+            });
+        }
+    </script>
+</body>
+
+</html>

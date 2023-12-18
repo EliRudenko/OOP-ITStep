@@ -273,6 +273,7 @@
   
 
         <main>
+
             <div class="for-cards">
                 <template id="block-template">
                     <div class="block">
@@ -281,21 +282,38 @@
                                 <div class="textTop"></div>
                                 <div class="textAdd"></div>
                             </div>
-                            
-                           
                             <div class="for-img">
                                 <img src="" alt="Image">
                             </div>
-                            
                         </div>
-                       
                         <div class="text textBottom"></div>
-                        <a href="#" class="bottomLink">Ссылка</a>
+                        <div class="bottomLinkContainer"></div>
                     </div>
                 </template>
-                <div class="container"></div>
+
+
+                <div class="container">
+
+                    <div class="header-text-before-cards">
+                        <h2>Get started with GitHub Actions</h2>
+                        <p>
+                            Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.
+                        </p>
+                        <p>
+                            Skip this and <span>set up a workflow yourself -></span>
+                        </p>
+
+                        <form action="#" method="get">
+
+                            <span class="material-symbols-outlined icon-search">search</span>
+                            <input type="text" placeholder="Search workflows">
+                        </form>
+
+                        <span>Suggested for this repository</span>
+                    </div>
+                    
+                </div>
             </div>
-            
         </main>
 
         
@@ -326,8 +344,172 @@
 
     </div>
 
-    
+
     <script>
+        const container = document.querySelector('.container');
+        const blockTemplate = document.getElementById('block-template');
+    
+        function createBlock(imageSrc, textTop, textAdd, textBottom, linkHref) {
+            const blockInstance = blockTemplate.content.cloneNode(true);
+    
+            blockInstance.querySelector('img').src = imageSrc;
+            blockInstance.querySelector('.textTop').textContent = textTop;
+            blockInstance.querySelector('.textAdd').textContent = textAdd;
+    
+            const textBottomElement = blockInstance.querySelector('.textBottom');
+            textBottomElement.textContent = textBottom;
+    
+            const link = document.createElement('a');
+            link.href = linkHref;
+            link.textContent = 'Configure';
+            link.classList.add('bottomLink');
+    
+            const linkContainer = blockInstance.querySelector('.bottomLinkContainer');
+            linkContainer.appendChild(link);
+    
+            return blockInstance;
+        }
+    
+        const blockInfo = [
+            {
+                imageSrc: '../img/action/1.png',
+                textTop: 'Jekyll using Docker image',
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Package a Jekyll site using the jekyll/builder Docker image.',
+                linkHref: '#' 
+            },
+            {
+                imageSrc: '../img/action/2.png',
+                textTop: 'C/C++ with Make',
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Build and test a C/C++ project using Make.',
+                linkHref: '#'
+            },
+            {
+                imageSrc: '../img/action/3.png',
+                textTop: 'Jekyll using Docker image', 
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Test your Deno project',
+                linkHref: '#'
+            }
+        ];
+    
+        blockInfo.forEach(info => {
+            const block = createBlock(info.imageSrc, info.textTop, info.textAdd, info.textBottom, info.linkHref);
+            container.appendChild(block);
+        });
+    
+        const blockInfo2 = [
+            {
+                imageSrc: '../img/action/4.png',
+                textTop: 'CMake based, multi-platform projects',
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Build and test a CMake based project on multiple platforms.',
+                linkHref: '#' 
+            },
+            {
+                imageSrc: '../img/action/4.png',
+                textTop: 'CMake based, single-platform projects',
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Build and test a CMake based project on a single-platform.',
+                linkHref: '#'
+            },
+            {
+                imageSrc: '../img/action/2.png',
+                textTop: 'MSBuild based projects', 
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Build a MSBuild based project.',
+                linkHref: '#'
+            }
+        ];
+    
+        blockInfo2.forEach(info => {
+            const block2 = createBlock(info.imageSrc, info.textTop, info.textAdd, info.textBottom, info.linkHref);
+            container.appendChild(block2);
+        });
+    </script>
+    
+
+    <!-- <script>
+        const container = document.querySelector('.container');
+        const blockTemplate = document.getElementById('block-template');
+
+        function createBlock(imageSrc, textTop, textAdd, textBottom, linkHref) {
+            const blockInstance = blockTemplate.content.cloneNode(true);
+
+            blockInstance.querySelector('img').src = imageSrc;
+            blockInstance.querySelector('.textTop').textContent = textTop;
+            blockInstance.querySelector('.textAdd').textContent = textAdd;
+
+            const textBottomElement = blockInstance.querySelector('.textBottom');
+            textBottomElement.textContent = textBottom;
+
+            const link = document.createElement('a');
+            link.href = linkHref;
+            link.textContent = 'Configure';
+            link.classList.add('bottomLink');
+            textBottomElement.appendChild(link);
+
+            return blockInstance;
+        }
+
+        const blockInfo = [
+            {
+                imageSrc: '../img/action/1.png',
+                textTop: 'Jekyll using Docker image',
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Package a Jekyll site using the jekyll/builder Docker image.',
+                linkHref: '#' 
+            },
+            {
+                imageSrc: '../img/action/2.png',
+                textTop: 'C/C++ with Make',
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Build and test a C/C++ project using Make.',
+                linkHref: '#'
+            },
+            {
+                imageSrc: '../img/action/3.png',
+                textTop: 'Jekyll using Docker image', 
+                textAdd: 'By GitHub Actions',
+                textBottom: 'Test your Deno project',
+                linkHref: '#'
+            }
+        ];
+
+        blockInfo.forEach(info => {
+            const block = createBlock(info.imageSrc, info.textTop, info.textAdd, info.textBottom, info.linkHref);
+            container.appendChild(block);
+        });
+
+        // const blockInfo2 = [
+        //     {
+        //         imageSrc: 'путь_к_картинке_1.jpg',
+        //         textTop: 'Текст 4',
+        //         textBottom: 'Дополнительный текст 1'
+        //     },
+        //     {
+        //         imageSrc: 'путь_к_картинке_2.jpg',
+        //         textTop: 'Текст 5',
+        //         textBottom: 'Дополнительный текст 2'
+        //     },
+        //     {
+        //         imageSrc: 'путь_к_картинке_3.jpg',
+        //         textTop: 'Текст 6',
+        //         textBottom: 'Дополнительный текст 3'
+        //     }
+        // ];
+
+        // blockInfo2.forEach(info => {
+        //     const block = createBlock(info.imageSrc, info.textTop, info.textBottom);
+        //     container.appendChild(block);
+        // });
+
+    </script> -->
+
+
+
+    <!-- <script>
         const container = document.querySelector('.container');
         const blockTemplate = document.getElementById('block-template');
 
@@ -337,8 +519,19 @@
             blockInstance.querySelector('img').src = imageSrc;
             blockInstance.querySelector('.textTop').textContent = textTop;
             blockInstance.querySelector('.textAdd').textContent = textAdd;
-            blockInstance.querySelector('.textBottom').textContent = textBottom;
+            // blockInstance.querySelector('.textBottom').textContent = textBottom;
+           
 
+            const textBottomElement = blockInstance.querySelector('.textBottom');
+            textBottomElement.textContent = textBottom;
+
+            const link = document.createElement('a');
+            link.href = linkHref;
+            link.textContent = 'Configure';
+            link.classList.add('bottomLink');
+            textBottomElement.appendChild(link);
+
+            
             return blockInstance;
         }
 
@@ -347,20 +540,24 @@
                 imageSrc: '../img/action/1.png',
                 textTop: 'Jekyll using Docker image',
                 textAdd: '11111',
-                textBottom: 'Package a Jekyll site using the jekyll/builder Docker image.'
+                textBottom: 'Package a Jekyll site using the jekyll/builder Docker image.',
+                linkHref: '../index.html'
             
+
             },
             {
                 imageSrc: '../img/action/2.png',
                 textTop: 'C/C++ with Make',
                 textAdd: '1111111111',
-                textBottom: 'Build and test a C/C++ project using Make.'
+                textBottom: 'Build and test a C/C++ project using Make.',
+                linkHref: '#'
             },
             {
                 imageSrc: '../img/action/1.png',
-                textTop: 'Jekyll using Docker image',
+                textTop: 'Jekyll using Docker image', 
                 textAdd: '11111',
-                textBottom: 'Дополнительный текст 1'
+                textBottom: 'Дополнительный текст 1',
+                linkHref: '#'
             }
         ];
 
@@ -393,7 +590,7 @@
         // });
 
 
-    </script>
+    </script> -->
 
 </body>
 </html>
