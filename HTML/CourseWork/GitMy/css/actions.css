@@ -142,6 +142,8 @@ main
     background-color: rgba(210, 105, 30, 0);
     border-color: rgba(210, 105, 30, 0);
     margin-left: 5px;
+    height: 70%;
+    padding-left: 10px;
 }
 .header-text-before-cards > form
 {
@@ -153,6 +155,30 @@ main
 {
     font-size: 20px;
 }
+
+.circle-container {
+    position: relative;
+  }
+  
+  .circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff0000; /* Замените на цвет, который вам нужен */
+  }
+  
+  .circle-text {
+    position: absolute;
+    top: 50%;
+    right: 30px; /* Расстояние между кругом и текстом */
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
 
 
 
@@ -205,7 +231,7 @@ main
     .block
     {
         width: 85%;
-        
+        height: 16vh;
     }
 
     .footer_block

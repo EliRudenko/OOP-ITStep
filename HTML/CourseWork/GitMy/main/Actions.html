@@ -152,6 +152,7 @@
                         <label for="toggleRight"> <img src="../img/header/me.jpg" class="logo-user"></label>
                         <div class="fullscreen-block right-block">
                             <label class="close-label-RIGHT" for="toggleRight"></label>
+                            
                             <div class="menu-content-RIGHT">
 
                                 <div class="container-for-img-menu-RIGHT">
@@ -344,6 +345,7 @@
 
     </div>
 
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
 
     <script>
         const container = document.querySelector('.container');
@@ -366,6 +368,8 @@
     
             const linkContainer = blockInstance.querySelector('.bottomLinkContainer');
             linkContainer.appendChild(link);
+
+            
     
             return blockInstance;
         }
@@ -427,7 +431,13 @@
             const block2 = createBlock(info.imageSrc, info.textTop, info.textAdd, info.textBottom, info.linkHref);
             container.appendChild(block2);
         });
+
+        $(".burger").click(function(){
+
+            $(".left-block").toggle("fast");
+        })
     </script>
+    <!-- Jqueyry + Ajax -->
     
 
     <!-- <script>

@@ -291,86 +291,153 @@
         
     
         <main>
-
-            <section>                
-
-                <div style="border: 1px solid rgba(44, 57, 73, 0.735);  border-radius: 5px; width: 99%;">   
-                        
+            <section>
+                <div class="main-button">
                     
-                    <div class="table-repo" style=" background-color: rgb(22, 27, 34); ">
-                        <div>
-                            EliRudenko new HW
-                        </div>
+                    <div class="righr-main-but">
                         
-                        <div class="table-header-last">
-                            <span style="opacity: 0.5;">ee1802f</span> 
-                            <span style="opacity: 0.5;">5 hours ago</span>
-                            
-                            <span style="margin-left: 0px; padding-left: 0px; color: white; font-size: 14px;">121</span>
-                            <span style="margin-left: 0px; padding-left: 0px; opacity: 0.5;">commits</span>
+                        <span>
+                            <a href="#" class="but-master-alink">
+                                <div class="but-master"> 
+
+                                    <p class="text-for-but">
+                                        <a class = "aclassN" href="../GitMy/main/Pull-requests.html">
+                                            <img src="../GitMy/img/header/Pull-requests.png" class="img-nav" >
+                                            <span style="padding-bottom: 3px;">master</span>
+                                        </a>
+                                    </p>
+                                    
+                                </div>
+                            </a>
+                        </span>
+
+                        <span style="margin: 0px;">
+                            <a href="#" class="but-master-alink">
+                                <div class=""> 
+
+                                    <p class="text-for-but">
+                                        <a class = "aclassN" href="../GitMy/main/Pull-requests.html">
+                                            <img src="../GitMy/img/header/Pull-requests.png" class="img-nav" style="padding: 0px;" >
+                                            <span style="padding-bottom: 3px;">1</span><span style="padding-bottom: 3px; opacity: 0.6;">Branch</span>
+                                        </a>
+                                    </p>
+                                    
+                                </div>
+                            </a>
+                        </span>
+                        <span style="margin: 0px;">
+                            <a href="#" class="but-master-alink" >
+                                <div class=""> 
+
+                                    <p class="text-for-but" style="margin: 0px;">
+                                        <a class = "aclassN" href="../GitMy/main/Pull-requests.html">
+                                            <!-- <img src="../GitMy/img/header/Pull-requests.png" class="img-nav" style="padding: 0px;" > -->
+                                            <span style="padding-bottom: 3px;">0</span><span style="padding-bottom: 3px; opacity: 0.6;">Tags</span>
+                                        </a>
+                                    </p>
+                                    
+                                </div>
+                            </a>
+                        </span>
+  
+                    </div>
+
+                    
+                    <div style="display: flex;">
+                        <div>
+                            <form action="#" method="get" style="width: 150px;">
+
+                                <span class="material-symbols-outlined icon-search">search</span>
+                                <input type="text" placeholder="Go to file" style="background-color: rgba(240, 248, 255, 0); border: 0px; margin-left: 5px; ">
+                            </form>
                         </div>
+                        <button onclick="goToTaskPage()" class="main-but-add">Add file</button>
+                        
                     </div>
-                        <table>
-                            
-                            <tr>
-                                <td>
-                                    <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
-                                        <img src="../GitMy/img/folder.png" class="img-nav code-icon" >.vscode</a></p>
-                                </td> 
-                                <td>Course work</td> 
-                                <td>last month</td> 
-                            </tr> 
-                            <tr> 
-                                <td>
-                                    <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
-                                        <img src="../GitMy/img/folder.png" class="img-nav code-icon" >HTML</a></p></td> 
-                                <td>New HW</td>
-                                <td>yesterday</td> 
-                            </tr> 
-                            <tr> 
-                                <td>
-                                    <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
-                                        <img src="../GitMy/img/folder.png" class="img-nav code-icon" >OOP</a></p>
-                                </td>
-                                <td>OOP</td>  
-                                <td>last month</td> 
-                            </tr> 
-                            <tr> 
-                                <td>
-                                    <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
-                                        <img src="../GitMy/img/file.png" class="img-nav code-icon" >.gitignore</a></p>
-                                </td> 
-                                <td>Initial commit</td> 
-                                <td>2 months ago</td> 
-                            </tr> 
-                            <tr> 
-                                <td>
-                                    <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
-                                        <img src="../GitMy/img/file.png" class="img-nav code-icon" >LICENSE</a></p>
-                                </td> 
-                                <td>Initial commit</td> 
-                                <td>2 months ago</td> 
-                            </tr> 
-                            <tr>
-                                <td>
-                                    <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
-                                        <img src="../GitMy/img/file.png" class="img-nav code-icon" >Notebook.txt</a></p>
-                                </td>  
-                                <td>DZ</td> 
-                                <td>last month</td>
-                            </tr> 
-                            <tr> 
-                                <td>
-                                    <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
-                                        <img src="../GitMy/img/file.png" class="img-nav code-icon" >README.md</a></p>
-                                </td>
-                                <td>Initial commit</td> 
-                                <td>2 months ago</td> 
-                            </tr> 
-                        </table>  
-                    </div>
+                    
                 </div>
 
+            
+                <div>                
+
+                    <div style="border: 1px solid rgba(44, 57, 73, 0.735);  border-radius: 5px; width: 99%; margin-left: 0.5%;">   
+                            
+                        
+                        <div class="table-repo" style=" background-color: rgb(22, 27, 34); ">
+                            <div>
+                                EliRudenko new HW
+                            </div>
+                            
+                            <div class="table-header-last">
+                                <span style="opacity: 0.5;">ee1802f</span> 
+                                <span style="opacity: 0.5;">5 hours ago</span>
+                                
+                                <span style="margin-left: 0px; padding-left: 0px; color: white; font-size: 14px;">121</span>
+                                <span style="margin-left: 0px; padding-left: 0px; opacity: 0.5;">commits</span>
+                            </div>
+                        </div>
+                            <table id="taskTable">
+                                
+                                <tr>
+                                    <td>
+                                        <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
+                                            <img src="../GitMy/img/folder.png" class="img-nav code-icon" >.vscode</a></p>
+                                    </td> 
+                                    <td>Course work</td> 
+                                    <td>last month</td> 
+                                </tr> 
+                                <tr> 
+                                    <td>
+                                        <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
+                                            <img src="../GitMy/img/folder.png" class="img-nav code-icon" >HTML</a></p></td> 
+                                    <td>New HW</td>
+                                    <td>yesterday</td> 
+                                </tr> 
+                                <tr> 
+                                    <td>
+                                        <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
+                                            <img src="../GitMy/img/folder.png" class="img-nav code-icon" >OOP</a></p>
+                                    </td>
+                                    <td>OOP</td>  
+                                    <td>last month</td> 
+                                </tr> 
+                                <tr> 
+                                    <td>
+                                        <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
+                                            <img src="../GitMy/img/file.png" class="img-nav code-icon" >.gitignore</a></p>
+                                    </td> 
+                                    <td>Initial commit</td> 
+                                    <td>2 months ago</td> 
+                                </tr> 
+                                <tr> 
+                                    <td>
+                                        <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
+                                            <img src="../GitMy/img/file.png" class="img-nav code-icon" >LICENSE</a></p>
+                                    </td> 
+                                    <td>Initial commit</td> 
+                                    <td>2 months ago</td> 
+                                </tr> 
+                                <tr>
+                                    <td>
+                                        <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
+                                            <img src="../GitMy/img/file.png" class="img-nav code-icon" >Notebook.txt</a></p>
+                                    </td>  
+                                    <td>DZ</td> 
+                                    <td>last month</td>
+                                </tr> 
+                                <tr> 
+                                    <td>
+                                        <p class="nav_text" style="margin: 0px;"><a class = "aclassN" href="#">
+                                            <img src="../GitMy/img/file.png" class="img-nav code-icon" >README.md</a></p>
+                                    </td>
+                                    <td>Initial commit</td> 
+                                    <td>2 months ago</td> 
+                                </tr> 
+                            </table>  
+                        </div>
+                    </div>
+
+                </div>
             </section>
 
 
@@ -400,121 +467,169 @@
         
         <footer>  
 
-                <div class = footer_block>    
-                    <div class="for-img-text">
-                        <a href="#top"><img src="../GitMy/img/git_img.png" class="img-footer"></a>&copy; 2023 GitHub, Inc.
-                    </div>             
-                    <ul class="footer-list"> 
-                        
-                        <li class="footer_text"><a class="aclass" href=""><p>Terms</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Privacy</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Security</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Status</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Docs</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Contact GitHub</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Pricing</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>API</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Training</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Blog</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>About</p></a></li>
-                    </ul>
-                </div>
-            
-            
-        </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-        <section>
-            <div class="name-option">
-                <ul> 
-                <li class="header_text_block"> 
-                        <h2 id = "#top">OOP-ITStep</h2>
-                </li>
-
-                    <li class="header_text_block">       
-                        <div  class="public"> 
-                            Public<br>
-                        </div>   
-                    </li> 
+            <div class = footer_block>    
+                <div class="for-img-text">
+                    <a href="#top"><img src="../GitMy/img/git_img.png" class="img-footer"></a>&copy; 2023 GitHub, Inc.
+                </div>             
+                <ul class="footer-list"> 
+                    
+                    <li class="footer_text"><a class="aclass" href=""><p>Terms</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>Privacy</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>Security</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>Status</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>Docs</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>Contact GitHub</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>Pricing</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>API</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>Training</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>Blog</p></a></li>
+                    <li class="footer_text"><a class="aclass" href=""><p>About</p></a></li>
                 </ul>
             </div>
-
-
-        </section>
-
-
-        <main>
-
-            <br><br>
-            <hr class="hrfooter"> 
-
-            <section class="content">1</section>
-
-
-            <aside>
-                <div class="aside-text">
-                    About
-                    <br><br>
-                    
-                    <ul style="list-style-type: none; font-size: 14px; color: rgba(255, 255, 255, 0.296);">
-                        <li><i style="font-size: 15px;">No description, website, or topics provided.</i></li>
-                        <br>
-                        <li>Readme</li>
-                        <li>GPL-3.0 license</li>
-                        <li>Activity</li>
-                        <li>1 star</li>
-                        <li>1 watching</li>
-                        <li>0 forks</li>
-                    </ul>
-                    
-                </div>
-
-                <div></div>
-                
-            </aside>
             
-        </main>
-
-        <footer>  
-            <hr class="hrfooter"> 
-                <div class = footer_block>
-                    
-                    <ul> 
-                        <li class="footer_text">
-                            <div class="for-img">
-                                <a href="#top"><img src="../GitMy/img/git_img.png"></a><p>&copy; 2023 GitHub, Inc.</p>
-                            </div>
-                        </li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Terms</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Privacy</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Security</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Status</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Docs</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Contact GitHub</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Pricing</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>API</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Training</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>Blog</p></a></li>
-                        <li class="footer_text"><a class="aclass" href=""><p>About</p></a></li>
-                    </ul>
-                </div>
-            
-            
-        </footer> -->
+        </footer>
     </div>
+
+    
+
+
+
+
+    <script>
+        function goToTaskPage() {
+          window.location.href = '../GitMy/main/task.html';
+        }
+
+        function addTaskToTable(title, description, index) 
+        {
+            const table = document.getElementById('taskTable');
+
+            // Получаем количество строк в таблице
+            const rowCount = table.rows.length;
+
+            // Создаем новую строку
+            const newRow = table.insertRow(rowCount - 4);
+
+            // Создаем ячейки для новой строки
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+
+            // Создаем ссылку
+            const link = document.createElement('a');
+            link.href = '#';
+            link.onclick = function () {
+                viewTask(index);
+            };
+            link.classList.add('aclassN');
+
+            // Создаем изображение
+            const image = document.createElement('img');
+            image.src = '../GitMy/img/file.png';
+            image.classList.add('img-nav', 'code-icon');
+
+            // Добавляем изображение и текст в ссылку
+            link.appendChild(image);
+            link.appendChild(document.createTextNode(title));
+
+            // Создаем абзац
+            const paragraph = document.createElement('p');
+            paragraph.classList.add('nav_text');
+            paragraph.appendChild(link);
+
+            // Добавляем абзац в первую ячейку новой строки
+            cell1.appendChild(paragraph);
+            cell2.innerHTML = description;
+
+            // Создаем элемент для времени
+            const timeElement = document.createElement('span');
+            cell3.appendChild(timeElement);
+
+            // Обновляем время добавления файла
+            const fileAddedTime = new Date();
+            setInterval(() => {
+                timeElement.innerHTML = calculateTimeDifference(fileAddedTime);
+            }, 1000);
+
+            // Убираем отступ для названия добавленного файла
+            paragraph.style.margin = '0';
+
+            // Создаем стиль для первой колонки
+            const style = document.createElement('style');
+            style.innerHTML = '#taskTable tr:nth-last-child(4) .nav_text { margin: 0; }';
+            document.head.appendChild(style);
+            }
+
+        function calculateTimeDifference(fileAddedTime) {
+            const currentTime = new Date();
+            const timeDifference = Math.floor((currentTime - fileAddedTime) / 1000);
+
+            if (timeDifference < 60) {
+                return 'now';
+            } else if (timeDifference < 3600) {
+                const minutes = Math.floor(timeDifference / 60);
+                return minutes === 1 ? '1 min ago' : `${minutes} mins ago`;
+            } else if (timeDifference < 86400) {
+                const hours = Math.floor(timeDifference / 3600);
+                return hours === 1 ? '1 hour ago' : `${hours} hours ago`;
+            } else if (timeDifference < 604800) {
+                const days = Math.floor(timeDifference / 86400);
+                return days === 1 ? 'yesterday' : `${days} days ago`;
+            } else if (timeDifference < 2592000) {
+                const weeks = Math.floor(timeDifference / 604800);
+                return weeks === 1 ? 'last week' : `${weeks} weeks ago`;
+            } else if (timeDifference < 31536000) {
+                const months = Math.floor(timeDifference / 2592000);
+                return months === 1 ? 'last month' : `${months} months ago`;
+            } else {
+                const years = Math.floor(timeDifference / 31536000);
+                return years === 1 ? 'last year' : `${years} years ago`;
+            }
+        }
+
+        
+      
+        function viewTask(index) {
+          localStorage.setItem('taskIndex', index);
+          window.location.href = '../GitMy/main/task-details.html';
+        }
+      
+        window.onload = function () {
+          const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+          tasks.forEach((task, index) => {
+            addTaskToTable(task.title, task.description, index);
+          });
+        };
+      
+        const titleInput = document.getElementById('title');
+        const submitButton = document.getElementById('submitButton');
+      
+        function checkInput() {
+          if (titleInput.value.trim() !== '') {
+            submitButton.disabled = false;
+          } else {
+            submitButton.disabled = true;
+          }
+        }
+      
+        titleInput.addEventListener('input', checkInput);
+      
+        document.getElementById('taskForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+          const title = titleInput.value;
+          const description = document.getElementById('description').value;
+      
+          const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+          tasks.push({ title, description });
+      
+          localStorage.setItem('tasks', JSON.stringify(tasks));
+      
+          window.location.href = '../index.html';
+        });
+      
+        checkInput();
+    </script>
+      
 </body>
 </html>
 

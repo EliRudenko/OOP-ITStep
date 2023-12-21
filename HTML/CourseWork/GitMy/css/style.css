@@ -291,7 +291,7 @@ nav
 }
 .nav_text-for-header
 {
-    position: relative; /* Ensure the li position is relative */
+    position: relative; 
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -467,7 +467,7 @@ main
     align-items: flex-start;
     padding-top: 2vh;
 
-    margin-left: 9%;
+    margin-left: 8.5%;
     margin-right: 9%; /* 10%!!!*/
 
     margin-bottom: 100px;
@@ -484,7 +484,107 @@ section
     padding: 0px;
     margin-right: 0%;
 
-    /* background-color: chartreuse; */
+}
+
+.main-button
+{
+    flex: 0 0 auto;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    margin-left: 0px;
+    margin-right: 1%;
+    margin-bottom: 18px;
+}
+
+
+.righr-main-but
+{
+    display: flex;
+
+    flex: 1 0 20%;
+    float: left;
+    left: 1;
+    align-items:start;
+    margin-left: 0px;
+}
+
+
+.but-master
+{
+    background-color: rgb(30, 35, 43);
+    width: 116px;
+    height: 25px;
+
+    border: 1px solid rgba(44, 57, 73, 0.735);
+    border-radius: 8px;
+
+    text-align: center;
+    padding: 0px 0px 4.5px; 
+}
+
+.but-master:hover
+{
+    background-color: rgb(35, 42, 51);
+}
+
+.but-master>img
+{
+    margin-top: 5px;
+   width: 13px;
+   height: 13px;
+}
+
+
+a.but-master-alink
+{
+   color: white;
+   text-decoration: none;
+
+}
+
+.main-but-add
+{
+    margin-left: 10px;
+
+    background-color: rgb(30, 35, 43);
+    /* width: 116px;
+    height: 25px; */
+
+    border: 1px solid rgba(44, 57, 73, 0.735);
+    border-radius: 8px;
+
+    text-align: center;
+    padding: 5px 15px 4.5px; 
+
+    font-size: 13px;
+}
+
+.main-but-add:hover
+{
+    background-color: rgb(35, 42, 51);
+}
+
+
+
+
+.text-for-but
+{
+    position: relative; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    float: left;
+    font-size: 14px;
+
+    margin-left: 13.5px;
+    margin-bottom: 0px;
+
+    padding: 5px;
+
+    list-style-type: none;
 }
 
 .table-repo
@@ -507,6 +607,7 @@ table
     border-collapse: collapse;
     width: 100%;
     font-size: 14px;
+    
 }
 
 
@@ -547,6 +648,7 @@ tr:hover
 {
     font-size: 12px; 
     margin-top: 5px;
+    
 }
 
 
@@ -1167,6 +1269,12 @@ footer
     align-items: center;
     padding-top: 6px;
     width: 100%; 
+
+    /* padding-top: 20px;
+    margin-top: 25vh; */
+
+
+
     /* padding-top: 2%;
     padding-bottom: 3%;
     margin-top: 10%; */
@@ -1255,6 +1363,17 @@ footer
     }
 }
 
+
+@media screen and (max-width: 1900px) 
+{
+    .footer_block
+    {
+        padding-top: 25px;
+        margin-top: 100vh;
+        padding-bottom: 5vh;
+        /* background-color: aqua; */
+    }
+}
 
 .thumbnails 
 {

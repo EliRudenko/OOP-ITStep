@@ -1,113 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Получение прогноза погоды</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #weather-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #weather-table th,
+        #weather-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #weather-table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            color: white;
+        }
+
+        button {
+            background-color: chocolate;
+        }
+
+        .weather-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s;
+        }
+    </style>
 </head>
-<style>
-    * {
-        font-size: 20px;
-    }
-
-    span {
-        color:chocolate;
-        font-size: 32px;
-        align-items: center;
-        display: flex;
-    }
-    img
-    {
-        width: 80px;
-    }
-
-    .block
-    {
-        align-items: center;
-        display: flex;
-    }
-
-    input
-    {
-       width: 300px;
-    }
-
-    button
-    {
-        background-color: chocolate;
-
-    }
-</style>
 
 <body>
-    <input type="text" id="cityInput" placeholder="Введите город">
-    <button id="submitBtn">Изменить город</button>
-    <h1>Прогноз погоды <span id="city"> </span></h1>
-    <div id="weatherInfo">
-        <div>
-            <div id="weather"></div>
-            <div class="block">
-                <div>
-                    <span id="temperature"></span>
-                </div>
-                <div>
-                    <img id="img" />
-                </div>
-                
-            </div>
-           
-        </div>
-        
-    </div>
-    <div id="description"></div>
+    <h1>Weather</h1>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city">
+    <button id="submitBtn">Get Weather</button>
+    <table id="weather-table">
+        <thead>
+
+        </thead>
+        <tbody id="weather-data">
+        </tbody>
+    </table>
 
     <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
+        $(document).ready(function() 
+        {
             const apiKey = 'd77e8a80bfcc7551c3135a39d716ce92';
 
-            let city = 'Odessa';
-            const weatherElement = document.getElementById('weather');
-            const temperatureElement = document.getElementById('temperature');
-            const descriptionElement = document.getElementById('description');
-            const iconw = document.getElementById('img');
-            const cit = document.getElementById('city');
-            const cityInput = document.getElementById('cityInput');
-            const submitBtn = document.getElementById('submitBtn');
-
-            const showWeather = (cityName) => {
-                const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
-                fetch(url)
-                    .then((response) => response.json())
-                    .then((data) => {
-                        weatherElement.innerHTML = `${cityName}`;
-                        const temperature = data.main.temp;
-                        const description = data.weather[0].description;
-                        const icn = data.weather[0].icon;
-
-                        // cit.innerText = data.name;
-                        temperatureElement.innerHTML = `Текущая температура: ${temperature}°C`;
-                        iconw.src = `https://openweathermap.org/img/wn/${icn}.png`;
-                        descriptionElement.innerHTML = `Описание: ${description}`;
-                    })
-                    .catch((error) => {
-                        console.error('Произошла ошибка:', error);
-                    });
-            };
-
-            showWeather(city);
-
-            submitBtn.addEventListener('click', () => 
+            $('#submitBtn').click(function() 
             {
-                const userInput = cityInput.value.trim();
-                if (userInput) 
+                const city = $('#city').val().trim();
+                if (city) 
                 {
-                    city = userInput;
-                    showWeather(city);
-                    cityInput.value = ''; 
+                    getWeather(city);
                 }
             });
+
+            function getWeather(city) 
+            {
+                $.ajax({
+                    url: `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`,
+                    type: 'GET',
+                    dataType: 'jsonp',
+                    success: function(data) 
+                    {
+                        const forecast = data.list;
+                        const weatherData = [];
+                        forecast.forEach(function(day, index) 
+                        {
+                            const dt = new Date(day.dt * 1000);
+                            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                            const dayOfWeek = days[dt.getDay()];
+                            const time = dt.toLocaleTimeString();
+                            const temp = day.main.temp;
+                            const weather = day.weather[0];
+                            const wind = day.wind;
+                            const rain = day.rain ? day.rain['3h'] : 'No Rain';
+                            const pressure = day.main.pressure;
+
+                            if (dt.getHours() === 11 || dt.getHours() === 23) 
+                            {
+                                weatherData.push({
+                                    dayOfWeek: dayOfWeek,
+                                    city: city,
+                                    country: data.city.country,
+                                    lastUpdate: time,
+                                    temperature: temp,
+                                    weatherIcon: `https://openweathermap.org/img/wn/${weather.icon}.png`,
+                                    weatherDescription: weather.description,
+                                    windSpeed: wind.speed,
+                                    rainfall: rain,
+                                    pressure: pressure
+                                });
+                            }
+                        });
+                        displayWeather(weatherData);
+                    },
+                    error: function(error) 
+                    {
+                        console.error('Error:', error);
+                    }
+                });
+            }
+
+            function scaleImage(element) 
+            {
+                element.css('transform', 'scale(1.1)');
+                setTimeout(function() 
+                {
+                    element.css('transform', 'scale(1)');
+                }, 1000);
+            }
+
+            function shakeImage(element) 
+            {
+                element.css('position', 'relative');
+                for (let i = 0; i < 2; i++) 
+                {
+                    element.animate({ left: '-=10px' }, 50)
+                        .animate({ left: '+=20px' }, 50)
+                        .animate({ left: '-=10px' }, 50);
+                }
+            }
+
+            function rotateImage(element) 
+            {
+                let rotation = 0;
+                setInterval(function() 
+                {
+                    rotation += 360;
+                    element.css('transform', 'rotate(' + rotation + 'deg)');
+                }, 1000);
+            }
+
+            function displayWeather(weatherData)
+            {
+                const tableBody = $('#weather-data');
+                tableBody.empty();
+
+                weatherData.forEach(function(data) 
+                {
+                    let weatherImage = $('<img>').attr(
+                    {
+                        src: data.weatherIcon,
+                        alt: data.weatherDescription,
+                        width: '50',
+                        class: 'weather-image'
+                    });
+
+                    let weatherCell = $('<td>').append(weatherImage);
+
+                    if (data.weatherDescription.toLowerCase().includes('overcast clouds') || 
+                        data.weatherDescription.toLowerCase().includes('broken clouds') || 
+                        data.weatherDescription.toLowerCase().includes('scattered clouds')) 
+                    {
+                        setInterval(function() 
+                        {
+                            scaleImage(weatherImage);
+                        }, 2000);
+                    } else if (data.weatherDescription.toLowerCase().includes('light rain')) 
+                    {
+                        setInterval(function() 
+                        {
+                            shakeImage(weatherImage);
+                        }, 1000);
+                    } 
+                    else if (data.weatherDescription.toLowerCase().includes('light snow')) 
+                    {
+                        rotateImage(weatherImage);
+                    }
+
+                    tableBody.append(
+                        $('<tr>').append(
+                            $('<td>').text(data.dayOfWeek),
+                            $('<td>').text(data.city),
+                            $('<td>').text(data.country),
+                            $('<td>').text(data.lastUpdate),
+                            $('<td>').text(data.temperature),
+                            weatherCell,
+                            $('<td>').text(data.weatherDescription),
+                            $('<td>').text(data.windSpeed),
+                            $('<td>').text(data.rainfall),
+                            $('<td>').text(data.pressure)
+                        )
+                    );
+                });
+            }
         });
     </script>
 </body>
-
 
 </html>
