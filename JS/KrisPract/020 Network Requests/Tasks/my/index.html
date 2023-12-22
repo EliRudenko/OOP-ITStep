@@ -4,48 +4,41 @@
   <meta charset="UTF-8">
   <title>To-Do List</title>
 </head>
-
-
 <body>
   <h1>Список задач</h1>
 
   <table id="taskTable">
     <tr>
       <th>Название задачи</th>
-      <th>Объяснение</th>
+      <th>Описание</th>
     </tr>
   </table>
 
   <button onclick="goToTaskPage()">Добавить задачу</button>
 
   <script>
-    function goToTaskPage() 
-    {
+    function goToTaskPage() {
       window.location.href = 'task.html';
     }
 
-    function addTaskToTable(title, description, index) 
-    {
-      const table = document.getElementById('taskTable');
-      const newRow = table.insertRow(-1);
-      const cell1 = newRow.insertCell(0);
-      const cell2 = newRow.insertCell(1);
-      cell1.innerHTML = `<a href="#" onclick="viewTask(${index});">${title}</a>`;
-      cell2.innerHTML = description;
-    }
-
-    function viewTask(index)
-    {
+    function viewTaskDetails(index) {
       localStorage.setItem('taskIndex', index);
       window.location.href = 'task-details.html';
     }
 
-    window.onload = function () 
-    {
+    function addTaskToTable(title, description, taskCode, index) {
+      const table = document.getElementById('taskTable');
+      const newRow = table.insertRow(-1);
+      const cell1 = newRow.insertCell(0);
+      const cell2 = newRow.insertCell(1);
+      cell1.innerHTML = `<a href="#" onclick="viewTaskDetails(${index});">${title}</a>`;
+      cell2.textContent = description;
+    }
+
+    window.onload = function () {
       const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      tasks.forEach((task, index) => 
-      {
-        addTaskToTable(task.title, task.description, index);
+      tasks.forEach((task, index) => {
+        addTaskToTable(task.title, task.description, task.taskCode, index);
       });
     };
   </script>

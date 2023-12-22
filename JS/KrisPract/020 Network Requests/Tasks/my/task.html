@@ -4,63 +4,131 @@
   <meta charset="UTF-8">
   <title>Добавление задачи</title>
   <style>
-    /*ДЛЯ КУРСОРА!!!!! лучший вариант*/
-    #submitButton:disabled { cursor: not-allowed; }
+    /* Стили модального окна */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    /* Стили сообщения об ошибке */
+    #errorContainer {
+      display: none; /* Скрыть изначально */
+      background-color: red;
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
 
   <h1>Добавить задачу</h1>
+
   <form id="taskForm">
-
-    <label for="title">Название задачи:</label><br>
     <input type="text" id="title" name="title" required><br>
-
-    <label for="description">Объяснение:</label><br>
-    <textarea id="description" name="description"></textarea><br>
-
-    <input type="submit" value="Сохранить" id="submitButton" disabled>
-
+    <button id="openModalButton" disabled>Добавить описание</button>
   </form>
+
+  <form id="codeForm">
+    <label for="taskInfo">Код:</label><br>
+    <textarea id="taskCode" name="taskCode"></textarea><br>
+  </form>
+
+  <!-- Модальное окно -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div id="errorContainer"></div> <!-- Сообщение об ошибке -->
+      <label for="description">Описание:</label><br>
+      <textarea id="description" name="description"></textarea><br>
+      <button id="saveDescriptionButton">Сохранить описание</button>
+      <button id="closeModalButton">Закрыть</button>
+    </div>
+  </div>
 
   <script>
     const titleInput = document.getElementById('title');
-    const submitButton = document.getElementById('submitButton');
+    const openModalButton = document.getElementById('openModalButton');
+    const modal = document.getElementById('myModal');
+    const saveDescriptionButton = document.getElementById('saveDescriptionButton');
+    const taskCodeInput = document.getElementById('taskCode');
+    const descriptionInput = document.getElementById('description');
+    const errorContainer = document.getElementById('errorContainer');
 
-    function checkInput() 
-    {//проверка на заполнения поля
-      if (titleInput.value.trim() !== '')
-      {
-        submitButton.disabled = false;
-      } 
-      else
-      {
-        submitButton.disabled = true;
+    function checkInput() {
+      const title = titleInput.value.trim();
+
+      if (title === '') {
+        openModalButton.disabled = true;
+      } else {
+        openModalButton.disabled = false;
+
+        // Проверяем, есть ли уже такое название
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        const existingTask = tasks.find(task => task.title === title);
+
+        if (existingTask) {
+          openModalButton.disabled = false;
+        } else {
+          openModalButton.disabled = true;
+        }
       }
     }
 
-    //название
     titleInput.addEventListener('input', checkInput);
 
-    // сохранение localStorage !!!!
-    document.getElementById('taskForm').addEventListener('submit', function (e) 
-    {
-      e.preventDefault();
-      const title = titleInput.value;
-      const description = document.getElementById('description').value;
-
-      // Получение задачи 
-      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      tasks.push({ title, description });
-
-      // Сохранение в localStorage
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-
-      //додому
-      window.location.href = 'index.html';
+    openModalButton.addEventListener('click', () => {
+      if (!openModalButton.disabled) {
+        modal.style.display = 'flex';
+        descriptionInput.focus();
+      }
     });
 
-    //перезагрузка стр, проверка
+    closeModalButton.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    saveDescriptionButton.addEventListener('click', () => {
+      let description = descriptionInput.value.trim();
+      if (description === '') {
+        description = 'Create commit'; // Дефолтное описание
+      }
+      localStorage.setItem('description', description);
+      const title = titleInput.value;
+      const taskCode = taskCodeInput.value;
+      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      const existingTask = tasks.find(task => task.title === title);
+
+      if (!existingTask) {
+        tasks.push({ title, description, taskCode });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        modal.style.display = 'none';
+        window.location.href = 'index.html';
+      } else {
+        errorContainer.style.display = 'block'; // Показываем сообщение об ошибке
+        errorContainer.textContent = 'There was an error committing your changes: File could not be edited';
+      }
+    });
+
+    document.getElementById('taskForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      modal.style.display = 'flex';
+    });
+
     checkInput();
   </script>
 </body>

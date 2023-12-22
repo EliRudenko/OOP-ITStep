@@ -1,67 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Добавление задачи</title>
-  <style>
-    /*ДЛЯ КУРСОРА!!!!! лучший вариант*/
-    #submitButton:disabled { cursor: not-allowed; }
-  </style>
+    <meta charset="UTF-8">
+    <title>EliRudenko/OOP-ITStep</title>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico ">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/task.css">
+
+    <style>
+      /*ДЛЯ КУРСОРА!!!!! лучший вариант*/
+      .submitButton:disabled { cursor: not-allowed; }
+    </style>
+
 </head>
 <body>
+    <div class="container-fuul">
+        <header id = "top"> 
+            
+                <div class="left-text-header"> 
+                    <ul>  
+                        <li class="header_text_block">       
+                           
+                            <div  class="burger"> 
+                                <input type="checkbox" id="toggleLeft">
+                                <label for="toggleLeft">
+                                    <img src="../img/header/burger.png" class="burger-img">
+                                </label>
 
-  <h1>Добавить задачу</h1>
-  <form id="taskForm">
+                                <div class="left-block">
+                                    <label class="close-label" for="toggleLeft"></label>
+                                    
+                                    <div class="menu-content-LEFT">
 
-    <label for="title">Название задачи:</label><br>
-    <input type="text" id="title" name="title" required><br>
+                                        <div class="container-for-img-menu">
+                                            <div class="left-block-menu-img">
+                                                <a href="#top"><img class="img-header-logo LEFT-menu-img" src="../img/git_img.png"></a>
+                                            </div>
+                                            <div class="left-block-menu-close"> 
+                                                <label class="close-label" for="toggleLeft">
+                                                    <span class="material-symbols-outlined ">close</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
 
-    <label for="description">Объяснение:</label><br>
-    <textarea id="description" name="description"></textarea><br>
+                                        <div class="block-menu1-left">
+                                            <ul>
+                                                <li class="nav_text"><a class = "aclassN" href="../index.html">
+                                                    <img src="../img/left/Home.png" class="img-nav">Home</a></li>
+                                                <li class="nav_text"><a class = "aclassN" href="../main/Issues.html">
+                                                    <img src="../img/header/Issues.png" class="img-nav">Issues</a></li>
+                                                <li class="nav_text"><a class = "aclassN" href="../main/Pull-requests.html">
+                                                    <img src="../img/header/Pull-requests.png" class="img-nav">Pull requests</a></li>
+                                                <li class="nav_text"><a class = "aclassN" href="">
+                                                    <img src="../img/left/Discussion.png" class="img-nav">Discussion</a></li>
+                                                <li class="nav_text"><a class = "aclassN" href="">
+                                                    <img src="../img/left/Codespaces.png" class="img-nav">Codespaces</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="block-menu1-left">
+                                            <ul>
+                                                <li class="nav_text"><a class = "aclassN" href="">
+                                                    <img src="../img/left/Explore.png" class="img-nav">Explore</a></li>
+                                                <li class="nav_text"><a class = "aclassN" href="">
+                                                    <img src="../img/left/Marketplace.png" class="img-nav">Markerplace</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="block-menu2-left">
+                                            
+                                            <ul> 
+                                                <div class="container-for-img-menu">
+                                                   
+                                                    <li style="font-size: 12px; opacity: 0.5; margin-bottom: 8px; padding-left: 5px;">Repositories</li>
+                                                   
+                                                    <div class="left-block-menu-close"> 
+                                                        <span class="material-symbols-outlined ">search</span>
+                                                    </div>
+                                                </div>
+                                               
+                                                <li class="nav_text"><a class = "aclassN" href="">
+                                                    <img src="../img/header/me.jpg" class="img-user-left-menu">EliRudenko/OOP-ITStep</a></li>
+                                                <li class="nav_text"><a class = "aclassN" href="">
+                                                    <img src="../img/header/me.jpg" class="img-user-left-menu">EliRudenko/ClassWork_OOP</a></li>
+                                                    <li class="nav_text"><a class = "aclassN" href="">
+                                                        <img src="../img/header/me.jpg" class="img-user-left-menu">EliRudenko/OOP_ITStep</a></li>
+                                                <li class="nav_text"><a class = "aclassN" href="">
+                                                    <img src="../img/header/me.jpg" class="img-user-left-menu">EliRudenko/Cars</a></li>
+                                                <li class="nav_text"><a class = "aclassN" href="">
+                                                    <img src="../img/header/me.jpg" class="img-user-left-menu">EliRudenko/Project1</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                </div> 
+                            </div>   
+                        </li> 
+        
+                        <li class="header_text_block"> 
+                            <div class="block-img-text-Header"> 
+                                <a href="#top"><img class="img-header-logo" src="../img/git_img.png"></a>
+                              
+                                <div class="text-and-imgHeader-NameRepo" style="opacity: 0.9;">
+                                    <span>
+                                        <span>EliRudenko</span> 
+                                        <span class="slash-split-repo-name">/</span>
+                                    </span>
+                                        
+                                     <span><b class="repo-name">OOP-ITStep</b></span>
+                                    
+                                </div> 
+                            </div> 
+                        </li> 
+                    </ul> 
+                </div>
 
-    <input type="submit" value="Сохранить" id="submitButton" disabled>
+                <div class="widgets">
+                   
+                    <form action="#" method="get" id="code-form">
 
-  </form>
+                        <span class="material-symbols-outlined icon-search">search</span>
+                        <input type="text" placeholder="Type / to search">
+                        <button type="submit"></button>
 
-  <script>
-    const titleInput = document.getElementById('title');
-    const submitButton = document.getElementById('submitButton');
+                        <div class="terminal-block-search">
+                            <a href=""><span class="material-symbols-outlined icon-terminal">arrow_forward_ios-</span></a>
+                        </div>
 
-    function checkInput() 
-    {//проверка на заполнения поля
-      if (titleInput.value.trim() !== '')
-      {
-        submitButton.disabled = false;
-      } 
-      else
-      {
-        submitButton.disabled = true;
-      }
-    }
+                    </form>
 
-    //название
-    titleInput.addEventListener('input', checkInput);
+                    <div class="split-widgets"></div>
+                   
+                    <div class="add">
+                        <span class="material-symbols-outlined icon-add">addarrow_drop_down</span>
+                    </div>
 
-    // сохранение localStorage !!!!
-    document.getElementById('taskForm').addEventListener('submit', function (e) 
-    {
-      e.preventDefault();
-      const title = titleInput.value;
-      const description = document.getElementById('description').value;
+                    <div class="icons-header">
+                        <img src="../img/header/Issues.png" class="img-nav">
+                    </div>
 
-      // Получение задачи 
-      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      tasks.push({ title, description });
+                    <div class="icons-header">
+                        <img src="../img/header/Pull-requests.png" class="img-nav">
+                    </div>
 
-      // Сохранение в localStorage
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+                    <div class="icons-header-last">
+                        <span class="material-symbols-outlined last-widgets">service_toolbox</span>
+                    </div>
 
-      //додому
-      window.location.href = '../index.html';
-    });
+                    <div>
+                        <input type="checkbox" id="toggleRight">
+                        <label for="toggleRight"> <img src="../img/header/me.jpg" class="logo-user"></label>
+                        <div class="fullscreen-block right-block">
+                            <label class="close-label-RIGHT" for="toggleRight"></label>
+                            <div class="menu-content-RIGHT">
 
-    //перезагрузка стр, проверка
-    checkInput();
-  </script>
+                                <div class="container-for-img-menu-RIGHT">
+                                    <div class="right-block-menu-img">
+                                        <ul>
+                                            <li class="option-text">
+                                                <a href="#top"><img src="../img/header/me.jpg" class="logo-user" style="margin-right: 8px;"></a>
+                                                <div>
+                                                
+                                                    <p style="font-size: 14px;">EliRudenko</p>
+                                                    <p style="opacity: 0.4; margin: 0px; padding: 0; font-size: 14px;">Eli</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                       
+                                    </div>
+                                    <div class="right-block-menu-close"> 
+                                        <label class="close-label-RIGHT-Span" for="toggleRight">
+                                            
+                                            <span class="material-symbols-outlined ">close</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="block-menu1-right">
+                                    <ul>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Status.png" class="img-nav">Set status</a></li>
+                                    </ul>
+                                </div>
+                                <div class="block-menu1-right">
+                                    <ul>
+                                        <li class="nav_text"><a class = "aclassN" href="../sign-in/index.html">
+                                            <img src="../img/right/Profile.png" class="img-nav">You profile</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Add-ac.png" class="img-nav">Add account</a></li>
+                                    </ul>
+                                </div>
+                                <div class="block-menu1-right">
+                                    <ul>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Repo.png" class="img-nav">Your repositories</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/header/Projects.png" class="img-nav">Your projects</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Organization.png" class="img-nav">Your organizations</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Enterprises.png" class="img-nav">Your enterprises</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Stars.png" class="img-nav">Your stars</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Sponsors.png" class="img-nav">Your sponsors</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Gists.png" class="img-nav">Your gists</a></li>
+                                    </ul>
+                                </div>
+                                <div class="block-menu1-right">
+                                    <ul>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Upgrade.png" class="img-nav">Upgrade</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Enterprises.png" class="img-nav">Try Enterprise</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Copilot.png" class="img-nav">Copilot</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/flask.png" class="img-nav">Feature preview</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/header/Settings.png" class="img-nav">Settings</a></li>
+                                    </ul>
+                                </div>
+                                <div class="block-menu1-right">
+                                    <ul>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/header/Wiki.png" class="img-nav">GitHub Docs</a></li>
+                                        <li class="nav_text"><a class = "aclassN" href="">
+                                            <img src="../img/right/Support.pn" class="img-nav">GitHub Support</a></li>
+                                    </ul>
+                                </div>
+                
+                            </div>
+                             
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>            
+        </header> 
+        
+
+        <nav>
+                    
+                <ul> 
+
+                    <li class="nav_text-for-header"><a class = "aclassN" href="../index.html">
+                        <img src="../img/header/Code.png" class="img-nav code-icon">Code</a></li>
+                    <li class="nav_text-for-header"><a class = "aclassN highlightH-text" href="#">
+                        <img src=" ../img/header/Issues.png" class="img-nav" >Issues</a><div class="highlightH"></li></div>
+                    <li class="nav_text-for-header"><a class = "aclassN" href="Pull-requests.html">
+                        <img src="../img/header/Pull-requests.png" class="img-nav" >Pull requests</a></li>
+                    <li class="nav_text-for-header"><a class = "aclassN" href="Actions.html">
+                        <img src="../img/header/Actions.png" class="img-nav">Actions</a></li>
+                    <li class="nav_text-for-header"><a class = "aclassN" href="Projects.html">
+                        <img src="../img/header/Projects.png" class="img-nav projects-icon"> Projects</a></li>
+                    <li class="nav_text-for-header"><a class = "aclassN" href="">
+                        <img src="../img/header/Wiki.png" class="img-nav">Wiki</a></li>
+                    <li class="nav_text-for-header"><a class = "aclassN" href="">
+                        <img src="../img/header/Security.png" class="img-nav">Security</a></li>
+                    <li class="nav_text-for-header"><a class = "aclassN" href="">
+                        <img src="../img/header/Insights.png" class="img-nav">Insights</a></li>
+                    <li class="nav_text-for-header"><a class = "aclassN" href="">
+                        <img src="../img/header/Settings.png" class="img-nav">Settings</a></li>
+
+                </ul>
+
+        </nav> 
+
+
+    
+        <main>
+            <div class="main-block">
+                <div id="task">
+                    <form id="taskForm">
+                        <div class="name-file">
+                            <span>
+                                <p class="text-for-but">
+                                    <a class = "aclassN" href="../index.html">
+                                        <img src="../img/header/Projects.png" class="img-nav projects-icon"> 
+                                        <span style="margin-left: 5px;"><a href = "../index.html" class="name-repo-back">OOP-ITStep</a></span> <span class="delimiter">/</span>
+
+                                        <!-- <input type="text" id="title" name="title" class="name-file-input" placeholder="Name your file..." required><br> -->
+                                        <input type="text" id="title" name="title" class="name-file-input" placeholder="Name your file..." required><br>
+                                    </a>
+                                </p>
+                            </span>
+                        
+                            <p class="text-for-but" style="margin: 0px; font-size: small; padding-left: 0px;">
+                                <a class = "aclassN" href="../index.html">
+                                    <span>in</span>
+                                    <span class="master-name-forTask">master</span>
+                                </a>
+                            </p>
+                        </div>
+
+                        
+                        <div class="commit">
+                            <!-- <label for="description">Объяснение:</label><br>
+                            <input id="description" name="description"></input><br> -->
+                            
+                            <button id="openModalButton" class="submitButton" disabled>Commit changes...</button>
+                            <!-- <input type="submit" value="Commit changes..." id="submitButton" disabled> -->
+
+                        </div>
+
+                       
+                    </form>
+
+              </div>
+
+            </div>
+
+            <div class="th-code-inp">
+               
+                <div id="task">
+                    <form id="taskForm">
+                        <div class="name-file">
+                            <span>
+                                <p class="text-for-but" style="margin-left: 0px;">
+                                    <a class = "aclassN" href="../index.html">
+                                        <span class="edit-code">Edit</span>
+                                        <span class="prev-code">Preview</span>
+                                       
+
+                                        
+                                    </a>
+                                </p>
+                            </span>
+                        
+                            <!-- <p class="text-for-but" style="margin: 0px; font-size: small; padding-left: 0px;">
+                                <a class = "aclassN" href="../index.html">
+                                    <span>in</span>
+                                    <span class="master-name-forTask">master</span>
+                                </a>
+                            </p> -->
+                        </div>
+
+                        
+                        <div class="commit" style="margin-right: 10px;">
+                            <span class="edit-code add-wid-code">Spaces</span>
+                            <span class="edit-code add-wid-code">2</span>
+                            <span class="edit-code add-wid-code">No wrap</span>
+                        </div>
+
+                </div>
+                
+            </div>
+
+            <form id="codeForm" >
+                <!-- <label for="taskInfo">Код:</label><br> -->
+                <div class="container">
+                    <div class="line-numbers"></div>
+                    <textarea id="taskCode" name="taskCode" type="text" id="multiLineInput" rows="40" cols="50" class="code" oninput="updateNumbers(this)"></textarea>
+                </div>
+                
+            
+                
+                
+
+                <!-- <textarea id="taskCode" name="taskCode" type="text" id="multiLineInput" rows="40" cols="50"></textarea> -->
+                <!-- <input id="taskCode" name="taskCode" type="text" id="multilineInput"></input><br> -->
+            </form>
+
+
+              <!-- Модальное окно -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div id="errorContainer"></div> <!-- Сообщение об ошибке -->
+                    <label for="description">Описание:</label><br>
+                    <textarea id="description" name="description"></textarea><br>
+                    <button id="saveDescriptionButton">Сохранить описание</button>
+                    <button id="closeModalButton">Закрыть</button>
+                </div>
+            </div>
+            
+        </main>
+ 
+        
+
+        
+        <footer>  
+
+          <div class = footer_block>    
+              <div class="for-img-text">
+                  <a href="#top"><img src="../img/git_img.png" class="img-footer"></a>&copy; 2023 GitHub, Inc.
+              </div>             
+              <ul class="footer-list"> 
+                  
+                  <li class="footer_text"><a class="aclass" href=""><p>Terms</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>Privacy</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>Security</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>Status</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>Docs</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>Contact GitHub</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>Pricing</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>API</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>Training</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>Blog</p></a></li>
+                  <li class="footer_text"><a class="aclass" href=""><p>About</p></a></li>
+              </ul>
+          </div> 
+        </footer>
+    </div>
+
+    <script>
+        function updateNumbers(textarea) {
+          const lines = textarea.value.split('\n').length;
+          const lineNumbersWrapper = document.querySelector('.line-numbers');
+          lineNumbersWrapper.innerHTML = '<div>1</div>'; // Добавляем первую строку до создания остальных
+          for (let i = 2; i <= lines; i++) { // Начинаем со второй строки
+            const line = document.createElement('div');
+            line.textContent = i;
+            lineNumbersWrapper.appendChild(line);
+          }
+        }
+        // Вызываем функцию при загрузке страницы
+        updateNumbers(document.querySelector('.code'));
+    </script>
+
+    <script>
+        const multilineInput = document.getElementById('multilineInput');
+      
+        multilineInput.addEventListener('keyup', (event) => {
+          if (event.key === 'Enter') {
+            // Добавляем перенос строки в значение input при нажатии Enter
+            multilineInput.value += '\n';
+          }
+        });
+
+    </script>
+
+    <script>
+        const titleInput = document.getElementById('title');
+        const openModalButton = document.getElementById('openModalButton');
+        const modal = document.getElementById('myModal');
+        const saveDescriptionButton = document.getElementById('saveDescriptionButton');
+        const taskCodeInput = document.getElementById('taskCode');
+        const descriptionInput = document.getElementById('description');
+        const errorContainer = document.getElementById('errorContainer');
+    
+        function checkInput() {
+          const title = titleInput.value.trim();
+    
+          if (title === '') {
+            openModalButton.disabled = true;
+          } else {
+            openModalButton.disabled = false;
+    
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            const existingTask = tasks.find(task => task.title === title);
+    
+            if (existingTask || title !== '') {
+              openModalButton.disabled = false;
+            } else {
+              openModalButton.disabled = true;
+            }
+          }
+        }
+    
+        function clearDescriptionInput() {
+          descriptionInput.value = '';
+        }
+    
+        function hideError() {
+          errorContainer.style.display = 'none';
+        }
+    
+        titleInput.addEventListener('input', checkInput);
+    
+        openModalButton.addEventListener('click', () => {
+          if (!openModalButton.disabled) {
+            modal.style.display = 'flex';
+            descriptionInput.focus();
+          }
+        });
+    
+        closeModalButton.addEventListener('click', () => {
+          modal.style.display = 'none';
+          clearDescriptionInput(); // Очистка только поля ввода описания при закрытии модального окна
+          hideError(); // Скрытие сообщения об ошибке при закрытии модального окна
+        });
+    
+        saveDescriptionButton.addEventListener('click', () => {
+          let description = descriptionInput.value.trim();
+          if (description === '') {
+            description = 'Create commit'; // Дефолтное описание, если пусто
+          }
+          localStorage.setItem('description', description);
+          const title = titleInput.value;
+          const taskCode = taskCodeInput.value;
+          const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+          const existingTask = tasks.find(task => task.title === title);
+    
+          if (!existingTask) {
+            tasks.push({ title, description, taskCode });
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            modal.style.display = 'none';
+            clearDescriptionInput(); // Очистка поля ввода описания после сохранения задачи и закрытия модального окна
+            window.location.href = 'index.html';
+          } else {
+            errorContainer.style.display = 'block';
+            errorContainer.textContent = 'There was an error committing your changes: File could not be edited';
+          }
+        });
+    
+        document.getElementById('taskForm').addEventListener('submit', (e) => {
+          e.preventDefault();
+          modal.style.display = 'flex';
+        });
+    
+        checkInput();
+      </script>
+  
+
+
+    <!-- <script>
+      
+        const titleInput = document.getElementById('title');
+        const submitButton = document.getElementById('submitButton');
+
+        function checkInput() 
+        {//проверка на заполнения поля
+        if (titleInput.value.trim() !== '')
+        {
+            submitButton.disabled = false;
+        } 
+        else
+        {
+            submitButton.disabled = true;
+        }
+        }
+
+        //название
+        titleInput.addEventListener('input', checkInput);
+
+        // сохранение localStorage !!!!
+        document.getElementById('taskForm').addEventListener('submit', function (e) 
+        {
+        e.preventDefault();
+        const title = titleInput.value;
+        const description = document.getElementById('description').value;
+
+        // Получение задачи 
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.push({ title, description });
+
+        // Сохранение в localStorage
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+
+        //додому
+        window.location.href = '../index.html';
+        });
+
+        //перезагрузка стр, проверка
+        checkInput();
+    </script> -->
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

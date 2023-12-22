@@ -10,7 +10,7 @@
 
   <div id="taskDetails">
     <h2 id="taskTitle"></h2>
-    <p id="taskDescription"></p>
+    <p id="taskCode"></p>
     
     <button onclick="deleteTask()">Удалить задачу</button>
   </div>
@@ -21,13 +21,12 @@
     const currentTask = tasks[taskIndex];
 
     document.getElementById('taskTitle').innerText = currentTask.title;
-    document.getElementById('taskDescription').innerText = currentTask.description;
+    document.getElementById('taskCode').innerText = currentTask.taskCode;
 
-    function deleteTask() 
-    {
+    function deleteTask() {
       tasks.splice(taskIndex, 1);
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      window.location.href = '../index.html';
+      window.location.href = 'index.html';
     }
   </script>
 </body>

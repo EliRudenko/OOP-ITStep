@@ -1,0 +1,278 @@
+main
+{
+    margin: 0.5%;
+    margin-right: 1%;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  /* Стили сообщения об ошибке */
+  #errorContainer {
+    display: none; /* Скрыть изначально */
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+.name-repo-back
+{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(0, 119, 255);
+    text-decoration: none;
+}
+.name-repo-back:hover
+{
+    text-decoration: underline;
+
+}
+.delimiter
+{
+    font-size: 17px;
+    font-weight:lighter;
+    opacity: 0.4;
+    margin-right: 5px ;
+}
+
+.master-name-forTask
+{
+    font-family: monospace;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 3px 8px 3px;
+    margin-top: 3px;
+    color: rgb(0, 119, 255);
+    background-color: rgba(29, 58, 126, 0.362);
+    border-radius: 5px;
+}
+
+.name-file-input
+{
+    background-color: rgba(0, 255, 255, 0);
+    border: 1px solid rgba(39, 55, 98, 0.289);
+    padding: 8px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+
+.submitButton
+{
+    background-color: rgb(46, 135, 52);
+    height: 30px;
+    color:white;
+    border: 0px;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight:550;
+    padding: 0px 12px 22px;
+    padding-top: 9px;
+
+}
+.submitButton:hover
+{
+    background-color: rgb(56, 159, 63);
+}
+.submitButton:disabled
+{
+    opacity: 0.8;
+}
+
+
+.but-commit-changes
+{
+    background-color: rgba(79, 83, 84, 0.355);
+    height: 20px;
+    color:rgb(255, 255, 255);
+    border: 1px solid rgba(90, 89, 89, 0.225);
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight:550;
+    padding: 0px 12px 6px;
+    padding-top: 6px;
+
+    margin-right: 10px;
+}
+.but-commit-changes:hover
+{
+    background-color: rgba(79, 83, 84, 0.523);
+    border: 1px solid rgba(90, 89, 89, 0.473);
+}
+.back-to-index
+{
+    color: rgba(255, 255, 255, 0.718);
+    text-decoration: none;
+}
+.main-block
+{
+    display: flex;
+    width: 100%;
+}
+
+#task
+{
+    flex: 0 0 auto;
+    display: flex;
+    width: 100%;
+    /* background-color: aqua; */
+}
+
+#taskForm, #codeForm
+{
+    width: 100%;
+    border: 0px;
+    padding: 0px;
+}
+
+#taskCode
+{
+    width: 98.5%;
+    height: 500px;
+    /* margin-top: 550px; */
+    /* margin-left: 1.5%; */
+    padding-top: 15px;
+    padding-left: 15px;
+
+    background-color: rgba(0, 255, 255, 0);
+    border: 1px solid rgba(39, 55, 98, 0.289);
+    border-left: 0px;
+
+
+    font-size: 13px;
+    vertical-align: top;
+    text-align: top;
+}
+
+textarea:focus 
+{
+    outline: none;
+}
+
+.container 
+{
+    display: flex;
+    width: 100%;
+}
+.line-numbers 
+{
+    background-color: aqua;
+    
+    font-family: monospace;
+
+
+    width: 25px;
+    height: 500px;
+    margin-left: 1.5%;
+    padding-left: 1%;
+    padding-right: 0.8%;
+    padding-top: 15px;
+    font-size: 13px;
+
+    background-color: rgba(0, 255, 255, 0);
+    border: 1px solid rgba(39, 55, 98, 0.289);
+    border-right: 0px;
+
+    color: rgba(34, 33, 33, 0.333);
+    text-align: center;
+    /* overflow: hidden; */
+    /* flex-shrink: 0; */
+}
+
+.edit-code
+{
+    background-color: rgba(0, 0, 0, 0.525);
+    border: 1px solid rgb(179, 191, 209);
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 10px;
+}
+
+.add-wid-code
+{
+    background-color: rgba(0, 0, 0, 0.386);
+    border: 1px solid rgba(179, 191, 209, 0.621);
+    font-weight: 400;
+}
+
+.prev-code
+{
+    background-color: rgba(43, 53, 71, 0.436);
+    border-radius: 0px 5px 5px 0px;
+    
+
+    margin-left: 0px;
+    font-size: 14px;
+    padding: 6px 10px;
+    
+}
+
+.prev-code:hover
+{
+    background-color: rgba(43, 53, 71, 0.712);
+}
+  
+
+
+
+
+
+
+
+
+
+.th-code-inp
+{
+    width: 98.4%;
+    height: 38px;
+    padding-top: 8px;
+    margin-top: 1.5%;
+    margin-left: 1.5%;
+    background-color: rgba(40, 49, 56, 0.312);
+    border: 1px solid rgba(39, 55, 98, 0.289);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 0px;
+}
+
+
+.name-file
+{
+    display: flex;
+
+    flex: 1 0 45%;
+    float: left;
+    left: 1;
+    /* align-items:start; */
+    margin-left: 0px;
+
+}
+
+.commit
+{
+    display: flex;
+}
