@@ -1,0 +1,8 @@
+  <h1>Детали задачи</h1>
+
+  <div id="taskDetails">
+    <h2 id="taskTitle"></h2>
+    <p id="taskCode"></p>
+    
+    <button onclick="deleteTask()">Удалить задачу</button>
+  </div>
