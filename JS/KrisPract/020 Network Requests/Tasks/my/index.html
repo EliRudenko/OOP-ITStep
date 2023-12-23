@@ -2,6 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Погода в Одессе</title>
+  <style>
+
+    #weather-info img 
+    {
+      margin-left: 0px;
+      width: 40px;
+      height: 40px;
+      vertical-align: middle; /* Выравнивание изображения по вертикали относительно текста */
+    }
+  </style>
+</head>
+<body>
+  <h1>Погода в Одессе</h1>
+  <div id="weather-info"></div>
+
+  <script>
+    const apiKey = 'd77e8a80bfcc7551c3135a39d716ce92';
+
+    // Функция для получения погоды по названию города
+    function getWeather(city) {
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const temperature = Math.floor(data.main.temp); // Округление температуры до целого значения
+          const weatherIcon = data.weather[0].icon;
+
+          // Создание строки с данными о погоде без пробелов и переносов строк
+          const weatherInfo = `${city} ${temperature}°C<img src="https://openweathermap.org/img/w/${weatherIcon}.png" alt="Иконка погоды">`;
+
+          // Вставка данных о погоде в элемент на странице
+          document.getElementById('weather-info').innerHTML = weatherInfo;
+        })
+        .catch(error => {
+          console.log('Произошла ошибка при получении данных о погоде:', error);
+        });
+    }
+
+    // Вызов функции для города Одесса
+    getWeather('Odessa');
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <title>To-Do List</title>
 </head>
 <body>
@@ -43,4 +106,4 @@
     };
   </script>
 </body>
-</html>
+</html> -->

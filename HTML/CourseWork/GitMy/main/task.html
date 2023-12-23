@@ -251,9 +251,9 @@
                 <ul> 
 
                     <li class="nav_text-for-header"><a class = "aclassN" href="../index.html">
-                        <img src="../img/header/Code.png" class="img-nav code-icon">Code</a></li>
+                        <img src="../img/header/Code.png" class="img-nav code-icon">Code</a><div class="highlightH"></li></div>
                     <li class="nav_text-for-header"><a class = "aclassN highlightH-text" href="#">
-                        <img src=" ../img/header/Issues.png" class="img-nav" >Issues</a><div class="highlightH"></li></div>
+                        <img src=" ../img/header/Issues.png" class="img-nav" >Issues</a></li>
                     <li class="nav_text-for-header"><a class = "aclassN" href="Pull-requests.html">
                         <img src="../img/header/Pull-requests.png" class="img-nav" >Pull requests</a></li>
                     <li class="nav_text-for-header"><a class = "aclassN" href="Actions.html">
@@ -305,6 +305,7 @@
                             <!-- <label for="description">Объяснение:</label><br>
                             <input id="description" name="description"></input><br> -->
                             
+                            <div class="back"><a href="../index.html" style="color: rgba(255, 255, 255, 0.86); text-decoration: none;">Cancel changes</a></div>
                             <button id="openModalButton" class="submitButton" disabled>Commit changes...</button>
                             <!-- <input type="submit" value="Commit changes..." id="submitButton" disabled> -->
 
@@ -327,19 +328,15 @@
                                     <a class = "aclassN" href="../index.html">
                                         <span class="edit-code">Edit</span>
                                         <span class="prev-code">Preview</span>
-                                       
+                                    
+                                        <span class="nav_text-for-header "><a class = "aclassN copilot-code" href="../index.html">
+                                            <img src="../img/right/Copilot.png" class="img-nav" style="width: 13px; height: 13px;">Code 55% gaster wiht GitHub Copliot</a>
+                                        </span>
 
                                         
                                     </a>
                                 </p>
                             </span>
-                        
-                            <!-- <p class="text-for-but" style="margin: 0px; font-size: small; padding-left: 0px;">
-                                <a class = "aclassN" href="../index.html">
-                                    <span>in</span>
-                                    <span class="master-name-forTask">master</span>
-                                </a>
-                            </p> -->
                         </div>
 
                         
@@ -359,24 +356,22 @@
                     <div class="line-numbers"></div>
                     <textarea id="taskCode" name="taskCode" type="text" id="multiLineInput" rows="40" cols="50" class="code" oninput="updateNumbers(this)"></textarea>
                 </div>
-                
-            
-                
-                
-
-                <!-- <textarea id="taskCode" name="taskCode" type="text" id="multiLineInput" rows="40" cols="50"></textarea> -->
-                <!-- <input id="taskCode" name="taskCode" type="text" id="multilineInput"></input><br> -->
             </form>
+
+            <div class="footer-code" >
+                Use <span class="footer-code-mini-block">Control + Shift + m</span> to toggle the <span class="footer-code-mini-block">tab</span> key moving focus. Alternatively, use <span class="footer-code-mini-block">esc</span> then <span class="footer-code-mini-block">tab</span> to move to the next interactive element on the page.
+            </div>
 
 
               <!-- Модальное окно -->
             <div id="myModal" class="modal">
                 <div class="modal-content">
                     <div id="errorContainer"></div> <!-- Сообщение об ошибке -->
-                    <label for="description">Описание:</label><br>
+                    <label for="description">Commit message</label><br>
                     <textarea id="description" name="description"></textarea><br>
-                    <button id="saveDescriptionButton">Сохранить описание</button>
-                    <button id="closeModalButton">Закрыть</button>
+                    <button id="closeModalButton">Cancel</button>
+                    <button id="saveDescriptionButton">Commit changes</button>
+                   
                 </div>
             </div>
             
@@ -503,7 +498,7 @@
             localStorage.setItem('tasks', JSON.stringify(tasks));
             modal.style.display = 'none';
             clearDescriptionInput(); // Очистка поля ввода описания после сохранения задачи и закрытия модального окна
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
           } else {
             errorContainer.style.display = 'block';
             errorContainer.textContent = 'There was an error committing your changes: File could not be edited';
