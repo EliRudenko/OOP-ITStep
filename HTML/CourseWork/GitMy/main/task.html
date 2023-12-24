@@ -282,17 +282,17 @@
                         <div class="name-file">
                             <span>
                                 <p class="text-for-but">
-                                    <a class = "aclassN" href="../index.html">
+                                    <a class = "aclassN min-but" href="../index.html">
                                         <img src="../img/header/Projects.png" class="img-nav projects-icon"> 
-                                        <span style="margin-left: 5px;"><a href = "../index.html" class="name-repo-back">OOP-ITStep</a></span> <span class="delimiter">/</span>
+                                        <span style="margin-left: 5px;"><a href = "../index.html" class="name-repo-back min-but">OOP-ITStep</a></span> <span class="delimiter min-but">/</span>
 
-                                        <!-- <input type="text" id="title" name="title" class="name-file-input" placeholder="Name your file..." required><br> -->
+                                       
                                         <input type="text" id="title" name="title" class="name-file-input" placeholder="Name your file..." required><br>
                                     </a>
                                 </p>
                             </span>
                         
-                            <p class="text-for-but" style="margin: 0px; font-size: small; padding-left: 0px;">
+                            <p class="text-for-but min-but" style="margin: 0px; font-size: small; padding-left: 0px;">
                                 <a class = "aclassN" href="../index.html">
                                     <span>in</span>
                                     <span class="master-name-forTask">master</span>
@@ -302,13 +302,9 @@
 
                         
                         <div class="commit">
-                            <!-- <label for="description">Объяснение:</label><br>
-                            <input id="description" name="description"></input><br> -->
-                            
-                            <div class="back"><a href="../index.html" style="color: rgba(255, 255, 255, 0.86); text-decoration: none;">Cancel changes</a></div>
-                            <button id="openModalButton" class="submitButton" disabled>Commit changes...</button>
-                            <!-- <input type="submit" value="Commit changes..." id="submitButton" disabled> -->
 
+                            <div class="back"><a href="../index.html" style="color: rgba(255, 255, 255, 0.86); text-decoration: none;">Cancel <span class="min-button">changes</span></a></div>
+                            <button id="openModalButton" class="submitButton" disabled>Commit <span class="min-button">changes...</span></button>
                         </div>
 
                        
@@ -351,7 +347,7 @@
             </div>
 
             <form id="codeForm" >
-                <!-- <label for="taskInfo">Код:</label><br> -->
+               
                 <div class="container">
                     <div class="line-numbers"></div>
                     <textarea id="taskCode" name="taskCode" type="text" id="multiLineInput" rows="40" cols="50" class="code" oninput="updateNumbers(this)"></textarea>
@@ -359,14 +355,15 @@
             </form>
 
             <div class="footer-code" >
-                Use <span class="footer-code-mini-block">Control + Shift + m</span> to toggle the <span class="footer-code-mini-block">tab</span> key moving focus. Alternatively, use <span class="footer-code-mini-block">esc</span> then <span class="footer-code-mini-block">tab</span> to move to the next interactive element on the page.
+                <span style="margin-left: 10px;"></span> Use<span class="footer-code-mini-block">Control + Shift + m</span> to toggle the <span class="footer-code-mini-block">tab</span> key moving focus. 
+                <span class="min-scri">Alternatively, use <span class="footer-code-mini-block">esc</span> then <span class="footer-code-mini-block">tab</span> to move to the next interactive element on the page.</span>
             </div>
 
 
-              <!-- Модальное окно -->
+           
             <div id="myModal" class="modal">
                 <div class="modal-content">
-                    <div id="errorContainer"></div> <!-- Сообщение об ошибке -->
+                    <div id="errorContainer"></div> 
                     <label for="description">Commit message</label><br>
                     <textarea id="description" name="description"></textarea><br>
                     <button id="closeModalButton">Cancel</button>
@@ -405,11 +402,13 @@
     </div>
 
     <script>
-        function updateNumbers(textarea) {
+        function updateNumbers(textarea) 
+        {
           const lines = textarea.value.split('\n').length;
           const lineNumbersWrapper = document.querySelector('.line-numbers');
-          lineNumbersWrapper.innerHTML = '<div>1</div>'; // Добавляем первую строку до создания остальных
-          for (let i = 2; i <= lines; i++) { // Начинаем со второй строки
+          lineNumbersWrapper.innerHTML = '<div>1</div>'; // первая строка до создания остальных
+          for (let i = 2; i <= lines; i++) 
+          { //со второй строки
             const line = document.createElement('div');
             line.textContent = i;
             lineNumbersWrapper.appendChild(line);
@@ -422,8 +421,10 @@
     <script>
         const multilineInput = document.getElementById('multilineInput');
       
-        multilineInput.addEventListener('keyup', (event) => {
-          if (event.key === 'Enter') {
+        multilineInput.addEventListener('keyup', (event) => 
+        {
+          if (event.key === 'Enter') 
+          {
             // Добавляем перенос строки в значение input при нажатии Enter
             multilineInput.value += '\n';
           }
@@ -443,49 +444,59 @@
         function checkInput() {
           const title = titleInput.value.trim();
     
-          if (title === '') {
+          if (title === '') 
+          {
             openModalButton.disabled = true;
-          } else {
+          } 
+          else 
+          {
             openModalButton.disabled = false;
     
             const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
             const existingTask = tasks.find(task => task.title === title);
     
-            if (existingTask || title !== '') {
+            if (existingTask || title !== '') 
+            {
               openModalButton.disabled = false;
-            } else {
-              openModalButton.disabled = true;
-            }
+            } 
+            else { openModalButton.disabled = true; }
           }
         }
     
-        function clearDescriptionInput() {
+        function clearDescriptionInput() 
+        {
           descriptionInput.value = '';
         }
     
-        function hideError() {
+        function hideError() 
+        {
           errorContainer.style.display = 'none';
         }
     
         titleInput.addEventListener('input', checkInput);
     
-        openModalButton.addEventListener('click', () => {
-          if (!openModalButton.disabled) {
+        openModalButton.addEventListener('click', () => 
+        {
+          if (!openModalButton.disabled) 
+          {
             modal.style.display = 'flex';
             descriptionInput.focus();
           }
         });
     
-        closeModalButton.addEventListener('click', () => {
+        closeModalButton.addEventListener('click', () => 
+        {
           modal.style.display = 'none';
-          clearDescriptionInput(); // Очистка только поля ввода описания при закрытии модального окна
-          hideError(); // Скрытие сообщения об ошибке при закрытии модального окна
+          clearDescriptionInput(); // Очистка поля ввода описания при закрытии
+          hideError(); // Скрытие сообщения об ошибке 
         });
     
-        saveDescriptionButton.addEventListener('click', () => {
+        saveDescriptionButton.addEventListener('click', () => 
+        {
           let description = descriptionInput.value.trim();
-          if (description === '') {
-            description = 'Create commit'; // Дефолтное описание, если пусто
+          if (description === '') 
+          {
+            description = 'Create commit'; // Дефолтное описание, если нет коммита
           }
           localStorage.setItem('description', description);
           const title = titleInput.value;
@@ -505,57 +516,14 @@
           }
         });
     
-        document.getElementById('taskForm').addEventListener('submit', (e) => {
+        document.getElementById('taskForm').addEventListener('submit', (e) => 
+        {
           e.preventDefault();
           modal.style.display = 'flex';
         });
     
         checkInput();
       </script>
-  
-
-
-    <!-- <script>
-      
-        const titleInput = document.getElementById('title');
-        const submitButton = document.getElementById('submitButton');
-
-        function checkInput() 
-        {//проверка на заполнения поля
-        if (titleInput.value.trim() !== '')
-        {
-            submitButton.disabled = false;
-        } 
-        else
-        {
-            submitButton.disabled = true;
-        }
-        }
-
-        //название
-        titleInput.addEventListener('input', checkInput);
-
-        // сохранение localStorage !!!!
-        document.getElementById('taskForm').addEventListener('submit', function (e) 
-        {
-        e.preventDefault();
-        const title = titleInput.value;
-        const description = document.getElementById('description').value;
-
-        // Получение задачи 
-        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks.push({ title, description });
-
-        // Сохранение в localStorage
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-
-        //додому
-        window.location.href = '../index.html';
-        });
-
-        //перезагрузка стр, проверка
-        checkInput();
-    </script> -->
 </body>
 </html>
 

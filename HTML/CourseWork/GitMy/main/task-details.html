@@ -294,14 +294,13 @@
                                             <span id="taskTitle" style="font-size: 15px; display: flex; font-weight: 500;"></span>
                                           </span>
                                       
-                                          <p class="text-for-but" style="margin: 0px; font-size: small; padding-left: 0px;">
+                                          <p class="text-for-but min-but" style="margin: 0px; font-size: small; padding-left: 0px;">
                                             <a class = "aclassN" href="../index.html">
                                                 <span>in</span>
                                                 <span class="master-name-forTask">master</span>
                                             </a>
                                           </p>
-                                          <!-- <input type="text" id="title" name="title" class="name-file-input" placeholder="Name your file..." required><br> -->
-                                          <!-- <input type="text" id="title" name="title" class="name-file-input" placeholder="Name your file..." required><br> -->
+                                          
                                       </a>
                                   </p>
                               </span>
@@ -311,18 +310,14 @@
   
                           
                           <div class="commit">
-                              <!-- <label for="description">Объяснение:</label><br>
-                              <input id="description" name="description"></input><br> -->
                               
                               <div id="taskDetails">
-                                <!-- <h2 id="taskTitle"></h2>
-                                <p id="taskCode"></p> -->
+
                                 
-                                <button onclick="deleteTask()" class="back" style="height: 30px; color: rgb(236, 51, 51); font-weight: 300;"><a href="../index.html" style="color: rgb(236, 51, 51); text-decoration: none;">Dalete file</a></button>
+                                <button onclick="deleteTask()" class="back" style="height: 30px; color: rgb(236, 51, 51); font-weight: 300;"><a href="../index.html" style="color: rgb(236, 51, 51); text-decoration: none;">Dalete <span class="min-button">file</span></a></button>
                               </div>
-                              <div class="back"><a href="../index.html" style="color: rgba(255, 255, 255, 0.86); text-decoration: none;">Cancel changes</a></div>
-                              <!-- <button id="openModalButton" class="submitButton" disabled>Commit changes...</button> -->
-                              <!-- <input type="submit" value="Commit changes..." id="submitButton" disabled> -->
+
+                              <div class="back"><a href="../index.html" style="color: rgba(255, 255, 255, 0.86); text-decoration: none;">Cancel <span class="min-button">changes</span></a></div>
   
                           </div>
   
@@ -356,9 +351,7 @@
   
                           
                           <div class="commit" style="margin-right: 10px;">
-                              <!-- <span class="edit-code add-wid-code">Spaces</span>
-                              <span class="edit-code add-wid-code">2</span>
-                              <span class="edit-code add-wid-code">No wrap</span> -->
+                              
                           </div>
                           
                       
@@ -370,25 +363,22 @@
               <form id="codeForm">
 
             
-                  <!-- <label for="taskInfo">Код:</label><br> -->
+                
                   <div class="container">
                       <div class="line-numbers"></div>
 
                       <div id="taskDetails">
-                        <!-- <h2 id="taskTitle"></h2> -->
+                       
                         <p id="taskCode" style="border-left: 0px; border-right: 0px; padding-left: 4px;"></p>
                         
-                        <!-- <button onclick="deleteTask()">Удалить задачу</button> -->
+                       
                       </div>
                   
                       
                       <textarea id="taskCode" name="taskCode" type="text" id="multiLineInput" rows="40" cols="50" class="code" oninput="updateNumbers(this)"></textarea>
                   </div>
               </form>
-  
-              <!-- <div class="footer-code">
-                  Use <span class="footer-code-mini-block">Control + Shift + m</span> to toggle the <span class="footer-code-mini-block">tab</span> key moving focus. Alternatively, use <span class="footer-code-mini-block">esc</span> then <span class="footer-code-mini-block">tab</span> to move to the next interactive element on the page.
-              </div> -->
+
               
           </main>
    
