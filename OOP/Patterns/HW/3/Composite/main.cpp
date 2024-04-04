@@ -107,7 +107,6 @@ int main()
     root->Display(0);
     cout << "Total Price: $" << root->GetPrice() << endl;
 
-    // Freeing memory
     delete root;
 
     return 0;
