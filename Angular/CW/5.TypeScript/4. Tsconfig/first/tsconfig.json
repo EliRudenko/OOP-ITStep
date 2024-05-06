@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es5", // версия ES
+        "removeComments": true, // удаление коммент. при компиляции
+        "outDir": "dist", // папка для js файлов
+        "sourceMap": true // созать карту сопоставлении ts и js
+    },
+    "include": [ // файлы для компиляции
+        "**/*"
+    ],
+    "exclude": [ // файлы не откомпилировать !! 
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
