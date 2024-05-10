@@ -1,0 +1,31 @@
+.header-div
+{
+    display: flex;
+    height: 5em;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(153, 255, 0, 0.666);
+    color: white;
+    font-size:1.5em;
+    font-family: monospace;
+    font-weight: 200;
+}
+.headerdiv
+{
+    height: 5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    font-weight: bolder;
+}
+
+.twodiv
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(101, 49, 174);
+    color: white;
+    width: 50%;
+}
