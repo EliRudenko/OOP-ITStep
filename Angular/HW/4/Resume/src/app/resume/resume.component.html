@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="rectangle">
+        <div class="user-info">
+            <h2>User</h2>
+            <p>{{ resume[0].fullName }}</p>
+            <p>Email: {{ resume[0].email }}</p>
+            <p>Телефон: {{ resume[0].phone }}</p>
+            <p>Город: {{ resume[0].city }}</p>
+        </div>
+        <div class="links">
+            <h2>Ссылки</h2>
+            <p><a href="{{ resume[0].links.github }}" target="_blank">GitHub</a></p>
+            <p><a href="{{ resume[0].links.linkedin }}" target="_blank">LinkedIn</a></p>
+            <p><a href="{{ resume[0].links.twitter }}" target="_blank">Twitter</a></p>
+        </div>
+    </div>
+    <div class="rectangle">
+        <div class="experience">
+            <h2>Опыт работы</h2>
+            <p>{{ resume[0].experience }}</p>
+        </div>
+        <div class="skills">
+            <h2>Навыки</h2>
+            <ul class="skills">
+                <li>{{ resume[0].skills[0] }}</li>
+                <li>{{ resume[0].skills[1] }}</li>
+                <li>{{ resume[0].skills[2] }}</li>
+                <li>{{ resume[0].skills[3] }}</li>
+                <li>{{ resume[0].skills[4] }}</li>
+            </ul>
+        </div>
+        <div class="certificates">
+            <h2>Сертификаты</h2>
+            <ul>
+                <li>{{ resume[0].certifications[0] }}</li>
+                <li>{{ resume[0].certifications[1] }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
