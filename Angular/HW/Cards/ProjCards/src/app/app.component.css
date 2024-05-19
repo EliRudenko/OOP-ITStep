@@ -1,0 +1,30 @@
+.product-details 
+{
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+
+  border: 1px solid #ff0000;
+
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 10px;
+}
+  
+.first-button 
+{
+  margin-top: 15px;
+  margin-left: 30px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #ca4444;
+  border: #ff0000;
+}
+  
+.first-button:hover 
+{
+  cursor: grab;
+  background-color: #ff0000;
+}
+  
+.first-button:active { cursor: grabbing; }

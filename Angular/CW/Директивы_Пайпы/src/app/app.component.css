@@ -1,0 +1,46 @@
+
+.container {
+    max-width: 1165px;
+    padding: 0 15px;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    border: 2.5px solid #ccc;
+}
+nav{
+    margin-right: 50px;
+    border-right: 2px solid #ccc;
+    padding-right: 50px;
+}
+nav a{
+    padding: 5px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    transition: all 0.5s;
+    color: #E03237;
+    font-size: 20px;
+    display: block;
+}
+
+nav a:hover{
+    box-shadow: 0 6px 6px rgba(10,16,20,.15), 0 0 52px rgba(10,16,20,.12);
+}
+
+nav .active{
+    background: #E03237;
+    color: #fff;
+}
+h3{
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+main{
+    display: flex;
+    align-items: flex-start;
+}
+
+.examples{
+    position: sticky;
+    top: 100px;
+}

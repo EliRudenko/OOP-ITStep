@@ -1,0 +1,49 @@
+input 
+{
+  display: block;
+  margin-bottom: 10px;
+  padding: 6px;
+  width: 160px;
+
+  border: 2px solid chocolate;
+  border-radius: 3px;
+}
+  
+select 
+{
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: auto;
+  border: 2px solid chocolate;
+ 
+}
+
+.products-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+  
+.product-card 
+{
+  border: 2px solid chocolate;
+  padding: 10px;
+  border-radius: 5px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+  
+  
+.product-card strong 
+{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+  
+ 

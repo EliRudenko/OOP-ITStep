@@ -1,0 +1,62 @@
+<h2>ng Tamplates</h2>
+<!-- ng-template директива инструмент Angular шаблона и содержимое 
+     этого тега будет содержать часть шаблона, которую затем может быть 
+     использована вместе с другими шаблонами для формирования окончательного 
+шаблона компонента. -->
+<h3>*ngIf</h3>
+
+<button (click)="toggleVisible()">Переключатель ngIf</button>
+<br>
+<br>
+<div *ngIf="visible">
+    <b>*</b> - директива ngIf задана через with <b>*</b>
+</div>
+<br>
+<ng-template [ngIf]="visible">
+    <div>
+        <b>[ngIf]</b> - директива ngIf задана через with <b>[ngIf]</b>
+    </div>
+</ng-template>
+
+<br>
+<hr>
+<br>
+<h3>*ngSwitch</h3>
+<button (click)="changeNgSwitch()">Кнопка changeNgSwitch</button>
+<br>
+<br>
+<div [ngSwitch]="choice">
+    <div *ngSwitchCase="true">ngSwitch Пример 1 - Элемент 1 !</div>
+    <div *ngSwitchCase="false">ngSwitch Пример 1 - Элемент 2 !</div>
+    <div *ngSwitchDefault>ngSwitch Пример 1: Изначально</div>
+</div>
+<br>
+<div [ngSwitch]="choice">
+    <ng-template [ngSwitchCase]="true">
+        <div>ngSwitch Пример 2 - Элемент 1</div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="false">
+        <div>ngSwitch Пример 2 - Элемент 2</div>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+        <div>ngSwitch Пример 2: Изначально</div>
+    </ng-template>
+</div>
+
+<br>
+<hr>
+<br>
+<p>Список <b>*ngFor</b></p>
+<ul>
+    <li *ngFor="let item of items">
+        {{item}}
+    </li>
+</ul>
+<p>Список <b>ng-template</b></p>
+<ol>
+    <ng-template ngFor let-item [ngForOf]="items">
+        <li>
+            {{item}}
+        </li>
+    </ng-template>
+</ol>

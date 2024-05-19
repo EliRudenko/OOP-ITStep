@@ -1,0 +1,17 @@
+<h2>Атрабутивная Директива ngStyle</h2>
+
+<div class="blocks">
+    <!-- Binding -->
+    <div [style.background-color]="'lightgreen'" class="block">
+        style
+    </div>
+    <!-- Directive -->
+    <div [ngStyle]="{
+        color: 'purple',
+        background: toggle ? 'lightgray' : 'brown',
+        backgroundColor: toggle ? 'gold' : 'aqua',
+        'background-color': toggle ? 'gold' : 'blue'
+    }" class="block">ngStyle</div>
+</div>
+<hr>
+<button (click)="toggle = !toggle">Изменить фон</button>

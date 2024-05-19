@@ -1,0 +1,24 @@
+<h2>Атрибутивная Директива ngClass</h2>
+
+<div class="blocks">
+    <!-- Bindings -->
+    <div 
+        [class.bg]="flag"
+        [class.myborder]="flag"
+        >class</div>
+        <!--
+            Использование директивы ngClass
+            При использовании данной директивы применяется привязка к контрольному объекту.
+            Каждый ключ объекта - имя CSS класса. Если значение ключа true - класс добавляется
+            к элементу, иначе - убирается. 
+        -->
+    <!-- Directive -->
+    <div [ngClass]="{
+        bg: flag,
+        myborder: flag
+    }">ngClass object</div>
+    <div [ngClass]="['bg','myborder']">ngClass array</div>
+    <div [ngClass]="'bg myborder'">ngClass string</div>
+</div>
+
+<button (click)="flag = !flag">Клик</button>

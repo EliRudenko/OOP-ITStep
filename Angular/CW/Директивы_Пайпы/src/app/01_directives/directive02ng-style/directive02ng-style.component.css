@@ -1,0 +1,16 @@
+.block{
+    width: 100px;
+    height: 100px;
+}
+.blocks{
+    display: flex;
+    justify-content: space-around;
+}
+
+.blocks div{
+    width: 150px;
+    height: 100px;
+    background: #ddd;
+    text-align: center;
+    font-size: 30px;
+}

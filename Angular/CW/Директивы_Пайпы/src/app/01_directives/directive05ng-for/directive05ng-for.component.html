@@ -1,0 +1,29 @@
+<h2>Структурная Директива ngFor</h2>
+<!--
+        let str of arrStr - получить каждый элемент из массива arrStr, 
+        сохранить в локальной переменной str и сделает доступной в HTML 
+        элементе на каждой итерации.
+    -->
+<button (click)="addStr()">Добавить пункт</button>
+<ul>
+    <li *ngFor="let str of arrStr">
+        {{ str }}
+    </li>
+</ul>
+
+<!--    index - индекс элемента
+        count - количество элементов
+        even  - четные элементы 
+        odd   - не четные элементы
+        first - первый элемент
+        last  - последний элемент
+        https://angular.io/api/common/NgForOf -->
+<hr>
+<ul>
+    <li 
+        *ngFor="let obj of arrObjs; let i = index;let ev = even"
+        [class.bg]="ev ? true : false"
+        >
+        {{ i + 1 }} - {{ obj.prop }}
+    </li>
+</ul>

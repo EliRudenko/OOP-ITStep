@@ -1,0 +1,5 @@
+<div>
+  <div class="product" *ngFor="let product of products">
+    <app-cards-block [product]="product" (viewDetails)="viewProductDetails($event)"></app-cards-block>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h2>Pipes / Пайпы</h2>
+<!-- В поиске пайпы которые начинаются со слова Deprecated лучше не использовать,
+     они устарели и в будущих версиях будут удалены!!! -->
+<h3>Strings\Строки</h3>
+<!-- https://angular.io/api/common/TitleCasePipe -->
+<!-- https://angular.io/api/common/LowerCasePipe -->
+<!-- https://angular.io/api/common/SlicePipe -->
+<h4> -- {{ textOne }}, {{ textTwo }} </h4>
+<!-- uppercase -->
+<!-- lowercase -->
+<!-- titlecase -->
+<!-- slice:число -->
+<h4> {{ textOne | uppercase }} </h4>
+<h4> {{ textTwo | slice:3:5 }} </h4>
+<hr>
+<h3>Numbers\Числа</h3>
+<!-- https://angular.io/api/common/DecimalPipe -->
+<h4> -- {{ varNumber }} </h4>
+<h4> {{ varNumber | number }} </h4>
+<h4> {{ varNumber | number:'2.1-3' }} </h4>
+<h4> {{ varNumber | number:'1.0-0' }} </h4>

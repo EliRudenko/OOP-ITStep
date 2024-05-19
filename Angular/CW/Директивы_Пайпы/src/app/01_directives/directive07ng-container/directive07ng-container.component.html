@@ -1,0 +1,14 @@
+<h2>ng-container</h2>
+
+<h3>
+    Заголовок 
+    <!-- Поменяйте значение *ngIf -->
+    <ng-container *ngIf="true">
+        с приставкой без тега
+    </ng-container>
+    <!-- Поменяйте значение [ngIf] -->
+    <!-- При записи *ngIf ng-template не отобразится -->
+    <ng-template [ngIf]="false">
+       с акцией продукта
+    </ng-template>
+</h3>
