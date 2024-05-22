@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ItStep</title>
+</head>
+<body>
+    <div id="app"> </div>
+    <!-- crossorigin для  работы с кроссбраузерными запросами -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- для компиляции кода нам необходим компилятор Babel, который позволяет скомпилировать приложение при запуске в браузере -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+   <!-- атрибут text/babel указывает, что данный код должен обрабатываться выше подключенным компилятором Babel. -->
+   <script type="text/babel">
+    const rootNode = document.getElementById("app");    // элемент для рендеринга приложения React
+    // получаем корневой элемент 
+    const root = ReactDOM.createRoot(rootNode);
+    // рендеринг в корневой элемент
+    root.render(
+        <h1>Hello React</h1>  // элемент, который мы хотим создать
+     );
+   </script>
+</body>
+</html>
+
+<!-- Рендеринг элемента на веб-странице разбивается на два этапа. Вначале нам надо установить элемент веб-страницы, в который будет производиться рендеринг приложения React. Для этого применяется метод ReactDOM.createRoot().
+ В него передается элемент веб-страницы, в котором будет производиться рендеринг.
+  В данном случае это элемент <div id="app"></div> -->

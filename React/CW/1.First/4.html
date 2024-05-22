@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ItStep</title>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="container"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const elem = ReactDOM.createRoot(document.getElementById("header"));
+        function tick() 
+        {
+            elem.render(
+              <div>
+                <h1>Сервис получения времени</h1>
+                <h2>Текущее время {new Date().toLocaleTimeString()}.</h2>
+              </div>
+            );
+          }
+          setInterval(tick, 1000);
+  
+        ReactDOM.createRoot(document.getElementById("container"))
+            .render(
+            <div>
+                <h2>Начальное время {new Date().toLocaleTimeString()}.</h2>
+            </div>
+        );
+    </script>
+</body>
+</html>
+
+<!-- Элементы React являются неизменяемыми (immutable). После создания элемента нельзя изменить его атрибуты или дочерние элементы. И единственный способ изменить интерфейс, определенный в элементе, это создать новый элемент и передать его в функцию ReactDOM.render(). -->

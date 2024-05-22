@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Информация о городе</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="city-app"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const CityInfo = () => {
+            const containerStyle = {
+                backgroundColor: 'rgba(0, 100, 280, 0.4)',
+                padding: '20px',
+                borderRadius: '10px',
+                textAlign: 'center',
+                width: '80%',
+                maxWidth: '600px'
+            };
+
+            const imgStyle = {
+                margin: '10px 0',
+                width: '100%',
+                maxWidth: '300px'
+            };
+
+            return (
+                <div style={containerStyle}>
+                    <h1>Информация о городе</h1>
+                    <p><strong>Страна:</strong> Украина</p>
+                    <p><strong>Город:</strong> Одесса</p>
+                    <p><strong>Год основания:</strong> 1794</p>
+                    
+                    <h2>Достопримечательности</h2>
+                    <img style={imgStyle} src="https://vtranse.life/wp-content/uploads/2020/11/1575_9_interesnykh_faktov_ob_Odesse_06261766367.jpg" alt="Оперный" />
+                    <img style={imgStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlFRPklV8QjX3wjLfka0PAwfteV_Bnz1iNF8Rd1b_UvJpMgSVXEPLa9dQrJzNTyaG3a8Q&usqp=CAU" alt="Лестница" />
+                    <img style={imgStyle} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREddh8JoP6Kbp-yxZ3uSC4dJ5k7jqY72BjPKRsjN_gq7_atn99iUaNjauZNiotfEuSh3U&usqp=CAU" alt="Пассаж" />
+                </div>
+            );
+        };
+
+        ReactDOM.createRoot(document.getElementById('city-app')).render(<CityInfo />);
+    </script>
+</body>
+</html>

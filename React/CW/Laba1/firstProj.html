@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Информация обо мне</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const PersonalInfo = () => {
+            const containerStyle = {
+                backgroundColor: 'rgba(128, 128, 128, 0.5)',
+                padding: '20px',
+                borderRadius: '10px',
+                textAlign: 'center',
+                width: '90%',
+                maxWidth: '400px'
+            };
+
+            return (
+                <div style={containerStyle}>
+                    <h1>Информация обо мне</h1>
+                    <p><strong>ФИО:</strong> Руденко Елена Константиновна</p>
+                    <p><strong>Телефон:</strong> +380 (68) 050 60 80</p>
+                    <p><strong>Email:</strong> rudenko.elin@gmail.com</p>
+                </div>
+            );
+        };
+
+        ReactDOM.createRoot(document.getElementById('app')).render(<PersonalInfo />);
+    </script>
+</body>
+</html>
