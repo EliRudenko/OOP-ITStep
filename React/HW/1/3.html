@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Рецепт: Брауни</title>
+    <style>
+        body 
+        {
+            margin: 0;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .recipe 
+        {
+            background-color: rgba(80, 200, 128, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1, h2 { color: #333; }
+        p {  margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div id="recipe-app"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const RecipeInfo = () => 
+        {
+            const containerStyle = 
+            {
+                backgroundColor: 'rgba(300, 200, 128)',
+                padding: '20px',
+                borderRadius: '10px',
+                textAlign: 'center',
+                width: '80%',
+                maxWidth: '600px'
+            };
+
+            return (
+                <div className="recipe" style={containerStyle}>
+                    <h1>Рецепт: Брауни</h1>
+                    <h2>Ингредиенты:</h2>
+                    <p><strong>Шоколад (темный):</strong> 200 г</p>
+                    <p><strong>Масло сливочное:</strong> 100 г</p>
+                    <p><strong>Сахар:</strong> 200 г</p>
+                    <p><strong>Яйца:</strong> 3 шт</p>
+                    <p><strong>Мука пшеничная:</strong> 100 г</p>
+                    <p><strong>Грецкие орехи (по желанию):</strong> 100 г</p>
+
+                    <h2>Приготовление:</h2>
+                    <ol>
+                        <li>Растопить масло и шоколад на медленном огне.</li>
+                        <li>Добавить сахар и перемешать.</li>
+                        <li>Вбить яйца и хорошо размешать.</li>
+                        <li>Постепенно добавить муку, не переставая мешать.</li>
+                        <li>Положить грецкие орехи и перемешать (по желанию).</li>
+                        <li>Вылить получившееся тесто в форму для выпечки.</li>
+                        <li>Выпекать в предварительно разогретой до 180°C духовке в течение 25-30 минут.</li>
+                        <li>Дать остыть и нарезать на квадраты.</li>
+                    </ol>
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo1I2QbDsSyx8URIdg6shz38uPz_2um7rJqmvP66clng&s" alt="Готовые брауни" style={{ maxWidth: '100%', height: 'auto', borderRadius: '8px' }} />
+                </div>
+            );
+        };
+
+        ReactDOM.createRoot(document.getElementById('recipe-app')).render(<RecipeInfo />);
+    </script>
+</body>
+</html>

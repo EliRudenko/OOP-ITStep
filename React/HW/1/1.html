@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Любимая книга</title>
+    <style>
+        body 
+        {
+            margin: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="book-app"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const BookInfo = () => 
+        {
+            const containerStyle = 
+            {
+                backgroundColor: 'rgba(80, 200, 128, 0.5)',
+                padding: '20px',
+                borderRadius: '10px',
+                textAlign: 'center',
+                width: '80%',
+                maxWidth: '600px'
+            };
+
+            return (
+                <div style={containerStyle}>
+                    <h1>Любимая книга</h1>
+                    <p><strong>Название книги:</strong> "О чем молчат ангелы"</p>
+                    <p><strong>Автор:</strong> Бекка Фитцпатрик </p>
+                    <p><strong>Жанр:</strong> Роман, Подростковая литература, Любовный роман, Фэнтези </p>
+                    <p><strong>Количество страниц:</strong> 416</p>
+                    <p><strong> Первая публикация:</strong> 13 октября 2009 г.</p>
+                    
+                    <h2>Описание</h2>
+                    <p>Нора никогда особенно не интересовалась мальчиками из школы. Но появился он, и все изменилось. </p>
+                    <p>Нору мистическим образом притягивает к необычному, закрытому, таинственному Патчу, несмотря на ореол тьмы, окутывающий его. Он, кажется, знает о ней больше, чем она сама, его глаза проникают в самые потаенные глубины ее души, а мимолетная улыбка заставляет сердце пропускать удары. </p>
+                    <p>Но тот пугающий мрак, что прячется в нем, рано или поздно откроется Норе, и тогда ей придется выбирать, кому верить в извечном противостоянии небесного воинства и ангелов, изгнанных из Рая. В нашей библиотеке вы можете бесплатно почитать книгу « О чем молчат ангелы ». Чтобы читать онлайн книгу « О чем молчат ангелы » перейдите по указанной ссылке. Приятного Вам чтения.</p>
+                </div>
+            );
+        };
+
+        ReactDOM.createRoot(document.getElementById('book-app')).render(<BookInfo />);
+    </script>
+</body>
+</html>

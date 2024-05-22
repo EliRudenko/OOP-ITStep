@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Любимая музыкальная группа</title>
+    <style>
+        body 
+        {
+            margin: 0;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .album-container 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        .album 
+        {
+            width: 20%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .album img 
+        {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="band-app"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script type="text/babel">
+        const BandInfo = () => 
+        {
+            const containerStyle = 
+            {
+                backgroundColor: 'rgba(200, 100, 100, 0.5)',
+                padding: '20px',
+                borderRadius: '10px',
+                textAlign: 'center',
+                width: '80%',
+                maxWidth: '600px'
+            };
+
+            const imgStyle = 
+            {
+                margin: '10px 0',
+                width: '100%',
+                maxWidth: '300px'
+            };
+
+
+
+            return (
+                <div style={containerStyle}>
+                    <h1>Любимая музыкальная группа</h1>
+                    <p><strong>Название группы:</strong> Coldplay</p>
+                    <img style={imgStyle} src="https://i.ytimg.com/vi/F8LSngVNBw8/maxresdefault.jpg" alt="Parachutes" />
+                    <p><strong>Участники группы:</strong></p>
+                    <ul>
+                        <li>Нико Саллах - Вокал</li>
+                        <li>Себастьян Бислер - Основной вокал</li>
+                        <li>Кевин Ратайчак - Клавишные музыкальные инструменты</li>
+                        <li>Давид Фридрих - Барабан</li>
+                        <li>Даниэль Ханисс - Гитара</li>
+                        <li>Паскаль Шилло - Гитара</li>
+                        <li>Даниэль Клоссек - Бас-гитара</li>
+                        <li>Майкл Малицки - барабан</li>
+                    </ul>
+                    
+                    <h2>Альбомы</h2>
+                    <div className="album-container">
+                        <div className="album">
+                   
+                            <img src="data:image/jpeg;base64,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" alt="Tekkono" />
+                            <p><strong>Tekkno (2022)</strong></p>
+                        </div>
+                        <div className="album">
+                            <img  src="data:image/jpeg;base64,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" alt="Crystals" />
+                            <p><strong>Crystals (2015)</strong></p>
+                        </div>
+                        <div className="album">
+                            <img  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFoAWgMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABgECBAUHAwj/xAA4EAABBAAEBAQDBQcFAAAAAAABAAIDBAUGEVESITFBEyJhcQcy8BRCUoGRYqGxwdHh8RUjM0OC/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAHhEAAwABBQEBAAAAAAAAAAAAAAECEQMSITFBInH/2gAMAwEAAhEDEQA/AO4oiIAiIgCIiAIiIAiIgCIiAIiIAoRn/PtfLmmH0CyfF5RqGHm2Bp+8/wDkO/XovH4nZ/jyrW+w4fwy4xOzVgI1bA0/fd+/Qd/ZQ+lJR+JdRsjxDUzdUj56eVl1g+v/AD7FXmfX0SkdQypmSvmKgJGgRWmAeNBr8p3G4W9XCMLuWcHvAs461yu7hc1w0IPcEbLq+GZrw+3hT7k8jYXwgeLGTzB/Z317LLdyaVpNco3Nu1DTgdNYeGsb+87D1WHh+J/aSTI3ga4+X091CLmNy4zeEknkhYf9qLX5RufVTDCoBDVZLONNRq1h6lYPVbrE9Gj0dk/XbN0ixIbJL+GToTyOyy1vNKlwc7TXYVNVVWqxBciIgIvnzJlLN+G+HLpDehBNa0BqWHY7tPcfmuCPwzEsu414NgPqX6rw5rmnmD2c09wd19RqG/FDCcHu5dmu4rYbTlqtJgt6auDuzNOrgT2/RXmvC8Vh8kUglq/ECn1iq5mqs59mW2D+f8PZRt3j1Z3QWWOjljPC9jhoWnZRXC8TmrzxWYZHRTRkOa9p0LSunwWanxDoaNMdbMlZmunRtto+vy9lXU0zpitn4ZOUTh0UMmI352vfC4NiqD5nu7E+n9FJIcUlty+LKfM7o0dvQLm8UNim5zJo3Ryxu4XscNC07LomQG1bUDp3yh9ph08I/cG/r7rlcNvCNtTbKdvklFKBzWB8o8x6DZZaIt5lSsI85tt5YVquVOSsQVREQGBjeL0cCw2bEMTnENeIcyeZJ7ADuT2C+cc+Ztv5sxEWLAdDRiJ+zVteTB+J27j3PboPXpHxsyzi+JR18WpTy2adNp8WiB/x7ytA68uuvMDp3WqyvlmjhOG18w5mr8XR1Kg4eaV3UOcD+uh9z2W2ntlbmPSPUclR1Mpz41mOxLSlnZphtVjQZJHdQXNPY7ctBzPYLzwXD7VRjLkTnxSxHiZI06Fp9FLMRFrHbrb2I+aV3KOMfLG38LR9aqa18oRy4I6GU+FYezybMPqq1eTWbwaKjdq51ouYfChx6FnMdG2APr8vZQxmN2sExMiPjr267+FzHDmD3BGy1rqeJYRmd1WXxKtyCTiaWnQjZzT3B3XRLWD1s6wRzWWMr49XZoXtGjbLBv6/w9lSpSNp1dvHhLspZnqZkpccekdqMDxoCebfUbg7rfLnGW8oW62Mw2YpH1WwHzvHV27dO+q6OoOe1KfyFarlahQuREQBRTNGAmxb/wBSBkmDWhpiPPgA7tG26lasfJHHp4j2t16cR0QGkwLA2Vy21ZYPGA8jD/1/3W+VvGz8TeXqgkYej29eHr32QGozHl2pjkcb5WhluDnDOBzb6HcHZYeEYRLHYBlYYzEebhv6KROmiYNXSMA3Lh6f1H6oyWN5IZIxxB0IDgdDsoayTkvREUkBERAEVCqIC5Y1ujXuFpsR8RYHBvPoD1XuiAxZMPgMZa2McyXaFx6n/Koyk1jQAwA8Zfye7kdNB+Wiy1UIDVTYHTtNdFahDoSPlEjt2nf9hv6LMq4fVqO4oI9Hc+ZcTprpy59uQWQiAuRUVEBcitRAf//Z" alt="The Scene" />
+                            <p><strong>The Scene (2017)</strong></p>
+                        </div>
+                        <div className="album">
+                            <img  src="data:image/jpeg;base64,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" alt="MMXX-EP" />
+                            <p><strong>MMXX-EP (2020)</strong></p>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.createRoot(document.getElementById('band-app')).render(<BandInfo />);
+    </script>
+</body>
+</html>
