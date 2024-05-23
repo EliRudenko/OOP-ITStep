@@ -1,0 +1,29 @@
+
+.App-logo 
+{
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+header 
+{
+  background-color: chocolate;
+}
+
+section 
+{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 0.9em;
+  background-color: chocolate;
+}
