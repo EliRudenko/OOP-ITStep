@@ -1,15 +1,20 @@
-const Achievements = ({ style }) => 
+import React, { Component } from 'react';
+class Achievements extends Component 
 {
-    return (
-        <div style={style}>
-            <h3>Достижения</h3>
-            <ul>
-                <li>Лига чемпионов УЕФА: 1961, 1965, 1977, 1986</li>
-                <li>Чемпионат Украины: 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2007, 2009, 2015, 2016, 2021</li>
-                <li>Забитые голы: более 2000 голов в различных турнирах</li>
-            </ul>
-        </div>
-    );
-};
+    render() 
+    {
+        const { achievements, style } = this.props;
+        return (
+            <div style={style}>
+                <h3>Достижения</h3>
+                <ul>
+                    {achievements.map((achievement, index) => (
+                        <li key={index}>{achievement}</li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
+}
 
 export default Achievements;

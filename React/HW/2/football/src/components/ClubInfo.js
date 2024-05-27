@@ -1,17 +1,22 @@
-const ClubInfo = ({ style }) => 
+import React, { Component } from 'react';
+class ClubInfo extends Component 
 {
-    return (
-        <div style={style}>
-            <h2>ФК Динамо Киев</h2>
-            <p>Город: Киев</p>
-            <p>Дата основания: 1927</p>
-            <img 
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK7AG9QfMOv_4wCUz3_nqpkRTB98ADeraxQJaH3cJWXCfFpbCz4nMBc72PRTJFli3Wp0o&usqp=CAU" 
-                alt="Герб ФК Динамо Киев" 
-                style={{ width: '150px', marginTop: '10px' }}
-            />
-        </div>
-    );
-};
+    render() 
+    {
+        const { name, city, founded, logo, style } = this.props;
+        return (
+            <div style={style}>
+                <h2>{name}</h2>
+                <p>Город: {city}</p>
+                <p>Дата основания: {founded}</p>
+                <img 
+                    src={logo}
+                    alt={`Герб ${name}`}
+                    style={{ width: '150px', marginTop: '10px' }}
+                />
+            </div>
+        );
+    }
+}
 
 export default ClubInfo;
