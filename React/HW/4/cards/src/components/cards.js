@@ -1,5 +1,5 @@
 import React from "react";
-import './cards_style.css';
+import './styles.css';
 
 export function Card(props) {
     const features = {
