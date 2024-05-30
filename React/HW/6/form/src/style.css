@@ -1,0 +1,70 @@
+.app 
+{
+font-family: Arial, sans-serif;
+max-width: 600px;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 5px;
+background-color: #f9f9f9;
+}
+  
+h1 { text-align: center; }
+  
+.form 
+{
+    display: flex;
+    flex-direction: column;
+}
+  
+.form-group 
+{
+    margin-bottom: 15px;
+    position: relative;
+}
+.form-group label 
+{
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.input-wrapper 
+{
+    display: flex;
+    align-items: center;
+}
+  
+.form-group input,
+.form-group select,
+.form-group textarea 
+{
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea { border-color: rgb(255, 0, 0); }
+  
+.validation-icon { margin-left: 10px; }
+.validation-icon.error-icon { color: rgb(255, 0, 0); }
+.validation-icon.success-icon { color: rgb(0, 255, 0); }
+  
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] { margin-right: 5px; }
+  
+button 
+{
+    padding: 10px 15px;
+    background-color: rgb(78, 206, 78);;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+button:hover { background-color: rgb(44, 149, 44); }
+  
