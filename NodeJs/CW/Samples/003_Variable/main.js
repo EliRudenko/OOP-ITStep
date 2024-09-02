@@ -1,5 +1,5 @@
-require('./mod');
+var mod = require('./mod');
 
 // переменной и функции в данном модуле не существует!
-console.log(x); // Error!
-test();         // Error!
+console.log(mod.x); // Error!
+mod.mytest();         // Error!

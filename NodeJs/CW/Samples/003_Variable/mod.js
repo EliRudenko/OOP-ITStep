@@ -1,6 +1,17 @@
 //Переменные обьявленные внутри модуля, являются локальными для модуля
 var x = 10;
 
-function test(){
-    console.log(x);
+function Sum(a,b)
+{
+    return a+b;
+}
+
+function test()
+{ 
+    console.log("Сумма =" + '${Sum(1,2)}');
+    console.log(x); 
 };
+
+
+exports.X=x;
+exports.mytest=test;
