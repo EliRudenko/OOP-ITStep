@@ -1,0 +1,11 @@
+{
+  "name": "contender-obstacle-simulation",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
+}
