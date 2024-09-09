@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <script>
+        window.onload = function() 
+        {
+            var form = document.getElementById('registrationForm');
+
+            form.addEventListener('submit', function(event) 
+            {
+                event.preventDefault();
+                var formData = new FormData(form);
+
+                fetch('/submit', 
+                {
+                    method: 'POST',
+                    body: new URLSearchParams(formData)
+                })
+                .then(response => response.text())
+                .then(data => { document.getElementById('output').innerHTML = data; })
+                .catch(error => console.error('Ошибка:', error));
+            });
+        };
+    </script>
+</head>
+<body>
+
+    <h1>Форма регистрации</h1>
+    <form id="registrationForm">
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" required><br><br>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+    
+    <div id="output"></div>
+
+</body>
+</html>
