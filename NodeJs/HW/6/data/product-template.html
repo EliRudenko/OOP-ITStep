@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .product-container 
+        {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-image 
+        {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .product-image img 
+        {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .product-details { flex: 2; }
+        
+        .product-details h1
+         {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .product-description 
+        {
+            margin-bottom: 20px;
+        }
+        .product-price 
+        {
+            font-size: 28px;
+            color: #ff3b30;
+            margin-bottom: 20px;
+        }
+        .product-button 
+        {
+            padding: 10px 40px;
+            background-color: #ff3b30;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product-button:hover 
+        {
+            background-color: #e62a24;
+        }
+        .shipping-info {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+
+        <div class="product-image">
+            <img src="{productImage}" alt="{productName}">
+            <p><strong>Причина уценки:</strong> {productCondition}</p>
+        </div>
+
+        <div class="product-details">
+            <h1 id="product-name">{productName}</h1>
+            <p id="product-description" class="product-description">{productDescription}</p>
+            <p id="product-price" class="product-price">{productPrice}</p>
+            <button class="product-button">Купить</button>
+            <p>Продавец: {productSeller}</p>
+            
+            <div class="shipping-info">
+                <p><strong>Самовывоз:</strong> {pickupInfo}</p>
+                <p><strong>Доставка курьером:</strong> {deliveryInfo}</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
