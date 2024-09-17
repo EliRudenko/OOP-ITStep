@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Добавить продукт</title>
+
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 10px;
+        }
+
+        h1 
+        {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+
+        form 
+        {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label 
+        {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+
+        input[type="text"], textarea 
+        {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 3px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        textarea 
+        {
+            height: 100px;
+            resize: vertical;
+        }
+        input[type="text"]:focus, textarea:focus 
+        {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button[type="submit"] 
+        {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover { background-color: #0056b3; }
+
+        @media (max-width: 768px) 
+        {
+            form { padding: 15px;}
+
+            button[type="submit"] { font-size: 14px; }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Добавить продукт</h1>
+    <form action="/add-product" method="POST">
+        <label for="name">Название продукта:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="price">Цена:</label><br>
+        <input type="text" id="price" name="price" required><br><br>
+
+        <label for="description">Описание:</label><br>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <label for="image">URL изображения:</label><br>
+        <input type="text" id="image" name="image" required><br><br>
+
+        <label for="condition">Состояние:</label><br>
+        <input type="text" id="condition" name="condition" required><br><br>
+
+        <label for="seller">Продавец:</label><br>
+        <input type="text" id="seller" name="seller" required><br><br>
+
+        <label for="pickup">Самовывоз:</label><br>
+        <input type="text" id="pickup" name="pickup" required><br><br>
+
+        <label for="delivery">Доставка:</label><br>
+        <input type="text" id="delivery" name="delivery" required><br><br>
+
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>
