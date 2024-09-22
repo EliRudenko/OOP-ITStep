@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/sttyles.css">
+    <title>Home Page</title>
+
+    <style>
+        
+        body 
+        {
+            font-family: Inter, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header 
+        {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 20px; 
+
+            height: 80px;
+            color: #5cb85c;
+        }
+        .header h1 
+        {
+            margin: 0;
+            flex-basis: 30%; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            
+            font-size: 24px; 
+        }
+
+
+        .main-menu 
+        {
+            display: flex;
+            justify-content: space-between;
+            width: 70%; 
+        }
+
+        .center-menu 
+        {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-basis: 40%;
+        }
+
+        .center-menu li { margin-left: 20px; }
+        .center-menu a 
+        {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        .right-menu 
+        {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-basis: 30%; 
+            justify-content: flex-end;
+        }
+        .right-menu li { margin-left: 20px; }
+        .right-menu a 
+        {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            font-size: 14px;
+
+        }
+
+        .center-menu a:hover, .right-menu a:hover  { color: #5cb85c; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Home Page</h1>
+        <nav class="main-menu">
+            <ul class="center-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/about">About Us</a></li>
+            </ul>
+            <ul class="right-menu">
+                <li><a href="/add-product">Product</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
