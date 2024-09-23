@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <h1>Add Student</h1>
+    <form method="POST" action="/students">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <label for="groupId">Group ID:</label>
+        <input type="number" id="groupId" name="groupId" required>
+        <label for="term">Term:</label>
+        <input type="number" id="term" name="term" required>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

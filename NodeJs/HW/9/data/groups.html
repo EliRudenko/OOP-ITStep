@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Group</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <h1>Add Group</h1>
+    <form method="POST" action="/groups">
+        <label for="name">Group Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="facultyId">Faculty ID:</label>
+        <input type="number" id="facultyId" name="facultyId" required>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
