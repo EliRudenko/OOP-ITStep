@@ -2,44 +2,41 @@ var express  = require('express');
 var app = express(); 
 
 var port = 8080; 
-
 var mssql = require('mssql'); 
-
 
 // параметры соединения с бд
 var config = {
-	user: 'admin',   				// пользователь базы данных
-	password: 'admin', 	 			// пароль пользователя 
-	server: 'Elon', 			// хост
-	database: 'testdb',    			// имя бд
-	port: 1433,			 			// порт, на котором запущен sql server
-    options: {
-        encrypt: true,  // Использование SSL/TLS
-        trustServerCertificate: true // Отключение проверки самоподписанного сертификата
+  server: 'Elin-TUF\\ELI',  // Имя сервера, как показано на скриншоте
+  database: 'testdb',       // Имя базы данных
+  user: 'admin',            // Пользователь
+  password: 'admin',        // Пароль
+  options: {
+        encrypt: true,               // Использование SSL/TLS
+        trustServerCertificate: true // Отключение проверки сертификата
     },
+  port: 1433,
+                     // Порт, на котором работает SQL Server
 }
 
-app.use(function(req, res) { 
-	// mssql.ConnectionPool - 
-	var connection = new mssql.ConnectionPool(config); 
+mssql.connect(config, err => 
+{
+  if (err) {
+    console.error('Error connecting to the database:', err);
+  } else {
+    console.log('Connected to the database');
 
-	connection.connect(function(err){		
-		// mssql.Request - 
-		var request = new mssql.Request(connection);  
-		// request.query - 
-		request.query('SELECT * FROM items', function(err, data) {
-			if (err){
-				console.log(err);
-				return;
-			}  
-			else {				
-				console.log(data); 
-				res.send(data.recordset); 				
-			}
-		});		
-	});
-}); 
+    const request = new mssql.Request();
+
+    request.query('SELECT * FROM items', (err, result) => {
+      if (err) {
+        console.error('Error executing query:', err);
+      } else {
+        console.log(result.recordset);
+      }
+    });
+  }
+});
 
 app.listen(port, function() { 
-	console.log('app listening on port ' + port); 
-}); 
+  console.log('App listening on port ' + port); 
+});
