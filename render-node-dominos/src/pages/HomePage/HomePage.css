@@ -1,0 +1,10 @@
+.home-page {
+    background-color: #f4f4f4;
+  }
+  
+  .filter-sort-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  

@@ -1,0 +1,13 @@
+.promo-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .promo-carousel img {
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+    scroll-snap-align: start;
+  }
+  

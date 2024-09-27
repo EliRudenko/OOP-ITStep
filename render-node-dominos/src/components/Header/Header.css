@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .header-logo {
+    font-size: 1.5rem;
+  }
+  
+  .header-nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .header-nav ul li {
+    margin-right: 15px;
+  }
+  
+  .header-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .header-user button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  

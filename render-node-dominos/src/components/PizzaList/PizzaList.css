@@ -1,0 +1,18 @@
+.pizza-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  @media (max-width: 768px) {
+    .pizza-card {
+      width: 48%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .pizza-card {
+      width: 100%;
+    }
+  }
+  
