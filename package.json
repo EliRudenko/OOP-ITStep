@@ -1,9 +1,13 @@
 {
   "dependencies": {
+    "body-parser": "^1.20.3",
     "cookie": "^0.6.0",
     "cookie-parser": "^1.4.6",
     "cookie-session": "^2.1.0",
     "express": "^4.21.0",
-    "mssql": "^11.0.1"
+    "express-session": "^1.18.0",
+    "mssql": "^11.0.1",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
   }
 }

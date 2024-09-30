@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Home Page</title>
+
+    <style>
+        body 
+        {
+            font-family: Inter, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header 
+        {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 20px; 
+            height: 80px;
+            color: rgb(254, 0, 33);
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header h1 
+        {
+            margin: 0;
+            font-size: 24px; 
+        }
+
+        .main-menu 
+        {
+            display: flex;
+            justify-content: space-between;
+            width: 70%; 
+        }
+
+        .center-menu, .right-menu 
+        {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex; 
+        }
+
+        .center-menu li, .right-menu li { margin-left: 20px; }
+        .center-menu a, .right-menu a 
+        {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        .center-menu a:hover, .right-menu a:hover { color:rgb(254, 0, 33); }
+
+        .cart 
+        {
+            display: none; 
+            background: rgba(245, 242, 242, 0.918);
+            padding: 20px; 
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: fixed; 
+            right: 20px; 
+            top: 100px; 
+            width: 430px; 
+            z-index: 1000; 
+            max-height: auto; 
+            overflow-y: auto; 
+        }
+
+        .cart.visible 
+        {
+            display: block; 
+        }
+
+        .cart-item 
+        {
+            display: flex; 
+            margin-bottom: 15px; 
+        }
+
+        .cart-item img 
+        {
+            width: 55px; 
+            height: 45px; 
+            margin-right: 10px; 
+            align-items: center;
+        }
+
+        .cart-item .item-details { flex-grow: 1; }
+
+        .cart-item h4 { margin: 0; }
+
+        .cart-item p 
+        {
+            font-size: 12px; 
+            margin: 0; 
+        }
+
+        .cart-item .item-actions 
+        {
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+        }
+
+        .cart-item button 
+        {
+            background-color: rgb(254, 0, 33);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px; 
+        }
+
+        .cart-item button:hover { background-color: rgb(254, 0, 33); }
+
+        .total 
+        {
+            font-weight: bold; 
+            margin-top: 10px; 
+        }
+
+        .pizza-cards 
+        {
+            display: flex;
+            justify-content: center; 
+            flex-wrap: wrap; 
+            padding: 20px; 
+        }
+
+        .pizza-card 
+        {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 10px;
+            width: calc(20% - 20px); 
+            text-align: center; 
+        }
+
+        .pizza-card img 
+        {
+            width: 100%; 
+            border-radius: 5px; 
+        }
+
+        #toggle-cart 
+        {
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(254, 0, 33);
+            border: none;
+            border-radius: 3px;
+            color: white;
+            position: relative; 
+        }
+
+        #item-count 
+        {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            color: rgb(254, 0, 33);
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #toggle-cart:hover { background-color: rgb(190, 23, 27);}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Home Page</h1>
+        <nav class="main-menu">
+
+            <ul class="center-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/about">About Us</a></li>
+            </ul>
+
+            <ul class="right-menu">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                <li><button id="toggle-cart" onclick="toggleCart()">Кошик</button></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <div class="cart" id="cart">
+        <h3>Кошик</h3>
+        <div id="cart-items"></div>
+        <p id="total-price" class="total">Итого: 0 грн</p>
+    </div>
+
+    <div class="pizza-cards" id="pizza-cards"></div>
+
+    <script>
+        let cart = {};
+
+        function toggleCart() 
+        {
+            const cartElement = document.getElementById('cart');
+            cartElement.classList.toggle('visible');
+        }
+
+        function updateCart() 
+        {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            let totalPrice = 0;
+
+            for (const [name, { price, quantity, imageUrl }] of Object.entries(cart)) 
+            {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'cart-item';
+                itemDiv.innerHTML = `
+                    <img src="${imageUrl}" alt="${name}">
+                    <div class="item-details">
+                        <h4>${name}</h4>
+                        <p>Соус Dominos, Моцарела(x2)</p>
+                    </div>
+                    <div class="item-actions">
+                        <span>${price} грн</span>
+                        <button onclick="changeQuantity('${name}', -1)">-</button>
+                        ${quantity}
+                        <button onclick="changeQuantity('${name}', 1)">+</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+                totalPrice += price * quantity;
+            }
+
+            document.getElementById('total-price').innerText = `Итого: ${totalPrice} грн`;
+        }
+
+        function changeQuantity(name, delta) 
+        {
+            if (cart[name]) 
+            {
+                cart[name].quantity += delta;
+
+                if (cart[name].quantity <= 0) 
+                {
+                    delete cart[name];
+                }
+            }
+
+            updateCart();
+        }
+
+        function addToCart(name, price, imageUrl) 
+        {
+            if (!cart[name]) 
+            {
+                cart[name] = { price, quantity: 0, imageUrl };
+            }
+
+            cart[name].quantity++;
+            updateCart();
+        }
+
+        async function loadPizzas() 
+        {
+            const response = await fetch('/pizzas');
+            const pizzas = await response.json();
+
+            const pizzaCardsContainer = document.getElementById('pizza-cards');
+
+            pizzas.forEach(pizza => 
+            {
+                const card = document.createElement('div');
+                card.className = 'pizza-card';
+                card.innerHTML = `
+                    <img src="${pizza.ImageUrl}" alt="${pizza.Name}">
+                    <h3>${pizza.Name}</h3>
+                    <p>${pizza.Description}</p>
+                    <p>${pizza.Price} грн</p>
+                    <button id="toggle-cart" onclick="addToCart('${pizza.Name}', ${pizza.Price}, '${pizza.ImageUrl}')">Додати в кошик</button>
+                `;
+                pizzaCardsContainer.appendChild(card);
+            });
+        }
+
+        window.onload = loadPizzas;
+    </script>
+</body>
+</html>
