@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo Chat</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body 
+        {
+            background-color: rgb(212, 219, 226);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        #wrap 
+        {
+            display: flex;
+            height: 100%;
+        }
+
+        #user_list 
+        {
+            width: 25%;
+            background-color: #f4f4f4;
+            border-right: 2px solid #ddd;
+            padding: 15px;
+            height: 100%;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        #user_list h4 { margin-top: 0; }
+
+        #user_list ul 
+        {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #user_list li 
+        {
+            padding: 8px;
+            background-color: #e9e9e9;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        #user_list li:hover {  background-color: #d4d4d4; }
+
+        #chat_area 
+        {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+        }
+
+        #register_form
+        {
+            text-align: center;
+            width: 300px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        #register_form h4 { margin-bottom: 15px; }
+
+        #register_form input { margin-bottom: 15px; }
+
+        #register_form button { width: 100%; }
+
+        #chat_section 
+        {
+            display: none;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        #messages { margin-bottom: 20px;}
+
+        #msg_form 
+        {
+            display: none;
+            margin-top: auto;
+        }
+
+        #msg_form input { margin-right: 10px; }
+        #inp{ width: 80%; }
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="user_list">
+            <h4>Users</h4>
+            <ul id="user_names"></ul> 
+        </div>
+
+        <div id="chat_area">
+            <div id="register_form">
+                <h4>Enter your name:</h4>
+                <input type="text" id="name" class="form-control input-lg" placeholder="Your Name..." />
+                <button id="register_btn" class="btn btn-lg btn-primary">Register</button>
+            </div>
+
+            <div id="chat_section">
+                <div id="messages"></div>
+            </div>
+
+            <div id="msg_form">
+                <input type="text" id="inp" class="form-control input-lg" placeholder="Message..." />
+                <button class="btn btn-lg btn-success" type="button" id="btn">Send!</button>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
