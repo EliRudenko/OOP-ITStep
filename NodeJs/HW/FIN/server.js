@@ -79,7 +79,6 @@ app.get('/register', (req, res) =>
 {
     res.sendFile(path.join(__dirname, 'data', 'register.html'));
 });
-
 app.post('/register', async (req, res) => 
 {
     const { login, password } = req.body;
@@ -120,7 +119,6 @@ app.get('/login', (req, res) =>
 {
     res.sendFile(path.join(__dirname, 'data', 'login.html'));
 });
-
 app.post('/login', (req, res) => 
 {
     const { login, password } = req.body;
@@ -245,7 +243,6 @@ app.get('/add-pizza', (req, res) =>
 
     res.sendFile(path.join(__dirname, 'data', 'add-pizza.html'));
 });
-
 app.post('/add-pizza', async (req, res) => 
 {
     const { name, price, description, imageUrl } = req.body;
@@ -355,7 +352,6 @@ app.get('/edit-pizza/:id', async (req, res) =>
     }
 });
 
-
 app.post('/edit-pizza/:id', async (req, res) => 
 {
     const pizzaId = req.params.id;
@@ -397,6 +393,8 @@ app.get('/delete-pizza/:id', async (req, res) =>
         res.send('Ошибка при удалении пиццы.');
     }
 });
+
+
 
 app.listen(port, () => 
 {
