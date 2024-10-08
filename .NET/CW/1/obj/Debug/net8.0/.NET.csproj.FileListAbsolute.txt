@@ -1,0 +1,15 @@
+d:\IT-STEP\IT-Step-Repo\.NET\1\bin\Debug\net8.0\.NET.exe
+d:\IT-STEP\IT-Step-Repo\.NET\1\bin\Debug\net8.0\.NET.deps.json
+d:\IT-STEP\IT-Step-Repo\.NET\1\bin\Debug\net8.0\.NET.runtimeconfig.json
+d:\IT-STEP\IT-Step-Repo\.NET\1\bin\Debug\net8.0\.NET.dll
+d:\IT-STEP\IT-Step-Repo\.NET\1\bin\Debug\net8.0\.NET.pdb
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\.NET.GeneratedMSBuildEditorConfig.editorconfig
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\.NET.AssemblyInfoInputs.cache
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\.NET.AssemblyInfo.cs
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\.NET.csproj.CoreCompileInputs.cache
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\.NET.sourcelink.json
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\.NET.dll
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\refint\.NET.dll
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\.NET.pdb
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\.NET.genruntimeconfig.cache
+d:\IT-STEP\IT-Step-Repo\.NET\1\obj\Debug\net8.0\ref\.NET.dll

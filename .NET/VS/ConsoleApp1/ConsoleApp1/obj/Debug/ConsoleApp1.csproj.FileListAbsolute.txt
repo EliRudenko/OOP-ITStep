@@ -1,0 +1,7 @@
+d:\IT-STEP\IT-Step-Repo\.NET\VS\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+d:\IT-STEP\IT-Step-Repo\.NET\VS\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+d:\IT-STEP\IT-Step-Repo\.NET\VS\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+d:\IT-STEP\IT-Step-Repo\.NET\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+d:\IT-STEP\IT-Step-Repo\.NET\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+d:\IT-STEP\IT-Step-Repo\.NET\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+d:\IT-STEP\IT-Step-Repo\.NET\VS\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
