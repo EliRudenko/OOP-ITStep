@@ -91,7 +91,7 @@ class ProgramEmployee
 */
 
 
-
+/*
 //2
 internal class Airplane
 {
@@ -197,3 +197,4 @@ class ProgramAirplane
         airplane.OutputData("short");
     }
 }
+*/
