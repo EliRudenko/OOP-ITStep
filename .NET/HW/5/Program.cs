@@ -5,46 +5,12 @@
 //1
 internal class Employee
 {
-    private string _fullName;
-    private DateTime _birthDate;
-    private string _contactNumber;
-    private string _workEmail;
-    private string _position;
-    private string _jobDescription;
-
-    public string FullName
-    {
-        get => _fullName;
-        set => _fullName = value;
-    }
-    public DateTime BirthDate
-    {
-        get => _birthDate;
-        set => _birthDate = value;
-    }
-    public string ContactNumber
-    {
-        get => _contactNumber;
-        set => _contactNumber = value;
-    }
-    public string WorkEmail
-    {
-        get => _workEmail;
-        set => _workEmail = value;
-    }
-    public string Position
-    {
-        get => _position;
-        set => _position = value;
-    }
-    public string JobDescription
-    {
-        get => _jobDescription;
-        set => _jobDescription = value;
-    }
-
-
-
+    public string FullName { get; set; }
+    public DateTime BirthDate { get; set; }
+    public string ContactNumber { get; set; }
+    public string WorkEmail { get; set; }
+    public string Position { get; set; }
+    public string JobDescription { get; set; }
 
     public void InputData()
     {
@@ -67,7 +33,6 @@ internal class Employee
         JobDescription = Console.ReadLine();
     }
 
-
     public void OutputData()
     {
         Console.WriteLine($"Full Name: {FullName}");
@@ -76,6 +41,18 @@ internal class Employee
         Console.WriteLine($"Work Email: {WorkEmail}");
         Console.WriteLine($"Position: {Position}");
         Console.WriteLine($"Job Description: {JobDescription}");
+    }
+
+    public void UpdateContactNumber(ref string newContactNumber)
+    {
+        ContactNumber = newContactNumber;
+        Console.WriteLine($"Updated Contact Number: {ContactNumber}");
+    }
+
+    public void GetEssentialInfo(out string fullName, out string position)
+    {
+        fullName = FullName;
+        position = Position;
     }
 }
 
@@ -86,64 +63,63 @@ class ProgramEmployee
         Employee employee = new Employee();
         employee.InputData();
         employee.OutputData();
+
+        string newContact = "123-456-7890";
+        employee.UpdateContactNumber(ref newContact);
+
+        employee.GetEssentialInfo(out string name, out string pos);
+        Console.WriteLine($"Essential Info: Name - {name}, Position - {pos}");
     }
 }
 */
 
 
+
 /*
 //2
 internal class Airplane
-{
-    private string _airplaneName;
-    private string _manufacturer;
-    private int _yearOfManufacture;
-    private double _wingspan;
-    private string _type;
 
-    public string AirplaneName
-    {
-        get => _airplaneName;
-        set => _airplaneName = value;
-    }
-    public string Manufacturer
-    {
-        get => _manufacturer;
-        set => _manufacturer = value;
-    }
+    public string AirplaneName { get; set; } = "Unknown";
+    public string Manufacturer { get; set; } = "Unknown";
+
+    private int _yearOfManufacture;
     public int YearOfManufacture
     {
         get => _yearOfManufacture;
-        set => _yearOfManufacture = value;
+        set
+        {
+            if (value > 1900 && value <= DateTime.Now.Year)
+                _yearOfManufacture = value;
+            else
+                throw new ArgumentException("Invalid year of manufacture");
+        }
     }
+
+    private double _wingspan;
     public double Wingspan
     {
         get => _wingspan;
-        set => _wingspan = value;
+        set
+        {
+            if (value > 0)
+                _wingspan = value;
+            else
+                throw new ArgumentException("Wingspan must be positive");
+        }
     }
-    public string Type
-    {
-        get => _type;
-        set => _type = value;
-    }
-    public Airplane()
-    {
-        _airplaneName = "Unknown";
-        _manufacturer = "Unknown";
-        _yearOfManufacture = 0;
-        _wingspan = 0.0;
-        _type = "Unknown";
-    }
+
+    public string Type { get; set; } = "Unknown";
+
+    public Airplane() { }
+
     public Airplane(string airplaneName, string manufacturer, int yearOfManufacture, double wingspan, string type)
     {
-        _airplaneName = airplaneName;
-        _manufacturer = manufacturer;
-        _yearOfManufacture = yearOfManufacture;
-        _wingspan = wingspan;
-        _type = type;
+        AirplaneName = airplaneName;
+        Manufacturer = manufacturer;
+        YearOfManufacture = yearOfManufacture;
+        Wingspan = wingspan;
+        Type = type;
     }
-
-
 
     public void InputData()
     {
@@ -163,7 +139,6 @@ internal class Airplane
         Type = Console.ReadLine();
     }
 
-
     public void OutputData()
     {
         Console.WriteLine($"Airplane Name: {AirplaneName}");
@@ -179,10 +154,25 @@ internal class Airplane
         {
             Console.WriteLine($"Name: {AirplaneName}, Manufacturer: {Manufacturer}");
         }
-        else
-        {
-            OutputData();
-        }
+        else { OutputData(); }
+    }
+
+    public void UpdateWingspan(ref double newWingspan)
+    {
+        Wingspan = newWingspan;
+        Console.WriteLine($"Updated Wingspan: {Wingspan}");
+    }
+
+    public void GetAirplaneDetails(out string name, out string manufacturer, out int year)
+    {
+        name = AirplaneName;
+        manufacturer = Manufacturer;
+        year = YearOfManufacture;
+    }
+
+    public void PrintDetails(in string message)
+    {
+        Console.WriteLine($"Message: {message}, Airplane: {AirplaneName}, Year: {YearOfManufacture}");
     }
 }
 
@@ -194,7 +184,14 @@ class ProgramAirplane
         airplane.InputData();
         airplane.OutputData(); 
 
-        airplane.OutputData("short");
+        double newWingspan = 35.5;
+        airplane.UpdateWingspan(ref newWingspan);
+
+        airplane.GetAirplaneDetails(out string name, out string manufacturer, out int year);
+        Console.WriteLine($"Airplane Details: {name}, {manufacturer}, Year: {year}");
+
+        string message = "Airplane Info";
+        airplane.PrintDetails(in message);
     }
 }
 */
