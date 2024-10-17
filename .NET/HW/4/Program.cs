@@ -10,29 +10,47 @@ internal class MyDate
     public int Day
     {
         get => _day;
-        set => _day = value;
+        set
+        {
+            if (value < 1 || value > DateTime.DaysInMonth(_year, _month))
+                throw new ArgumentOutOfRangeException(nameof(value), $"День должен быть в диапазоне от 1 до {DateTime.DaysInMonth(_year, _month)} для указанного месяца.");
+            _day = value;
+        }
     }
+    
     public int Month
     {
         get => _month;
-        set => _month = value;
+        set
+        {
+            if (value < 1 || value > 12)
+                throw new ArgumentOutOfRangeException(nameof(value), "Месяц должен быть в диапазоне от 1 до 12.");
+            _month = value;
+        }
     }
+    
     public int Year
     {
         get => _year;
-        set => _year = value;
+        set
+        {
+            if (value < 1 || value > DateTime.Now.Year)
+                throw new ArgumentOutOfRangeException(nameof(value), "Год должен быть больше 0 и не превышать текущий год.");
+            _year = value;
+        }
     }
+    
     public static string DayOfWeek
     {
         get => _dayOfWeek;
         private set => _dayOfWeek = value;
     }
 
-
     static MyDate()
     {
         _dayOfWeek = "Monday"; 
     }
+
     public MyDate()
     {
         _day = 1;
@@ -40,11 +58,12 @@ internal class MyDate
         _year = 2000;
         UpdateDayOfWeek();
     }
+
     public MyDate(int day, int month, int year)
     {
-        _day = day;
-        _month = month;
-        _year = year;
+        Year = year;
+        Month = month;
+        Day = day; 
         UpdateDayOfWeek();
     }
 
@@ -64,7 +83,6 @@ internal class MyDate
         UpdateDayOfWeek();
     }
 
-
     public void DisplayDate()
     {
         Console.WriteLine($"Date: {_day:D2}/{_month:D2}/{_year}, Day of the week: {DayOfWeek}");
@@ -77,22 +95,27 @@ internal class MyDate
     }
 }
 
-
-
 class Program
 {
     static void Main()
     {
-        MyDate date1 = new MyDate();
-        date1.DisplayDate();
+        try
+        {
+            MyDate date1 = new MyDate();
+            date1.DisplayDate();
 
-        MyDate date2 = new MyDate(15, 10, 2024);
-        date2.DisplayDate();
+            MyDate date2 = new MyDate(31, 2, 2024);
+            date2.DisplayDate();
 
-        int diff = date1.DifferenceInDays(date2);
-        Console.WriteLine($"Difference between dates: {diff} days");
+            int diff = date1.DifferenceInDays(date2);
+            Console.WriteLine($"Difference between dates: {diff} days");
 
-        date2.ChangeDate(10);
-        date2.DisplayDate();
+            date2.ChangeDate(10);
+            date2.DisplayDate();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка: " + ex.Message);
+        }
     }
 }

@@ -1,0 +1,5 @@
+D:\IT-STEP\IT-Step-Repo\.NET\HW\7\obj\Debug\net8.0\7.GeneratedMSBuildEditorConfig.editorconfig
+D:\IT-STEP\IT-Step-Repo\.NET\HW\7\obj\Debug\net8.0\7.AssemblyInfoInputs.cache
+D:\IT-STEP\IT-Step-Repo\.NET\HW\7\obj\Debug\net8.0\7.AssemblyInfo.cs
+D:\IT-STEP\IT-Step-Repo\.NET\HW\7\obj\Debug\net8.0\7.csproj.CoreCompileInputs.cache
+D:\IT-STEP\IT-Step-Repo\.NET\HW\7\obj\Debug\net8.0\7.sourcelink.json
