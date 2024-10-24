@@ -1,0 +1,15 @@
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\AnimalsAgain.GeneratedMSBuildEditorConfig.editorconfig
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\AnimalsAgain.AssemblyInfoInputs.cache
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\AnimalsAgain.AssemblyInfo.cs
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\AnimalsAgain.csproj.CoreCompileInputs.cache
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\AnimalsAgain.sourcelink.json
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\bin\Debug\net8.0\AnimalsAgain.exe
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\bin\Debug\net8.0\AnimalsAgain.deps.json
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\bin\Debug\net8.0\AnimalsAgain.runtimeconfig.json
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\bin\Debug\net8.0\AnimalsAgain.dll
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\bin\Debug\net8.0\AnimalsAgain.pdb
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\AnimalsAgain.dll
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\refint\AnimalsAgain.dll
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\AnimalsAgain.pdb
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\AnimalsAgain.genruntimeconfig.cache
+D:\IT-STEP\IT-Step-Repo\.NET\HW\AnimalsAgain\obj\Debug\net8.0\ref\AnimalsAgain.dll
