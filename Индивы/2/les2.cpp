@@ -882,6 +882,9 @@ int main()
 
 
 //Адресная арифметика 
+
+
+//int
 int main()
 {
     int value = 8;
@@ -896,6 +899,8 @@ int main()
 }
 
 
+
+//short
 int main()
 {
     short value = 8;
@@ -906,5 +911,197 @@ int main()
     std::cout << ptr + 2 << '\n';
     std::cout << ptr + 3 << '\n';
  
+    return 0;
+}
+
+
+
+
+
+
+//Расположение элементов массива в памяти
+ 
+int main()
+{
+    int array[] = {7, 8, 2, 4, 5};
+ 
+    std::cout << "Element 0 is at address: " << &array[0] << '\n';
+    std::cout << "Element 1 is at address: " << &array[1] << '\n';
+    std::cout << "Element 2 is at address: " << &array[2] << '\n';
+    std::cout << "Element 3 is at address: " << &array[3] << '\n';
+ 
+    return 0;
+}
+
+
+//Индексация массивов 
+int main()
+{
+     int array [5] = {7, 8, 2, 4, 5};
+ 
+     std::cout << &array[1] << '\n'; // выведется адрес памяти элемента под индексом 1
+     std::cout << array+1 << '\n'; // выведется адрес памяти указателя на массив + 1 
+     std::cout << array[1] << '\n'; // выведется 8
+     std::cout << *(array+1) << '\n'; // выведется 8
+ 
+    return 0;
+}
+
+
+
+
+//Использование указателей для итерации по массиву
+
+int main()
+{
+    const int arrayLength = 9;
+    char name[arrayLength] = "Jonathan";
+    int numVowels(0);
+    
+    for (char *ptr = name; ptr < name + arrayLength; ++ptr)
+    {
+        switch (*ptr)
+        {
+        case 'A':
+        case 'a':
+        case 'E':
+        case 'e':
+        case 'I':
+        case 'i':
+        case 'O':
+        case 'o':
+        case 'U':
+        case 'u':
+            ++numVowels;
+        }
+    }
+
+    std::cout << name << " has " << numVowels << " vowels.\n";
+    return 0;
+}
+
+
+
+
+
+
+/*
+Задание 1
+Адресная арифметика с типом int
+
+Напишите программу, которая создаст переменную типа int, присвоит ей значение 42, 
+и выведет на экран:
+Адрес этой переменной.
+Адрес переменной после увеличения указателя на 1.
+Адрес переменной после увеличения указателя на 2 и 3.
+*/
+
+
+/*
+Задание 2
+Расположение элементов массива в памяти
+
+Напишите программу, которая создает массив из 5 целых чисел и выводит на экран:
+Адрес каждого элемента массива (с помощью оператора &).
+*/
+
+
+/*
+Задание 3
+Индексация массивов через указатели
+
+Напишите программу, которая создает массив из 5 целых чисел. Затем выведите:
+Адрес второго элемента массива с использованием &array[1].
+Адрес второго элемента с использованием array + 1.
+Значение второго элемента с использованием индексации массива array[1].
+Значение второго элемента с использованием арифметики указателя *(array + 1).
+*/
+
+
+/*
+Задание 4
+Использование указателей для итерации по массиву
+
+Напишите программу, которая создает строку (массив символов) 
+и подсчитывает количество гласных в строке с помощью указателей. 
+Используйте цикл, который будет проходить по всем символам строки, и увеличивайте счетчик, 
+если символ является гласной (буква A, E, I, O, U в любом регистре).
+*/
+
+
+
+
+
+
+//1
+int main() 
+{
+    int value = 42;
+    int *ptr = &value;
+
+    std::cout << "Address of value: " << ptr << '\n';
+    std::cout << "Address after ptr + 1: " << ptr + 1 << '\n';
+    std::cout << "Address after ptr + 2: " << ptr + 2 << '\n';
+    std::cout << "Address after ptr + 3: " << ptr + 3 << '\n';
+
+    return 0;
+}
+
+
+//2
+int main() 
+{
+    int array[] = {10, 20, 30, 40, 50};
+
+    std::cout << "Address of element 0: " << &array[0] << '\n';
+    std::cout << "Address of element 1: " << &array[1] << '\n';
+    std::cout << "Address of element 2: " << &array[2] << '\n';
+    std::cout << "Address of element 3: " << &array[3] << '\n';
+    std::cout << "Address of element 4: " << &array[4] << '\n';
+
+    return 0;
+}
+
+
+//3
+int main() 
+{
+    int array[5] = {7, 8, 2, 4, 5};
+
+    std::cout << "Address of element 1 (using &array[1]): " << &array[1] << '\n';
+    std::cout << "Address of element 1 (using array + 1): " << array + 1 << '\n';
+    std::cout << "Value of element 1 (using array[1]): " << array[1] << '\n';
+    std::cout << "Value of element 1 (using *(array + 1)): " << *(array + 1) << '\n';
+
+    return 0;
+}
+
+
+//4
+int main() 
+{
+    const int arrayLength = 9;
+    char name[arrayLength] = "Jonathan";
+    int numVowels = 0;
+
+    for (char *ptr = name; *ptr != '\0'; ++ptr) {
+        switch (*ptr) 
+        {
+            case 'A':
+            case 'a':
+            case 'E':
+            case 'e':
+            case 'I':
+            case 'i':
+            case 'O':
+            case 'o':
+            case 'U':
+            case 'u':
+                ++numVowels;
+                break;
+        }
+    }
+
+    std::cout << name << " has " << numVowels << " vowels.\n";
     return 0;
 }
