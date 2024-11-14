@@ -206,8 +206,130 @@ public:
 /*
 Конструктор с параметром
 
-Описание: Напишите класс Rectangle, у которого есть поля width и height. 
+Напишите класс Rectangle, у которого есть поля width и height. 
 Создайте конструктор, который принимает параметры с такими же именами (width и height) 
 и инициализирует поля класса значениями параметров. 
 Используйте указатель this, чтобы избежать конфликта имён.
 */
+
+
+
+
+/*
+Проверка на равенство объектов
+
+Создайте класс Point с полями x и y, представляющими координаты точки. 
+Напишите метод equals(const Point& other), который сравнивает текущий объект с другим объектом типа Point и возвращает true, если они равны. 
+Используйте this, чтобы явно указать на текущий объект.
+*/
+
+
+
+/*
+Метод для сравнения объектов
+
+Напишите класс Employee с полями name и id. 
+Создайте метод compareId(const Employee& other), который возвращает true, если id текущего объекта больше, чем у другого объекта. 
+Используйте this для обращения к полю id текущего объекта.
+*/
+
+
+
+
+
+
+
+//1
+class Rectangle 
+{
+    private:
+        int width;
+        int height;
+
+    public:
+        // Конструктор с параметрами
+        Rectangle(int width, int height) 
+        {
+            // Используем указатель this, чтобы избежать конфликта имен
+            this->width = width;
+            this->height = height;
+        }
+
+        // Метод для вывода размеров
+        void printDimensions() const 
+        {
+            std::cout << "Width: " << this->width << ", Height: " << this->height << std::endl;
+        }
+};
+
+int main() 
+{
+    Rectangle rect(10, 5);
+    rect.printDimensions(); // Width: 10, Height: 5
+    return 0;
+}
+
+
+
+
+
+//2
+#include <iostream>
+
+class Point 
+{
+    private:
+        int x, y;
+
+    public:
+        Point(int x, int y) : x(x), y(y) {}
+
+        // Метод для сравнения с другим объектом
+        bool equals(const Point& other) const  //по ссылке, чтобы избежать копирования.
+        {
+            return this->x == other.x && this->y == other.y;  // Сравниваем координаты
+        }
+};
+
+int main() 
+{
+    Point p1(3, 4);
+    Point p2(3, 4);
+    Point p3(5, 6);
+
+    std::cout << "p1 == p2: " << p1.equals(p2) << std::endl; // true
+    std::cout << "p1 == p3: " << p1.equals(p3) << std::endl; // false
+    return 0;
+}
+
+
+
+
+//3
+#include <iostream>
+#include <string>
+
+class Employee 
+{
+    private:
+        std::string name;
+        int id;
+
+    public:
+        Employee(std::string name, int id) : name(name), id(id) {}
+
+        // Метод для сравнения id
+        bool compareId(const Employee& other) const 
+        {
+            return this->id > other.id;  // Сравниваем id
+        }
+};
+
+int main() 
+{
+    Employee emp1("Alice", 101);
+    Employee emp2("Bob", 102);
+
+    std::cout << "emp1 has higher id than emp2: " << emp1.compareId(emp2) << std::endl;  // false
+    return 0;
+}
