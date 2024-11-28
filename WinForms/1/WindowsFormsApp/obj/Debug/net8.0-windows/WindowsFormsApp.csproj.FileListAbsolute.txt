@@ -1,0 +1,15 @@
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\bin\Debug\net8.0-windows\WindowsFormsApp.exe
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\bin\Debug\net8.0-windows\WindowsFormsApp.deps.json
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\bin\Debug\net8.0-windows\WindowsFormsApp.runtimeconfig.json
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\bin\Debug\net8.0-windows\WindowsFormsApp.dll
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\bin\Debug\net8.0-windows\WindowsFormsApp.pdb
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\WindowsFormsApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\WindowsFormsApp.AssemblyInfoInputs.cache
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\WindowsFormsApp.AssemblyInfo.cs
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\WindowsFormsApp.csproj.CoreCompileInputs.cache
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\WindowsFormsApp.sourcelink.json
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\WindowsFormsApp.dll
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\refint\WindowsFormsApp.dll
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\WindowsFormsApp.pdb
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\WindowsFormsApp.genruntimeconfig.cache
+D:\IT-STEP\IT-Step-Repo\WinForms\1\WindowsFormsApp\obj\Debug\net8.0-windows\ref\WindowsFormsApp.dll
