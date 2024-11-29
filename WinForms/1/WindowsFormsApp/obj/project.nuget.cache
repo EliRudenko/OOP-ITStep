@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1PJNgJtdwfY=",
+  "dgSpecHash": "3FWIewYP0iE=",
   "success": true,
-  "projectFilePath": "D:\\IT-STEP\\IT-Step-Repo\\WinForms\\1\\WindowsFormsApp\\WindowsFormsApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Uni\\STEP\\OOP-ITStep\\WinForms\\1\\WindowsFormsApp\\WindowsFormsApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ruden\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.11\\microsoft.netcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\ruden\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.11\\microsoft.windowsdesktop.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\ruden\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.11\\microsoft.aspnetcore.app.ref.8.0.11.nupkg.sha512",
+    "C:\\Users\\ruden\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.11\\microsoft.netcore.app.host.win-x64.8.0.11.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,0 +1,5 @@
+D:\Uni\STEP\OOP-ITStep\WinForms\2\TicTacToeGame\obj\Debug\net9.0-windows\TicTacToeGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\Uni\STEP\OOP-ITStep\WinForms\2\TicTacToeGame\obj\Debug\net9.0-windows\TicTacToeGame.AssemblyInfoInputs.cache
+D:\Uni\STEP\OOP-ITStep\WinForms\2\TicTacToeGame\obj\Debug\net9.0-windows\TicTacToeGame.AssemblyInfo.cs
+D:\Uni\STEP\OOP-ITStep\WinForms\2\TicTacToeGame\obj\Debug\net9.0-windows\TicTacToeGame.csproj.CoreCompileInputs.cache
+D:\Uni\STEP\OOP-ITStep\WinForms\2\TicTacToeGame\obj\Debug\net9.0-windows\TicTacToeGame.sourcelink.json

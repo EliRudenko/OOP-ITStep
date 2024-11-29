@@ -1,11 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net8.0-windows7.0": {}
+    "net9.0-windows7.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net8.0-windows7.0": []
+    "net9.0-windows7.0": []
   },
   "packageFolders": {
     "C:\\Users\\ruden\\.nuget\\packages\\": {}
@@ -13,24 +13,24 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Uni\\STEP\\OOP-ITStep\\WinForms\\1\\WindowsFormsApp\\WindowsFormsApp.csproj",
-      "projectName": "WindowsFormsApp",
-      "projectPath": "D:\\Uni\\STEP\\OOP-ITStep\\WinForms\\1\\WindowsFormsApp\\WindowsFormsApp.csproj",
+      "projectUniqueName": "D:\\Uni\\STEP\\OOP-ITStep\\WinForms\\2\\TicTacToeGame\\TicTacToeGame.csproj",
+      "projectName": "TicTacToeGame",
+      "projectPath": "D:\\Uni\\STEP\\OOP-ITStep\\WinForms\\2\\TicTacToeGame\\TicTacToeGame.csproj",
       "packagesPath": "C:\\Users\\ruden\\.nuget\\packages\\",
-      "outputPath": "D:\\Uni\\STEP\\OOP-ITStep\\WinForms\\1\\WindowsFormsApp\\obj\\",
+      "outputPath": "D:\\Uni\\STEP\\OOP-ITStep\\WinForms\\2\\TicTacToeGame\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ruden\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-windows"
+        "net9.0-windows"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0-windows7.0": {
-          "targetAlias": "net8.0-windows",
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
           "projectReferences": {}
         }
       },
@@ -47,8 +47,8 @@
       "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
-      "net8.0-windows7.0": {
-        "targetAlias": "net8.0-windows",
+      "net9.0-windows7.0": {
+        "targetAlias": "net9.0-windows",
         "imports": [
           "net461",
           "net462",
@@ -60,24 +60,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.11, 8.0.11]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
