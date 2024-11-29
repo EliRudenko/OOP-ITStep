@@ -5,27 +5,22 @@ namespace TicTacToeGame
 {
     public partial class TicTacToeForm : Form
     {
-        // Матрица для хранения состояния игры (крестики-нолики)
         private string[] buttons = new string[9];
         private string currentPlayer = "X";
 
-        // Конструктор класса TicTacToeForm
         public TicTacToeForm()
         {
             InitializeComponent();
         }
 
-        // Обработчик событий для нажатия на кнопки
         private void ButtonClick(object sender, EventArgs e)
         {
             var button = sender as Button;
             if (button != null && string.IsNullOrEmpty(button.Text))
             {
-                // Заполняем кнопку символом текущего игрока
                 button.Text = currentPlayer;
                 buttons[Convert.ToInt32(button.Tag)] = currentPlayer;
 
-                // Проверка на победу
                 if (CheckWin())
                 {
                     MessageBox.Show($"{currentPlayer} Wins!");
@@ -33,13 +28,11 @@ namespace TicTacToeGame
                 }
                 else
                 {
-                    // Меняем игрока
                     currentPlayer = (currentPlayer == "X") ? "O" : "X";
                 }
             }
         }
 
-        // Проверка на победу
         private bool CheckWin()
         {
             int[,] winCombinations = new int[,]
@@ -61,7 +54,6 @@ namespace TicTacToeGame
             return false;
         }
 
-        // Сброс игры
         private void ResetGame()
         {
             for (int i = 0; i < 9; i++)
