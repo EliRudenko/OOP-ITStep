@@ -1,0 +1,59 @@
+﻿<Window x:Class="WPFCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCalculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <Border BorderThickness="1" BorderBrush="Gray" DockPanel.Dock="Top">
+            <TextBlock x:Name="resultTb" FontSize="30" Foreground="Gray" HorizontalAlignment="Right"></TextBlock>
+        </Border>
+        <Border Margin="0,5,0,5" BorderThickness="1" BorderBrush="Gray" DockPanel.Dock="Top">
+            <TextBlock FontSize="50" FontWeight="Bold" HorizontalAlignment="Right">12</TextBlock>
+        </Border>
+        
+
+        <Grid VerticalAlignment="Stretch" DockPanel.Dock="Top" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button FontSize="30" Grid.Row="0" Grid.Column="0" Margin="0,0,5,5">CE</Button>
+            <Button FontSize="30" Grid.Row="0" Grid.Column="1" Margin="0,0,5,5" Click="Clear_Click">C</Button>
+            <Button FontSize="30" Grid.Row="0" Grid.Column="2" Margin="0,0,5,5">&lt;</Button>
+            <Button FontSize="30" Grid.Row="0" Grid.Column="3" Margin="0,0,0,5">/</Button>
+
+            <Button FontSize="30" Grid.Row="1" Grid.Column="0" Margin="0,0,5,5" Click="Button_Click">7</Button>
+            <Button FontSize="30" Grid.Row="1" Grid.Column="1" Margin="0,0,5,5" Click="Button_Click">8</Button>
+            <Button FontSize="30" Grid.Row="1" Grid.Column="2" Margin="0,0,5,5" Click="Button_Click">9</Button>
+            <Button FontSize="30" Grid.Row="1" Grid.Column="3" Margin="0,0,0,5">*</Button>
+
+            <Button FontSize="30" Grid.Row="2" Grid.Column="0" Margin="0,0,5,5" Click="Button_Click">4</Button>
+            <Button FontSize="30" Grid.Row="2" Grid.Column="1" Margin="0,0,5,5" Click="Button_Click">5</Button>
+            <Button FontSize="30" Grid.Row="2" Grid.Column="2" Margin="0,0,5,5" Click="Button_Click">6</Button>
+            <Button FontSize="30" Grid.Row="2" Grid.Column="3" Margin="0,0,0,5">-</Button>
+
+            <Button FontSize="30" Grid.Row="3" Grid.Column="0" Margin="0,0,5,5" Click="Button_Click">1</Button>
+            <Button FontSize="30" Grid.Row="3" Grid.Column="1" Margin="0,0,5,5" Click="Button_Click">2</Button>
+            <Button FontSize="30" Grid.Row="3" Grid.Column="2" Margin="0,0,5,5" Click="Button_Click">3</Button>
+            <Button FontSize="30" Grid.Row="3" Grid.Column="3" Margin="0,0,0,5">+</Button>
+
+            <Button FontSize="30" Grid.Row="4" Grid.Column="0" Margin="0,0,5,0">.</Button>
+            <Button FontSize="30" Grid.Row="4" Grid.Column="1" Margin="0,0,5,0">0</Button>
+            <Button FontSize="30" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="0,0,0,0">=</Button>
+        </Grid>
+    </DockPanel>
+</Window>
