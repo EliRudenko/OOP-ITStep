@@ -1,0 +1,46 @@
+﻿<Window x:Class="Task2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid VerticalAlignment="Stretch">
+        <DockPanel>
+            <Grid Width="300"  DockPanel.Dock="Right" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" FontSize="40" Grid.Row="0" Content="7" Margin="5" Click="Button_Click" />
+                <Button Grid.Column="1" FontSize="40" Grid.Row="0" Content="8" Margin="5" Click="Button_Click" />
+                <Button Grid.Column="2" FontSize="40" Grid.Row="0" Content="9" Margin="5" Click="Button_Click" />
+
+                <Button Grid.Column="0" FontSize="40" Grid.Row="1" Content="4" Margin="5" Click="Button_Click" />
+                <Button Grid.Column="1" FontSize="40" Grid.Row="1" Content="5" Margin="5" Click="Button_Click" />
+                <Button Grid.Column="2" FontSize="40" Grid.Row="1" Content="6" Margin="5" Click="Button_Click" />
+
+                <Button Grid.Column="0" FontSize="40" Grid.Row="2" Content="1" Margin="5" Click="Button_Click" />
+                <Button Grid.Column="1" FontSize="40" Grid.Row="2" Content="2" Margin="5" Click="Button_Click" />
+                <Button Grid.Column="2" FontSize="40" Grid.Row="2" Content="3" Margin="5" Click="Button_Click" />
+
+                <Button Grid.Column="0" FontSize="40" Grid.Row="3" Content="C" Margin="5" Click="Clear_Click"  />
+                <Button Grid.Column="1" FontSize="40" Grid.Row="3" Content="0" Margin="5" Click="Button_Click" />
+                <Button Grid.Column="2" FontSize="40" Grid.Row="3" Content="Ok" Margin="5" Click="Ok_Click" />
+
+            </Grid>
+
+            <TextBlock TextWrapping="Wrap" FontSize="70" FontWeight="Bold" Name="textBlock"></TextBlock>
+        </DockPanel>
+    </Grid>
+</Window>
