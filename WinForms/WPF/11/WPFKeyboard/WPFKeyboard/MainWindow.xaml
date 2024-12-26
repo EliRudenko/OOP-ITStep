@@ -1,0 +1,389 @@
+﻿<Window x:Class="WPFKeyboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFKeyboard"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="White">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="PinkColor">#FFF07795</SolidColorBrush>
+        <SolidColorBrush x:Key="YellowColor">#FFE8E86F</SolidColorBrush>
+        <SolidColorBrush x:Key="GreenColor">#FF50E080</SolidColorBrush>
+        <SolidColorBrush x:Key="BlueColor">#FF5FB4FF</SolidColorBrush>
+        <SolidColorBrush x:Key="PurpleColor">#FFDC5ED7</SolidColorBrush>
+        <SolidColorBrush x:Key="InactiveColor">#FFCACACA</SolidColorBrush>
+        <SolidColorBrush x:Key="OrangeColor">#FFE4BC4D</SolidColorBrush>
+    </Window.Resources>
+    <Grid>
+        <DockPanel Margin="3">
+            <DockPanel Margin="0,0,0,5" VerticalAlignment="Top" DockPanel.Dock="Top">
+                <Label FontSize="15" DockPanel.Dock="Left" Content="Speed:"></Label>
+                <Label FontSize="15" DockPanel.Dock="Left" Content="0 chars/min" x:Name="speedValue"/>
+
+                <Label FontSize="15" Margin="30,0,0,0" Content="Fails:"></Label>
+                <Label FontSize="15" Content="0" x:Name="failsValue"></Label>
+
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top">
+                <Button FontSize="15" Margin="5,0,0,0" Padding="60,0,60,0" DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="stopButton" Content="Stop" Click="stopButton_Click"></Button>
+                <Button FontSize="15" Padding="60,0,60,0" DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="startButton" Content="Start" Click="StartButton_Click"></Button>
+            </DockPanel>
+            <TextBox 
+                     IsHitTestVisible="False"
+                     IsReadOnly="True" Margin="0,10,0,10"
+                     FontWeight="Medium" Background="#FFC9D1D8"
+                     TextWrapping="WrapWithOverflow"
+                     KeyDown="KeyboardKeyDown"
+                     PreviewKeyDown="PrintingPanel_PreviewKeyDown"
+                     FontSize="20" x:Name="printingPanel"
+                     DockPanel.Dock="Top" VerticalAlignment="Top" Height="60"
+                     IsReadOnlyCaretVisible="True" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockTilde" FontSize="30" HorizontalAlignment="Center" Text="~" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="1" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockExclamation" FontSize="30" HorizontalAlignment="Center" Text="!" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="2" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockAt" FontSize="30" HorizontalAlignment="Center" Text="@" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="3" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockHash" FontSize="30" HorizontalAlignment="Center" Text="#" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="4" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockDollar" FontSize="30" HorizontalAlignment="Center" Text="$" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="5" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockPercent" FontSize="30" HorizontalAlignment="Center" Text="%" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="6" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockCaret" FontSize="30" HorizontalAlignment="Center" Text="^" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="7" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockAmpersand" FontSize="30" HorizontalAlignment="Center" Text="&#38;" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="8" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockAsterisk" FontSize="30" HorizontalAlignment="Center" Text="*" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="9" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockLeftParenthesis" FontSize="30" HorizontalAlignment="Center" Text="(" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="10" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockRightParenthesis" FontSize="30" HorizontalAlignment="Center" Text=")" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="11" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockUnderscore" FontSize="30" HorizontalAlignment="Center" Text="_" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="12" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockPlus" FontSize="30" HorizontalAlignment="Center" Text="+" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Grid.Column="13" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockBackspace" FontSize="20" Text="Backspace" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"/>
+                    </Border>
+
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockTab" FontSize="20" HorizontalAlignment="Center" Text="Tab" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="2" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockQ" FontSize="30" HorizontalAlignment="Center" Text="Q" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="3" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockW" FontSize="30" HorizontalAlignment="Center" Text="W" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="4" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockE" FontSize="30" HorizontalAlignment="Center" Text="E" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="5" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockR" FontSize="30" HorizontalAlignment="Center" Text="R" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="6" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockT" FontSize="30" HorizontalAlignment="Center" Text="T" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="7" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockY" FontSize="30" HorizontalAlignment="Center" Text="Y" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="8" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockU" FontSize="30" HorizontalAlignment="Center" Text="U" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="9" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockI" FontSize="30" HorizontalAlignment="Center" Text="I" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="10" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockO" FontSize="30" HorizontalAlignment="Center" Text="O" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="11" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockP" FontSize="30" HorizontalAlignment="Center" Text="P" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="12" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockLeftBrace" FontSize="30" HorizontalAlignment="Center" Text="{}{" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="13" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockRightBrace" FontSize="30" HorizontalAlignment="Center" Text="}" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="14" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockPipe" FontSize="30" HorizontalAlignment="Center" Text="|" VerticalAlignment="Center"/>
+                    </Border>
+
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockCapsLock" FontSize="20" HorizontalAlignment="Center" Text="Caps Lock" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="2" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockA" FontSize="30" HorizontalAlignment="Center" Text="A" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="3" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockS" FontSize="30" HorizontalAlignment="Center" Text="S" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="4" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockD" FontSize="30" HorizontalAlignment="Center" Text="D" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="5" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockF" FontSize="30" HorizontalAlignment="Center" Text="F" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="6" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockG" FontSize="30" HorizontalAlignment="Center" Text="G" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="7" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockH" FontSize="30" HorizontalAlignment="Center" Text="H" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="8" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockJ" FontSize="30" HorizontalAlignment="Center" Text="J" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="9" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockK" FontSize="30" HorizontalAlignment="Center" Text="K" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="10" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockL" FontSize="30" HorizontalAlignment="Center" Text="L" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="11" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockSemicolon" FontSize="30" HorizontalAlignment="Center" Text=";" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="12" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockQuote" FontSize="30" HorizontalAlignment="Center" Text="&#34;" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="13" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockEnter" FontSize="20" HorizontalAlignment="Center" Text="Enter" VerticalAlignment="Center"/>
+                    </Border>
+
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockShiftLeft" FontSize="20" HorizontalAlignment="Center" Text="Shift" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="2" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockZ" FontSize="30" HorizontalAlignment="Center" Text="Z" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="3" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockX" FontSize="30" HorizontalAlignment="Center" Text="X" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="4" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockC" FontSize="30" HorizontalAlignment="Center" Text="C" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="5" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockV" FontSize="30" HorizontalAlignment="Center" Text="V" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="6" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockB" FontSize="30" HorizontalAlignment="Center" Text="B" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="7" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockN" FontSize="30" HorizontalAlignment="Center" Text="N" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="8" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockM" FontSize="30" HorizontalAlignment="Center" Text="M" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="9" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockLessThan" FontSize="30" HorizontalAlignment="Center" Text="&lt;" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="10" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockGreaterThan" FontSize="30" HorizontalAlignment="Center" Text="&gt;" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="11" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockQuestionMark" FontSize="30" HorizontalAlignment="Center" Text="?" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="12" Grid.ColumnSpan="3" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockShiftRight" FontSize="20" HorizontalAlignment="Center" Text="Shift" VerticalAlignment="Center"/>
+                    </Border>
+
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockCtrlLeft" FontSize="20" HorizontalAlignment="Center" Text="Ctrl" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockWinLeft" FontSize="20" HorizontalAlignment="Center" Text="Win" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="3" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockAltLeft" FontSize="20" HorizontalAlignment="Center" Text="Alt" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="4" Grid.ColumnSpan="7" Background="{StaticResource OrangeColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockSpace" FontSize="20" HorizontalAlignment="Center" Text="Space" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="11" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockAltRight" FontSize="20" HorizontalAlignment="Center" Text="Alt" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="12" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockWinRight" FontSize="20" HorizontalAlignment="Center" Text="Win" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Grid.Column="13" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                        <TextBlock x:Name="TextBlockCtrlRight" FontSize="20" HorizontalAlignment="Center" Text="Ctrl" VerticalAlignment="Center"/>
+                    </Border>
+
+                </Grid>
+                
+                
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
