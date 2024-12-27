@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFKeyboard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="White">
-
+        Title="MainWindow" Height="450" Width="1147" Background="White">
     <Window.Resources>
-        <SolidColorBrush x:Key="PinkColor">#FFF07795</SolidColorBrush>
-        <SolidColorBrush x:Key="YellowColor">#FFE8E86F</SolidColorBrush>
-        <SolidColorBrush x:Key="GreenColor">#FF50E080</SolidColorBrush>
-        <SolidColorBrush x:Key="BlueColor">#FF5FB4FF</SolidColorBrush>
-        <SolidColorBrush x:Key="PurpleColor">#FFDC5ED7</SolidColorBrush>
-        <SolidColorBrush x:Key="InactiveColor">#FFCACACA</SolidColorBrush>
-        <SolidColorBrush x:Key="OrangeColor">#FFE4BC4D</SolidColorBrush>
+        <SolidColorBrush x:Key="PinkColor">#FFEC407A</SolidColorBrush>
+        <SolidColorBrush x:Key="YellowColor">#FFFFC107</SolidColorBrush>
+        <SolidColorBrush x:Key="GreenColor">#FF43A047</SolidColorBrush>
+        <SolidColorBrush x:Key="BlueColor">#FF1976D2</SolidColorBrush>
+        <SolidColorBrush x:Key="PurpleColor">#FF8E24AA</SolidColorBrush>
+        <SolidColorBrush x:Key="InactiveColor">#FFB0BEC5</SolidColorBrush>
+        <SolidColorBrush x:Key="OrangeColor">#FFFB8C00</SolidColorBrush>
     </Window.Resources>
+
     <Grid>
-        <DockPanel Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="333*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Margin="3,3,3,3" Grid.ColumnSpan="2">
             <DockPanel Margin="0,0,0,5" VerticalAlignment="Top" DockPanel.Dock="Top">
                 <Label FontSize="15" DockPanel.Dock="Left" Content="Speed:"></Label>
                 <Label FontSize="15" DockPanel.Dock="Left" Content="0 chars/min" x:Name="speedValue"/>
@@ -30,6 +34,8 @@
                 <Button FontSize="15" Margin="5,0,0,0" Padding="60,0,60,0" DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="stopButton" Content="Stop" Click="stopButton_Click"></Button>
                 <Button FontSize="15" Padding="60,0,60,0" DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="startButton" Content="Start" Click="StartButton_Click"></Button>
             </DockPanel>
+
+
             <TextBox 
                      IsHitTestVisible="False"
                      IsReadOnly="True" Margin="0,10,0,10"
@@ -131,43 +137,43 @@
                         <ColumnDefinition></ColumnDefinition>
 
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2,2,11,2">
                         <TextBlock x:Name="TextBlockTab" FontSize="20" HorizontalAlignment="Center" Text="Tab" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="2" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="1" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="70,2,10,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockQ" FontSize="30" HorizontalAlignment="Center" Text="Q" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="3" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="2" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="70,2,10,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockW" FontSize="30" HorizontalAlignment="Center" Text="W" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="4" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="3" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="70,2,10,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockE" FontSize="30" HorizontalAlignment="Center" Text="E" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="5" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="4" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="71,2,9,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockR" FontSize="30" HorizontalAlignment="Center" Text="R" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="6" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="5" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="72,2,8,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockT" FontSize="30" HorizontalAlignment="Center" Text="T" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="7" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="6" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="73,2,7,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockY" FontSize="30" HorizontalAlignment="Center" Text="Y" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="8" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="7" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="75,2,6,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockU" FontSize="30" HorizontalAlignment="Center" Text="U" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="9" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="9" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="0,2,4,2">
                         <TextBlock x:Name="TextBlockI" FontSize="30" HorizontalAlignment="Center" Text="I" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="10" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="10" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="0,2,4,2">
                         <TextBlock x:Name="TextBlockO" FontSize="30" HorizontalAlignment="Center" Text="O" VerticalAlignment="Center"/>
                     </Border>
 
@@ -209,55 +215,55 @@
 
                     </Grid.ColumnDefinitions>
 
-                    <Border Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="0" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2,2,25,2">
                         <TextBlock x:Name="TextBlockCapsLock" FontSize="20" HorizontalAlignment="Center" Text="Caps Lock" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="2" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="1" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="56,2,24,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockA" FontSize="30" HorizontalAlignment="Center" Text="A" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="3" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="2" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="57,2,23,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockS" FontSize="30" HorizontalAlignment="Center" Text="S" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="4" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="3" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="58,2,22,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockD" FontSize="30" HorizontalAlignment="Center" Text="D" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="5" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="4" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="59,2,21,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockF" FontSize="30" HorizontalAlignment="Center" Text="F" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="6" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="5" Background="{StaticResource BlueColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="60,2,20,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockG" FontSize="30" HorizontalAlignment="Center" Text="G" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="7" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="6" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="61,2,19,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockH" FontSize="30" HorizontalAlignment="Center" Text="H" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="8" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="7" Background="{StaticResource PurpleColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="63,2,19,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockJ" FontSize="30" HorizontalAlignment="Center" Text="J" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="9" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="8" Background="{StaticResource PinkColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="62,2,18,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockK" FontSize="30" HorizontalAlignment="Center" Text="K" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="10" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="9" Background="{StaticResource YellowColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="63,2,17,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockL" FontSize="30" HorizontalAlignment="Center" Text="L" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="11" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="10" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="64,2,16,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockSemicolon" FontSize="30" HorizontalAlignment="Center" Text=";" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="12" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="11" Background="{StaticResource GreenColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="65,2,15,2" Grid.ColumnSpan="2">
                         <TextBlock x:Name="TextBlockQuote" FontSize="30" HorizontalAlignment="Center" Text="&#34;" VerticalAlignment="Center"/>
                     </Border>
 
-                    <Border Grid.Column="13" Grid.ColumnSpan="2" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="2">
+                    <Border Grid.Column="12" Grid.ColumnSpan="3" Background="{StaticResource InactiveColor}" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Margin="66,2,0,2" HorizontalAlignment="Left" Width="160">
                         <TextBlock x:Name="TextBlockEnter" FontSize="20" HorizontalAlignment="Center" Text="Enter" VerticalAlignment="Center"/>
                     </Border>
 
@@ -381,8 +387,8 @@
                     </Border>
 
                 </Grid>
-                
-                
+
+
             </Grid>
         </DockPanel>
     </Grid>

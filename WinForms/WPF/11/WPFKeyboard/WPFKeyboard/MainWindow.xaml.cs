@@ -23,6 +23,7 @@ namespace WPFKeyboard
             " molestie ornare conubia eget ut orci est litora molestie. Ullamcorper tincidunt hac enim" +
             " suspendisse consequat mauris auctor fusce egestas. Potenti" +
             " suspendisse dolor auctor himenaeos magna. Massa diam elit diam torquent curae at." +
+            " suspendisse dolor auctor himenaeos magna. Massa diam elit diam torquent curae at." +
             " Dolor nullam lorem finibus felis duis consectetur mollis. Egestas aliquet parturient" +
             " tempus fermentum suspendisse mattis dapibus. Elementum diam aptent natoque malesuada" +
             " habitasse per erat. Diam nisi ligula pulvinar neque venenatis augue venenatis dis." +
