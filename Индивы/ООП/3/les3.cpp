@@ -102,13 +102,13 @@ private:
 public:
     Notebook() : batteryCharge(100) {}
 
-    // геттер для уровня заряда
+    // геттер!!!! для уровня заряда
     int getBatteryCharge() const 
     {
         return batteryCharge;
     }
 
-    // сеттер для обновления уровня заряда
+    // сеттер!!!! для обновления уровня заряда
     void setBatteryCharge(int newCharge) 
     {
         if (newCharge >= 0 && newCharge <= 100) 
@@ -253,14 +253,24 @@ class Rectangle
         Rectangle(int width, int height) 
         {
             // Используем указатель this, чтобы избежать конфликта имен
-            this->width = width;
             this->height = height;
+            this->width = width;
+            
         }
 
         // Метод для вывода размеров
-        void printDimensions() const 
+
+
+        //printDimensions(const Rectangle* const this)
+        void printDimensions() const
         {
             std::cout << "Width: " << this->width << ", Height: " << this->height << std::endl;
+        }
+
+        //printDimensions(Rectangle* const this)
+        void printDimensions() 
+        {
+            
         }
 };
 
@@ -268,6 +278,7 @@ int main()
 {
     Rectangle rect(10, 5);
     rect.printDimensions(); // Width: 10, Height: 5
+    Rectangle rect2(20, 5);
     return 0;
 }
 

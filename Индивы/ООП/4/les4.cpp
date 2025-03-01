@@ -136,7 +136,7 @@ public:
     void printInfo() const { cout << "Processor: " << this->brand << ", Cores: " << this->cores << endl; }
 };
 
-// Класс Battery (агрегация)
+// Класс Battery (агрегация!!!!)
 class Battery 
 {
 private:
@@ -159,6 +159,7 @@ class Laptop
 {
 private:
     string model;
+    
     Processor processor; // Композиция: процессор является частью ноутбука
     Battery* battery;    // Агрегация: батарея может быть общей
 
