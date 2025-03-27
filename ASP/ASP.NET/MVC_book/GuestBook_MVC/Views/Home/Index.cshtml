@@ -1,0 +1,67 @@
+﻿@model MessageViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Messages</h2>
+
+<div class="scrollable-message-list">
+    @foreach (var message in Model.Messages)
+    {
+        <div class="message-container">
+            <strong>@message.User.Name</strong> said:
+            <p>@message.MessageText</p>
+            <small>@message.SendDate.ToString()</small>
+        </div>
+    }
+</div>
+
+@if (Context.Session.GetString("username") != null)
+{
+    <div class="d-flex flex-column justify-content-center align-items-center w-100">
+        <form class="w-100" asp-action="Index" method="post">
+            <div class="form-group mt-3">
+                <textarea asp-for="MessageText" class="form-control" rows="4" cols="50"></textarea>
+                <input class="btn btn-primary mt-2" type="submit" value="Send" />
+            </div>
+        </form>
+
+        <form asp-action="LogOut">
+            <input type="submit" class="btn btn-primary mt-5" value="Log out" />
+        </form>
+    </div>
+}
+
+
+<style>
+    .scrollable-message-list {
+        max-width: 600px;
+        height: 400px; 
+        overflow-y: auto;
+        margin: 0 auto;
+        border: 1px solid #ddd; 
+        padding: 10px;
+        background-color: #f9f9f9; 
+    }
+
+    .message-container {
+        margin-bottom: 15px; 
+        padding: 10px;
+        background-color: #fff; 
+        border: 1px solid #ddd; 
+        border-radius: 5px; 
+    }
+
+        .message-container strong {
+            font-weight: bold;
+        }
+
+        .message-container p {
+            word-wrap: break-word;
+            margin: 5px 0;
+        }
+
+</style>
+
+

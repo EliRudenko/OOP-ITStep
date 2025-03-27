@@ -1,0 +1,39 @@
+﻿@model IEnumerable<UniversityMVC.Models.SubjectsGroups>
+
+@{
+    ViewData["Title"] = "Lectures";
+}
+
+<h1>Lectures</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Group)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teacher)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Group.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teacher.Name) @Html.DisplayFor(modelItem => item.Teacher.LastName)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

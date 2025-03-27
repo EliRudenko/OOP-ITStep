@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginMiddleware", "LoginMiddleware\LoginMiddleware.csproj", "{D5488A8A-4C01-41CF-9216-796AC22F2AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserClass", "User\UserClass.csproj", "{9D469D04-510D-4005-8262-FA9BE338A867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileHandler", "FileHandler\FileHandler.csproj", "{911CD99A-4D81-4586-8070-7E76D6B2BE5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5488A8A-4C01-41CF-9216-796AC22F2AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5488A8A-4C01-41CF-9216-796AC22F2AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5488A8A-4C01-41CF-9216-796AC22F2AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5488A8A-4C01-41CF-9216-796AC22F2AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D469D04-510D-4005-8262-FA9BE338A867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D469D04-510D-4005-8262-FA9BE338A867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D469D04-510D-4005-8262-FA9BE338A867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D469D04-510D-4005-8262-FA9BE338A867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{911CD99A-4D81-4586-8070-7E76D6B2BE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911CD99A-4D81-4586-8070-7E76D6B2BE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911CD99A-4D81-4586-8070-7E76D6B2BE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911CD99A-4D81-4586-8070-7E76D6B2BE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
