@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальне вікно з ефектом появи</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .open-btn 
+        {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .open-btn:hover { background-color: #45a049; }
+
+        /* Стилі для модального вікна */
+        .modal 
+        {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 0.5s ease, zoomIn 0.5s ease;
+        }
+
+        /* Анімація для появи */
+        @keyframes fadeIn 
+        {
+            0% {opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes zoomIn 
+        {
+            0% { transform: scale(0); }
+            100% {  transform: scale(1); }
+        }
+
+
+        .modal-content 
+        {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-btn 
+        {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Окриття модального вікна при натисканні на кнопку */
+        .open-btn:focus + .modal 
+        {
+            display: flex;
+            opacity: 1;
+            animation: fadeIn 0.5s ease, zoomIn 0.5s ease;
+        }
+
+        /* Окриття затемненого фону */
+        .open-btn:focus + .modal 
+        {
+            visibility: visible;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="open-btn">Відкрити модальне вікно</button>
+
+
+    <div class="modal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>Модальне вікно</h2>
+            <p>Це модальне вікно з ефектом зменшення і появи.</p>
+        </div>
+    </div>
+
+</body>
+</html>

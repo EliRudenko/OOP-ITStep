@@ -1,79 +1,112 @@
-
-
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Плаваючий блок</title>
-    <!--<link rel="stylesheet" href="style.css">!-->
+    <title>Анімоване меню</title>
     <style>
         body 
         {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
 
-        .card 
-        {
-            position: relative;
-            width: 250px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            overflow: hidden;
-        }
-        .card:hover 
-        {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .card img 
-        {
-            width: 120%;
-            position: relative;
-            left: -10%;
-            border-radius: 10px;
+   
+        .overlay 
+        {   /* Затемнение фона */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            visibility: hidden;
+            transition: 0.3s;
         }
 
-        .price 
+        .menu 
         {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: red;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            width: 200px;
+            height: 100%;
+            background: #333;
+            padding-top: 50px;
+            transition: 0.3s;
+        }
+        .menu a 
+        {
+            display: block;
             color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 15px;
         }
+        .menu a:hover { background: #575757; }
 
-        .description 
+
+        .burger 
         {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #333;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
         }
-    </style>
+        .burger div 
+        {
+            width: 100%;
+            height: 5px;
+            background: black;
+            margin: 5px 0;
+        }
 
+
+        /* Скрытый чекбокс */
+        #menuToggle 
+        {
+            display: none;
+        }
+
+
+        /* Открытие меню */
+        #menuToggle:checked ~ .menu 
+        {
+            left: 0;
+        }
+        #menuToggle:checked ~ .overlay 
+        {
+            visibility: visible;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
 </head>
 <body>
-    
-    <div class="card">
-        
-        <img src="https://axent.com.ua/sites/default/files/photoproduct/8815-25-54-A_1.jpg" alt="Товар">
-        <div class="description">
-            Це чудовий товар, який варто придбати! Він має високоякісний дизайн і відмінні характеристики.
-        </div>
-        <div class="price">$99</div>
 
-    </div>
+    <!-- Чекбокс для управления -->
+    <input type="checkbox" id="menuToggle">
+
+    <!-- Затемнение фона -->
+    <label for="menuToggle" class="overlay"></label>
+
+    <!-- Бургер-кнопка -->
+    <label for="menuToggle" class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </label>
+
+
+
+    
+    <nav class="menu">
+        <a href="#">Главная</a>
+        <a href="#">О нас</a>
+        <a href="#">Услуги</a>
+        <a href="#">Контакты</a>
+    </nav>
 
 </body>
 </html>
