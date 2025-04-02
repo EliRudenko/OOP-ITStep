@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div style="display:flex;gap:1em;margin-inline:auto; margin-block:10em; width:fit-content;">
+    <form asp-action="Login" method="get">
+        <button type="submit">Log in</button>
+    </form>
+    <form asp-action="Register" method="get">
+        <button type="submit">Registration</button>
+    </form>
+    <form asp-action="GuestLogin" method="get">
+        <button type="submit">Log in as guest</button>
+    </form>
+</div>

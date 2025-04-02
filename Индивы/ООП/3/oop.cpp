@@ -26,10 +26,21 @@ int main()
 }
 
 
+
+
+
+
+
+
+
+
+
+
 #include <iostream>
 using namespace std;
 
-class BankAccount {
+class BankAccount 
+{
 private:  // Прямой доступ запрещён
     double balance;
 

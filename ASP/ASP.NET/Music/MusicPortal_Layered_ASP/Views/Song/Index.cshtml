@@ -1,0 +1,57 @@
+﻿@model IEnumerable<BLL.UIModels.SongGTO?>
+
+@{
+    ViewData["Title"] = "Index";
+    var isAdmin = Context.Session.GetString("IsAdmin");
+	var isAuth = Context.Session.GetString("Username");
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Artist)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                @if (isAdmin == "true")
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                }
+            </tr>
+        }
+		@if (isAuth != null)
+		{
+		    <td>
+				    @Html.ActionLink("Create New", "Create")
+		    </td>
+		}
+
+    </tbody>
+</table>
