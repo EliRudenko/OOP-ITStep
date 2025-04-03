@@ -78,6 +78,7 @@
         "ranges": "cpp",
         "span": "cpp",
         "stack": "cpp",
-        "codecvt": "cpp"
+        "codecvt": "cpp",
+        "filesystem": "cpp"
     }
 }

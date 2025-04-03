@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery with Filter Effect</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .filter-button {
+      padding: 0.75rem 1.5rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .filter-button:hover {
+      background-color: #388E3C;
+    }
+
+    .filter-input {
+      display: none;
+    }
+
+    #show-all:checked ~ .filter-buttons label[for="show-all"],
+    #show-animals:checked ~ .filter-buttons label[for="show-animals"],
+    #show-nature:checked ~ .filter-buttons label[for="show-nature"] {
+      background-color: #388E3C;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      transition: all 0.5s ease;
+    }
+
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .gallery-item .image-container {
+      position: relative;
+      width: 100%;
+      height: 250px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      transition: opacity 0.5s ease;
+    }
+
+    .gallery-item .image-hover {
+      opacity: 0;
+    }
+
+    .gallery-item:hover .image-hover {
+      opacity: 1;
+    }
+
+    .gallery-item:hover .image-default {
+      opacity: 0;
+    }
+
+    .gallery-item .caption {
+      padding: 1rem;
+      background-color: white;
+      text-align: center;
+    }
+
+    #show-all:checked ~ .gallery .gallery-item {
+      opacity: 1;
+    }
+
+    #show-animals:checked ~ .gallery .nature {
+      opacity: 0.5;
+    }
+
+    #show-nature:checked ~ .gallery .animal {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Gallery with Filter Effect</h1>
+    
+    <input type="radio" name="filter" id="show-all" class="filter-input" checked>
+    <input type="radio" name="filter" id="show-animals" class="filter-input">
+    <input type="radio" name="filter" id="show-nature" class="filter-input">
+    
+    <div class="filter-buttons">
+      <label for="show-all" class="filter-button">All</label>
+      <label for="show-animals" class="filter-button">Animals</label>
+      <label for="show-nature" class="filter-button">Nature</label>
+    </div>
+    
+    <div class="gallery">
+
+      <div class="gallery-item nature">
+        <div class="image-container">
+          <img src="https://st2.depositphotos.com/3651191/7410/i/450/depositphotos_74106203-stock-photo-blossom-carpet-of-pink-rhododendron.jpg" class="image-default" alt="Nature 1">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/%D0%9F%D0%BE%D0%BB%D0%B5_%D0%B2%D0%BE%D0%BB%D0%BE%D1%88%D0%BE%D0%BA.jpg" class="image-hover" alt="Nature 1 Hover">
+        </div>
+        <div class="caption">Field</div>
+      </div>
+
+      <div class="gallery-item animal">
+        <div class="image-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG4HZxi6a2Pq1LCEXdJG6YjVpCVGGNLYFbMQ&s" class="image-default" alt="Animal 1">
+          <img src="https://wildfauna.ru/wp-content/uploads/2019/07/kvokka-obl.jpg" class="image-hover" alt="Animal 1 Hover">
+        </div>
+        <div class="caption">Quokka</div>
+      </div>
+
+      <div class="gallery-item nature">
+        <div class="image-container">
+          <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_640.jpg" class="image-default" alt="Nature 2">
+          <img src="https://storge.pic2.me/w/560x350/935/5948f0a9d6a9f.webp" class="image-hover" alt="Nature 2 Hover">
+        </div>
+        <div class="caption">Forest</div>
+      </div>
+
+      <div class="gallery-item animal">
+        <div class="image-container">
+          <img src="https://f12.pmo.ee/zTyhaSrrGEBJgNgTF8KwRspiH58=/685x0/filters:format(webp)/nginx/o/2018/07/12/8713351t1hd7f1.jpg" class="image-default" alt="Animal 2">
+          <img src="https://flomaster.top/o/uploads/posts/2023-11/1700261477_flomaster-top-p-malenkoe-zhivotnoe-s-vipuchennimi-glazami-1.jpg" class="image-hover" alt="Animal 2 Hover">
+        </div>
+        <div class="caption">Lemur</div>
+      </div>
+
+      <div class="gallery-item animal">
+        <div class="image-container">
+          <img src="https://cdn.nur.kz/images/1200x675/fb83fb1a2016d0b2.jpeg" class="image-default" alt="Animal 3">
+          <img src="https://kartinki.pics/pics/uploads/posts/2022-07/1658274820_1-kartinkin-net-p-neobichnie-zhivotnie-mira-zhivotnie-krasiv-1.jpg" class="image-hover" alt="Animal 3 Hover">
+        </div>
+        <div class="caption">Punya</div>
+      </div>
+
+      <div class="gallery-item nature">
+        <div class="image-container">
+          <img src="https://t4.ftcdn.net/jpg/02/56/10/07/360_F_256100731_qNLp6MQ3FjYtA3Freu9epjhsAj2cwU9c.jpg" class="image-default" alt="Nature 3">
+          <img src="https://images.moneycontrol.com/static-mcnews/2024/09/20240905042226_12.jpg" class="image-hover" alt="Nature 3 Hover">
+        </div>
+        <div class="caption">Mountain</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,100 +1,71 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Текст з ефектом наближення</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* Загальні стилі */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    height: 200vh; /* Для прокручування сторінки */
-}
 
-/* Контейнер для тексту */
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    overflow: hidden;
-}
+        body 
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            height: 2000px; 
+            display: flex;
+            justify-content: center;
 
-/* Блок з текстом */
-.text-block {
-    text-align: center;
-    font-size: 24px;
-}
+        }
 
-/* Стилі для кожного слова */
-.word {
-    opacity: 0;
-    transform: translateY(50px); /* Текст початково зсувається вниз */
-    transition: opacity 1s, transform 1s, color 1s;
-    will-change: opacity, transform;
-}
 
-/* Ключова анімація для появи слів */
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        .content 
+        {
+            /*
+            display: flex;
+            flex-direction: column;
+            */
+            align-items: center;
+            margin-top: 60vh; 
+        }
 
-/* Прив'язуємо анімацію до всіх слів */
-.word:nth-child(1) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 0.5s;
-}
-.word:nth-child(2) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 1s;
-}
-.word:nth-child(3) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 1.5s;
-}
-.word:nth-child(4) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 2s;
-}
-.word:nth-child(5) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 2.5s;
-}
-.word:nth-child(6) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 3s;
-}
-.word:nth-child(7) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 3.5s;
-}
-.word:nth-child(8) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 4s;
-}
-.word:nth-child(9) {
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 4.5s;
-}
+        .text-block 
+        {
+            text-align: center;
+            font-size: 28px;
+        }
 
-/* Стиль для анімації наближення при скролінгу (за допомогою JavaScript) */
-.word.visible {
-    opacity: 1;
-    transform: translateY(0);
-    color: #ff6347; /* Зміна кольору на червоний при наближенні */
-}
+       
+        .word 
+        {
 
+            animation: appear-disappear linear both;
+            animation-timeline: view();
+            
+        }
+
+        
+        @keyframes appear-disappear 
+        {
+            0% 
+            {
+                opacity: 0;
+                transform: scale(0.2) translateY(50px);
+                color: gray;
+            }
+            50% 
+            {
+                opacity: 1;
+                transform: scale(1.5) translateY(0);
+                color: #ff6347;
+            }
+            100% 
+            {
+                opacity: 0;
+                transform: scale(0.2) translateY(-50px);
+                color: gray;
+            }
+        }
     </style>
 </head>
 <body>
@@ -105,9 +76,7 @@ body {
             <p class="word">текст</p>
             <p class="word">з</p>
             <p class="word">ефектом</p>
-            <p class="word">набігання</p>
-            <p class="word">кожного</p>
-            <p class="word">слова</p>
+            <p class="word">наближення</p>
             <p class="word">при</p>
             <p class="word">прокручуванні</p>
             <p class="word">сторінки.</p>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паралакс-ефект без JS</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #200122;
+            color: white;
+        }
+
+        .parallax {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .layer1 { background-image: url('https://naked-science.ru/wp-content/uploads/2017/05/field_image_marsandmoon_00.jpeg'); }
+        .layer2 { background-image: url('https://habrastorage.org/getpro/habr/upload_files/d92/778/9ef/d927789ef426ab9779f66790aa8936a2.jpg'); }
+        .layer3 { background-image: url('https://psm7.com/wp-content/uploads/2024/05/mars_image_1280x700.webp'); }
+
+        .content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #6e2506, #ce722c, #b63e12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Контейнер для звезд */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* Звезды */
+        .star, .dust {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.8;
+            transition: transform 0.5s ease-out;
+        }
+
+        .star {
+            width: 6px;
+            height: 6px;
+            background: white;
+            box-shadow: 0 0 10px white;
+        }
+
+        .dust {
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 165, 0, 0.7);
+            box-shadow: 0 0 5px orange;
+        }
+
+        /* Размещение элементов */
+        .star:nth-child(1) { top: 20%; left: 30%; }
+        .star:nth-child(2) { top: 50%; left: 80%; }
+        .star:nth-child(3) { top: 70%; left: 40%; }
+        .dust:nth-child(4) { top: 30%; left: 60%; }
+        .dust:nth-child(5) { top: 60%; left: 20%; }
+        .dust:nth-child(6) { top: 80%; left: 70%; }
+
+        /* Движение при наведении */
+        .content:hover .star {
+            transform: translate(20px, -20px);
+        }
+
+        .content:hover .dust {
+            transform: translate(-15px, 15px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parallax layer1">Марс-Шар 1</div>
+    <div class="content">
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="dust"></div>
+            <div class="dust"></div>
+            <div class="dust"></div>
+        </div>
+        Пейзаж Марса, камни, пески...
+    </div>
+    <div class="parallax layer2">Марс-Шар 2</div>
+    <div class="content">
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="dust"></div>
+            <div class="dust"></div>
+            <div class="dust"></div>
+        </div>
+        Темные кратеры и холодные ночи
+    </div>
+    <div class="parallax layer3">Марс-Шар 3</div>
+</body>
+</html>
