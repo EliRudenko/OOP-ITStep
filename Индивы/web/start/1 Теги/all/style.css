@@ -1,0 +1,129 @@
+/* ----------- СЕЛЕКТОРЫ ----------- */
+body 
+{
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header, footer 
+{
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul 
+{
+    
+    padding: 0;
+    margin: 0;
+    /*display: flex;
+    justify-content: center;*/
+    gap: 15px;
+}
+nav ul li a 
+{
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover 
+{
+    text-decoration: underline;
+}
+
+
+
+main 
+{
+    padding: 20px;
+}
+
+h1, h2 
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p { line-height: 1.5; }
+
+img 
+{
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+ul 
+{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+table 
+{
+    border-collapse: collapse;
+    width: 50%;
+    margin-bottom: 20px;
+}
+th, td 
+{
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+form 
+{
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+label
+{
+    display: block;
+    margin-bottom: 10px;
+    width: 50%;
+}
+input, textarea, select, button 
+{
+    padding: 8px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button 
+{
+    background-color: #2fb22d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover { background-color: #186217; }
+
+
+
+.box 
+{
+    background-color: #eee;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+}
+
+
+aside 
+{
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-left: 4px solid #ccc;
+    margin: 15px 0;
+}
+
+address {font-style: normal; }

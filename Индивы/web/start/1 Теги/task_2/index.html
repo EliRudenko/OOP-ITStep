@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой блог</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        /* Шапка */
+        #header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Основной контент */
+        #content {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        /* Сайдбар */
+        #sidebar {
+            width: 25%;
+            background-color: #f1f1f1;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        #sidebar h2 {
+            text-align: center;
+            color: #007BFF;
+        }
+        
+        #sidebar ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #sidebar ul li {
+            margin-bottom: 10px;
+        }
+        
+        #sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        #sidebar ul li a:hover {
+            color: #007BFF;
+        }
+
+        /* Статья */
+        #main-content {
+            width: 70%;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #main-content h2 {
+            font-size: 28px;
+            color: #007BFF;
+        }
+
+        #main-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        #main-content img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        /* Картинка превью */
+        #main-content img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Футер */
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            #content {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            #main-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Мой блог</h1>
+    </div>
+
+    <div id="content">
+        <!-- Сайдбар -->
+        <div id="sidebar">
+            <h2>Меню</h2>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Категории</a></li>
+                <li><a href="#">О сайте</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+
+        <!-- Основной контент -->
+        <div id="main-content">
+            <h2>Как научиться программировать</h2>
+            <img src="https://via.placeholder.com/800x400" alt="Программирование">
+            <p>Программирование - это увлекательная и полезная деятельность, которая может открыть перед вами огромные возможности. В этой статье я расскажу, как начать учиться программированию и какие ресурсы использовать для этого.</p>
+            <p>Начать можно с освоения одного из языков программирования. Самые популярные языки для начинающих - это Python, JavaScript и HTML/CSS. Для каждого из них есть много бесплатных онлайн-курсов, видеоуроков и учебников, которые помогут вам погрузиться в мир программирования.</p>
+            <p>Основные шаги для начала: выберите язык программирования, начните учить синтаксис, создайте небольшие проекты, участвуйте в сообществах программистов и не бойтесь ошибаться. Чем больше практики, тем лучше!</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Авторские права © 2023 Мой блог</p>
+    </footer>
+
+</body>
+</html>

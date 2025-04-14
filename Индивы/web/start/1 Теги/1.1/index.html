@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример всех основных тегов</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 10px 0px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Стили для блока */
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .container div {
+            margin-bottom: 20px;
+        }
+
+        /* Стили для таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Стили для формы */
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+
+        /* Стили для изображения */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Заголовок страницы -->
+    <header>
+        <h1>Заголовок страницы (h1)</h1>
+        <nav>
+            <ol>
+                <li>
+                    <a href="#">Главная</a>
+                </li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <h2>Введение</h2>
+        <p>Это пример HTML-документа, включающего все основные теги, которые могут понадобиться для создания простой страницы.</p>
+        
+        <!-- Ссылка -->
+        <p>Для получения дополнительной информации перейдите по ссылке <a href="#">тут</a>.</p>
+        
+        <!-- Список -->
+        <h3>Список (ul, ol, li)</h3>
+        <ul>
+            <li>Первый элемент списка</li>
+            <li>Второй элемент списка</li>
+            <li>Третий элемент списка</li>
+        </ul>
+
+        <h3>Нумерованный список (ol)</h3>
+        <ol>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+            <li>Третий пункт</li>
+        </ol>
+
+        <!-- Таблица -->
+        <h3>Таблица (table, th, td)</h3>
+        <table>
+            <tr>
+                <th>Имя</th>
+                <th>Возраст</th>
+            </tr>
+            <tr>
+                <td>Иван</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Мария</td>
+                <td>25</td>
+            </tr>
+        </table>
+
+        <!-- Формы -->
+        <h3>Форма (form, input, textarea)</h3>
+        <form action="#" method="post">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <input type="submit" value="Отправить">
+        </form>
+
+        <!-- Изображение -->
+        <h3>Изображение (img)</h3>
+        <img src="https://i.pinimg.com/236x/c9/72/a4/c972a4e9acc6fb1c89b35e47b01b38ac.jpg" alt="Пример изображения">
+
+        <!-- Вставка видео -->
+        <h3>Видео (video)</h3>
+        <video controls>
+            <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+
+        <!-- Блоки с текстом -->
+        <h3>Блоки</h3>
+        <div class="box">
+            <h3>Блок 1 (div)</h3>
+            <p>Это пример простого блока с текстом.</p>
+        </div>
+        <div class="box">
+            <h3>Блок 2 (div)</h3>
+            <p>Другой пример блока.</p>
+        </div>
+
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+        <p>© 2023 Пример сайта</p>
+    </footer>
+
+</body>
+</html>

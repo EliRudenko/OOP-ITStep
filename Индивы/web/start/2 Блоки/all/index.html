@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Макет и блочная верстка</title>
+    <link rel="stylesheet" href="../all/style.css">
+</head>
+<body>
+    <header>
+        <h1>Пример макета и блочной верстки</h1>
+    </header>
+
+    <div class="container">
+        <main>
+            <!-- Создание панели навигации -->
+            <nav>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Создание простейшего макета -->
+            <article>
+                <h2>Контент страницы</h2>
+                <p>Это пример основного контента. Здесь размещаются статьи, изображения и другой основной материал.</p>
+
+                <!-- Вложенные плавающие блоки -->
+                <div class="float-container">
+                    <div class="float-box">Левый блок</div>
+                    <div class="float-box">Правый блок</div>
+                </div>
+
+                <!-- Выравнивание столбцов по высоте -->
+                <div class="equal-height">
+                    <div>Колонка 1 с длинным текстом<br>Еще немного текста<br>И еще строка</div>
+                    <div>Колонка 2</div>
+                </div>
+
+                <!-- Свойство display: inline-block -->
+                <div class="inline-block-boxes">
+                    <div>Блок 1</div>
+                    <div>Блок 2</div>
+                    <div>Блок 3</div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Фиксированное позиционирование -->
+    <div class="fixed-box">Я всегда внизу справа</div>
+
+    <footer>
+        <p>© 2025 Все права защищены</p>
+    </footer>
+
+</body>
+</html>

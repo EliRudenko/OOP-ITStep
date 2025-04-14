@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Блочная верстка в HTML5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+
+        #header {
+            background-color: #eee;
+            border-bottom: 1px solid #ccc;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        #header h2 {
+            margin: 0;
+        }
+
+        #wrapper {
+            display: flex;
+            background-color: #ddd;
+            padding: 20px;
+        }
+
+        #menu {
+            background-color: #ccc;
+            width: 200px;
+            padding: 10px;
+        }
+
+        #menu ul {
+            list-style: none;
+        }
+
+        #menu li {
+            margin-bottom: 10px;
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        #main {
+            background-color: #f7f7f7;
+            border-left: 1px solid #ccc;
+            flex: 1;
+            padding: 20px;
+        }
+
+        #footer {
+            background-color: #dedede;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) 
+        {
+            #wrapper 
+            {
+                flex-direction: column;
+            }
+
+            #menu 
+            {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            #main 
+            {
+                margin-left: 0;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="header"><h2>Сайт MySyte.com</h2></div>
+    <div id="wrapper">
+        <div id="menu">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Блог</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">О сайте</a></li>
+            </ul>
+        </div>
+        <div id="main">
+            <h2>What is Lorem Ipsum?</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
+                has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type 
+                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of 
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus 
+                PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
+    <div id="footer">
+        <p>Copyright © MySyte.com, 2016</p>
+    </div>
+</body>
+</html>

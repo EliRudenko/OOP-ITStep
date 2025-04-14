@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Блочная верстка в HTML5</title>
+    <style>
+        * 
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            background-color: #f5f5f5;
+        }
+
+        div 
+        {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        #header 
+        {
+            background-color: #ccc;
+        }
+
+        #sidebar 
+        {
+            background-color: #bbb;
+            width: 150px;
+        }
+/*
+        #main 
+        {
+            background-color: #fafafa;
+            display: flex;
+            gap: 10px;
+            min-height: 200px;
+            flex: 1;
+        }
+*/
+        #footer { background-color: #ccc; }
+/*
+        #menu 
+        {
+            background-color: #ddd;
+            width: 160px;
+        }
+
+        #content 
+        {
+            background-color: #eee;
+            flex: 1;
+        }
+
+*/
+
+
+
+        #main 
+        {
+            display: flex;
+            gap: 10px;
+            flex-direction: row-reverse;
+        }
+
+        #menu 
+        {
+            background-color: #ddd;
+            width: 160px;
+        }
+
+        #content
+        {
+            background-color: #eee;
+            flex: 1;
+        }
+ 
+   
+    </style>
+</head>
+<body>
+    <div id="header">Шапка сайта</div>
+
+    <div style="display: flex; justify-content: space-between;">
+
+        <div id="main">
+            <div id="menu">Меню</div>
+            <div id="content">Основное содержимое</div>
+        </div>
+
+        <div id="sidebar">Правый сайдбар</div>
+    </div>
+
+    <div id="footer">Футер</div>
+</body>
+</html>

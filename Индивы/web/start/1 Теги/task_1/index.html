@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Личная страница Елизара</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: square;
+      margin-left: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label, input, textarea {
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .media {
+      margin-top: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Привет, я Елизар!</h1>
+  <p>Мне 17 лет, я увлекаюсь учебой, играми и развиваюсь каждый день. Добро пожаловать на мою страницу!</p>
+</header>
+
+<main>
+  <h2>Мои увлечения</h2>
+  <ul>
+    <li>Компьютерные игры</li>
+    <li>Программирование</li>
+    <li>Чтение</li>
+    <li>VR-технологии</li>
+  </ul>
+ <h2>Любимые книги и фильмы</h2>
+  <table>
+    <tr>
+      <th>Книга</th>
+      <th>Фильм</th>
+    </tr>
+    <tr>
+      <td>451° по Фаренгейту</td>
+      <td>Начало</td>
+    </tr>
+    <tr>
+      <td>Игра Эндера</td>
+      <td>Матрица</td>
+    </tr>
+  </table>
+
+  <h2>Обратная связь</h2>
+  <form>
+    <label for="name">Ваше имя:</label>
+    <input type="text" id="name" name="name" placeholder="Введите имя">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Введите email">
+
+    <label for="message">Сообщение:</label>
+    <textarea id="message" name="message" rows="4" placeholder="Введите сообщение"></textarea>
+
+    <button type="submit">Отправить</button>
+  </form>
+
+  <div class="media">
+    <h2>Фото и видео</h2>
+    <img src="" alt="Пример изображения">
+
+
+    <video controls>
+      <source src="https://st.depositphotos.com/1683796/61480/v/600/depositphotos_614804486-stock-video-vertical-video-app-software-developer.mp4" type="video/mp4">
+    </video>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Блочная вёрстка в HTML5</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body 
+        {
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .container 
+        {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer, aside, main 
+        {
+            padding: 1rem;
+            border: 1px solid #000;
+        }
+
+        header { background-color: #f6e2a1;}
+
+        footer
+        {
+            background-color: #894a21;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        .content 
+        {
+            display: flex;
+
+            flex: 1;
+            gap: 5rem;
+            margin: 1rem 0;
+        }
+
+
+
+
+        aside 
+        {
+            width: 20%;
+            min-width: 150px;
+        }
+
+        .left-sidebar {background-color: #c8a97e; }
+
+        .right-sidebar { background-color: #d9a65e;}
+
+        main 
+        {
+            background-color: #ea8f33;
+            flex: 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Шапка сайта</header>
+
+        <div class="content">
+            <aside class="left-sidebar">Левый сайдбар</aside>
+            <main>Основное содержимое</main>
+            <aside class="right-sidebar">Правый сайдбар</aside>
+        </div>
+
+        <footer>Футер</footer>
+    </div>
+</body>
+</html>

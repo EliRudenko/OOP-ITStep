@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Примеры использования display</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            padding: 20px;
+        }
+
+        .example {
+            margin-bottom: 30px;
+        }
+
+        .box {
+            background-color: #ddd;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Пример 1: display: block */
+        .block-example {
+            display: block;
+        }
+
+        /* Пример 2: display: inline */
+        .inline-example {
+            display: inline;
+            background-color: #a1c4fd;
+            width: 150px;
+            margin: 5px;
+        }
+
+        /* Пример 3: display: inline-block */
+        .inline-block-example {
+            display: inline-block;
+            background-color: #f7c5a0;
+            width: 150px;
+            margin: 5px;
+            text-align: center;
+        }
+
+        /* Пример 4: display: flex */
+        .flex-example {
+            display: flex;
+            gap: 10px;
+            background-color: #e7f5ff;
+            background-color: #c1e2fd;
+            width: 150px;
+        }
+
+        .flex-example .box {
+            background-color: #c1e2fd;
+            width: 150px;
+        }
+
+        /* Пример 5: display: grid */
+        .grid-example {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background-color: #f2e1d1;
+        }
+
+        .grid-example .box {
+            background-color: #f5a623;
+        }
+
+        /* Пример 6: display: none */
+        .none-example {
+            display: none;
+        }
+
+        /* Пример 7: display: inline-flex */
+        .inline-flex-example {
+            display: inline-flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="example">
+        <h2>Пример 1: display: block</h2>
+        <div class="box block-example">Элемент с display: block</div>
+        <div class="box block-example">Еще один блоковый элемент</div>
+    </div>
+
+    <div class="example">
+        <h2>Пример 2: display: inline</h2>
+        <span class="inline-example">Элемент с display: inline</span>
+        <span class="inline-example">Еще один inline элемент</span>
+    </div>
+
+    <div class="example">
+        <h2>Пример 3: display: inline-block</h2>
+        <div class="inline-block-example">Элемент с display: inline-block</div>
+        <div class="inline-block-example">Еще один inline-block элемент</div>
+    </div>
+
+    <div class="example">
+        <h2>Пример 4: display: flex</h2>
+        <div class="flex-example">
+            <div class="box">Flex 1</div>
+            <div class="box">Flex 2</div>
+            <div class="box">Flex 3</div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>Пример 5: display: grid</h2>
+        <div class="grid-example">
+            <div class="box">Grid 1</div>
+            <div class="box">Grid 2</div>
+            <div class="box">Grid 3</div>
+        </div>
+    </div>
+
+    <div class="example">
+        <h2>Пример 6: display: none</h2>
+        <div class="none-example">Этот элемент не виден, так как имеет display: none</div>
+        <div class="box">Этот элемент видим</div>
+    </div>
+
+    <div class="example">
+        <h2>Пример 7: display: inline-flex</h2>
+        <div class="inline-flex-example">
+            <div class="box">Inline-flex 1</div>
+            <div class="box">Inline-flex 2</div>
+        </div>
+    </div>
+
+</body>
+</html>

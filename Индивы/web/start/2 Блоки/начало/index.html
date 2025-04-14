@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример с блоками</title>
+    <style>
+        /* Общие стили для всех блоков */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Блок с заголовком */
+        #header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        /* Контейнер для всех блоков */
+        #container {
+            padding: 20px;
+        }
+
+        /* Пример блока с фоном и отступами */
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            margin: 30px 0;  /* Увеличенные отступы между блоками */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Блок с флоатами */
+        .float-example {
+            background-color: #ffcc00;
+            width: 45%;
+            float: left;
+            margin-right: 10%;
+            padding: 20px;
+        }
+
+        /* Для второго блока, расположенного рядом с первым */
+        .float-example-right {
+            background-color: #ff6347;
+            width: 45%;
+            float: left;
+            padding: 20px;
+        }
+
+        /* Блок с флексбоксом (выравнивание блоков по горизонтали) */
+        .flex-example {
+            background-color: #8a2be2;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 20px;
+            margin: 30px 0; /* Увеличенные отступы между блоками */
+        }
+
+        /* Блоки внутри флекс-контейнера */
+        .flex-item {
+            background-color: #ffffff;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Блок с гридом */
+        .grid-example {
+            background-color: #ff99cc;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            padding: 20px;
+            margin: 30px 0; /* Увеличенные отступы между блоками */
+        }
+
+        .grid-item {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Пример для блоков внутри контейнера с относительным позиционированием */
+        .relative-positioning {
+            background-color: #20b2aa;
+            position: relative;
+            padding: 20px;
+            margin: 30px 0; /* Увеличенные отступы между блоками */
+        }
+
+        .relative-positioning div {
+            background-color: #ffffff;
+            padding: 20px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Пример для блока с фиксированным позиционированием */
+        .fixed-positioning {
+            background-color: #e9967a;
+            padding: 20px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 200px;
+            margin: 30px 0; /* Увеличенные отступы между блоками */
+        }
+
+        /* Пример для блока с абсолютным позиционированием */
+        .absolute-positioning {
+            background-color: #add8e6;
+            padding: 20px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            margin: 30px 0; /* Увеличенные отступы между блоками */
+        }
+
+        /* Пример блока с адаптивностью (медиа-запросы) */
+        @media (max-width: 768px) {
+            .float-example, .float-example-right {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .flex-example {
+                flex-direction: column;
+            }
+
+            .grid-example {
+                grid-template-columns: 1fr;
+            }
+
+            .fixed-positioning {
+                width: 100%;
+                top: auto;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Блок заголовка -->
+    <div id="header">Пример работы с блоками</div>
+
+    <div id="container">
+        <!-- Пример с флоатами (float) -->
+        <div class="box">
+            <h2>Пример с флоатами (float)</h2>
+            <div class="float-example">Это левый блок с флоатами, который выровнен слева.</div>
+            <div class="float-example-right">Это правый блок с флоатами, который выровнен справа от первого блока.</div>
+        </div>
+
+        <!-- Пример с флексбоксом (flexbox) -->
+        <div class="box">
+            <h2>Пример с флексбоксом (flexbox)</h2>
+            <div class="flex-example">
+                <div class="flex-item">Блок 1</div>
+                <div class="flex-item">Блок 2</div>
+                <div class="flex-item">Блок 3</div>
+            </div>
+        </div>
+
+        <!-- Пример с гридом (grid) -->
+        <div class="box">
+            <h2>Пример с гридом (grid)</h2>
+            <div class="grid-example">
+                <div class="grid-item">Грид 1</div>
+                <div class="grid-item">Грид 2</div>
+                <div class="grid-item">Грид 3</div>
+            </div>
+        </div>
+
+        <!-- Пример с относительным позиционированием -->
+        <div class="box">
+            <h2>Пример с относительным позиционированием</h2>
+            <div class="relative-positioning">
+                <div>Этот блок расположен относительно другого блока с помощью position: relative.</div>
+            </div>
+        </div>
+
+        <!-- Пример с фиксированным позиционированием -->
+        <div class="box">
+            <h2>Пример с фиксированным позиционированием</h2>
+            <div class="fixed-positioning">Этот блок закреплен в правом верхнем углу с фиксированным позиционированием.</div>
+        </div>
+
+        <!-- Пример с абсолютным позиционированием -->
+        <div class="box">
+            <h2>Пример с абсолютным позиционированием</h2>
+            <div class="absolute-positioning">Этот блок размещен абсолютно относительно ближайшего родительского элемента с position: relative.</div>
+        </div>
+    </div>
+
+</body>
+</html>
