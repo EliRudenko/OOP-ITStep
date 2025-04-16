@@ -1,0 +1,41 @@
+﻿@model Soccer.Models.TeamListViewModel
+
+@{
+    ViewData["Title"] = "Команды";
+}
+
+<h2>Список команд</h2>
+
+<form asp-action="Index" method="get">
+    <p>
+        Поиск по тренеру:
+        <input type="text" name="coach" value="@Model.Coach" />
+        <input type="submit" value="Фильтр" class="btn btn-primary" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Тренер</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Teams)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Coach</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a class="btn btn-success" asp-action="Create">Создать новую команду</a>

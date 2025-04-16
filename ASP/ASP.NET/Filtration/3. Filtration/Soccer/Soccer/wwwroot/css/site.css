@@ -1,0 +1,44 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+td, th {
+    padding: 0 13px 0 0;
+}
+
+.glyphicon {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin: 0 5px;
+}
+
+.glyphicon-chevron-down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.glyphicon-chevron-up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
